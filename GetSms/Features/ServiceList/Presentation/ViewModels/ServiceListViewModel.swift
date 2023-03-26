@@ -56,6 +56,7 @@ extension ServiceListViewModel: ServiceListHandlerProtocol {
         case .LoadList:
             interactor
                 .getServiceList()
+                .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
                 .observe(on: MainScheduler.instance)
                 .subscribe(
                     onSuccess: { [weak self] serviceList in
