@@ -7,10 +7,9 @@
 
 protocol Processor {
     
-    associatedtype State
     associatedtype Intent
     
     func subscribeToIntents()
     
-    func handleIntent(intent: Intent, state: State) -> Intent?
+    func handleIntent(intent: Intent, completion: @escaping (Intent) -> Void)
 }

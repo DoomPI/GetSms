@@ -11,5 +11,7 @@ enum ServiceListState {
     
     case Loading
     
-    case Loaded
+    case Loaded(vo: ServiceListVO)
+    
+    case Error(vo: ServiceListErrorVO)
 }

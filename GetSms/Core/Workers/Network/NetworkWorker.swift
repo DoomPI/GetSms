@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class NetworkWorker {
     
@@ -15,31 +16,17 @@ class NetworkWorker {
     // MARK: - Init
     private init() {}
     
-    // MARK: - Internal vars
-    private let session = URLSession.shared
-}
-
-extension NetworkWorker: NetworkWorking {
-
-    func sendRequest(
-        to url: URL,
-        params: [String: String]?,
-        completion: @escaping (Data?) -> Void
-    ) async {
-        return await Task {
-            session.dataTask(with: url) { data, response, error in
+    // MARK: Public methods
+    func sendRequest(url: URL) -> Single<Data> {
+        return Single<Data>.create { subscriber in
+            URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data {
-                    DispatchQueue.main.async {
-                        completion(data)
-                    }
+                    subscriber(SingleEvent.success(data))
                 } else {
-                    print("Could not get any content")
-                    DispatchQueue.main.async {
-                        completion(nil)
-                    }
+                    subscriber(SingleEvent.failure(error!))
                 }
             }.resume()
-        }.value
+            return Disposables.create()
+        }
     }
 }
-

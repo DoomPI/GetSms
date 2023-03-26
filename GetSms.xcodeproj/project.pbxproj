@@ -7,9 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC1EBC4F29CFA6B000C43EF0 /* NetworkWorking.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC4E29CFA6B000C43EF0 /* NetworkWorking.swift */; };
+		CC1EBC5629CFAA9400C43EF0 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
+		CC1EBC5729CFAA9400C43EF0 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC1EBC5829CFAA9400C43EF0 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
+		CC1EBC5929CFAA9400C43EF0 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC1EBC5A29CFAA9400C43EF0 /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
+		CC1EBC5B29CFAA9400C43EF0 /* RxBlocking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC1EBC5E29CFAA9400C43EF0 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
+		CC1EBC5F29CFAA9400C43EF0 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */; };
+		CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */; };
+		CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */; };
+		CC1EBC7329CFC76900C43EF0 /* ServiceListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC7229CFC76900C43EF0 /* ServiceListNetworkDTO.swift */; };
+		CC1EBC7529CFC7C400C43EF0 /* ServiceNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */; };
+		CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC7629CFC95400C43EF0 /* ServiceListNetworkMapper.swift */; };
+		CC1EBC7929CFD8F500C43EF0 /* ServiceListErrorVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC7829CFD8F500C43EF0 /* ServiceListErrorVO.swift */; };
+		CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC7E29CFDB4B00C43EF0 /* ServiceListInteractor.swift */; };
+		CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC8129CFDF3100C43EF0 /* ServiceListFormatter.swift */; };
+		CC1EBC8429CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC8329CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift */; };
+		CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC8729CFE79400C43EF0 /* ServiceListAssembly.swift */; };
 		CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123329C78D930085324A /* GetSmsApp.swift */; };
-		CC5E123629C78D930085324A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ContentView.swift */; };
+		CC5E123629C78D930085324A /* ServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ServiceListView.swift */; };
 		CC5E123829C78D940085324A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123729C78D940085324A /* Assets.xcassets */; };
 		CC5E123B29C78D940085324A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123A29C78D940085324A /* Preview Assets.xcassets */; };
 		CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E158729CF8DA800237F71 /* NetworkWorker.swift */; };
@@ -20,14 +38,44 @@
 		CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15A729CF944C00237F71 /* ServiceListViewModel.swift */; };
 		CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15A929CF949500237F71 /* ServiceListState.swift */; };
 		CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15AB29CF94BE00237F71 /* ServiceListIntent.swift */; };
-		CC9E15AE29CF973B00237F71 /* ServiceListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15AD29CF973B00237F71 /* ServiceListDelegate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CC1EBC6029CFAA9400C43EF0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CC1EBC5729CFAA9400C43EF0 /* RxSwift.xcframework in Embed Frameworks */,
+				CC1EBC5B29CFAA9400C43EF0 /* RxBlocking.xcframework in Embed Frameworks */,
+				CC1EBC5929CFAA9400C43EF0 /* RxCocoa.xcframework in Embed Frameworks */,
+				CC1EBC5F29CFAA9400C43EF0 /* RxRelay.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		CC1EBC4E29CFA6B000C43EF0 /* NetworkWorking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorking.swift; sourceTree = "<group>"; };
+		CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = ../../Downloads/RxSwift/RxSwift.xcframework; sourceTree = "<group>"; };
+		CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = ../../Downloads/RxSwift/RxCocoa.xcframework; sourceTree = "<group>"; };
+		CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = ../../Downloads/RxSwift/RxBlocking.xcframework; sourceTree = "<group>"; };
+		CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = ../../Downloads/RxSwift/RxRelay.xcframework; sourceTree = "<group>"; };
+		CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListVO.swift; path = ../../../../../../../Downloads/RxSwift/ServiceListVO.swift; sourceTree = "<group>"; };
+		CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceVO.swift; path = ../../../../../../CiteIt/ServiceVO.swift; sourceTree = "<group>"; };
+		CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkWorker.swift; sourceTree = "<group>"; };
+		CC1EBC7229CFC76900C43EF0 /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
+		CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkDTO.swift; sourceTree = "<group>"; };
+		CC1EBC7629CFC95400C43EF0 /* ServiceListNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkMapper.swift; sourceTree = "<group>"; };
+		CC1EBC7829CFD8F500C43EF0 /* ServiceListErrorVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListErrorVO.swift; path = GetSms/Features/ServiceList/Data/Workers/Network/Mappers/ServiceListErrorVO.swift; sourceTree = SOURCE_ROOT; };
+		CC1EBC7E29CFDB4B00C43EF0 /* ServiceListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListInteractor.swift; sourceTree = "<group>"; };
+		CC1EBC8129CFDF3100C43EF0 /* ServiceListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListFormatter.swift; path = GetSms/Features/ServiceList/Presentation/Interactors/ServiceListFormatter.swift; sourceTree = SOURCE_ROOT; };
+		CC1EBC8329CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListErrorFormatter.swift; path = GetSms/Features/ServiceList/Presentation/Interactors/ServiceListErrorFormatter.swift; sourceTree = SOURCE_ROOT; };
+		CC1EBC8729CFE79400C43EF0 /* ServiceListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListAssembly.swift; sourceTree = "<group>"; };
 		CC5E123029C78D930085324A /* GetSms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E123329C78D930085324A /* GetSmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSmsApp.swift; sourceTree = "<group>"; };
-		CC5E123529C78D930085324A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CC5E123529C78D930085324A /* ServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListView.swift; sourceTree = "<group>"; };
 		CC5E123729C78D940085324A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC5E123A29C78D940085324A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC9E158729CF8DA800237F71 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
@@ -38,7 +86,6 @@
 		CC9E15A729CF944C00237F71 /* ServiceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListViewModel.swift; sourceTree = "<group>"; };
 		CC9E15A929CF949500237F71 /* ServiceListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListState.swift; sourceTree = "<group>"; };
 		CC9E15AB29CF94BE00237F71 /* ServiceListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListIntent.swift; sourceTree = "<group>"; };
-		CC9E15AD29CF973B00237F71 /* ServiceListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,17 +93,119 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1EBC5629CFAA9400C43EF0 /* RxSwift.xcframework in Frameworks */,
+				CC1EBC5A29CFAA9400C43EF0 /* RxBlocking.xcframework in Frameworks */,
+				CC1EBC5829CFAA9400C43EF0 /* RxCocoa.xcframework in Frameworks */,
+				CC1EBC5E29CFAA9400C43EF0 /* RxRelay.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC1EBC5029CFAA9300C43EF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */,
+				CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */,
+				CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */,
+				CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC1EBC6129CFADCA00C43EF0 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */,
+				CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */,
+				CC1EBC7829CFD8F500C43EF0 /* ServiceListErrorVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		CC1EBC6629CFBA1B00C43EF0 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC6729CFBA2800C43EF0 /* Workers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CC1EBC6729CFBA2800C43EF0 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC6929CFBA4C00C43EF0 /* Network */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		CC1EBC6929CFBA4C00C43EF0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC6B29CFBA5A00C43EF0 /* DTO */,
+				CC1EBC6A29CFBA5500C43EF0 /* Mappers */,
+				CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CC1EBC6A29CFBA5500C43EF0 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC7629CFC95400C43EF0 /* ServiceListNetworkMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		CC1EBC6B29CFBA5A00C43EF0 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC7229CFC76900C43EF0 /* ServiceListNetworkDTO.swift */,
+				CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC1EBC7D29CFDB3200C43EF0 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC7E29CFDB4B00C43EF0 /* ServiceListInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CC1EBC8029CFDEB800C43EF0 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC8129CFDF3100C43EF0 /* ServiceListFormatter.swift */,
+				CC1EBC8329CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		CC1EBC8529CFE4F400C43EF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC5E123529C78D930085324A /* ServiceListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC1EBC8629CFE77900C43EF0 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC8729CFE79400C43EF0 /* ServiceListAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		CC5E122729C78D930085324A = {
 			isa = PBXGroup;
 			children = (
 				CC5E123229C78D930085324A /* GetSms */,
 				CC5E123129C78D930085324A /* Products */,
+				CC1EBC5029CFAA9300C43EF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +224,6 @@
 				CC9E158029CF8CD400237F71 /* Features */,
 				CC9E157F29CF8CCA00237F71 /* Core */,
 				CC5E123329C78D930085324A /* GetSmsApp.swift */,
-				CC5E123529C78D930085324A /* ContentView.swift */,
 				CC5E123729C78D940085324A /* Assets.xcassets */,
 				CC5E123929C78D940085324A /* Preview Content */,
 			);
@@ -135,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				CC9E158729CF8DA800237F71 /* NetworkWorker.swift */,
-				CC1EBC4E29CFA6B000C43EF0 /* NetworkWorking.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -143,7 +290,8 @@
 		CC9E158D29CF8E1F00237F71 /* ServiceList */ = {
 			isa = PBXGroup;
 			children = (
-				CC9E159029CF8E3800237F71 /* Data */,
+				CC1EBC8629CFE77900C43EF0 /* DI */,
+				CC1EBC6629CFBA1B00C43EF0 /* Data */,
 				CC9E158F29CF8E3000237F71 /* Domain */,
 				CC9E158E29CF8E2700237F71 /* Presentation */,
 			);
@@ -153,13 +301,13 @@
 		CC9E158E29CF8E2700237F71 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CC1EBC8529CFE4F400C43EF0 /* Views */,
+				CC1EBC8029CFDEB800C43EF0 /* Formatters */,
+				CC1EBC7D29CFDB3200C43EF0 /* Interactors */,
+				CC1EBC6129CFADCA00C43EF0 /* VO */,
 				CC9E15A629CF942F00237F71 /* Intents */,
 				CC9E15A429CF940C00237F71 /* States */,
-				CC9E159529CF90E500237F71 /* Formatters */,
-				CC9E159429CF90DE00237F71 /* VO */,
-				CC9E159329CF90D700237F71 /* Views */,
 				CC9E159229CF90CF00237F71 /* ViewModels */,
-				CC9E159129CF90BB00237F71 /* Presenters */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -168,25 +316,8 @@
 			isa = PBXGroup;
 			children = (
 				CC9E159F29CF933A00237F71 /* Models */,
-				CC9E159E29CF930500237F71 /* Delegates */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		CC9E159029CF8E3800237F71 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				CC9E159729CF917600237F71 /* DataSources */,
-				CC9E159629CF916C00237F71 /* Repositories */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		CC9E159129CF90BB00237F71 /* Presenters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenters;
 			sourceTree = "<group>";
 		};
 		CC9E159229CF90CF00237F71 /* ViewModels */ = {
@@ -195,73 +326,6 @@
 				CC9E15A729CF944C00237F71 /* ServiceListViewModel.swift */,
 			);
 			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		CC9E159329CF90D700237F71 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		CC9E159429CF90DE00237F71 /* VO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = VO;
-			sourceTree = "<group>";
-		};
-		CC9E159529CF90E500237F71 /* Formatters */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Formatters;
-			sourceTree = "<group>";
-		};
-		CC9E159629CF916C00237F71 /* Repositories */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Repositories;
-			sourceTree = "<group>";
-		};
-		CC9E159729CF917600237F71 /* DataSources */ = {
-			isa = PBXGroup;
-			children = (
-				CC9E159829CF91C200237F71 /* Network */,
-			);
-			path = DataSources;
-			sourceTree = "<group>";
-		};
-		CC9E159829CF91C200237F71 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				CC9E159C29CF922200237F71 /* DTO */,
-				CC9E159B29CF91F300237F71 /* Mappers */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		CC9E159B29CF91F300237F71 /* Mappers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Mappers;
-			sourceTree = "<group>";
-		};
-		CC9E159C29CF922200237F71 /* DTO */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DTO;
-			sourceTree = "<group>";
-		};
-		CC9E159E29CF930500237F71 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				CC9E15AD29CF973B00237F71 /* ServiceListDelegate.swift */,
-			);
-			path = Delegates;
 			sourceTree = "<group>";
 		};
 		CC9E159F29CF933A00237F71 /* Models */ = {
@@ -299,6 +363,7 @@
 				CC5E122C29C78D930085324A /* Sources */,
 				CC5E122D29C78D930085324A /* Frameworks */,
 				CC5E122E29C78D930085324A /* Resources */,
+				CC1EBC6029CFAA9400C43EF0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,17 +424,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC1EBC7529CFC7C400C43EF0 /* ServiceNetworkDTO.swift in Sources */,
+				CC1EBC8429CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift in Sources */,
+				CC1EBC7329CFC76900C43EF0 /* ServiceListNetworkDTO.swift in Sources */,
+				CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */,
+				CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */,
 				CC9E158C29CF8DEF00237F71 /* Processor.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
+				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
+				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
-				CC9E15AE29CF973B00237F71 /* ServiceListDelegate.swift in Sources */,
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
-				CC5E123629C78D930085324A /* ContentView.swift in Sources */,
+				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
+				CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */,
+				CC1EBC7929CFD8F500C43EF0 /* ServiceListErrorVO.swift in Sources */,
 				CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */,
-				CC1EBC4F29CFA6B000C43EF0 /* NetworkWorking.swift in Sources */,
+				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
+				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

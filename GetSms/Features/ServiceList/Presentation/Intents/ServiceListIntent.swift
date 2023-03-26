@@ -9,5 +9,7 @@ enum ServiceListIntent {
     
     case LoadList
     
-    case ShowList
+    case ShowList(vo: ServiceListVO)
+    
+    case ShowError(vo: ServiceListErrorVO)
 }
