@@ -41,6 +41,11 @@ struct ServiceListView: View {
                     return AnyView(Text("Error"))
                 }
             }
+            
+            List {
+                
+            }
+            
         }
         .padding()
     }

@@ -6,11 +6,11 @@
 //
 
 struct ServiceNetworkDTO: Decodable {
-    let name: String
-    let imageURL: String
-    let quantity: Int
+    let name: String?
+    let imageURL: String?
+    let quantity: Int?
     let info: String?
-    let cost: Float
+    let cost: Float?
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
