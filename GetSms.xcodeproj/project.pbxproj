@@ -68,8 +68,8 @@
 		CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = ../../Downloads/RxSwift/RxCocoa.xcframework; sourceTree = "<group>"; };
 		CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = ../../Downloads/RxSwift/RxBlocking.xcframework; sourceTree = "<group>"; };
 		CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = ../../Downloads/RxSwift/RxRelay.xcframework; sourceTree = "<group>"; };
-		CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListVO.swift; path = ../../../../../../../Downloads/RxSwift/ServiceListVO.swift; sourceTree = "<group>"; };
-		CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceVO.swift; path = ../../../../../../CiteIt/ServiceVO.swift; sourceTree = "<group>"; };
+		CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListVO.swift; sourceTree = "<group>"; };
+		CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceVO.swift; sourceTree = "<group>"; };
 		CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkWorker.swift; sourceTree = "<group>"; };
 		CC1EBC7229CFC76900C43EF0 /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
 		CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNetworkDTO.swift; sourceTree = "<group>"; };
