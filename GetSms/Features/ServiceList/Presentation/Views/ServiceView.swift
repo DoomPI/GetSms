@@ -29,7 +29,11 @@ struct ServiceView: View {
     var body: some View {
         HStack(alignment: .center) {
             
-            AsyncImage(url: vo.imageURL)
+            if vo.imageURL != nil {
+                AsyncImage(url: vo.imageURL)
+            } else {
+                Image("ServiceNoImage")
+            }
             
             VStack(alignment: .leading) {
                 Text(vo.name)

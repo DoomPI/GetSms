@@ -10,7 +10,6 @@ import Foundation
 class ServiceListNetworkMapper {
     
     private static let url = "https://vak-sms.com"
-    private static let defaultImageUrl = "/static/default.png"
     
     func fromDto(dto: ServiceListNetworkDTO) -> ServiceList {
         let data = Array(dto.values).map { serviceDto in
@@ -22,7 +21,7 @@ class ServiceListNetworkMapper {
     
     private func fromDto(dto: ServiceNetworkDTO) -> Service {
         let name = dto.name!
-        let imageURL = URL(string: Self.url + (dto.imageURL ?? Self.defaultImageUrl))
+        let imageURL = dto.imageURL != nil ? URL(string: Self.url + dto.imageURL!) : nil
         let quantity = dto.quantity!
         let info = dto.info
         let cost = dto.cost!

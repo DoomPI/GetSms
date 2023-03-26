@@ -7,7 +7,9 @@
 
 import SwiftUI
 import RxSwift
-import RxRelay
+
+protocol ServiceListHandlerProtocol: Handler where Intent == ServiceListIntent {
+}
 
 class ServiceListViewModel: ObservableObject {
     
@@ -15,86 +17,60 @@ class ServiceListViewModel: ObservableObject {
     typealias Intent = ServiceListIntent
     
     // MARK: - External vars
-    @Published var state: ServiceListState = .Idle
+    @Published var state: State
     
     // MARK: - Internal vars
+    private let processor: any ServiceListProcessorProtocol
+    private let reducer: any ServiceListReducerProtocol
     private let interactor: ServiceListBusinessLogic
-    private let formatter: ServiceListFormatter
-    private let errorFormatter: ServiceListErrorFormatter
-    
-    private let reducer: ServiceListReducer = ServiceListReducer()
     private let disposeBag = DisposeBag()
-    private var intentRelay = BehaviorRelay<ServiceListIntent>(value: .LoadList)
     
     init(
-        interactor: ServiceListBusinessLogic,
-        formatter: ServiceListFormatter,
-        errorFormatter: ServiceListErrorFormatter
+        state: State,
+        processor: any ServiceListProcessorProtocol,
+        reducer: any ServiceListReducerProtocol,
+        interactor: ServiceListBusinessLogic
     ) {
+        self.state = state
+        self.processor = processor
+        self.reducer = reducer
         self.interactor = interactor
-        self.formatter = formatter
-        self.errorFormatter = errorFormatter
     }
     
-    private class ServiceListReducer: Reducer {
-        
-        func reduce(intent: Intent) -> State {
-            switch intent {
-                
-            case .LoadList:
-                return .Loading
-                
-            case .ShowList(let vo):
-                return .Loaded(vo: vo)
-                
-            case .ShowError(let vo):
-                return .Error(vo: vo)
-            }
-        }
+    func onViewAppear() {
+        processor.subscribeToIntents()
+    }
+    
+    func loadServiceList() {
+        processor.fireIntent(intent: .LoadList)
     }
 }
 
-extension ServiceListViewModel: Processor {
+extension ServiceListViewModel: ServiceListHandlerProtocol {
     
-    func subscribeToIntents() {
-        intentRelay.subscribe { [weak self] event in
-            guard
-                let self,
-                let intent = event.element
-            else { return }
-            
-            let newState = self.reducer.reduce(intent: intent)
-            self.state = newState
-            
-            self.handleIntent(intent: intent) { [weak self] newIntent in
-                self?.intentRelay.accept(newIntent)
-            }
-
-        }.disposed(by: disposeBag)
-    }
-    
-    func handleIntent(intent: Intent, completion: @escaping (Intent) -> Void) {
+    func handle(intent: Intent) {
+        let newState = self.reducer.reduce(intent: intent)
+        self.state = newState
         
         switch intent {
-            
         case .LoadList:
             interactor
                 .getServiceList()
                 .observe(on: MainScheduler.instance)
                 .subscribe(
-                    onSuccess: { serviceList in
-                        completion(.ShowList(vo: self.formatter.format(model: serviceList)))
+                    onSuccess: { [weak self] serviceList in
+                        guard let self else { return }
+                        self.processor.fireIntent(intent: .PresentList(model: serviceList))
                     },
-                    onFailure: { error in
-                        completion(.ShowError(vo: self.errorFormatter.format()))
+                    onFailure: { [weak self] error in
+                        guard let self else { return }
+                        self.processor.fireIntent(intent: .PresentError)
                     }
                 )
                 .disposed(by: disposeBag)
-            
-        case .ShowList:
+        case .PresentList:
             break
-            
-        case .ShowError:
+        case .PresentError:
             break
         }
     }

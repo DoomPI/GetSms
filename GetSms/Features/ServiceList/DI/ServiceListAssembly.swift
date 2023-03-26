@@ -12,17 +12,29 @@ enum ServiceListAssembly {
     static func assemble() -> ServiceListViewModel {
         let networkWorker = ServiceListNetworkWorker()
         let networkMapper = ServiceListNetworkMapper()
+        
         let interactor = ServiceListInteractor(
             networkWorker: networkWorker,
             networkMapper: networkMapper
         )
+        
         let formatter = ServiceListFormatter()
         let errorFormatter = ServiceListErrorFormatter()
         
-        return ServiceListViewModel(
-            interactor: interactor,
+        let state = ServiceListState.Loading
+        let reducer = ServiceListReducer(
             formatter: formatter,
             errorFormatter: errorFormatter
         )
+        let processor = ServiceListProcessor()
+        let viewModel = ServiceListViewModel(
+            state: state,
+            processor: processor,
+            reducer: reducer,
+            interactor: interactor
+        )
+        processor.handler = viewModel
+        
+        return viewModel
     }
 }

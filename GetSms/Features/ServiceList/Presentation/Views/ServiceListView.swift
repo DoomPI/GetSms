@@ -12,41 +12,56 @@ struct ServiceListView: View {
     // MARK: - External vars
     @ObservedObject var viewModel: ServiceListViewModel
     
-    // MARK: - Init
-    init(viewModel: ServiceListViewModel) {
-        self.viewModel = viewModel
-        viewModel.subscribeToIntents()
-    }
-
-    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
             
-            Group { () -> AnyView in
+            List {
                 switch viewModel.state {
                     
                 case .Idle:
-                    return AnyView(Text("Idle"))
+                    Text("Idle")
                     
                 case.Loading:
-                    return AnyView(Text("Loading"))
+                    ForEach((1...10), id: \.self) { _ in
+                        ServicePlaceholderView()
+                            .listRowBackground(Color.white.opacity(0))
+                            .listRowInsets(EdgeInsets(
+                                top: 4,
+                                leading: 0,
+                                bottom: 4,
+                                trailing: 0
+                            ))
+                            .listRowSeparator(.hidden)
+                    }
                     
                 case .Loaded(let vo):
-                    return AnyView(Text("Loaded " + vo.data[0].name))
+                    
+                    ForEach(vo.data) { serviceVo in
+                        ServiceView(vo: serviceVo, pressAction: {})
+                            .listRowBackground(Color.white.opacity(0))
+                            .listRowInsets(EdgeInsets(
+                                top: 4,
+                                leading: 0,
+                                bottom: 4,
+                                trailing: 0
+                            ))
+                            .listRowSeparator(.hidden)
+                    }
                     
                 case .Error(let vo):
-                    return AnyView(Text("Error"))
+                    Text("Error")
                 }
             }
-            
-            List {
-                
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+            .refreshable {
+                viewModel.loadServiceList()
             }
-            
         }
-        .padding()
+        .padding(8)
+        .background(Color("DarkBlueColor"))
+        .onAppear {
+            viewModel.onViewAppear()
+        }
     }
 }

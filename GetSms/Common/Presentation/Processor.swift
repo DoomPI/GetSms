@@ -11,5 +11,5 @@ protocol Processor {
     
     func subscribeToIntents()
     
-    func handleIntent(intent: Intent, completion: @escaping (Intent) -> Void)
+    func fireIntent(intent: Intent)
 }

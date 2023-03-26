@@ -28,6 +28,10 @@
 		CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC8729CFE79400C43EF0 /* ServiceListAssembly.swift */; };
 		CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC8B29D0705000C43EF0 /* ShimmerEffect.swift */; };
 		CC1EBC8E29D07E0000C43EF0 /* ServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC8D29D07E0000C43EF0 /* ServiceView.swift */; };
+		CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */; };
+		CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9529D0CC3700C43EF0 /* ServiceListProcessor.swift */; };
+		CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9729D0CC5000C43EF0 /* ServiceListReducer.swift */; };
+		CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9929D0DAB000C43EF0 /* Handler.swift */; };
 		CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123329C78D930085324A /* GetSmsApp.swift */; };
 		CC5E123629C78D930085324A /* ServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ServiceListView.swift */; };
 		CC5E123829C78D940085324A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123729C78D940085324A /* Assets.xcassets */; };
@@ -77,6 +81,10 @@
 		CC1EBC8729CFE79400C43EF0 /* ServiceListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListAssembly.swift; sourceTree = "<group>"; };
 		CC1EBC8B29D0705000C43EF0 /* ShimmerEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimmerEffect.swift; sourceTree = "<group>"; };
 		CC1EBC8D29D07E0000C43EF0 /* ServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceView.swift; sourceTree = "<group>"; };
+		CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicePlaceholderView.swift; sourceTree = "<group>"; };
+		CC1EBC9529D0CC3700C43EF0 /* ServiceListProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListProcessor.swift; sourceTree = "<group>"; };
+		CC1EBC9729D0CC5000C43EF0 /* ServiceListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListReducer.swift; sourceTree = "<group>"; };
+		CC1EBC9929D0DAB000C43EF0 /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		CC5E123029C78D930085324A /* GetSms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E123329C78D930085324A /* GetSmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSmsApp.swift; sourceTree = "<group>"; };
 		CC5E123529C78D930085324A /* ServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListView.swift; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 			children = (
 				CC5E123529C78D930085324A /* ServiceListView.swift */,
 				CC1EBC8D29D07E0000C43EF0 /* ServiceView.swift */,
+				CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -219,6 +228,22 @@
 				CC1EBC8B29D0705000C43EF0 /* ShimmerEffect.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		CC1EBC9329D0CC0000C43EF0 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC9729D0CC5000C43EF0 /* ServiceListReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		CC1EBC9429D0CC0700C43EF0 /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				CC1EBC9529D0CC3700C43EF0 /* ServiceListProcessor.swift */,
+			);
+			path = Processors;
 			sourceTree = "<group>";
 		};
 		CC5E122729C78D930085324A = {
@@ -289,6 +314,7 @@
 			children = (
 				CC9E158929CF8DDE00237F71 /* Reducer.swift */,
 				CC9E158B29CF8DEF00237F71 /* Processor.swift */,
+				CC1EBC9929D0DAB000C43EF0 /* Handler.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -323,10 +349,10 @@
 		CC9E158E29CF8E2700237F71 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CC1EBC9329D0CC0000C43EF0 /* Reducers */,
 				CC1EBC8529CFE4F400C43EF0 /* Views */,
 				CC1EBC8029CFDEB800C43EF0 /* Formatters */,
 				CC1EBC6129CFADCA00C43EF0 /* VO */,
-				CC9E15A629CF942F00237F71 /* Intents */,
 				CC9E15A429CF940C00237F71 /* States */,
 				CC9E159229CF90CF00237F71 /* ViewModels */,
 			);
@@ -336,6 +362,8 @@
 		CC9E158F29CF8E3000237F71 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				CC9E15A629CF942F00237F71 /* Intents */,
+				CC1EBC9429D0CC0700C43EF0 /* Processors */,
 				CC1EBC7D29CFDB3200C43EF0 /* Interactors */,
 				CC9E159F29CF933A00237F71 /* Models */,
 			);
@@ -455,11 +483,14 @@
 				CC1EBC8E29D07E0000C43EF0 /* ServiceView.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
+				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
+				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
 				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
+				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
@@ -467,6 +498,7 @@
 				CC1EBC7929CFD8F500C43EF0 /* ServiceListErrorVO.swift in Sources */,
 				CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
+				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
 			);
@@ -605,6 +637,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -634,6 +667,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
