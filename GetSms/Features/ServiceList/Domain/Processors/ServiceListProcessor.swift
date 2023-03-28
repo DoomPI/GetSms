@@ -27,15 +27,18 @@ class ServiceListProcessor: ServiceListProcessorProtocol {
     }
     
     func subscribeToIntents() {
-        intentRelay.subscribe { [weak self] event in
-            guard
-                let self,
-                let intent = event.element
-            else { return }
-            
-            self.handleIntent(intent: intent)
-            
-        }.disposed(by: disposeBag)
+        intentRelay
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+            .observe(on: MainScheduler.instance)
+            .subscribe { [weak self] event in
+                guard
+                    let self,
+                    let intent = event.element
+                else { return }
+                
+                self.handleIntent(intent: intent)
+                
+            }.disposed(by: disposeBag)
     }
     
     private func handleIntent(intent: Intent) {

@@ -17,7 +17,7 @@ struct ServicePlaceholderView: View {
         HStack(alignment: .center) {
             
             Circle()
-                .frame(width: 40, height: 40)
+                .frame(width: 30, height: 30)
             
             VStack(alignment: .leading) {
                 RoundedRectangle(cornerRadius: 8)
@@ -48,6 +48,7 @@ struct ServicePlaceholderView: View {
                 )
             )
         }
+        .frame(height: 40)
         .shimmer(
             tint: .gray.opacity(0.3),
             highlight: .white,

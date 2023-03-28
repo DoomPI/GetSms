@@ -17,7 +17,7 @@ class ServiceListViewModel: ObservableObject {
     typealias Intent = ServiceListIntent
     
     // MARK: - External vars
-    @Published var state: State
+    @Published private(set) var state: State
     
     // MARK: - Internal vars
     private let processor: any ServiceListProcessorProtocol

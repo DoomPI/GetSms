@@ -30,7 +30,12 @@ struct ServiceView: View {
         HStack(alignment: .center) {
             
             if vo.imageURL != nil {
-                AsyncImage(url: vo.imageURL)
+                AsyncImage(url: vo.imageURL) { image in
+                    image
+                } placeholder: {
+                    Image("ServiceNoImage")
+                }
+                
             } else {
                 Image("ServiceNoImage")
             }
@@ -69,6 +74,7 @@ struct ServiceView: View {
                 )
             )
         }
+        .frame(height: 40)
         .padding(16)
         .background(Rectangle()
             .fill(.linearGradient(

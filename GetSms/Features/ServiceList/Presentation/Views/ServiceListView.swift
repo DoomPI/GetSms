@@ -12,50 +12,36 @@ struct ServiceListView: View {
     // MARK: - External vars
     @ObservedObject var viewModel: ServiceListViewModel
     
+    @State var state: ServiceListState = .Idle
+    
     var body: some View {
         VStack {
             
-            List {
-                switch viewModel.state {
+            ScrollView {
+                switch state {
                     
                 case .Idle:
                     Text("Idle")
                     
-                case.Loading:
+                case .Loading:
                     ForEach((1...10), id: \.self) { _ in
                         ServicePlaceholderView()
-                            .listRowBackground(Color.white.opacity(0))
-                            .listRowInsets(EdgeInsets(
-                                top: 4,
-                                leading: 0,
-                                bottom: 4,
-                                trailing: 0
-                            ))
-                            .listRowSeparator(.hidden)
                     }
                     
                 case .Loaded(let vo):
-                    
                     ForEach(vo.data) { serviceVo in
                         ServiceView(vo: serviceVo, pressAction: {})
-                            .listRowBackground(Color.white.opacity(0))
-                            .listRowInsets(EdgeInsets(
-                                top: 4,
-                                leading: 0,
-                                bottom: 4,
-                                trailing: 0
-                            ))
-                            .listRowSeparator(.hidden)
                     }
                     
-                case .Error(let vo):
+                case .Error:
                     Text("Error")
                 }
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
             .refreshable {
                 viewModel.loadServiceList()
+            }
+            .onReceive(viewModel.$state) { newState in
+                state = newState
             }
         }
         .padding(8)
