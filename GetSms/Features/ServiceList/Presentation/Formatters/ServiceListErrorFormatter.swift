@@ -7,7 +7,7 @@
 
 class ServiceListErrorFormatter {
     
-    func format() -> ServiceListErrorVO {
-        return ServiceListErrorVO()
+    func format(error: Error) -> ServiceListErrorVO {
+        return ServiceListErrorVO(description: error.localizedDescription)
     }
 }

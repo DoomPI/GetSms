@@ -11,5 +11,5 @@ enum ServiceListIntent {
     
     case PresentList(model: ServiceList)
     
-    case PresentError
+    case PresentError(error: Error)
 }

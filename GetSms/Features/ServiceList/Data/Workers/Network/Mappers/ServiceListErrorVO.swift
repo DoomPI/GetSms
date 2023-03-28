@@ -6,5 +6,5 @@
 //
 
 struct ServiceListErrorVO {
-    
+    let description: String
 }

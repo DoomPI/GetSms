@@ -65,7 +65,7 @@ extension ServiceListViewModel: ServiceListHandlerProtocol {
                     },
                     onFailure: { [weak self] error in
                         guard let self else { return }
-                        self.processor.fireIntent(intent: .PresentError)
+                        self.processor.fireIntent(intent: .PresentError(error: error))
                     }
                 )
                 .disposed(by: disposeBag)

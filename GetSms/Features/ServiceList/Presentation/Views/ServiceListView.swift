@@ -33,8 +33,8 @@ struct ServiceListView: View {
                         ServiceView(vo: serviceVo, pressAction: {})
                     }
                     
-                case .Error:
-                    Text("Error")
+                case .Error(let vo):
+                    Text(vo.description)
                 }
             }
             .refreshable {

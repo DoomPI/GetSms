@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC1EBC5629CFAA9400C43EF0 /* RxSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
-		CC1EBC5729CFAA9400C43EF0 /* RxSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CC1EBC5829CFAA9400C43EF0 /* RxCocoa.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
-		CC1EBC5929CFAA9400C43EF0 /* RxCocoa.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CC1EBC5A29CFAA9400C43EF0 /* RxBlocking.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
-		CC1EBC5B29CFAA9400C43EF0 /* RxBlocking.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CC1EBC5E29CFAA9400C43EF0 /* RxRelay.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (Required, ); }; };
-		CC1EBC5F29CFAA9400C43EF0 /* RxRelay.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */; };
 		CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */; };
 		CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */; };
@@ -44,6 +36,8 @@
 		CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15A729CF944C00237F71 /* ServiceListViewModel.swift */; };
 		CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15A929CF949500237F71 /* ServiceListState.swift */; };
 		CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15AB29CF94BE00237F71 /* ServiceListIntent.swift */; };
+		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
+		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,10 +47,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CC1EBC5729CFAA9400C43EF0 /* RxSwift.xcframework in Embed Frameworks */,
-				CC1EBC5B29CFAA9400C43EF0 /* RxBlocking.xcframework in Embed Frameworks */,
-				CC1EBC5929CFAA9400C43EF0 /* RxCocoa.xcframework in Embed Frameworks */,
-				CC1EBC5F29CFAA9400C43EF0 /* RxRelay.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -64,10 +54,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxSwift.xcframework; path = ../../Downloads/RxSwift/RxSwift.xcframework; sourceTree = "<group>"; };
-		CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxCocoa.xcframework; path = ../../Downloads/RxSwift/RxCocoa.xcframework; sourceTree = "<group>"; };
-		CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxBlocking.xcframework; path = ../../Downloads/RxSwift/RxBlocking.xcframework; sourceTree = "<group>"; };
-		CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RxRelay.xcframework; path = ../../Downloads/RxSwift/RxRelay.xcframework; sourceTree = "<group>"; };
 		CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListVO.swift; sourceTree = "<group>"; };
 		CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceVO.swift; sourceTree = "<group>"; };
 		CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkWorker.swift; sourceTree = "<group>"; };
@@ -105,10 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC1EBC5629CFAA9400C43EF0 /* RxSwift.xcframework in Frameworks */,
-				CC1EBC5A29CFAA9400C43EF0 /* RxBlocking.xcframework in Frameworks */,
-				CC1EBC5829CFAA9400C43EF0 /* RxCocoa.xcframework in Frameworks */,
-				CC1EBC5E29CFAA9400C43EF0 /* RxRelay.xcframework in Frameworks */,
+				CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */,
+				CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,10 +102,6 @@
 		CC1EBC5029CFAA9300C43EF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CC1EBC5329CFAA9400C43EF0 /* RxBlocking.xcframework */,
-				CC1EBC5229CFAA9400C43EF0 /* RxCocoa.xcframework */,
-				CC1EBC5529CFAA9400C43EF0 /* RxRelay.xcframework */,
-				CC1EBC5129CFAA9300C43EF0 /* RxSwift.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -420,6 +400,10 @@
 			dependencies = (
 			);
 			name = GetSms;
+			packageProductDependencies = (
+				CCFE4BC229D366CA006BB842 /* RxRelay */,
+				CCFE4BC429D366CA006BB842 /* RxSwift */,
+			);
 			productName = GetSms;
 			productReference = CC5E123029C78D930085324A /* GetSms.app */;
 			productType = "com.apple.product-type.application";
@@ -448,6 +432,9 @@
 				Base,
 			);
 			mainGroup = CC5E122729C78D930085324A;
+			packageReferences = (
+				CCFE4BC129D366CA006BB842 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = CC5E123129C78D930085324A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -703,6 +690,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CCFE4BC129D366CA006BB842 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CCFE4BC229D366CA006BB842 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCFE4BC129D366CA006BB842 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		CCFE4BC429D366CA006BB842 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCFE4BC129D366CA006BB842 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CC5E122829C78D930085324A /* Project object */;
 }

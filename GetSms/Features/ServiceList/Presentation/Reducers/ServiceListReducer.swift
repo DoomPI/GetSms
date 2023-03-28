@@ -35,8 +35,8 @@ class ServiceListReducer: ServiceListReducerProtocol {
         case .PresentList(let model):
             return .Loaded(vo: formatter.format(model: model))
             
-        case .PresentError:
-            return .Error(vo: errorFormatter.format())
+        case .PresentError(let error):
+            return .Error(vo: errorFormatter.format(error: error))
         }
     }
 }
