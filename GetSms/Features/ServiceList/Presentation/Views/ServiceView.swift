@@ -29,16 +29,8 @@ struct ServiceView: View {
     var body: some View {
         HStack(alignment: .center) {
             
-            if vo.imageURL != nil {
-                AsyncImage(url: vo.imageURL) { image in
-                    image
-                } placeholder: {
-                    Image("ServiceNoImage")
-                }
-                
-            } else {
-                Image("ServiceNoImage")
-            }
+            ServiceImage(url: vo.imageURL)
+                .clipShape(RoundedRectangle(cornerRadius: 8))
             
             VStack(alignment: .leading) {
                 Text(vo.name)
@@ -91,6 +83,24 @@ struct ServiceView: View {
             ))
             .cornerRadius(5)
         )
+    }
+}
+
+struct ServiceImage: View {
+    
+    let url: URL?
+    
+    var body: some View {
+        if url != nil {
+            AsyncImage(url: url) { image in
+                image
+            } placeholder: {
+                Image("ServiceNoImage")
+            }
+            
+        } else {
+            Image("ServiceNoImage")
+        }
     }
 }
 
