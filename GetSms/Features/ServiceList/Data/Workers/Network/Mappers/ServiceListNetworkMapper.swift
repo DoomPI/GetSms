@@ -11,9 +11,9 @@ class ServiceListNetworkMapper {
     
     private static let url = "https://vak-sms.com"
     
-    func fromDto(dto: ServiceListNetworkDTO) -> ServiceList {
-        let data = Array(dto.values).map { serviceDto in
-            fromDto(dto: serviceDto[0])
+    func fromDto(dto: [ServiceNetworkDTO]) -> ServiceList {
+        let data = dto.map { serviceDto in
+            fromDto(dto: serviceDto)
         }
         
         return ServiceList(data: data)

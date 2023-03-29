@@ -10,7 +10,7 @@ import Foundation
 
 protocol ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<ServiceListNetworkDTO>
+    func getServiceList() -> Single<[ServiceNetworkDTO]>
 }
 
 class ServiceListNetworkWorker {
@@ -23,7 +23,7 @@ class ServiceListNetworkWorker {
 
 extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<ServiceListNetworkDTO>{
+    func getServiceList() -> Single<[ServiceNetworkDTO]>{
         Single.deferred { [weak self] in
             guard let self else { throw NetworkError.IrrelevantRequest }
             let queryItems = [URLQueryItem(name: "country", value: "ru")]
@@ -33,10 +33,10 @@ extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
             return self.worker.sendRequest(
                 url: urlComps.url!
             ).map { data in
-                try self.decoder.decode(
-                    ServiceListNetworkDTO.self,
-                    from: data
-                )
+                let values = try JSON.parse(string: String(decoding: data, as: UTF8.self)).values!
+                return try values.map { value in
+                    try self.decoder.decode([ServiceNetworkDTO].self, from: value.toJSONString().data(using: .utf8)!)[0]
+                }
             }
         }
     }
