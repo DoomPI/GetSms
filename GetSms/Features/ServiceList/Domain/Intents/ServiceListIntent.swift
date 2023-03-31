@@ -9,6 +9,8 @@ enum ServiceListIntent {
     
     case LoadList
     
+    case SearchService(searchText: String)
+    
     case PresentList(model: ServiceList)
     
     case PresentError(error: Error)

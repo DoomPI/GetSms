@@ -32,6 +32,9 @@ class ServiceListReducer: ServiceListReducerProtocol {
         case .LoadList:
             return .Loading
             
+        case .SearchService:
+            return .Loading
+            
         case .PresentList(let model):
             return .Loaded(vo: formatter.format(model: model))
             

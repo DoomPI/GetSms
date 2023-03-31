@@ -44,6 +44,11 @@ class ServiceListViewModel: ObservableObject {
     func loadServiceList() {
         processor.fireIntent(intent: .LoadList)
     }
+    
+    func searchService(inputText: String) {
+        let searchText = inputText.trimmingCharacters(in: .whitespaces).lowercased()
+        processor.fireIntent(intent: .SearchService(searchText: searchText))
+    }
 }
 
 extension ServiceListViewModel: ServiceListHandlerProtocol {
@@ -53,6 +58,7 @@ extension ServiceListViewModel: ServiceListHandlerProtocol {
         self.state = newState
         
         switch intent {
+            
         case .LoadList:
             interactor
                 .getServiceList()
@@ -60,19 +66,35 @@ extension ServiceListViewModel: ServiceListHandlerProtocol {
                 .observe(on: MainScheduler.instance)
                 .subscribe(
                     onSuccess: { [weak self] serviceList in
-                        guard let self else { return }
-                        self.processor.fireIntent(intent: .PresentList(model: serviceList))
+                        self?.processor.fireIntent(intent: .PresentList(model: serviceList))
                     },
                     onFailure: { [weak self] error in
-                        guard let self else { return }
-                        self.processor.fireIntent(intent: .PresentError(error: error))
+                        self?.processor.fireIntent(intent: .PresentError(error: error))
                     }
                 )
                 .disposed(by: disposeBag)
+            
+        case .SearchService(let searchText):
+            interactor
+                .searchService(searchText: searchText)
+                .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                .observe(on: MainScheduler.instance)
+                .subscribe(
+                    onSuccess: { [weak self] serviceList in
+                        self?.processor.fireIntent(intent: .PresentList(model: serviceList))
+                    },
+                    onFailure: { [weak self] error in
+                        self?.processor.fireIntent(intent: .PresentError(error: error))
+                    }
+                )
+                .disposed(by: disposeBag)
+            
         case .PresentList:
             break
+            
         case .PresentError:
             break
+            
         }
     }
 }

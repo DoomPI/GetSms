@@ -10,10 +10,13 @@ import Foundation
 enum ServiceListAssembly {
     
     static func assemble() -> ServiceListViewModel {
+        let cacheWorker = ServiceListCacheWorker()
+        
         let networkWorker = ServiceListNetworkWorker()
         let networkMapper = ServiceListNetworkMapper()
         
         let interactor = ServiceListInteractor(
+            cacheWorker: cacheWorker,
             networkWorker: networkWorker,
             networkMapper: networkMapper
         )
