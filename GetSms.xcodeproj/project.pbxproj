@@ -248,7 +248,6 @@
 			children = (
 				CC9E158129CF8CDF00237F71 /* Common */,
 				CC9E158029CF8CD400237F71 /* Features */,
-				CC9E157F29CF8CCA00237F71 /* Core */,
 				CC5E123329C78D930085324A /* GetSmsApp.swift */,
 				CC5E123729C78D940085324A /* Assets.xcassets */,
 				CC5E123929C78D940085324A /* Preview Content */,
@@ -264,15 +263,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CC9E157F29CF8CCA00237F71 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				CC1EBC8929D0703800C43EF0 /* Utils */,
-				CC9E158329CF8D2D00237F71 /* Workers */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +274,8 @@
 		CC9E158129CF8CDF00237F71 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CC1EBC8929D0703800C43EF0 /* Utils */,
+				CCFE4BCC29D74769006BB842 /* Data */,
 				CC9E158229CF8CF000237F71 /* Presentation */,
 			);
 			path = Common;
@@ -389,6 +381,14 @@
 				CCFE4BCA29D3B9E5006BB842 /* JSON.swift */,
 			);
 			path = JSON;
+			sourceTree = "<group>";
+		};
+		CCFE4BCC29D74769006BB842 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC9E158329CF8D2D00237F71 /* Workers */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
