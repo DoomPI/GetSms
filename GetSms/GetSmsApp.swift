@@ -11,7 +11,7 @@ import SwiftUI
 struct GetSmsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ServiceListScreen(serviceListViewModel: ServiceListAssembly.assemble())
         }
     }
 }
