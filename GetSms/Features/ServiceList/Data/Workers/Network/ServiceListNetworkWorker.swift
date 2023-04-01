@@ -10,7 +10,7 @@ import Foundation
 
 protocol ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<[ServiceNetworkDTO]>
+    func getServiceList() -> Single<ServiceListNetworkDTO>
 }
 
 class ServiceListNetworkWorker {
@@ -21,13 +21,11 @@ class ServiceListNetworkWorker {
     
     private let serviceListUrl = "https://vak-sms.com/api/getCountNumbersList/"
     private let countryQueryItemName = "country"
-    
-    private let countryListUrl = "https://vak-sms.com/api/getCountryOperatorList/"
 }
 
 extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<[ServiceNetworkDTO]>{
+    func getServiceList() -> Single<ServiceListNetworkDTO>{
         Single.deferred { [weak self] in
             guard let self else { throw NetworkError.IrrelevantRequest }
             let queryItems = [URLQueryItem(name: self.countryQueryItemName, value: "ru")]
@@ -37,10 +35,7 @@ extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
             return self.worker.sendRequest(
                 url: urlComps.url!
             ).map { data in
-                let values = try JSON.parse(string: String(decoding: data, as: UTF8.self)).values!
-                return try values.map { value in
-                    try self.decoder.decode([ServiceNetworkDTO].self, from: value.toJSONString().data(using: .utf8)!)[0]
-                }
+                try JSONExtractor.extractMap(from: data)
             }
         }
     }

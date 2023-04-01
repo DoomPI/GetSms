@@ -11,6 +11,8 @@
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
 		CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608C529D7B769005A815C /* ServiceListScreen.swift */; };
 		CC0608CC29D7BC04005A815C /* CountryNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */; };
+		CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D129D887AC005A815C /* JSONExtractor.swift */; };
+		CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */; };
 		CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */; };
 		CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */; };
 		CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */; };
@@ -62,6 +64,8 @@
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
 		CC0608C529D7B769005A815C /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListScreen.swift; path = ../../../../../../Documents/ServiceListScreen.swift; sourceTree = "<group>"; };
 		CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNetworkDTO.swift; sourceTree = "<group>"; };
+		CC0608D129D887AC005A815C /* JSONExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtractor.swift; sourceTree = "<group>"; };
+		CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
 		CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListVO.swift; sourceTree = "<group>"; };
 		CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceVO.swift; sourceTree = "<group>"; };
 		CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkWorker.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 			children = (
 				CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */,
 				CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */,
+				CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -423,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				CCFE4BCA29D3B9E5006BB842 /* JSON.swift */,
+				CC0608D129D887AC005A815C /* JSONExtractor.swift */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -517,6 +523,7 @@
 				CC1EBC8429CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift in Sources */,
 				CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */,
 				CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */,
+				CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */,
 				CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */,
 				CC9E158C29CF8DEF00237F71 /* Processor.swift in Sources */,
 				CC1EBC8E29D07E0000C43EF0 /* ServiceView.swift in Sources */,
@@ -524,6 +531,7 @@
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
 				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
+				CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,

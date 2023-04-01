@@ -8,6 +8,7 @@
 import Foundation
 
 struct Service {
+    let code: String
     let name: String
     let imageURL: URL?
     let quantity: Int
