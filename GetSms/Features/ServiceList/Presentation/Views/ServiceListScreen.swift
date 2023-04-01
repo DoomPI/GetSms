@@ -41,7 +41,9 @@ struct ServiceListScreen: View {
                 viewModel.loadServiceList()
             }
             .onReceive(viewModel.$state) { newState in
-                state = newState
+                withAnimation {
+                    state = newState
+                }
             }
         }
         .padding(8)
@@ -78,11 +80,5 @@ struct ServiceListErrorView: View {
     
     var body: some View {
         Text(vo.description)
-    }
-}
-
-struct ServiceListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ServiceListScreen(viewModel: ServiceListAssembly.assemble())
     }
 }
