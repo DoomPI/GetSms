@@ -12,7 +12,7 @@ class ServiceListFormatter {
             format(model: service)
         }
         
-        return ServiceListVO(data: data)
+        return ServiceListVO(services: data)
     }
     
     private func format(model: Service) -> ServiceVO {

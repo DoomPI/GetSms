@@ -18,7 +18,11 @@ class ServiceListNetworkWorker {
     // MARK: - Internal vars
     private let worker = NetworkWorker.shared
     private let decoder = JSONDecoder()
+    
     private let serviceListUrl = "https://vak-sms.com/api/getCountNumbersList/"
+    private let countryQueryItemName = "country"
+    
+    private let countryListUrl = "https://vak-sms.com/api/getCountryOperatorList/"
 }
 
 extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
@@ -26,7 +30,7 @@ extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
     func getServiceList() -> Single<[ServiceNetworkDTO]>{
         Single.deferred { [weak self] in
             guard let self else { throw NetworkError.IrrelevantRequest }
-            let queryItems = [URLQueryItem(name: "country", value: "ru")]
+            let queryItems = [URLQueryItem(name: self.countryQueryItemName, value: "ru")]
             var urlComps = URLComponents(string: self.serviceListUrl)!
             urlComps.queryItems = queryItems
             

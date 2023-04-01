@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608B629D758D4005A815C /* ServiceSearchView.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
+		CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608C529D7B769005A815C /* ServiceListScreen.swift */; };
+		CC0608CC29D7BC04005A815C /* CountryNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */; };
 		CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */; };
 		CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */; };
 		CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */; };
@@ -26,7 +28,7 @@
 		CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9729D0CC5000C43EF0 /* ServiceListReducer.swift */; };
 		CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9929D0DAB000C43EF0 /* Handler.swift */; };
 		CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123329C78D930085324A /* GetSmsApp.swift */; };
-		CC5E123629C78D930085324A /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ServiceListScreen.swift */; };
+		CC5E123629C78D930085324A /* ServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ServiceListView.swift */; };
 		CC5E123829C78D940085324A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123729C78D940085324A /* Assets.xcassets */; };
 		CC5E123B29C78D940085324A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123A29C78D940085324A /* Preview Assets.xcassets */; };
 		CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E158729CF8DA800237F71 /* NetworkWorker.swift */; };
@@ -58,6 +60,8 @@
 /* Begin PBXFileReference section */
 		CC0608B629D758D4005A815C /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
+		CC0608C529D7B769005A815C /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListScreen.swift; path = ../../../../../../Documents/ServiceListScreen.swift; sourceTree = "<group>"; };
+		CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNetworkDTO.swift; sourceTree = "<group>"; };
 		CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListVO.swift; sourceTree = "<group>"; };
 		CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceVO.swift; sourceTree = "<group>"; };
 		CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkWorker.swift; sourceTree = "<group>"; };
@@ -76,7 +80,7 @@
 		CC1EBC9929D0DAB000C43EF0 /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		CC5E123029C78D930085324A /* GetSms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E123329C78D930085324A /* GetSmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSmsApp.swift; sourceTree = "<group>"; };
-		CC5E123529C78D930085324A /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListScreen.swift; sourceTree = "<group>"; };
+		CC5E123529C78D930085324A /* ServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListView.swift; sourceTree = "<group>"; };
 		CC5E123729C78D940085324A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CC5E123A29C78D940085324A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CC9E158729CF8DA800237F71 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
@@ -109,6 +113,30 @@
 				CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */,
 			);
 			path = Cache;
+			sourceTree = "<group>";
+		};
+		CC0608C229D7B6AC005A815C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608C329D7B6B7005A815C /* Presentation */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		CC0608C329D7B6B7005A815C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608C429D7B74F005A815C /* Screens */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CC0608C429D7B74F005A815C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608C529D7B769005A815C /* ServiceListScreen.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		CC1EBC5029CFAA9300C43EF0 /* Frameworks */ = {
@@ -167,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */,
+				CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -191,7 +220,7 @@
 		CC1EBC8529CFE4F400C43EF0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CC5E123529C78D930085324A /* ServiceListScreen.swift */,
+				CC5E123529C78D930085324A /* ServiceListView.swift */,
 				CC1EBC8D29D07E0000C43EF0 /* ServiceView.swift */,
 				CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */,
 				CC0608B629D758D4005A815C /* ServiceSearchView.swift */,
@@ -260,6 +289,7 @@
 		CC5E123229C78D930085324A /* GetSms */ = {
 			isa = PBXGroup;
 			children = (
+				CC0608C229D7B6AC005A815C /* Core */,
 				CC9E158129CF8CDF00237F71 /* Common */,
 				CC9E158029CF8CD400237F71 /* Features */,
 				CC5E123329C78D930085324A /* GetSmsApp.swift */,
@@ -498,18 +528,20 @@
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
-				CC5E123629C78D930085324A /* ServiceListScreen.swift in Sources */,
+				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
 				CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */,
 				CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */,
+				CC0608CC29D7BC04005A815C /* CountryNetworkDTO.swift in Sources */,
 				CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */,
 				CC1EBC7929CFD8F500C43EF0 /* ServiceListErrorVO.swift in Sources */,
 				CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
+				CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
 			);

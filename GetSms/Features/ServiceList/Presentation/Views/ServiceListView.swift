@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ServiceListScreen: View {
+struct ServiceListView: View {
     
     // MARK: - External vars
-    @ObservedObject var viewModel: ServiceListViewModel
+    @EnvironmentObject var viewModel: ServiceListViewModel
     
     @State private var state: ServiceListState = .Idle
     
@@ -28,10 +28,10 @@ struct ServiceListScreen: View {
                     Spacer()
                     
                 case .Loading:
-                    ServiceListPlaceholderView()
+                    ServiceListLoadingView()
                     
                 case .Loaded(let vo):
-                    ServiceListView(vo: vo)
+                    ServiceListLoadedView(vo: vo)
                     
                 case .Error(let vo):
                     ServiceListErrorView(vo: vo)
@@ -54,18 +54,18 @@ struct ServiceListScreen: View {
     }
 }
 
-struct ServiceListView: View {
+struct ServiceListLoadedView: View {
     
     let vo: ServiceListVO
     
     var body: some View {
-        ForEach(vo.data) { serviceVo in
+        ForEach(vo.services) { serviceVo in
             ServiceView(vo: serviceVo, pressAction: {})
         }
     }
 }
 
-struct ServiceListPlaceholderView: View {
+struct ServiceListLoadingView: View {
     
     var body: some View {
         ForEach((1...10), id: \.self) { _ in

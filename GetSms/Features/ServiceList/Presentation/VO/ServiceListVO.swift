@@ -6,5 +6,5 @@
 //
 
 struct ServiceListVO {
-    let data: [ServiceVO]
+    let services: [ServiceVO]
 }
