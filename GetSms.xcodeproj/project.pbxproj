@@ -63,6 +63,12 @@
 		CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */; };
 		CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */; };
 		CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */; };
+		CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */; };
+		CCCD15D629D9DD9000739C44 /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15D529D9DD9000739C44 /* AuthAssembly.swift */; };
+		CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */; };
+		CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15DB29D9E27E00739C44 /* AuthView.swift */; };
+		CCCD15DF29D9E32000739C44 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15DE29D9E32000739C44 /* WebView.swift */; };
+		CCCD15E229D9E80400739C44 /* WebViewNavigationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15E129D9E80400739C44 /* WebViewNavigationAction.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -139,6 +145,12 @@
 		CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPlaceholderView.swift; sourceTree = "<group>"; };
 		CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListDropdownView.swift; sourceTree = "<group>"; };
 		CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchPlaceholderView.swift; sourceTree = "<group>"; };
+		CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
+		CCCD15D529D9DD9000739C44 /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CCCD15DB29D9E27E00739C44 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		CCCD15DE29D9E32000739C44 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		CCCD15E129D9E80400739C44 /* WebViewNavigationAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewNavigationAction.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +178,7 @@
 		A8C9880829D9CB8D000D1249 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CCCD15D729D9DDB000739C44 /* Navigation */,
 				A8C9880929D9CB9D000D1249 /* Screens */,
 			);
 			path = Presentation;
@@ -175,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */,
+				CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -532,6 +546,7 @@
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CCCD15CF29D9DD0D00739C44 /* Auth */,
 				CC0608D529D89439005A815C /* CountryList */,
 				CC9E158D29CF8E1F00237F71 /* ServiceList */,
 			);
@@ -551,6 +566,7 @@
 		CC9E158229CF8CF000237F71 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CCCD15DD29D9E31300739C44 /* UI */,
 				CC9E158929CF8DDE00237F71 /* Reducer.swift */,
 				CC9E158B29CF8DEF00237F71 /* Processor.swift */,
 				CC1EBC9929D0DAB000C43EF0 /* Handler.swift */,
@@ -640,6 +656,88 @@
 				CC9E15AB29CF94BE00237F71 /* ServiceListIntent.swift */,
 			);
 			path = Intents;
+			sourceTree = "<group>";
+		};
+		CCCD15CF29D9DD0D00739C44 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15D329D9DD5D00739C44 /* DI */,
+				CCCD15D229D9DD5500739C44 /* Presentation */,
+				CCCD15D129D9DD5100739C44 /* Data */,
+				CCCD15D029D9DD4300739C44 /* Domain */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CCCD15D029D9DD4300739C44 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CCCD15D129D9DD5100739C44 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CCCD15D229D9DD5500739C44 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15DA29D9DE0400739C44 /* Views */,
+				CCCD15D429D9DD6E00739C44 /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CCCD15D329D9DD5D00739C44 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15D529D9DD9000739C44 /* AuthAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CCCD15D429D9DD6E00739C44 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CCCD15D729D9DDB000739C44 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CCCD15DA29D9DE0400739C44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15DB29D9E27E00739C44 /* AuthView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCCD15DD29D9E31300739C44 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15E029D9E7D500739C44 /* Web */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		CCCD15E029D9E7D500739C44 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15DE29D9E32000739C44 /* WebView.swift */,
+				CCCD15E129D9E80400739C44 /* WebViewNavigationAction.swift */,
+			);
+			path = Web;
 			sourceTree = "<group>";
 		};
 		CCFE4BC929D3B972006BB842 /* JSON */ = {
@@ -758,16 +856,21 @@
 				CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */,
 				CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */,
 				CC0608ED29D896ED005A815C /* CountryListState.swift in Sources */,
+				CCCD15DF29D9E32000739C44 /* WebView.swift in Sources */,
+				CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
+				CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */,
 				CC06090529D8A1C3005A815C /* CountryListNetworkDTO.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
 				CC0608EF29D896F8005A815C /* CountryListVO.swift in Sources */,
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
+				CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */,
 				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
+				CCCD15E229D9E80400739C44 /* WebViewNavigationAction.swift in Sources */,
 				A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
@@ -787,6 +890,7 @@
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
+				CCCD15D629D9DD9000739C44 /* AuthAssembly.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
@@ -920,7 +1024,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GetSms/Preview Content\"";
-				DEVELOPMENT_TEAM = JARWHL6PTD;
+				DEVELOPMENT_TEAM = 7JCTFR9C8T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -934,7 +1038,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -950,7 +1054,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GetSms/Preview Content\"";
-				DEVELOPMENT_TEAM = JARWHL6PTD;
+				DEVELOPMENT_TEAM = 7JCTFR9C8T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -964,7 +1068,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

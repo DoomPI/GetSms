@@ -14,10 +14,10 @@ struct ServiceListScreen: View {
  
     var body: some View {
         VStack {
- 
+
             CountryListView()
                 .environmentObject(countryListViewModel)
- 
+
             ServiceListView()
                 .environmentObject(serviceListViewModel)
         }
