@@ -62,6 +62,7 @@
 		CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C229D8D5AA00739C44 /* CountryView.swift */; };
 		CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */; };
 		CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */; };
+		CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -137,6 +138,7 @@
 		CCCD15C229D8D5AA00739C44 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPlaceholderView.swift; sourceTree = "<group>"; };
 		CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListDropdownView.swift; sourceTree = "<group>"; };
+		CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchPlaceholderView.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -443,6 +445,7 @@
 				CC1EBC8D29D07E0000C43EF0 /* ServiceView.swift */,
 				CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */,
 				CC0608B629D758D4005A815C /* ServiceSearchView.swift */,
+				CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */,
 				CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */,
 				CC0608FF29D89D1D005A815C /* CountryListInteractor.swift in Sources */,
+				CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,

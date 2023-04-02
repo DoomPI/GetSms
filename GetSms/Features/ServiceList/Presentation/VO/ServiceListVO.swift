@@ -7,5 +7,4 @@
 
 struct ServiceListVO {
     let services: [ServiceVO]
-    let countryCode: String
 }

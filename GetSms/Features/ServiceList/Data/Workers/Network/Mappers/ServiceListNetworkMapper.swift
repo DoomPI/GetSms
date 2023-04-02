@@ -34,6 +34,7 @@ class ServiceListNetworkMapper {
         let name = dto.name!
         let imageURL = dto.imageURL != nil ? URL(string: Self.url + dto.imageURL!) : nil
         let quantity = dto.quantity!
+        let isLowQuantity = quantity < 10
         let info = dto.info
         let cost = dto.cost!
         
@@ -42,6 +43,7 @@ class ServiceListNetworkMapper {
             name: name,
             imageURL: imageURL,
             quantity: quantity,
+            isLowQuantity: isLowQuantity,
             info: info,
             cost: cost
         )

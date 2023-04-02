@@ -7,8 +7,6 @@
 
 enum CountryListState {
     
-    case Idle
-    
     case Loading
     
     case Loaded(vo: CountryListVO)
