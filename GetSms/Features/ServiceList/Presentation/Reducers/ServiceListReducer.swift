@@ -29,6 +29,9 @@ extension ServiceListReducer: ServiceListReducerProtocol {
     func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
+        case .Nothing:
+            return currentState
+            
         case .LoadList:
             return .Loading
             
