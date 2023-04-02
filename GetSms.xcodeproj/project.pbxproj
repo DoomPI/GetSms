@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */; };
 		CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608B629D758D4005A815C /* ServiceSearchView.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
-		CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608C529D7B769005A815C /* ServiceListScreen.swift */; };
 		CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D129D887AC005A815C /* JSONExtractor.swift */; };
 		CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */; };
 		CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608DA29D895D1005A815C /* CountryListAssembly.swift */; };
@@ -82,9 +82,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListScreen.swift; sourceTree = "<group>"; };
 		CC0608B629D758D4005A815C /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
-		CC0608C529D7B769005A815C /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListScreen.swift; path = ../../../../../../Documents/ServiceListScreen.swift; sourceTree = "<group>"; };
 		CC0608D129D887AC005A815C /* JSONExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtractor.swift; sourceTree = "<group>"; };
 		CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
 		CC0608DA29D895D1005A815C /* CountryListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListAssembly.swift; sourceTree = "<group>"; };
@@ -155,36 +155,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A8C9880729D9CB7B000D1249 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A8C9880829D9CB8D000D1249 /* Presentation */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A8C9880829D9CB8D000D1249 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A8C9880929D9CB9D000D1249 /* Screens */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A8C9880929D9CB9D000D1249 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		CC0608B929D78815005A815C /* Cache */ = {
 			isa = PBXGroup;
 			children = (
 				CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		CC0608C229D7B6AC005A815C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				CC0608C329D7B6B7005A815C /* Presentation */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		CC0608C329D7B6B7005A815C /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				CC0608C429D7B74F005A815C /* Screens */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		CC0608C429D7B74F005A815C /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				CC0608C529D7B769005A815C /* ServiceListScreen.swift */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		CC0608D529D89439005A815C /* CountryList */ = {
@@ -511,7 +511,7 @@
 		CC5E123229C78D930085324A /* GetSms */ = {
 			isa = PBXGroup;
 			children = (
-				CC0608C229D7B6AC005A815C /* Core */,
+				A8C9880729D9CB7B000D1249 /* Core */,
 				CC9E158129CF8CDF00237F71 /* Common */,
 				CC9E158029CF8CD400237F71 /* Features */,
 				CC5E123329C78D930085324A /* GetSmsApp.swift */,
@@ -768,6 +768,7 @@
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
+				A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
 				CC06090D29D8C256005A815C /* CountryVO.swift in Sources */,
@@ -787,7 +788,6 @@
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
-				CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
@@ -920,7 +920,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GetSms/Preview Content\"";
-				DEVELOPMENT_TEAM = 7JCTFR9C8T;
+				DEVELOPMENT_TEAM = JARWHL6PTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -934,7 +934,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -950,7 +950,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GetSms/Preview Content\"";
-				DEVELOPMENT_TEAM = 7JCTFR9C8T;
+				DEVELOPMENT_TEAM = JARWHL6PTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -964,7 +964,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
