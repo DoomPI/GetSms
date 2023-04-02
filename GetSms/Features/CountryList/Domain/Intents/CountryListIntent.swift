@@ -11,5 +11,7 @@ enum CountryListIntent {
     
     case PresentList(model: CountryList)
     
+    case SelectCountry(countryCode: String)
+    
     case PresentError(error: Error)
 }

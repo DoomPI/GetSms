@@ -10,6 +10,7 @@ import Foundation
 class CountryListNetworkMapper {
     
     private static let url = "https://vak-sms.com"
+    private static let defaultSelectedCountryCode = "ru"
     
     func fromDto(dto: CountryListNetworkDTO) -> CountryList {
         let countries = dto.keys.indices.map { index in
@@ -20,8 +21,14 @@ class CountryListNetworkMapper {
                 dto: countryDto
             )
         }
+        let selectedCountryIndex = countries.firstIndex(where: { country in
+            country.code == Self.defaultSelectedCountryCode
+        }) ?? 0
         
-        return CountryList(countries: countries)
+        return CountryList(
+            countries: countries,
+            selectedCountryIndex: selectedCountryIndex
+        )
     }
     
     private func fromDto(code: String, dto: CountryNetworkDTO) -> Country {

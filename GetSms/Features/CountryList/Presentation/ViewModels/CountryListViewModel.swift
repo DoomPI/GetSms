@@ -39,6 +39,10 @@ class CountryListViewModel: ObservableObject {
         processor.subscribeToIntents()
     }
     
+    func onCountrySelected(countryCode: String) {
+        processor.fireIntent(intent: .SelectCountry(countryCode: countryCode))
+    }
+    
     func loadCountryList() {
         processor.fireIntent(intent: .LoadList)
     }
@@ -47,7 +51,10 @@ class CountryListViewModel: ObservableObject {
 extension CountryListViewModel: CountryListHandlerProtocol {
     
     func handle(intent: CountryListIntent) {
-        let newState = self.reducer.reduce(intent: intent)
+        let newState = self.reducer.reduce(
+            currentState: state,
+            intent: intent
+        )
         self.state = newState
         
         switch intent {
@@ -68,6 +75,9 @@ extension CountryListViewModel: CountryListHandlerProtocol {
                 .disposed(by: disposeBag)
             
         case .PresentList:
+            break
+            
+        case .SelectCountry:
             break
             
         case .PresentError:

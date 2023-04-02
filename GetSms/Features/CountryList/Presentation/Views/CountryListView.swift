@@ -25,7 +25,12 @@ struct CountryListView: View {
                 CountryListLoadingView()
                 
             case .Loaded(let vo):
-                CountryListLoadedView(vo: vo)
+                CountryListLoadedView(
+                    vo: vo,
+                    onCountrySelected: { countryCode in
+                        viewModel.onCountrySelected(countryCode: countryCode)
+                    }
+                )
                 
             case .Error(let vo):
                 CountryListErrorView(vo: vo)
@@ -71,9 +76,13 @@ struct CountryListLoadingView: View {
 struct CountryListLoadedView: View {
     
     let vo: CountryListVO
+    let onCountrySelected: (String) -> Void
     
     var body: some View {
-        CountryListDropdownView(vo: vo)
+        CountryListDropdownView(
+            vo: vo,
+            onSelected: onCountrySelected
+        )
     }
 }
 

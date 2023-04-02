@@ -9,25 +9,25 @@ import SwiftUI
 
 struct CountryListDropdownView: View {
     let vo: CountryListVO
+    let onSelected: (String) -> Void
     
     @State private var isExpanded = false
-    @State private var selectedServiceIndex = 0
     
     var body: some View {
         
         VStack {
             
             CountryListDropListHeaderView(
-                vo: vo.countries[selectedServiceIndex],
+                vo: vo.countries[vo.selectedCountryIndex],
                 onClick: toggleExpand
             )
             
             if (isExpanded) {
                 ScrollView {
-                    LazyVStack {
+                    VStack {
                         ForEach(vo.countries.indices, id: \.self) { index in
                             Button(action: {
-                                selectedServiceIndex = index
+                                onSelected(vo.countries[index].code)
                                 toggleExpand()
                             }) {
                                 HStack {
@@ -39,7 +39,6 @@ struct CountryListDropdownView: View {
                         }
                     }
                 }
-                .background(Color("DarkBlueColor"))
             }
         }
     }

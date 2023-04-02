@@ -10,5 +10,5 @@ protocol Reducer {
     associatedtype State
     associatedtype Intent
     
-    func reduce(intent: Intent) -> State
+    func reduce(currentState: State, intent: Intent) -> State
 }

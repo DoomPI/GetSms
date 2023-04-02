@@ -26,7 +26,7 @@ class CountryListReducer {
 
 extension CountryListReducer: CountryListReducerProtocol {
     
-    func reduce(intent: Intent) -> State {
+    func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
         case .LoadList:
@@ -35,8 +35,29 @@ extension CountryListReducer: CountryListReducerProtocol {
         case .PresentList(let model):
             return .Loaded(vo: formatter.format(model: model))
             
+        case .SelectCountry(let countryCode):
+            return reduceSelectCountry(currentState: currentState, countryCode: countryCode)
+            
         case .PresentError(let error):
             return .Error(vo: errorFormatter.format(error: error))
+        }
+    }
+    
+    private func reduceSelectCountry(currentState: State, countryCode: String) -> State {
+        if case .Loaded(let vo) = currentState {
+            let selectedCountryIndex = vo.countries.firstIndex(where: { country in
+                country.code == countryCode
+            })
+            if selectedCountryIndex != nil {
+                return .Loaded(vo: CountryListVO(
+                    countries: vo.countries,
+                    selectedCountryIndex: selectedCountryIndex!
+                ))
+            } else {
+                return .Error(vo: CountryListErrorVO(description: "Country code not found"))
+            }
+        } else {
+            return currentState
         }
     }
 }

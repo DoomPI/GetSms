@@ -47,6 +47,7 @@ struct CountryView_Previews: PreviewProvider {
     static var previews: some View {
         CountryView(
             vo: CountryVO(
+                code: "ru",
                 name: "Russia",
                 imageURL: URL(string: "https://vak-sms.com/static/country/ru.png")
             )

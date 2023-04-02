@@ -8,6 +8,7 @@
 import Foundation
 
 struct CountryVO {
+    let code: String
     let name: String
     let imageURL: URL?
 }

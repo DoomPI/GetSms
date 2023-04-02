@@ -26,7 +26,7 @@ class ServiceListReducer {
 
 extension ServiceListReducer: ServiceListReducerProtocol {
     
-    func reduce(intent: Intent) -> State {
+    func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
         case .LoadList:

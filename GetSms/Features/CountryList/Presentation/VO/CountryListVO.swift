@@ -7,4 +7,5 @@
 
 struct CountryListVO {
     let countries: [CountryVO]
+    let selectedCountryIndex: Int
 }

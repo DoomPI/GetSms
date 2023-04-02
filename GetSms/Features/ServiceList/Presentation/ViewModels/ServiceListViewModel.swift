@@ -51,7 +51,10 @@ class ServiceListViewModel: ObservableObject {
 extension ServiceListViewModel: ServiceListHandlerProtocol {
     
     func handle(intent: Intent) {
-        let newState = self.reducer.reduce(intent: intent)
+        let newState = self.reducer.reduce(
+            currentState: state,
+            intent: intent
+        )
         self.state = newState
         
         switch intent {
