@@ -12,7 +12,9 @@ struct ServiceView: View {
     // MARK: - External vars
     let vo: ServiceVO
     let pressAction: () -> Void
-    let backgroundColor: Color
+    
+    // MARK: - Internval vars
+    private let backgroundColor: Color
     
     // MARK: - Init
     init(

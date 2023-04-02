@@ -12,14 +12,16 @@ class ServiceListNetworkMapper {
     private static let url = "https://vak-sms.com"
     
     func fromDto(dto: ServiceListNetworkDTO) -> ServiceList {
-        let data = dto.keys.indices.map { index in
-            fromDto(
-                code: dto.keys[index],
-                dto: dto.values[index][0]
+        let services = dto.keys.indices.map { index in
+            let serviceCode = dto.keys[index]
+            let serviceDto = dto.values[index][0]
+            return fromDto(
+                code: serviceCode,
+                dto: serviceDto
             )
         }
         
-        return ServiceList(data: data)
+        return ServiceList(services: services)
     }
     
     private func fromDto(code: String, dto: ServiceNetworkDTO) -> Service {

@@ -6,5 +6,5 @@
 //
 
 struct ServiceList {
-    let data: [Service]
+    let services: [Service]
 }

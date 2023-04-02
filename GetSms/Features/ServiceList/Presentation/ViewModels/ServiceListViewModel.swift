@@ -14,10 +14,9 @@ protocol ServiceListHandlerProtocol: Handler where Intent == ServiceListIntent {
 class ServiceListViewModel: ObservableObject {
     
     typealias State = ServiceListState
-    typealias Intent = ServiceListIntent
     
     // MARK: - External vars
-    @Published private(set) var state: State
+    @Published private(set) var state: State = .Idle
     
     // MARK: - Internal vars
     private let processor: any ServiceListProcessorProtocol
@@ -26,12 +25,10 @@ class ServiceListViewModel: ObservableObject {
     private let disposeBag = DisposeBag()
     
     init(
-        state: State,
         processor: any ServiceListProcessorProtocol,
         reducer: any ServiceListReducerProtocol,
         interactor: ServiceListBusinessLogic
     ) {
-        self.state = state
         self.processor = processor
         self.reducer = reducer
         self.interactor = interactor

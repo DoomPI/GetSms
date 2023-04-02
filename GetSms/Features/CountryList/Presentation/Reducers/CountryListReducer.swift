@@ -1,38 +1,35 @@
 //
-//  ServiceListReducer.swift
+//  CountryListReducer.swift
 //  GetSms
 //
-//  Created by Роман Ломтев on 26.03.2023.
+//  Created by Роман Ломтев on 01.04.2023.
 //
 
-protocol ServiceListReducerProtocol: Reducer where State == ServiceListState, Intent == ServiceListIntent {
+protocol CountryListReducerProtocol: Reducer where State == CountryListState, Intent == CountryListIntent {
 }
 
-class ServiceListReducer {
+class CountryListReducer {
     
     // MARK: - Internal vars
-    private let formatter: ServiceListFormatter
-    private let errorFormatter: ServiceListErrorFormatter
+    private let formatter: CountryListFormatter
+    private let errorFormatter: CountryListErrorFormatter
     
     // MARK: - Init
     init(
-        formatter: ServiceListFormatter,
-        errorFormatter: ServiceListErrorFormatter
+        formatter: CountryListFormatter,
+        errorFormatter: CountryListErrorFormatter
     ) {
         self.formatter = formatter
         self.errorFormatter = errorFormatter
     }
 }
 
-extension ServiceListReducer: ServiceListReducerProtocol {
+extension CountryListReducer: CountryListReducerProtocol {
     
     func reduce(intent: Intent) -> State {
         switch intent {
             
         case .LoadList:
-            return .Loading
-            
-        case .SearchService:
             return .Loading
             
         case .PresentList(let model):

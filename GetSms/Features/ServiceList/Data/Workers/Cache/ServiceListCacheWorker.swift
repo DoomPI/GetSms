@@ -17,18 +17,19 @@ protocol ServiceListCacheWorkingLogic {
 
 class ServiceListCacheWorker {
     
+    // MARK: - Internal vars
     private let serviceListDataRelay = BehaviorRelay<[Service]>(value: [])
 }
 
 extension ServiceListCacheWorker: ServiceListCacheWorkingLogic {
     
     func setServiceList(serviceList: ServiceList) -> Completable {
-        serviceListDataRelay.accept(serviceList.data)
+        serviceListDataRelay.accept(serviceList.services)
         return Completable.empty()
     }
     
     func searchService(searchText: String) -> Single<ServiceList> {
-        return Single.just (ServiceList(data: serviceListDataRelay.value.filter { service in
+        return Single.just (ServiceList(services: serviceListDataRelay.value.filter { service in
             let serviceNameLowerCased = service.name.lowercased()
             return serviceNameLowerCased.contains(searchText)
             || searchText.contains(serviceNameLowerCased)

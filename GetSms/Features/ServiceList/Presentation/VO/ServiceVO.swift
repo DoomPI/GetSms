@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct ServiceVO: Identifiable {
-    var id: String
+struct ServiceVO {
     let name: String
     let imageURL: URL?
     let quantity: String
@@ -22,7 +21,6 @@ struct ServiceVO: Identifiable {
         cost: String,
         isLowQuantity: Bool
     ) {
-        self.id = name
         self.name = name
         self.imageURL = imageURL
         self.quantity = quantity

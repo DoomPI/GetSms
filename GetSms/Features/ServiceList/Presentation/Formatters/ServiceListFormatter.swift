@@ -8,11 +8,11 @@
 class ServiceListFormatter {
     
     func format(model: ServiceList) -> ServiceListVO {
-        let data = model.data.map { service in
+        let services = model.services.map { service in
             format(model: service)
         }
         
-        return ServiceListVO(services: data)
+        return ServiceListVO(services: services)
     }
     
     private func format(model: Service) -> ServiceVO {

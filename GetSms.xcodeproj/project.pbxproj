@@ -10,9 +10,27 @@
 		CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608B629D758D4005A815C /* ServiceSearchView.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
 		CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608C529D7B769005A815C /* ServiceListScreen.swift */; };
-		CC0608CC29D7BC04005A815C /* CountryNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */; };
 		CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D129D887AC005A815C /* JSONExtractor.swift */; };
 		CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */; };
+		CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608DA29D895D1005A815C /* CountryListAssembly.swift */; };
+		CC0608E229D89668005A815C /* CountryListNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608E129D89668005A815C /* CountryListNetworkMapper.swift */; };
+		CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608E329D8967D005A815C /* CountryListNetworkWorker.swift */; };
+		CC0608EB29D896E6005A815C /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608EA29D896E6005A815C /* CountryListViewModel.swift */; };
+		CC0608ED29D896ED005A815C /* CountryListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608EC29D896ED005A815C /* CountryListState.swift */; };
+		CC0608EF29D896F8005A815C /* CountryListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608EE29D896F8005A815C /* CountryListVO.swift */; };
+		CC0608F129D89704005A815C /* CountryListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608F029D89704005A815C /* CountryListFormatter.swift */; };
+		CC0608F329D89718005A815C /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608F229D89718005A815C /* CountryListView.swift */; };
+		CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608F429D89722005A815C /* CountryListReducer.swift */; };
+		CC0608FB29D89833005A815C /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608FA29D89833005A815C /* Country.swift */; };
+		CC0608FD29D89891005A815C /* CountryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608FC29D89891005A815C /* CountryList.swift */; };
+		CC0608FF29D89D1D005A815C /* CountryListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608FE29D89D1D005A815C /* CountryListInteractor.swift */; };
+		CC06090129D89D28005A815C /* CountryListProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06090029D89D28005A815C /* CountryListProcessor.swift */; };
+		CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06090229D89D35005A815C /* CountryListIntent.swift */; };
+		CC06090529D8A1C3005A815C /* CountryListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06090429D8A1C3005A815C /* CountryListNetworkDTO.swift */; };
+		CC06090729D8A1CF005A815C /* CountryNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06090629D8A1CF005A815C /* CountryNetworkDTO.swift */; };
+		CC06090929D8B0E9005A815C /* CountryListErrorVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06090829D8B0E9005A815C /* CountryListErrorVO.swift */; };
+		CC06090B29D8BAE3005A815C /* CountryListErrorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06090A29D8BAE3005A815C /* CountryListErrorFormatter.swift */; };
+		CC06090D29D8C256005A815C /* CountryVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC06090C29D8C256005A815C /* CountryVO.swift */; };
 		CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */; };
 		CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */; };
 		CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */; };
@@ -41,6 +59,9 @@
 		CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15A729CF944C00237F71 /* ServiceListViewModel.swift */; };
 		CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15A929CF949500237F71 /* ServiceListState.swift */; };
 		CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9E15AB29CF94BE00237F71 /* ServiceListIntent.swift */; };
+		CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C229D8D5AA00739C44 /* CountryView.swift */; };
+		CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */; };
+		CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -63,9 +84,27 @@
 		CC0608B629D758D4005A815C /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
 		CC0608C529D7B769005A815C /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListScreen.swift; path = ../../../../../../Documents/ServiceListScreen.swift; sourceTree = "<group>"; };
-		CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNetworkDTO.swift; sourceTree = "<group>"; };
 		CC0608D129D887AC005A815C /* JSONExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtractor.swift; sourceTree = "<group>"; };
 		CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
+		CC0608DA29D895D1005A815C /* CountryListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListAssembly.swift; sourceTree = "<group>"; };
+		CC0608E129D89668005A815C /* CountryListNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListNetworkMapper.swift; sourceTree = "<group>"; };
+		CC0608E329D8967D005A815C /* CountryListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListNetworkWorker.swift; sourceTree = "<group>"; };
+		CC0608EA29D896E6005A815C /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
+		CC0608EC29D896ED005A815C /* CountryListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListState.swift; sourceTree = "<group>"; };
+		CC0608EE29D896F8005A815C /* CountryListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListVO.swift; sourceTree = "<group>"; };
+		CC0608F029D89704005A815C /* CountryListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListFormatter.swift; sourceTree = "<group>"; };
+		CC0608F229D89718005A815C /* CountryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListView.swift; sourceTree = "<group>"; };
+		CC0608F429D89722005A815C /* CountryListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListReducer.swift; sourceTree = "<group>"; };
+		CC0608FA29D89833005A815C /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		CC0608FC29D89891005A815C /* CountryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryList.swift; sourceTree = "<group>"; };
+		CC0608FE29D89D1D005A815C /* CountryListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListInteractor.swift; sourceTree = "<group>"; };
+		CC06090029D89D28005A815C /* CountryListProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListProcessor.swift; sourceTree = "<group>"; };
+		CC06090229D89D35005A815C /* CountryListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListIntent.swift; sourceTree = "<group>"; };
+		CC06090429D8A1C3005A815C /* CountryListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListNetworkDTO.swift; sourceTree = "<group>"; };
+		CC06090629D8A1CF005A815C /* CountryNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryNetworkDTO.swift; sourceTree = "<group>"; };
+		CC06090829D8B0E9005A815C /* CountryListErrorVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListErrorVO.swift; sourceTree = "<group>"; };
+		CC06090A29D8BAE3005A815C /* CountryListErrorFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListErrorFormatter.swift; sourceTree = "<group>"; };
+		CC06090C29D8C256005A815C /* CountryVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryVO.swift; sourceTree = "<group>"; };
 		CC1EBC6229CFADDF00C43EF0 /* ServiceListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListVO.swift; sourceTree = "<group>"; };
 		CC1EBC6429CFB89F00C43EF0 /* ServiceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceVO.swift; sourceTree = "<group>"; };
 		CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkWorker.swift; sourceTree = "<group>"; };
@@ -95,6 +134,9 @@
 		CC9E15A729CF944C00237F71 /* ServiceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListViewModel.swift; sourceTree = "<group>"; };
 		CC9E15A929CF949500237F71 /* ServiceListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListState.swift; sourceTree = "<group>"; };
 		CC9E15AB29CF94BE00237F71 /* ServiceListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListIntent.swift; sourceTree = "<group>"; };
+		CCCD15C229D8D5AA00739C44 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
+		CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPlaceholderView.swift; sourceTree = "<group>"; };
+		CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListDropdownView.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +183,179 @@
 				CC0608C529D7B769005A815C /* ServiceListScreen.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		CC0608D529D89439005A815C /* CountryList */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608D929D895BE005A815C /* Presentation */,
+				CC0608D829D895B8005A815C /* Domain */,
+				CC0608D729D895B3005A815C /* Data */,
+				CC0608D629D895AD005A815C /* DI */,
+			);
+			path = CountryList;
+			sourceTree = "<group>";
+		};
+		CC0608D629D895AD005A815C /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608DA29D895D1005A815C /* CountryListAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CC0608D729D895B3005A815C /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608DD29D89636005A815C /* Workers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CC0608D829D895B8005A815C /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608F929D8981A005A815C /* Models */,
+				CC0608F829D89811005A815C /* Interactors */,
+				CC0608F729D89809005A815C /* Processors */,
+				CC0608F629D89802005A815C /* Intents */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CC0608D929D895BE005A815C /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608E929D896CC005A815C /* ViewModels */,
+				CC0608E829D896C5005A815C /* States */,
+				CC0608E729D896BE005A815C /* VO */,
+				CC0608E629D896B6005A815C /* Formatters */,
+				CC0608E529D896B0005A815C /* Views */,
+				CC0608DC29D895E8005A815C /* Reducers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CC0608DC29D895E8005A815C /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608F429D89722005A815C /* CountryListReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		CC0608DD29D89636005A815C /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608DE29D89646005A815C /* Network */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		CC0608DE29D89646005A815C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608E029D89657005A815C /* Mappers */,
+				CC0608DF29D89651005A815C /* DTO */,
+				CC0608E329D8967D005A815C /* CountryListNetworkWorker.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CC0608DF29D89651005A815C /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CC06090429D8A1C3005A815C /* CountryListNetworkDTO.swift */,
+				CC06090629D8A1CF005A815C /* CountryNetworkDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC0608E029D89657005A815C /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608E129D89668005A815C /* CountryListNetworkMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		CC0608E529D896B0005A815C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608F229D89718005A815C /* CountryListView.swift */,
+				CCCD15C229D8D5AA00739C44 /* CountryView.swift */,
+				CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */,
+				CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC0608E629D896B6005A815C /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608F029D89704005A815C /* CountryListFormatter.swift */,
+				CC06090A29D8BAE3005A815C /* CountryListErrorFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		CC0608E729D896BE005A815C /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608EE29D896F8005A815C /* CountryListVO.swift */,
+				CC06090829D8B0E9005A815C /* CountryListErrorVO.swift */,
+				CC06090C29D8C256005A815C /* CountryVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		CC0608E829D896C5005A815C /* States */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608EC29D896ED005A815C /* CountryListState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		CC0608E929D896CC005A815C /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608EA29D896E6005A815C /* CountryListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CC0608F629D89802005A815C /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				CC06090229D89D35005A815C /* CountryListIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		CC0608F729D89809005A815C /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				CC06090029D89D28005A815C /* CountryListProcessor.swift */,
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
+		CC0608F829D89811005A815C /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608FE29D89D1D005A815C /* CountryListInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CC0608F929D8981A005A815C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC0608FA29D89833005A815C /* Country.swift */,
+				CC0608FC29D89891005A815C /* CountryList.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		CC1EBC5029CFAA9300C43EF0 /* Frameworks */ = {
@@ -199,7 +414,6 @@
 			isa = PBXGroup;
 			children = (
 				CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */,
-				CC0608CB29D7BC04005A815C /* CountryNetworkDTO.swift */,
 				CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */,
 			);
 			path = DTO;
@@ -315,6 +529,7 @@
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CC0608D529D89439005A815C /* CountryList */,
 				CC9E158D29CF8E1F00237F71 /* ServiceList */,
 			);
 			path = Features;
@@ -519,39 +734,60 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC0608FD29D89891005A815C /* CountryList.swift in Sources */,
 				CC1EBC7529CFC7C400C43EF0 /* ServiceNetworkDTO.swift in Sources */,
+				CC0608F129D89704005A815C /* CountryListFormatter.swift in Sources */,
 				CC1EBC8429CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift in Sources */,
 				CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */,
+				CC0608EB29D896E6005A815C /* CountryListViewModel.swift in Sources */,
 				CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */,
 				CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */,
 				CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */,
 				CC9E158C29CF8DEF00237F71 /* Processor.swift in Sources */,
 				CC1EBC8E29D07E0000C43EF0 /* ServiceView.swift in Sources */,
+				CC0608E229D89668005A815C /* CountryListNetworkMapper.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
+				CC0608FB29D89833005A815C /* Country.swift in Sources */,
 				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
+				CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */,
+				CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */,
 				CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */,
+				CC0608ED29D896ED005A815C /* CountryListState.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
+				CC06090529D8A1C3005A815C /* CountryListNetworkDTO.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
+				CC0608EF29D896F8005A815C /* CountryListVO.swift in Sources */,
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
 				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
+				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
+				CC06090D29D8C256005A815C /* CountryVO.swift in Sources */,
+				CC06090B29D8BAE3005A815C /* CountryListErrorFormatter.swift in Sources */,
+				CC06090129D89D28005A815C /* CountryListProcessor.swift in Sources */,
 				CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */,
+				CC06090929D8B0E9005A815C /* CountryListErrorVO.swift in Sources */,
 				CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */,
-				CC0608CC29D7BC04005A815C /* CountryNetworkDTO.swift in Sources */,
+				CC06090729D8A1CF005A815C /* CountryNetworkDTO.swift in Sources */,
 				CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */,
 				CC1EBC7929CFD8F500C43EF0 /* ServiceListErrorVO.swift in Sources */,
+				CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */,
 				CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */,
+				CC0608FF29D89D1D005A815C /* CountryListInteractor.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
+				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
+				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
 				CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */,
+				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
+				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

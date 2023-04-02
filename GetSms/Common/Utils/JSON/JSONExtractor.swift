@@ -7,11 +7,18 @@
 
 import Foundation
 
-enum JSONExtractor {
+class JSONExtractor {
     
-    private static let decoder = JSONDecoder()
+    // MARK: - Exrernal vars
+    public static let shared = JSONExtractor()
     
-    static func extractMap<T: Decodable>(from data: Data) throws -> KeysValues<T>  {
+    // MARK: - Internal vars
+    private let decoder = JSONDecoder()
+    
+    // MARK: - Init
+    private init() {}
+    
+    func extractMap<T: Decodable>(from data: Data) throws -> KeysValues<T>  {
         let jsonString = String(decoding: data, as: UTF8.self)
         let jsonMap = try JSON.parse(string: jsonString)
         let keys = jsonMap.keys!

@@ -22,14 +22,9 @@ struct ServiceSearchView: View {
             
             SearchTextField(inputText: $inputText)
                 .font(.system(size: 20))
-            
-            Spacer()
         }
+        .frame(height: 30)
         .padding(12)
-        .background(Rectangle()
-            .fill(Color("DarkBlueColor"))
-            .cornerRadius(5)
-        )
         .overlay(RoundedRectangle(cornerRadius: 5)
             .stroke(Color("PinkColor"), lineWidth: 2)
         )
