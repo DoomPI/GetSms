@@ -20,7 +20,7 @@ class ServiceListProcessor {
     
     // MARK: - Internal vars
     private let disposeBag = DisposeBag()
-    private var intentRelay = BehaviorRelay<Intent>(value: .LoadList)
+    private var intentRelay = BehaviorRelay<Intent>(value: .LoadList(countryCode: "ru"))
     
 }
 

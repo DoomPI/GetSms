@@ -7,4 +7,5 @@
 
 struct ServiceList {
     let services: [Service]
+    let countryCode: String
 }

@@ -7,7 +7,7 @@
 
 enum ServiceListIntent {
     
-    case LoadList
+    case LoadList(countryCode: String?)
     
     case SearchService(searchText: String)
     

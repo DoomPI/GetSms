@@ -9,7 +9,7 @@ import RxSwift
 
 protocol ServiceListBusinessLogic {
     
-    func getServiceList() -> Single<ServiceList>
+    func getServiceList(countryCode: String?) -> Single<ServiceList>
     
     func searchService(searchText: String) -> Single<ServiceList>
 }
@@ -21,6 +21,8 @@ class ServiceListInteractor {
     
     private let networkWorker: ServiceListNetworkWorkingLogic
     private let networkMapper: ServiceListNetworkMapper
+    
+    private static let defaultCountryCode = "ru"
     
     // MARK: - Init
     init(
@@ -36,8 +38,8 @@ class ServiceListInteractor {
 
 extension ServiceListInteractor: ServiceListBusinessLogic {
     
-    func getServiceList() -> Single<ServiceList> {
-        return getServiceListFromNetwork().flatMap { serviceList in
+    func getServiceList(countryCode: String?) -> Single<ServiceList> {
+        return getServiceListFromNetwork(countryCode: countryCode).flatMap { serviceList in
             self.setServiceListInCache(serviceList: serviceList)
                 .andThen(Single.just(serviceList))
         }
@@ -47,9 +49,13 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
         return cacheWorker.searchService(searchText: searchText)
     }
     
-    private func getServiceListFromNetwork() -> Single<ServiceList> {
-        return networkWorker.getServiceList().map { dto in
-            self.networkMapper.fromDto(dto: dto)
+    private func getServiceListFromNetwork(countryCode: String?) -> Single<ServiceList> {
+        let code = countryCode ?? Self.defaultCountryCode
+        return networkWorker.getServiceList(countryCode: code).map { dto in
+            self.networkMapper.fromDto(
+                dto: dto,
+                countryCode: code
+            )
         }
     }
     

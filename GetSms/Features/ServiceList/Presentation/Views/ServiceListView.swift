@@ -37,7 +37,11 @@ struct ServiceListView: View {
                 }
             }
             .refreshable {
-                viewModel.loadServiceList()
+                if case .Loaded(let vo) = state {
+                    viewModel.loadServiceList(countryCode: vo.countryCode)
+                } else {
+                    viewModel.loadServiceList()
+                }
             }
         }
         .onReceive(viewModel.$state) { newState in

@@ -10,7 +10,7 @@ import Foundation
 
 protocol ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<ServiceListNetworkDTO>
+    func getServiceList(countryCode: String) -> Single<ServiceListNetworkDTO>
 }
 
 class ServiceListNetworkWorker {
@@ -25,9 +25,14 @@ class ServiceListNetworkWorker {
 
 extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<ServiceListNetworkDTO>{
+    func getServiceList(countryCode: String) -> Single<ServiceListNetworkDTO>{
         Single.deferred {
-            let queryItems = [URLQueryItem(name: Self.countryQueryItemName, value: "ru")]
+            let queryItems = [
+                URLQueryItem(
+                    name: Self.countryQueryItemName,
+                    value: countryCode
+                )
+            ]
             var urlComps = URLComponents(string: Self.serviceListUrl)!
             urlComps.queryItems = queryItems
             

@@ -11,8 +11,12 @@ class ServiceListFormatter {
         let services = model.services.map { service in
             format(model: service)
         }
+        let countryCode = model.countryCode
         
-        return ServiceListVO(services: services)
+        return ServiceListVO(
+            services: services,
+            countryCode: countryCode
+        )
     }
     
     private func format(model: Service) -> ServiceVO {

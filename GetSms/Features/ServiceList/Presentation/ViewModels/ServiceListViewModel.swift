@@ -38,8 +38,8 @@ class ServiceListViewModel: ObservableObject {
         processor.subscribeToIntents()
     }
     
-    func loadServiceList() {
-        processor.fireIntent(intent: .LoadList)
+    func loadServiceList(countryCode: String? = nil) {
+        processor.fireIntent(intent: .LoadList(countryCode: countryCode))
     }
     
     func searchService(inputText: String) {
@@ -59,9 +59,9 @@ extension ServiceListViewModel: ServiceListHandlerProtocol {
         
         switch intent {
             
-        case .LoadList:
+        case .LoadList(let countryCode):
             interactor
-                .getServiceList()
+                .getServiceList(countryCode: countryCode)
                 .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
                 .observe(on: MainScheduler.instance)
                 .subscribe(
