@@ -45,9 +45,7 @@ struct ServiceListView: View {
             }
         }
         .onReceive(viewModel.$state) { newState in
-            withAnimation {
-                state = newState
-            }
+            state = newState
         }
         .onAppear {
             viewModel.onViewAppear()
