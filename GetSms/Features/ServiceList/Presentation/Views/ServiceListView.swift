@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ServiceListView: View {
     
-    // MARK: - External vars
     @EnvironmentObject var viewModel: ServiceListViewModel
     
     @State private var state: ServiceListState = .Idle
@@ -38,16 +37,18 @@ struct ServiceListView: View {
                 }
             }
             .refreshable {
-                viewModel.loadServiceList()
-            }
-            .onReceive(viewModel.$state) { newState in
-                withAnimation {
-                    state = newState
+                if case .Loaded(let vo) = state {
+                    viewModel.loadServiceList(countryCode: vo.countryCode)
+                } else {
+                    viewModel.loadServiceList()
                 }
             }
         }
-        .padding(8)
-        .background(Color("DarkBlueColor"))
+        .onReceive(viewModel.$state) { newState in
+            withAnimation {
+                state = newState
+            }
+        }
         .onAppear {
             viewModel.onViewAppear()
         }
@@ -59,8 +60,8 @@ struct ServiceListLoadedView: View {
     let vo: ServiceListVO
     
     var body: some View {
-        ForEach(vo.services) { serviceVo in
-            ServiceView(vo: serviceVo, pressAction: {})
+        ForEach(vo.services.indices, id: \.self) { index in
+            ServiceView(vo: vo.services[index], pressAction: {})
         }
     }
 }

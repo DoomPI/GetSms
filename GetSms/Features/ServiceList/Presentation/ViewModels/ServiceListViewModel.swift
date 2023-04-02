@@ -14,10 +14,9 @@ protocol ServiceListHandlerProtocol: Handler where Intent == ServiceListIntent {
 class ServiceListViewModel: ObservableObject {
     
     typealias State = ServiceListState
-    typealias Intent = ServiceListIntent
     
     // MARK: - External vars
-    @Published private(set) var state: State
+    @Published private(set) var state: State = .Idle
     
     // MARK: - Internal vars
     private let processor: any ServiceListProcessorProtocol
@@ -26,12 +25,10 @@ class ServiceListViewModel: ObservableObject {
     private let disposeBag = DisposeBag()
     
     init(
-        state: State,
         processor: any ServiceListProcessorProtocol,
         reducer: any ServiceListReducerProtocol,
         interactor: ServiceListBusinessLogic
     ) {
-        self.state = state
         self.processor = processor
         self.reducer = reducer
         self.interactor = interactor
@@ -41,8 +38,8 @@ class ServiceListViewModel: ObservableObject {
         processor.subscribeToIntents()
     }
     
-    func loadServiceList() {
-        processor.fireIntent(intent: .LoadList)
+    func loadServiceList(countryCode: String? = nil) {
+        processor.fireIntent(intent: .LoadList(countryCode: countryCode))
     }
     
     func searchService(inputText: String) {
@@ -54,14 +51,17 @@ class ServiceListViewModel: ObservableObject {
 extension ServiceListViewModel: ServiceListHandlerProtocol {
     
     func handle(intent: Intent) {
-        let newState = self.reducer.reduce(intent: intent)
+        let newState = self.reducer.reduce(
+            currentState: state,
+            intent: intent
+        )
         self.state = newState
         
         switch intent {
             
-        case .LoadList:
+        case .LoadList(let countryCode):
             interactor
-                .getServiceList()
+                .getServiceList(countryCode: countryCode)
                 .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
                 .observe(on: MainScheduler.instance)
                 .subscribe(

@@ -8,16 +8,13 @@
 protocol ServiceListReducerProtocol: Reducer where State == ServiceListState, Intent == ServiceListIntent {
 }
 
-class ServiceListReducer: ServiceListReducerProtocol {
-    
-    typealias State = ServiceListState
-    typealias Intent = ServiceListIntent
-    
+class ServiceListReducer {
     
     // MARK: - Internal vars
     private let formatter: ServiceListFormatter
     private let errorFormatter: ServiceListErrorFormatter
     
+    // MARK: - Init
     init(
         formatter: ServiceListFormatter,
         errorFormatter: ServiceListErrorFormatter
@@ -25,8 +22,11 @@ class ServiceListReducer: ServiceListReducerProtocol {
         self.formatter = formatter
         self.errorFormatter = errorFormatter
     }
+}
+
+extension ServiceListReducer: ServiceListReducerProtocol {
     
-    func reduce(intent: Intent) -> State {
+    func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
         case .LoadList:

@@ -10,37 +10,37 @@ import Foundation
 
 protocol ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<ServiceListNetworkDTO>
+    func getServiceList(countryCode: String) -> Single<ServiceListNetworkDTO>
 }
 
 class ServiceListNetworkWorker {
     
     // MARK: - Internal vars
-    private let worker = NetworkWorker.shared
-    private let decoder = JSONDecoder()
+    private static let worker = NetworkWorker.shared
+    private static let extractor = JSONExtractor.shared
     
-    private let serviceListUrl = "https://vak-sms.com/api/getCountNumbersList/"
-    private let countryQueryItemName = "country"
+    private static let serviceListUrl = "https://vak-sms.com/api/getCountNumbersList/"
+    private static let countryQueryItemName = "country"
 }
 
 extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
     
-    func getServiceList() -> Single<ServiceListNetworkDTO>{
-        Single.deferred { [weak self] in
-            guard let self else { throw NetworkError.IrrelevantRequest }
-            let queryItems = [URLQueryItem(name: self.countryQueryItemName, value: "ru")]
-            var urlComps = URLComponents(string: self.serviceListUrl)!
+    func getServiceList(countryCode: String) -> Single<ServiceListNetworkDTO>{
+        Single.deferred {
+            let queryItems = [
+                URLQueryItem(
+                    name: Self.countryQueryItemName,
+                    value: countryCode
+                )
+            ]
+            var urlComps = URLComponents(string: Self.serviceListUrl)!
             urlComps.queryItems = queryItems
             
-            return self.worker.sendRequest(
+            return Self.worker.sendRequest(
                 url: urlComps.url!
             ).map { data in
-                try JSONExtractor.extractMap(from: data)
+                try Self.extractor.extractMap(from: data)
             }
         }
     }
-}
-
-enum NetworkError: Error {
-case IrrelevantRequest
 }

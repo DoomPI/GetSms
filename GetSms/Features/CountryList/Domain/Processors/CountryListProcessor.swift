@@ -1,30 +1,29 @@
 //
-//  ServiceListProcessor.swift
+//  CountryListProcessor.swift
 //  GetSms
 //
-//  Created by Роман Ломтев on 26.03.2023.
+//  Created by Роман Ломтев on 01.04.2023.
 //
 
 import RxSwift
 import RxRelay
 
-protocol ServiceListProcessorProtocol: Processor where Intent == ServiceListIntent {
+protocol CountryListProcessorProtocol: Processor where Intent == CountryListIntent {
 }
 
-class ServiceListProcessor {
+class CountryListProcessor {
     
-    typealias Intent = ServiceListIntent
+    typealias Intent = CountryListIntent
     
     // MARK: - External vars
-    weak var handler: (any ServiceListHandlerProtocol)?
+    weak var handler: (any CountryListHandlerProtocol)?
     
     // MARK: - Internal vars
     private let disposeBag = DisposeBag()
-    private var intentRelay = BehaviorRelay<Intent>(value: .LoadList(countryCode: "ru"))
-    
+    private var intentRelay = BehaviorRelay<Intent>(value: .LoadList)
 }
 
-extension ServiceListProcessor: ServiceListProcessorProtocol {
+extension CountryListProcessor: CountryListProcessorProtocol {
     
     func fireIntent(intent: Intent) {
         self.intentRelay.accept(intent)
@@ -49,3 +48,4 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
         handler?.handle(intent: intent)
     }
 }
+
