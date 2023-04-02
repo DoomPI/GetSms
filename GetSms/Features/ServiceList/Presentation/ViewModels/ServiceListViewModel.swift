@@ -89,10 +89,8 @@ extension ServiceListViewModel: ServiceListHandlerProtocol {
                 )
                 .disposed(by: disposeBag)
             
-        case .PresentList:
-            break
             
-        case .PresentError:
+        case .Nothing, .PresentList, .PresentError:
             break
             
         }
