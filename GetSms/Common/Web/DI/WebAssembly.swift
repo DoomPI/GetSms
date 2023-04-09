@@ -10,11 +10,9 @@ enum WebAssembly {
     static func assemble() -> WebViewModel {
         
         let processor = WebProcessor()
-        let reducer = WebReducer()
         
         let viewModel = WebViewModel(
-            processor: processor,
-            reducer: reducer
+            processor: processor
         )
         processor.handler = viewModel
         

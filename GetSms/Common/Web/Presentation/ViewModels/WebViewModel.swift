@@ -14,22 +14,15 @@ protocol WebHandlerProtocol: Handler where Intent == WebIntent {
 
 class WebViewModel: NSObject, ObservableObject {
     
-    typealias State = WebState
-    
-    // MARK: - External vars
-    @Published private(set) var state: State = .Idle
-    
     // MARK: - Internal vars
     private let processor: any WebProcessorProtocol
-    private let reducer: any WebReducerProtocol
+    private var webView: WKWebView? = nil
     
     // MARK: - Init
     init(
-        processor: any WebProcessorProtocol,
-        reducer: any WebReducerProtocol
+        processor: any WebProcessorProtocol
     ) {
         self.processor = processor
-        self.reducer = reducer
     }
     
     func onViewAppear() {
@@ -52,36 +45,34 @@ class WebViewModel: NSObject, ObservableObject {
 extension WebViewModel: WebHandlerProtocol {
     
     func handle(intent: Intent) {
-        let newState = self.reducer.reduce(
-            currentState: state,
-            intent: intent
-        )
-        self.state = newState
+        
+        switch intent {
+            
+        case .None:
+            break
+            
+        case .Forward:
+            guard let webView else { return }
+            if webView.canGoForward {
+                webView.goForward()
+            }
+            
+        case .Backward:
+            guard let webView else { return }
+            if webView.canGoBack {
+                webView.goBack()
+            }
+            
+        case .Reload:
+            guard let webView else { return }
+            webView.reload()
+        }
     }
 }
 
 extension WebViewModel: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        
-        switch state {
-            
-        case .Idle:
-            break
-            
-        case .PresentForward:
-            if webView.canGoForward {
-                webView.goForward()
-            }
-            
-        case .PresentBackward:
-            if webView.canGoBack {
-                webView.goBack()
-            }
-            
-        case .PresentReload:
-            webView.reload()
-
-        }
+        self.webView = webView
     }
 }

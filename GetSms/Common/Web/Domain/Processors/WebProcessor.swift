@@ -19,7 +19,7 @@ class WebProcessor {
     weak var handler: (any WebHandlerProtocol)?
     
     // MARK: - Internal vars
-    private var intentRelay = BehaviorRelay<Intent>(value: .Reload)
+    private var intentRelay = BehaviorRelay<Intent>(value: .None)
     private let disposeBag = DisposeBag()
 }
 

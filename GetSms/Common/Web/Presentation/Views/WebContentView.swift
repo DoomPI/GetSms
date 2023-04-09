@@ -14,8 +14,8 @@ struct WebContentView: UIViewRepresentable {
     
     @EnvironmentObject var viewModel: WebViewModel
     
-    var url: String
-    var urlType: URLType
+    let url: String
+    let urlType: URLType
     
     func makeUIView(context: Context) -> WKWebView {
         let preferences = WKPreferences()
@@ -30,11 +30,6 @@ struct WebContentView: UIViewRepresentable {
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.scrollView.backgroundColor = UIColor(Color("DarkerBlueColor"))
-        return webView
-    
-    }
-    
-    func updateUIView(_ webView: WKWebView, context: Context) {
         
         if urlType == .Local {
             if let localUrl = Bundle.main.url(forResource: url, withExtension: "html", subdirectory: "www") {
@@ -45,5 +40,10 @@ struct WebContentView: UIViewRepresentable {
                 webView.load(URLRequest(url: requestUrl))
             }
         }
+        
+        return webView
+    }
+    
+    func updateUIView(_ webView: WKWebView, context: Context) {
     }
 }

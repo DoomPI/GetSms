@@ -7,6 +7,8 @@
 
 enum WebIntent {
     
+    case None
+    
     case Forward
     
     case Backward
