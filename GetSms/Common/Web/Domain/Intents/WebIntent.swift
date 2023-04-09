@@ -5,11 +5,11 @@
 //  Created by Роман Ломтев on 02.04.2023.
 //
 
-enum WebViewNavigationAction {
+enum WebIntent {
     
-    case backward
+    case Forward
     
-    case forward
+    case Backward
     
-    case reload
+    case Reload
 }
