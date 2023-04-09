@@ -9,15 +9,12 @@ import SwiftUI
 
 struct AuthView: View {
     
-    @State private var state: AuthState = .Loading
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         
         WebView(url: "https://vak-sms.com/accounts/logout/?next=/lk/", urlType: .Public)
-            .environmentObject(WebAssembly.assemble())
+            .environmentObject(WebAssembly.assemble(didFinish: viewModel.webViewDidFinish))
             .edgesIgnoringSafeArea(.bottom)
-        //        .onReceive(viewModel.$state) { newState in
-        //            state = newState
-        //        }
     }
 }

@@ -11,5 +11,6 @@ struct AuthScreen: View {
     
     var body: some View {
         AuthView()
+            .environmentObject(AuthAssembly.assemble())
     }
 }
