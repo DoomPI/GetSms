@@ -7,6 +7,7 @@
 
 import WebKit
 import SwiftUI
+import RxSwift
 
 protocol AuthHandlerProtocol: Handler where Intent == AuthIntent {
 }
@@ -20,22 +21,22 @@ class AuthViewModel: ObservableObject {
     private let urlLk = "https://vak-sms.com/lk/"
     private let processor: any AuthProcessorProtocol
     private let reducer: any AuthReducerProtocol
+    private let interacor: AuthBusinessLogic
+    private let disposeBag = DisposeBag()
     
     // MARK: - Init
     init(
         processor: any AuthProcessorProtocol,
-        reducer: any AuthReducerProtocol
+        reducer: any AuthReducerProtocol,
+        interactor: AuthBusinessLogic
     ) {
         self.processor = processor
         self.reducer = reducer
+        self.interacor = interactor
     }
     
     func onViewAppear() {
         processor.subscribeToIntents()
-    }
-    
-    func success(model: AuthModel) {
-        processor.fireIntent(intent: .Success(model: model))
     }
     
     func webViewDidFinish(webView : WKWebView) {
@@ -45,8 +46,7 @@ class AuthViewModel: ObservableObject {
                     case .success(let value):
                         if let apiKeyString = value as? String {
                             let apiKey = ApiKey(apiKey: apiKeyString)
-                            // Сохранение в KeyChain
-                            KeychainHelper.standard.save(apiKey, service: apiKeyService, account: account)
+                            self?.saveToKeyChain(apiKey: apiKey)
                             self?.success(model: AuthModel(apiKey: apiKeyString))
                         }
                                 
@@ -62,6 +62,14 @@ class AuthViewModel: ObservableObject {
             webView.isHidden = true
             processor.fireIntent(intent: .BlockingLoad)
         }
+    }
+    
+    private func saveToKeyChain(apiKey: ApiKey) {
+        interacor.saveToKeyChain(apiKey: apiKey)
+    }
+    
+    private func success(model: AuthModel) {
+        processor.fireIntent(intent: .Success(model: model))
     }
 }
 

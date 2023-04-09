@@ -13,9 +13,15 @@ enum AuthAssembly {
         let processor = AuthProcessor()
         let reducer = AuthReducer()
         
+        let cacheWorker = AuthCacheWorker()
+        let interactor = AuthInteractor(
+            cacheWorker: cacheWorker
+        )
+        
         let viewModel = AuthViewModel(
             processor: processor,
-            reducer: reducer
+            reducer: reducer,
+            interactor: interactor
         )
         processor.handler = viewModel
         
