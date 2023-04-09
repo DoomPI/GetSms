@@ -42,13 +42,16 @@ class AuthViewModel: ObservableObject {
         if webView.url?.absoluteString == urlLk {
             webView.evaluateJavaScript(authScript, in: nil, in: .defaultClient) { [weak self] result in
                 switch result {
-                case .success(let value):
-                    if let apiKey = value as? String {
-                        self?.success(model: AuthModel(apiKey: apiKey))
-                    }
-                    
-                case .failure(let error):
-                    print(error.localizedDescription)
+                    case .success(let value):
+                        if let apiKeyString = value as? String {
+                            let apiKey = ApiKey(apiKey: apiKeyString)
+                            // Сохранение в KeyChain
+                            KeychainHelper.standard.save(apiKey, service: apiKeyService, account: account)
+                            self?.success(model: AuthModel(apiKey: apiKey))
+                        }
+                                
+                    case .failure(let error):
+                        print(error.localizedDescription)
                 }
             }
         }
