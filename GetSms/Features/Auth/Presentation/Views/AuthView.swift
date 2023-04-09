@@ -13,7 +13,7 @@ struct AuthView: View {
     
     var body: some View {
         
-        WebView(url: "https://vak-sms.com/accounts/login/", urlType: .Public)
+        WebView(url: "https://vak-sms.com/accounts/logout/?next=/lk/", urlType: .Public)
             .environmentObject(WebAssembly.assemble())
             .edgesIgnoringSafeArea(.bottom)
         //        .onReceive(viewModel.$state) { newState in
