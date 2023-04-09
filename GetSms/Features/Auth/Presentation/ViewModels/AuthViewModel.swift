@@ -47,7 +47,7 @@ class AuthViewModel: ObservableObject {
                             let apiKey = ApiKey(apiKey: apiKeyString)
                             // Сохранение в KeyChain
                             KeychainHelper.standard.save(apiKey, service: apiKeyService, account: account)
-                            self?.success(model: AuthModel(apiKey: apiKey))
+                            self?.success(model: AuthModel(apiKey: apiKeyString))
                         }
                                 
                     case .failure(let error):
