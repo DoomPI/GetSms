@@ -14,37 +14,29 @@ struct WebNavigationView: View {
     let reloadAction: () -> Void
     
     var body: some View {
-        VStack {
-            Divider()
-            HStack(spacing: 10) {
-                Divider()
-                Button(action: goBackwardAction) {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 30, weight: .regular))
-                        .foregroundColor(Color("PinkColor"))
-                        .imageScale(.medium)
-                }
-                Divider()
-                Button(action: goForwardAction) {
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 30, weight: .regular))
-                        .foregroundColor(Color("PinkColor"))
-                        .imageScale(.medium)
-                }
-                Divider()
-                Spacer()
-                Divider()
-                Button(action: reloadAction) {
-                    Image(systemName: "arrow.clockwise")
-                        .font(.system(size: 30, weight: .regular))
-                        .foregroundColor(Color("PinkColor"))
-                        .imageScale(.medium)
-                }
-                Divider()
+        HStack {
+            Button(action: goBackwardAction) {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 30, weight: .regular))
+                    .foregroundColor(Color("PinkColor"))
+                    .imageScale(.medium)
             }
-            .frame(height: 50)
-            Divider()
+            Button(action: goForwardAction) {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 30, weight: .regular))
+                    .foregroundColor(Color("PinkColor"))
+                    .imageScale(.medium)
+            }
+            Spacer()
+            Button(action: reloadAction) {
+                Image(systemName: "arrow.clockwise")
+                    .font(.system(size: 30, weight: .regular))
+                    .foregroundColor(Color("PinkColor"))
+                    .imageScale(.medium)
+            }
         }
+        .padding(8)
+        .frame(height: 40)
     }
 }
 

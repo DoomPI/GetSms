@@ -11,10 +11,38 @@ struct AuthView: View {
     
     @EnvironmentObject var viewModel: AuthViewModel
     
+    @State private var state: AuthState = .Idle
+    
     var body: some View {
-        
-        WebView(url: "https://vak-sms.com/accounts/logout/?next=/lk/", urlType: .Public)
-            .environmentObject(WebAssembly.assemble(didFinish: viewModel.webViewDidFinish))
-            .edgesIgnoringSafeArea(.bottom)
+        ZStack {
+            switch state {
+                
+            case .Idle:
+                WebView(url: "https://vak-sms.com/accounts/logout/?next=/accounts/login/", urlType: .Public)
+                    .environmentObject(WebAssembly.assemble(
+                        didFinish: viewModel.webViewDidFinish,
+                        decidePolicyFor: viewModel.webViewDecidePolicyFor
+                    ))
+                
+            case .BlockingLoading:
+                AuthBlockingLoadingView()
+                
+            case .SuccessfulAuth:
+                Spacer()
+                
+            case .FailedAuth:
+                Spacer()
+            }
+        }
+        .background(Color("DarkerBlueColor"))
+        .edgesIgnoringSafeArea(.bottom)
+        .onReceive(viewModel.$state) { newState in
+            withAnimation {
+                self.state = newState
+            }
+        }
+        .onAppear {
+            viewModel.onViewAppear()
+        }
     }
 }

@@ -25,8 +25,9 @@ struct WebContentView: UIViewRepresentable {
         configuration.preferences = preferences
         
         let webView = WKWebView(frame: CGRect.zero, configuration: configuration)
+        webView.isOpaque = false
+        webView.backgroundColor = .clear
         webView.navigationDelegate = viewModel
-        
         webView.allowsBackForwardNavigationGestures = true
         webView.scrollView.isScrollEnabled = true
         webView.scrollView.backgroundColor = UIColor(Color("DarkerBlueColor"))

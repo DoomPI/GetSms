@@ -9,8 +9,8 @@ import SwiftUI
  
 struct ServiceListScreen: View {
  
-    @ObservedObject var countryListViewModel: CountryListViewModel
-    @ObservedObject var serviceListViewModel: ServiceListViewModel
+    @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
+    @ObservedObject var serviceListViewModel = ServiceListAssembly.assemble()
  
     var body: some View {
         VStack {

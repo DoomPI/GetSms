@@ -1,0 +1,33 @@
+//
+//  AuthReducer.swift
+//  GetSms
+//
+//  Created by Роман Ломтев on 09.04.2023.
+//
+
+protocol AuthReducerProtocol: Reducer where State == AuthState, Intent == AuthIntent {
+}
+
+class AuthReducer {
+}
+
+extension AuthReducer: AuthReducerProtocol {
+    
+    func reduce(currentState: State, intent: Intent) -> State {
+        switch intent {
+            
+        case .None:
+            return currentState
+            
+        case .BlockingLoad:
+            return .BlockingLoading
+            
+        case .Success(let model):
+            return .SuccessfulAuth(vo: AuthVO(apiKey: model.apiKey))
+            
+        case .Failure:
+            return .FailedAuth
+
+        }
+    }
+}

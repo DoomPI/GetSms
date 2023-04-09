@@ -19,14 +19,17 @@ class WebViewModel: NSObject, ObservableObject {
     private var webView: WKWebView? = nil
     
     private let didFinish: (WKWebView) -> Void
+    private let decidePolicyFor: (WKWebView) -> Void
     
     // MARK: - Init
     init(
         processor: any WebProcessorProtocol,
-        didFinish: @escaping (WKWebView) -> Void
+        didFinish: @escaping (WKWebView) -> Void,
+        decidePolicyFor: @escaping (WKWebView) -> Void
     ) {
         self.processor = processor
         self.didFinish = didFinish
+        self.decidePolicyFor = decidePolicyFor
     }
     
     func onViewAppear() {
@@ -82,5 +85,14 @@ extension WebViewModel: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         didFinish(webView)
+    }
+    
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction,
+        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    ) {
+        decidePolicyFor(webView)
+        return decisionHandler(WKNavigationActionPolicy.allow)
     }
 }
