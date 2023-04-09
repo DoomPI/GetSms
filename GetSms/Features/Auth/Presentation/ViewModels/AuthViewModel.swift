@@ -8,26 +8,63 @@
 import WebKit
 import SwiftUI
 
+protocol AuthHandlerProtocol: Handler where Intent == AuthIntent {
+}
+
 class AuthViewModel: ObservableObject {
     
-    let URL_LK = "https://vak-sms.com/lk/"
-    let SCRIPT = "(function() { return (document.getElementsByClassName('sidebar')[0].getAttribute('data-api')); })();"
+    // MARK: - External state
+    @Published var state: AuthState = .Idle
     
-    func webViewDidFinish(webView : WKWebView){
-        if (webView.url?.absoluteString == URL_LK){
-            webView.evaluateJavaScript(SCRIPT, in: nil, in: .defaultClient) { result  in
+    // MARK: - Internal vars
+    private let urlLk = "https://vak-sms.com/lk/"
+    private let processor: any AuthProcessorProtocol
+    private let reducer: any AuthReducerProtocol
+    
+    // MARK: - Init
+    init(
+        processor: any AuthProcessorProtocol,
+        reducer: any AuthReducerProtocol
+    ) {
+        self.processor = processor
+        self.reducer = reducer
+    }
+    
+    func onViewAppear() {
+        processor.subscribeToIntents()
+    }
+    
+    func success(model: AuthModel) {
+        processor.fireIntent(intent: .Success(model: model))
+    }
+    
+    func webViewDidFinish(webView : WKWebView) {
+        if webView.url?.absoluteString == urlLk {
+            webView.evaluateJavaScript(authScript, in: nil, in: .defaultClient) { [weak self] result in
                 switch result {
-                    case .success(let value):
-                        if let apiKey = value as? String {
-                            print(apiKey)
-                        }
-                                
-                    case .failure(let error):
-                        print(error.localizedDescription)
+                case .success(let value):
+                    if let apiKey = value as? String {
+                        self?.success(model: AuthModel(apiKey: apiKey))
+                    }
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
                 }
             }
-                    
         }
     }
     
+    func webViewDecidePolicyFor(webView: WKWebView) {
+        if webView.url?.absoluteString == urlLk {
+            processor.fireIntent(intent: .BlockingLoad)
+        }
+    }
+}
+
+extension AuthViewModel: AuthHandlerProtocol {
+    
+    func handle(intent: Intent) {
+        let newState = self.reducer.reduce(currentState: state, intent: intent)
+        self.state = newState
+    }
 }

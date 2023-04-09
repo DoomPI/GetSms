@@ -10,7 +10,14 @@ import Foundation
 enum AuthAssembly {
     
     static func assemble() -> AuthViewModel {
-        let viewModel = AuthViewModel()
+        let processor = AuthProcessor()
+        let reducer = AuthReducer()
+        
+        let viewModel = AuthViewModel(
+            processor: processor,
+            reducer: reducer
+        )
+        processor.handler = viewModel
         
         return viewModel
     }

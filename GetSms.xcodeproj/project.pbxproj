@@ -76,6 +76,14 @@
 		CCCE957B29E221AB007B4D0D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE957A29E221AB007B4D0D /* WebView.swift */; };
 		CCCE957E29E2CAF3007B4D0D /* AuthWebScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE957D29E2CAF3007B4D0D /* AuthWebScripts.swift */; };
 		CCCE958229E2E11E007B4D0D /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE958129E2E11D007B4D0D /* AuthAssembly.swift */; };
+		CCCE958429E2E935007B4D0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE958329E2E935007B4D0D /* ContentView.swift */; };
+		CCCE958F29E2FD66007B4D0D /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE958E29E2FD65007B4D0D /* AuthState.swift */; };
+		CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959329E2FDD1007B4D0D /* AuthIntent.swift */; };
+		CCCE959729E2FE25007B4D0D /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959629E2FE25007B4D0D /* AuthModel.swift */; };
+		CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959829E2FE75007B4D0D /* AuthProcessor.swift */; };
+		CCCE959C29E2FF8B007B4D0D /* AuthReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959B29E2FF8B007B4D0D /* AuthReducer.swift */; };
+		CCCE959E29E300BE007B4D0D /* AuthVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959D29E300BE007B4D0D /* AuthVO.swift */; };
+		CCCE95A029E327E9007B4D0D /* AuthBlockingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959F29E327E9007B4D0D /* AuthBlockingLoadingView.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -165,6 +173,14 @@
 		CCCE957A29E221AB007B4D0D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		CCCE957D29E2CAF3007B4D0D /* AuthWebScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWebScripts.swift; sourceTree = "<group>"; };
 		CCCE958129E2E11D007B4D0D /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
+		CCCE958329E2E935007B4D0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CCCE958E29E2FD65007B4D0D /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		CCCE959329E2FDD1007B4D0D /* AuthIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIntent.swift; sourceTree = "<group>"; };
+		CCCE959629E2FE25007B4D0D /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		CCCE959829E2FE75007B4D0D /* AuthProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProcessor.swift; sourceTree = "<group>"; };
+		CCCE959B29E2FF8B007B4D0D /* AuthReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReducer.swift; sourceTree = "<group>"; };
+		CCCE959D29E300BE007B4D0D /* AuthVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVO.swift; sourceTree = "<group>"; };
+		CCCE959F29E327E9007B4D0D /* AuthBlockingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBlockingLoadingView.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -675,6 +691,7 @@
 		CCCD15CF29D9DD0D00739C44 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				CCCE959029E2FDB9007B4D0D /* Domain */,
 				CCCE958029E2E0E3007B4D0D /* DI */,
 				CCCE957C29E2CADB007B4D0D /* Web */,
 				CCCD15D229D9DD5500739C44 /* Presentation */,
@@ -685,8 +702,11 @@
 		CCCD15D229D9DD5500739C44 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CCCE959A29E2FF7E007B4D0D /* Reducers */,
+				CCCE958A29E2FD01007B4D0D /* States */,
 				CCCD15DA29D9DE0400739C44 /* Views */,
 				CCCD15D429D9DD6E00739C44 /* ViewModels */,
+				CCCE959D29E300BE007B4D0D /* AuthVO.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -702,6 +722,7 @@
 		CCCD15D729D9DDB000739C44 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
+				CCCE958329E2E935007B4D0D /* ContentView.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -710,6 +731,7 @@
 			isa = PBXGroup;
 			children = (
 				CCCD15DB29D9E27E00739C44 /* AuthView.swift */,
+				CCCE959F29E327E9007B4D0D /* AuthBlockingLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -799,6 +821,56 @@
 				CCCE958129E2E11D007B4D0D /* AuthAssembly.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		CCCE958A29E2FD01007B4D0D /* States */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE958E29E2FD65007B4D0D /* AuthState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		CCCE959029E2FDB9007B4D0D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE959529E2FE1A007B4D0D /* Models */,
+				CCCE959229E2FDC8007B4D0D /* Intents */,
+				CCCE959129E2FDBF007B4D0D /* Processors */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CCCE959129E2FDBF007B4D0D /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE959829E2FE75007B4D0D /* AuthProcessor.swift */,
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
+		CCCE959229E2FDC8007B4D0D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE959329E2FDD1007B4D0D /* AuthIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		CCCE959529E2FE1A007B4D0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE959629E2FE25007B4D0D /* AuthModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCCE959A29E2FF7E007B4D0D /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE959B29E2FF8B007B4D0D /* AuthReducer.swift */,
+			);
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 		CCFE4BC929D3B972006BB842 /* JSON */ = {
@@ -906,6 +978,7 @@
 				CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */,
 				CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */,
 				CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */,
+				CCCE958F29E2FD66007B4D0D /* AuthState.swift in Sources */,
 				CC9E158C29CF8DEF00237F71 /* Processor.swift in Sources */,
 				CC1EBC8E29D07E0000C43EF0 /* ServiceView.swift in Sources */,
 				CC0608E229D89668005A815C /* CountryListNetworkMapper.swift in Sources */,
@@ -913,6 +986,7 @@
 				CCCE956C29E1F7BC007B4D0D /* WebViewModel.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
 				CC0608FB29D89833005A815C /* Country.swift in Sources */,
+				CCCE958429E2E935007B4D0D /* ContentView.swift in Sources */,
 				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
 				CCCE956A29E1F6C7007B4D0D /* WebAssembly.swift in Sources */,
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
@@ -924,11 +998,13 @@
 				CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
+				CCCE959E29E300BE007B4D0D /* AuthVO.swift in Sources */,
 				CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */,
 				CC06090529D8A1C3005A815C /* CountryListNetworkDTO.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
 				CC0608EF29D896F8005A815C /* CountryListVO.swift in Sources */,
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
+				CCCE95A029E327E9007B4D0D /* AuthBlockingLoadingView.swift in Sources */,
 				CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */,
 				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
@@ -956,13 +1032,17 @@
 				CCCE957729E20381007B4D0D /* WebProcessor.swift in Sources */,
 				CCCD15E429DA0D8400739C44 /* URLType.swift in Sources */,
 				CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */,
+				CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
+				CCCE959C29E2FF8B007B4D0D /* AuthReducer.swift in Sources */,
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
+				CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
+				CCCE959729E2FE25007B4D0D /* AuthModel.swift in Sources */,
 				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
