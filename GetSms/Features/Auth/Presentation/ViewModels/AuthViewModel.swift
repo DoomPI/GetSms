@@ -18,8 +18,19 @@ class AuthViewModel: ObservableObject {
             webView.evaluateJavaScript(SCRIPT, in: nil, in: .defaultClient) { result  in
                 switch result {
                     case .success(let value):
-                        if let apiKey = value as? String {
-                            print(apiKey)
+                        if let apiKeyString = value as? String {
+                            let apiKey = ApiKey(apiKey: apiKeyString)
+                            // Сохранение в KeyChain
+                            KeychainHelper.standard.save(apiKey, service: apiKeyService, account: account)
+                            // Чтение из KeyChain
+                            if let receivedData = KeychainHelper.standard.read(service: apiKeyService, account: account){
+                                do {
+                                    let apiKK = try  JSONDecoder().decode(ApiKey.self, from: receivedData)
+                                    print(apiKK.apiKey+"!")
+                                    
+                                } catch {}
+                            
+                            }
                         }
                                 
                     case .failure(let error):

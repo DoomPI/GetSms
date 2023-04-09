@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */; };
+		A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885643029E2E7D3001C1F39 /* ApiKey.swift */; };
 		A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */; };
 		CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608B629D758D4005A815C /* ServiceSearchView.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
@@ -95,6 +97,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		A885643029E2E7D3001C1F39 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListScreen.swift; sourceTree = "<group>"; };
 		CC0608B629D758D4005A815C /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
@@ -181,6 +185,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A885642D29E2E6C9001C1F39 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */,
+				A885643029E2E7D3001C1F39 /* ApiKey.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
 		A8C9880729D9CB7B000D1249 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +552,7 @@
 		CC5E123229C78D930085324A /* GetSms */ = {
 			isa = PBXGroup;
 			children = (
+				A885642D29E2E6C9001C1F39 /* KeyChain */,
 				A8C9880729D9CB7B000D1249 /* Core */,
 				CC9E158129CF8CDF00237F71 /* Common */,
 				CC9E158029CF8CD400237F71 /* Features */,
@@ -956,6 +970,7 @@
 				CCCE957729E20381007B4D0D /* WebProcessor.swift in Sources */,
 				CCCD15E429DA0D8400739C44 /* URLType.swift in Sources */,
 				CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */,
+				A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
@@ -963,6 +978,7 @@
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
+				A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */,
 				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1092,7 +1108,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "GetSms/Preview\\ Content";
-				DEVELOPMENT_TEAM = 7JCTFR9C8T;
+				DEVELOPMENT_TEAM = JARWHL6PTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1122,7 +1138,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "GetSms/Preview\\ Content";
-				DEVELOPMENT_TEAM = 7JCTFR9C8T;
+				DEVELOPMENT_TEAM = JARWHL6PTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
