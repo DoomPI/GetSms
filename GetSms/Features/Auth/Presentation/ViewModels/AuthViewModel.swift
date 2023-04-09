@@ -59,6 +59,7 @@ class AuthViewModel: ObservableObject {
     
     func webViewDecidePolicyFor(webView: WKWebView) {
         if webView.url?.absoluteString == urlLk {
+            webView.isHidden = true
             processor.fireIntent(intent: .BlockingLoad)
         }
     }
