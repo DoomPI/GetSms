@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */; };
+		A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885643029E2E7D3001C1F39 /* ApiKey.swift */; };
+		A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */; };
 		CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608B629D758D4005A815C /* ServiceSearchView.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
-		CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608C529D7B769005A815C /* ServiceListScreen.swift */; };
 		CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D129D887AC005A815C /* JSONExtractor.swift */; };
 		CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */; };
 		CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608DA29D895D1005A815C /* CountryListAssembly.swift */; };
@@ -62,6 +64,20 @@
 		CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C229D8D5AA00739C44 /* CountryView.swift */; };
 		CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */; };
 		CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */; };
+		CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */; };
+		CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */; };
+		CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */; };
+		CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15DB29D9E27E00739C44 /* AuthView.swift */; };
+		CCCD15DF29D9E32000739C44 /* WebContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15DE29D9E32000739C44 /* WebContentView.swift */; };
+		CCCD15E229D9E80400739C44 /* WebIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15E129D9E80400739C44 /* WebIntent.swift */; };
+		CCCD15E429DA0D8400739C44 /* URLType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15E329DA0D8400739C44 /* URLType.swift */; };
+		CCCD15E629DA1CAE00739C44 /* WebNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15E529DA1CAE00739C44 /* WebNavigationView.swift */; };
+		CCCE956A29E1F6C7007B4D0D /* WebAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE956929E1F6C7007B4D0D /* WebAssembly.swift */; };
+		CCCE956C29E1F7BC007B4D0D /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE956B29E1F7BC007B4D0D /* WebViewModel.swift */; };
+		CCCE957729E20381007B4D0D /* WebProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE957629E20381007B4D0D /* WebProcessor.swift */; };
+		CCCE957B29E221AB007B4D0D /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE957A29E221AB007B4D0D /* WebView.swift */; };
+		CCCE957E29E2CAF3007B4D0D /* AuthWebScripts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE957D29E2CAF3007B4D0D /* AuthWebScripts.swift */; };
+		CCCE958229E2E11E007B4D0D /* AuthAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE958129E2E11D007B4D0D /* AuthAssembly.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -81,9 +97,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		A885643029E2E7D3001C1F39 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListScreen.swift; sourceTree = "<group>"; };
 		CC0608B629D758D4005A815C /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
-		CC0608C529D7B769005A815C /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ServiceListScreen.swift; path = ../../../../../../Documents/ServiceListScreen.swift; sourceTree = "<group>"; };
 		CC0608D129D887AC005A815C /* JSONExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtractor.swift; sourceTree = "<group>"; };
 		CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
 		CC0608DA29D895D1005A815C /* CountryListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListAssembly.swift; sourceTree = "<group>"; };
@@ -137,6 +155,20 @@
 		CCCD15C229D8D5AA00739C44 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPlaceholderView.swift; sourceTree = "<group>"; };
 		CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListDropdownView.swift; sourceTree = "<group>"; };
+		CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchPlaceholderView.swift; sourceTree = "<group>"; };
+		CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
+		CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CCCD15DB29D9E27E00739C44 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		CCCD15DE29D9E32000739C44 /* WebContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebContentView.swift; sourceTree = "<group>"; };
+		CCCD15E129D9E80400739C44 /* WebIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebIntent.swift; sourceTree = "<group>"; };
+		CCCD15E329DA0D8400739C44 /* URLType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLType.swift; sourceTree = "<group>"; };
+		CCCD15E529DA1CAE00739C44 /* WebNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebNavigationView.swift; sourceTree = "<group>"; };
+		CCCE956929E1F6C7007B4D0D /* WebAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAssembly.swift; sourceTree = "<group>"; };
+		CCCE956B29E1F7BC007B4D0D /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
+		CCCE957629E20381007B4D0D /* WebProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebProcessor.swift; sourceTree = "<group>"; };
+		CCCE957A29E221AB007B4D0D /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		CCCE957D29E2CAF3007B4D0D /* AuthWebScripts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWebScripts.swift; sourceTree = "<group>"; };
+		CCCE958129E2E11D007B4D0D /* AuthAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAssembly.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,36 +185,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A885642D29E2E6C9001C1F39 /* KeyChain */ = {
+			isa = PBXGroup;
+			children = (
+				A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */,
+				A885643029E2E7D3001C1F39 /* ApiKey.swift */,
+			);
+			path = KeyChain;
+			sourceTree = "<group>";
+		};
+		A8C9880729D9CB7B000D1249 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A8C9880829D9CB8D000D1249 /* Presentation */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A8C9880829D9CB8D000D1249 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15D729D9DDB000739C44 /* Navigation */,
+				A8C9880929D9CB9D000D1249 /* Screens */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A8C9880929D9CB9D000D1249 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */,
+				CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 		CC0608B929D78815005A815C /* Cache */ = {
 			isa = PBXGroup;
 			children = (
 				CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */,
 			);
 			path = Cache;
-			sourceTree = "<group>";
-		};
-		CC0608C229D7B6AC005A815C /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				CC0608C329D7B6B7005A815C /* Presentation */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		CC0608C329D7B6B7005A815C /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				CC0608C429D7B74F005A815C /* Screens */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		CC0608C429D7B74F005A815C /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				CC0608C529D7B769005A815C /* ServiceListScreen.swift */,
-			);
-			path = Screens;
 			sourceTree = "<group>";
 		};
 		CC0608D529D89439005A815C /* CountryList */ = {
@@ -443,6 +486,7 @@
 				CC1EBC8D29D07E0000C43EF0 /* ServiceView.swift */,
 				CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */,
 				CC0608B629D758D4005A815C /* ServiceSearchView.swift */,
+				CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -508,7 +552,8 @@
 		CC5E123229C78D930085324A /* GetSms */ = {
 			isa = PBXGroup;
 			children = (
-				CC0608C229D7B6AC005A815C /* Core */,
+				A885642D29E2E6C9001C1F39 /* KeyChain */,
+				A8C9880729D9CB7B000D1249 /* Core */,
 				CC9E158129CF8CDF00237F71 /* Common */,
 				CC9E158029CF8CD400237F71 /* Features */,
 				CC5E123329C78D930085324A /* GetSmsApp.swift */,
@@ -529,6 +574,7 @@
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CCCD15CF29D9DD0D00739C44 /* Auth */,
 				CC0608D529D89439005A815C /* CountryList */,
 				CC9E158D29CF8E1F00237F71 /* ServiceList */,
 			);
@@ -538,6 +584,7 @@
 		CC9E158129CF8CDF00237F71 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				CCCE956329E1F319007B4D0D /* Web */,
 				CC1EBC8929D0703800C43EF0 /* Utils */,
 				CCFE4BCC29D74769006BB842 /* Data */,
 				CC9E158229CF8CF000237F71 /* Presentation */,
@@ -639,6 +686,135 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
+		CCCD15CF29D9DD0D00739C44 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE958029E2E0E3007B4D0D /* DI */,
+				CCCE957C29E2CADB007B4D0D /* Web */,
+				CCCD15D229D9DD5500739C44 /* Presentation */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		CCCD15D229D9DD5500739C44 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15DA29D9DE0400739C44 /* Views */,
+				CCCD15D429D9DD6E00739C44 /* ViewModels */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CCCD15D429D9DD6E00739C44 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CCCD15D729D9DDB000739C44 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CCCD15DA29D9DE0400739C44 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15DB29D9E27E00739C44 /* AuthView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCCE956329E1F319007B4D0D /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE956829E1F6B5007B4D0D /* DI */,
+				CCCE956529E1F34C007B4D0D /* Domain */,
+				CCCE956429E1F324007B4D0D /* Presentation */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		CCCE956429E1F324007B4D0D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE956729E1F6A9007B4D0D /* ViewModels */,
+				CCCE956629E1F615007B4D0D /* Views */,
+				CCCD15E329DA0D8400739C44 /* URLType.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CCCE956529E1F34C007B4D0D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE957529E20362007B4D0D /* Processors */,
+				CCCE957429E20356007B4D0D /* Intents */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CCCE956629E1F615007B4D0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15DE29D9E32000739C44 /* WebContentView.swift */,
+				CCCD15E529DA1CAE00739C44 /* WebNavigationView.swift */,
+				CCCE957A29E221AB007B4D0D /* WebView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCCE956729E1F6A9007B4D0D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE956B29E1F7BC007B4D0D /* WebViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CCCE956829E1F6B5007B4D0D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE956929E1F6C7007B4D0D /* WebAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CCCE957429E20356007B4D0D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				CCCD15E129D9E80400739C44 /* WebIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		CCCE957529E20362007B4D0D /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE957629E20381007B4D0D /* WebProcessor.swift */,
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
+		CCCE957C29E2CADB007B4D0D /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE957D29E2CAF3007B4D0D /* AuthWebScripts.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		CCCE958029E2E0E3007B4D0D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE958129E2E11D007B4D0D /* AuthAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		CCFE4BC929D3B972006BB842 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,6 +910,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCCE957B29E221AB007B4D0D /* WebView.swift in Sources */,
 				CC0608FD29D89891005A815C /* CountryList.swift in Sources */,
 				CC1EBC7529CFC7C400C43EF0 /* ServiceNetworkDTO.swift in Sources */,
 				CC0608F129D89704005A815C /* CountryListFormatter.swift in Sources */,
@@ -747,24 +924,33 @@
 				CC1EBC8E29D07E0000C43EF0 /* ServiceView.swift in Sources */,
 				CC0608E229D89668005A815C /* CountryListNetworkMapper.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
+				CCCE956C29E1F7BC007B4D0D /* WebViewModel.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
 				CC0608FB29D89833005A815C /* Country.swift in Sources */,
 				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
+				CCCE956A29E1F6C7007B4D0D /* WebAssembly.swift in Sources */,
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
 				CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */,
 				CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */,
 				CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */,
 				CC0608ED29D896ED005A815C /* CountryListState.swift in Sources */,
+				CCCD15DF29D9E32000739C44 /* WebContentView.swift in Sources */,
+				CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
+				CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */,
 				CC06090529D8A1C3005A815C /* CountryListNetworkDTO.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
 				CC0608EF29D896F8005A815C /* CountryListVO.swift in Sources */,
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
+				CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */,
 				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
+				CCCD15E229D9E80400739C44 /* WebIntent.swift in Sources */,
+				CCCE958229E2E11E007B4D0D /* AuthAssembly.swift in Sources */,
+				A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
 				CC06090D29D8C256005A815C /* CountryVO.swift in Sources */,
@@ -772,6 +958,7 @@
 				CC06090129D89D28005A815C /* CountryListProcessor.swift in Sources */,
 				CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */,
 				CC06090929D8B0E9005A815C /* CountryListErrorVO.swift in Sources */,
+				CCCE957E29E2CAF3007B4D0D /* AuthWebScripts.swift in Sources */,
 				CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */,
 				CC06090729D8A1CF005A815C /* CountryNetworkDTO.swift in Sources */,
 				CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */,
@@ -779,14 +966,19 @@
 				CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */,
 				CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */,
 				CC0608FF29D89D1D005A815C /* CountryListInteractor.swift in Sources */,
+				CCCD15E629DA1CAE00739C44 /* WebNavigationView.swift in Sources */,
+				CCCE957729E20381007B4D0D /* WebProcessor.swift in Sources */,
+				CCCD15E429DA0D8400739C44 /* URLType.swift in Sources */,
+				CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */,
+				A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
-				CC0608C629D7B769005A815C /* ServiceListScreen.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
+				A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */,
 				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -915,8 +1107,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GetSms/Preview Content\"";
-				DEVELOPMENT_TEAM = 7JCTFR9C8T;
+				DEVELOPMENT_ASSET_PATHS = "GetSms/Preview\\ Content";
+				DEVELOPMENT_TEAM = JARWHL6PTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -945,8 +1137,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GetSms/Preview Content\"";
-				DEVELOPMENT_TEAM = 7JCTFR9C8T;
+				DEVELOPMENT_ASSET_PATHS = "GetSms/Preview\\ Content";
+				DEVELOPMENT_TEAM = JARWHL6PTD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

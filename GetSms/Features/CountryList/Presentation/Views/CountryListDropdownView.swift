@@ -23,18 +23,16 @@ struct CountryListDropdownView: View {
             )
             
             if (isExpanded) {
-                ScrollView {
-                    VStack {
-                        ForEach(vo.countries.indices, id: \.self) { index in
-                            Button(action: {
-                                onSelected(vo.countries[index].code)
-                                toggleExpand()
-                            }) {
-                                HStack {
-                                    CountryView(vo: vo.countries[index])
-                                    
-                                    Spacer()
-                                }
+                VStack {
+                    ForEach(vo.countries.indices, id: \.self) { index in
+                        Button(action: {
+                            onSelected(vo.countries[index].code)
+                            toggleExpand()
+                        }) {
+                            HStack {
+                                CountryView(vo: vo.countries[index])
+                                
+                                Spacer()
                             }
                         }
                     }

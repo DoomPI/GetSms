@@ -16,7 +16,7 @@ class CountryListViewModel: ObservableObject {
     typealias State = CountryListState
     
     // MARK: - External vars
-    @Published private(set) var state: State = .Idle
+    @Published private(set) var state: State = .Loading
     
     // MARK: - Internal vars
     private let processor: any CountryListProcessorProtocol

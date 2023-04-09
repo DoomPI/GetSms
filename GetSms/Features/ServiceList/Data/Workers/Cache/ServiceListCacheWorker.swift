@@ -13,6 +13,8 @@ protocol ServiceListCacheWorkingLogic {
     func setServiceList(serviceList: ServiceList) -> Completable
     
     func searchService(searchText: String) -> Single<ServiceList>
+    
+    func getCountryCode() -> Single<String>
 }
 
 class ServiceListCacheWorker {
@@ -43,5 +45,9 @@ extension ServiceListCacheWorker: ServiceListCacheWorkingLogic {
             },
             countryCode: value.countryCode
         ))
+    }
+    
+    func getCountryCode() -> Single<String> {
+        return Single.just(serviceListDataRelay.value.countryCode)
     }
 }

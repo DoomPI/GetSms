@@ -11,12 +11,8 @@ class ServiceListFormatter {
         let services = model.services.map { service in
             format(model: service)
         }
-        let countryCode = model.countryCode
         
-        return ServiceListVO(
-            services: services,
-            countryCode: countryCode
-        )
+        return ServiceListVO(services: services)
     }
     
     private func format(model: Service) -> ServiceVO {
@@ -24,7 +20,7 @@ class ServiceListFormatter {
         let imageURL = model.imageURL
         let quantity = String(format: "%d шт.", model.quantity)
         let cost = String(format: "%.2f₽", model.cost)
-        let isLowQuantity = model.quantity < 10
+        let isLowQuantity = model.isLowQuantity
         
         return ServiceVO(
             name: name,

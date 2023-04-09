@@ -11,15 +11,12 @@ struct CountryListView: View {
     
     @EnvironmentObject var viewModel: CountryListViewModel
     
-    @State private var state: CountryListState = .Idle
+    @State private var state: CountryListState = .Loading
     
     var body: some View {
         
         VStack {
             switch state {
-                
-            case .Idle:
-                Text("Idle")
                 
             case .Loading:
                 CountryListLoadingView()

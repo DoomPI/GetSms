@@ -12,6 +12,7 @@ struct Service {
     let name: String
     let imageURL: URL?
     let quantity: Int
+    let isLowQuantity: Bool
     let info: String?
     let cost: Float
 }

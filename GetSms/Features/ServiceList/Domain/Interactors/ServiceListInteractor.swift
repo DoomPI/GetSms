@@ -37,11 +37,20 @@ class ServiceListInteractor {
 }
 
 extension ServiceListInteractor: ServiceListBusinessLogic {
-    
+   
     func getServiceList(countryCode: String?) -> Single<ServiceList> {
-        return getServiceListFromNetwork(countryCode: countryCode).flatMap { serviceList in
-            self.setServiceListInCache(serviceList: serviceList)
-                .andThen(Single.just(serviceList))
+        if let countryCode {
+            return getServiceListFromNetwork(countryCode: countryCode).flatMap { serviceList in
+                self.setServiceListInCache(serviceList: serviceList)
+                    .andThen(Single.just(serviceList))
+            }
+        }
+        
+        return getCountryCodeFromCache().flatMap { countryCode in
+            self.getServiceListFromNetwork(countryCode: countryCode).flatMap { serviceList in
+                self.setServiceListInCache(serviceList: serviceList)
+                    .andThen(Single.just(serviceList))
+            }
         }
     }
     
@@ -49,17 +58,20 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
         return cacheWorker.searchService(searchText: searchText)
     }
     
-    private func getServiceListFromNetwork(countryCode: String?) -> Single<ServiceList> {
-        let code = countryCode ?? Self.defaultCountryCode
-        return networkWorker.getServiceList(countryCode: code).map { dto in
+    private func getServiceListFromNetwork(countryCode: String) -> Single<ServiceList> {
+        return networkWorker.getServiceList(countryCode: countryCode).map { dto in
             self.networkMapper.fromDto(
                 dto: dto,
-                countryCode: code
+                countryCode: countryCode
             )
         }
     }
     
     private func setServiceListInCache(serviceList: ServiceList) -> Completable {
         return cacheWorker.setServiceList(serviceList: serviceList)
+    }
+    
+    private func getCountryCodeFromCache() -> Single<String> {
+        return cacheWorker.getCountryCode()
     }
 }
