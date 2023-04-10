@@ -63,13 +63,9 @@ import Foundation
          SecItemDelete(query)
      }
 
-     func save<T>(_ item: T, service: String, account: String) where T: Codable {
-         do {
-             let data = try JSONEncoder().encode(item)
-             save(data, service: service, account: account)
-         } catch {
-             assertionFailure("Fail to encode item for keychain: \(error)")
-         }
+     func save<T>(_ item: T, service: String, account: String) throws where T: Codable {
+         let data = try JSONEncoder().encode(item)
+         save(data, service: service, account: account)
      }
 
      func read<T>(service: String, account: String, type: T.Type) -> T? where T: Codable {

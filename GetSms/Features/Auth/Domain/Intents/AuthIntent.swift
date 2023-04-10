@@ -7,11 +7,11 @@
 
 enum AuthIntent {
     
-    case None
+    case Nothing
     
     case BlockingLoad
     
-    case Success(model: AuthModel)
+    case Success
     
     case Failure
 }

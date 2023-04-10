@@ -15,7 +15,7 @@ protocol AuthHandlerProtocol: Handler where Intent == AuthIntent {
 class AuthViewModel: ObservableObject {
     
     // MARK: - External state
-    @Published var state: AuthState = .Idle
+    @Published private(set) var state: AuthState = .Idle
     
     // MARK: - Internal vars
     private let urlLk = "https://vak-sms.com/lk/"
@@ -42,12 +42,22 @@ class AuthViewModel: ObservableObject {
     func webViewDidFinish(webView : WKWebView) {
         if webView.url?.absoluteString == urlLk {
             webView.evaluateJavaScript(authScript, in: nil, in: .defaultClient) { [weak self] result in
+                guard let self else { return }
                 switch result {
                     case .success(let value):
                         if let apiKeyString = value as? String {
                             let apiKey = ApiKey(apiKey: apiKeyString)
-                            self?.saveToKeyChain(apiKey: apiKey)
-                            self?.success(model: AuthModel(apiKey: apiKeyString))
+                            self.interacor
+                                .saveToKeyChain(apiKey: apiKey)
+                                .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                                .observe(on: MainScheduler.instance)
+                                .subscribe(
+                                    onCompleted: self.success,
+                                    onError: { error in
+                                        print(error)
+                                    }
+                                )
+                                .disposed(by: self.disposeBag)
                         }
                                 
                     case .failure(let error):
@@ -64,12 +74,8 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    private func saveToKeyChain(apiKey: ApiKey) {
-        interacor.saveToKeyChain(apiKey: apiKey)
-    }
-    
-    private func success(model: AuthModel) {
-        processor.fireIntent(intent: .Success(model: model))
+    private func success() {
+        processor.fireIntent(intent: .Success)
     }
 }
 

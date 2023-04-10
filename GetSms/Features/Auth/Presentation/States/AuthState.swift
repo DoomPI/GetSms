@@ -11,7 +11,7 @@ enum AuthState {
     
     case BlockingLoading
     
-    case SuccessfulAuth(vo: AuthVO)
+    case SuccessfulAuth
     
     case FailedAuth
 }

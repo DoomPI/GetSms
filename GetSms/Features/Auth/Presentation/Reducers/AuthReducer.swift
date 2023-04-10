@@ -16,14 +16,14 @@ extension AuthReducer: AuthReducerProtocol {
     func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
-        case .None:
+        case .Nothing:
             return currentState
             
         case .BlockingLoad:
             return .BlockingLoading
             
-        case .Success(let model):
-            return .SuccessfulAuth(vo: AuthVO(apiKey: model.apiKey))
+        case .Success:
+            return .SuccessfulAuth
             
         case .Failure:
             return .FailedAuth
