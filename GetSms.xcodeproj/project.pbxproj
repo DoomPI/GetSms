@@ -81,11 +81,36 @@
 		CCCE958429E2E935007B4D0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE958329E2E935007B4D0D /* ContentView.swift */; };
 		CCCE958F29E2FD66007B4D0D /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE958E29E2FD65007B4D0D /* AuthState.swift */; };
 		CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959329E2FDD1007B4D0D /* AuthIntent.swift */; };
-		CCCE959729E2FE25007B4D0D /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959629E2FE25007B4D0D /* AuthModel.swift */; };
 		CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959829E2FE75007B4D0D /* AuthProcessor.swift */; };
 		CCCE959C29E2FF8B007B4D0D /* AuthReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959B29E2FF8B007B4D0D /* AuthReducer.swift */; };
-		CCCE959E29E300BE007B4D0D /* AuthVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959D29E300BE007B4D0D /* AuthVO.swift */; };
 		CCCE95A029E327E9007B4D0D /* AuthBlockingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE959F29E327E9007B4D0D /* AuthBlockingLoadingView.swift */; };
+		CCCE95A329E360D6007B4D0D /* AuthInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95A229E360D6007B4D0D /* AuthInteractor.swift */; };
+		CCCE95A829E361CA007B4D0D /* AuthCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95A729E361CA007B4D0D /* AuthCacheWorker.swift */; };
+		CCCE95B429E3707A007B4D0D /* BalanceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95B329E3707A007B4D0D /* BalanceState.swift */; };
+		CCCE95B629E370A8007B4D0D /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95B529E370A8007B4D0D /* BalanceView.swift */; };
+		CCCE95B829E370B2007B4D0D /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95B729E370B2007B4D0D /* BalanceViewModel.swift */; };
+		CCCE95BA29E370B8007B4D0D /* BalanceVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95B929E370B8007B4D0D /* BalanceVO.swift */; };
+		CCCE95BC29E370BE007B4D0D /* BalanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95BB29E370BE007B4D0D /* BalanceFormatter.swift */; };
+		CCCE95BE29E370C7007B4D0D /* BalanceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95BD29E370C7007B4D0D /* BalanceAssembly.swift */; };
+		CCCE95C529E37151007B4D0D /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95C429E37151007B4D0D /* Balance.swift */; };
+		CCCE95C729E37204007B4D0D /* BalanceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95C629E37204007B4D0D /* BalanceIntent.swift */; };
+		CCCE95C929E37228007B4D0D /* BalanceProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95C829E37228007B4D0D /* BalanceProcessor.swift */; };
+		CCCE95CB29E37261007B4D0D /* BalanceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95CA29E37261007B4D0D /* BalanceInteractor.swift */; };
+		CCCE95D229E37789007B4D0D /* BalanceNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95D129E37789007B4D0D /* BalanceNetworkWorker.swift */; };
+		CCCE95D429E38012007B4D0D /* BalanceNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95D329E38012007B4D0D /* BalanceNetworkDTO.swift */; };
+		CCCE95D629E38C7A007B4D0D /* BalanceNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95D529E38C7A007B4D0D /* BalanceNetworkMapper.swift */; };
+		CCCE95D829E391DC007B4D0D /* BalanceCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95D729E391DC007B4D0D /* BalanceCacheWorker.swift */; };
+		CCCE95DB29E486AE007B4D0D /* BalanceReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95DA29E486AE007B4D0D /* BalanceReducer.swift */; };
+		CCCE95DD29E493B5007B4D0D /* BalanceImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95DC29E493B5007B4D0D /* BalanceImage.swift */; };
+		CCCE95DF29E49F87007B4D0D /* BalanceLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95DE29E49F87007B4D0D /* BalanceLoadedView.swift */; };
+		CCCE95E129E4A2A0007B4D0D /* BalanceLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95E029E4A2A0007B4D0D /* BalanceLoadingView.swift */; };
+		CCCE95E329E4A879007B4D0D /* BalanceErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95E229E4A879007B4D0D /* BalanceErrorView.swift */; };
+		CCCE95E529E4A906007B4D0D /* CountryListLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95E429E4A906007B4D0D /* CountryListLoadedView.swift */; };
+		CCCE95E729E4A9EE007B4D0D /* CountryListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95E629E4A9EE007B4D0D /* CountryListErrorView.swift */; };
+		CCCE95E929E4AA37007B4D0D /* CountryListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95E829E4AA37007B4D0D /* CountryListLoadingView.swift */; };
+		CCCE95EB29E4AA7A007B4D0D /* ServiceListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95EA29E4AA7A007B4D0D /* ServiceListLoadingView.swift */; };
+		CCCE95ED29E4AABD007B4D0D /* ServiceListLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95EC29E4AABD007B4D0D /* ServiceListLoadedView.swift */; };
+		CCCE95EF29E4ABD3007B4D0D /* ServiceListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95EE29E4ABD3007B4D0D /* ServiceListErrorView.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -180,11 +205,36 @@
 		CCCE958329E2E935007B4D0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CCCE958E29E2FD65007B4D0D /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
 		CCCE959329E2FDD1007B4D0D /* AuthIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthIntent.swift; sourceTree = "<group>"; };
-		CCCE959629E2FE25007B4D0D /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		CCCE959829E2FE75007B4D0D /* AuthProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProcessor.swift; sourceTree = "<group>"; };
 		CCCE959B29E2FF8B007B4D0D /* AuthReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthReducer.swift; sourceTree = "<group>"; };
-		CCCE959D29E300BE007B4D0D /* AuthVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVO.swift; sourceTree = "<group>"; };
 		CCCE959F29E327E9007B4D0D /* AuthBlockingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBlockingLoadingView.swift; sourceTree = "<group>"; };
+		CCCE95A229E360D6007B4D0D /* AuthInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractor.swift; sourceTree = "<group>"; };
+		CCCE95A729E361CA007B4D0D /* AuthCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCacheWorker.swift; sourceTree = "<group>"; };
+		CCCE95B329E3707A007B4D0D /* BalanceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceState.swift; sourceTree = "<group>"; };
+		CCCE95B529E370A8007B4D0D /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		CCCE95B729E370B2007B4D0D /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		CCCE95B929E370B8007B4D0D /* BalanceVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVO.swift; sourceTree = "<group>"; };
+		CCCE95BB29E370BE007B4D0D /* BalanceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceFormatter.swift; sourceTree = "<group>"; };
+		CCCE95BD29E370C7007B4D0D /* BalanceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceAssembly.swift; sourceTree = "<group>"; };
+		CCCE95C429E37151007B4D0D /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		CCCE95C629E37204007B4D0D /* BalanceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceIntent.swift; sourceTree = "<group>"; };
+		CCCE95C829E37228007B4D0D /* BalanceProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceProcessor.swift; sourceTree = "<group>"; };
+		CCCE95CA29E37261007B4D0D /* BalanceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInteractor.swift; sourceTree = "<group>"; };
+		CCCE95D129E37789007B4D0D /* BalanceNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNetworkWorker.swift; sourceTree = "<group>"; };
+		CCCE95D329E38012007B4D0D /* BalanceNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNetworkDTO.swift; sourceTree = "<group>"; };
+		CCCE95D529E38C7A007B4D0D /* BalanceNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceNetworkMapper.swift; sourceTree = "<group>"; };
+		CCCE95D729E391DC007B4D0D /* BalanceCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCacheWorker.swift; sourceTree = "<group>"; };
+		CCCE95DA29E486AE007B4D0D /* BalanceReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceReducer.swift; sourceTree = "<group>"; };
+		CCCE95DC29E493B5007B4D0D /* BalanceImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceImage.swift; sourceTree = "<group>"; };
+		CCCE95DE29E49F87007B4D0D /* BalanceLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceLoadedView.swift; sourceTree = "<group>"; };
+		CCCE95E029E4A2A0007B4D0D /* BalanceLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceLoadingView.swift; sourceTree = "<group>"; };
+		CCCE95E229E4A879007B4D0D /* BalanceErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceErrorView.swift; sourceTree = "<group>"; };
+		CCCE95E429E4A906007B4D0D /* CountryListLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListLoadedView.swift; sourceTree = "<group>"; };
+		CCCE95E629E4A9EE007B4D0D /* CountryListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListErrorView.swift; sourceTree = "<group>"; };
+		CCCE95E829E4AA37007B4D0D /* CountryListLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListLoadingView.swift; sourceTree = "<group>"; };
+		CCCE95EA29E4AA7A007B4D0D /* ServiceListLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListLoadingView.swift; sourceTree = "<group>"; };
+		CCCE95EC29E4AABD007B4D0D /* ServiceListLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListLoadedView.swift; sourceTree = "<group>"; };
+		CCCE95EE29E4ABD3007B4D0D /* ServiceListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListErrorView.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -345,6 +395,9 @@
 				CCCD15C229D8D5AA00739C44 /* CountryView.swift */,
 				CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */,
 				CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */,
+				CCCE95E429E4A906007B4D0D /* CountryListLoadedView.swift */,
+				CCCE95E629E4A9EE007B4D0D /* CountryListErrorView.swift */,
+				CCCE95E829E4AA37007B4D0D /* CountryListLoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -503,6 +556,9 @@
 				CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */,
 				CC0608B629D758D4005A815C /* ServiceSearchView.swift */,
 				CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */,
+				CCCE95EA29E4AA7A007B4D0D /* ServiceListLoadingView.swift */,
+				CCCE95EC29E4AABD007B4D0D /* ServiceListLoadedView.swift */,
+				CCCE95EE29E4ABD3007B4D0D /* ServiceListErrorView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -568,7 +624,6 @@
 		CC5E123229C78D930085324A /* GetSms */ = {
 			isa = PBXGroup;
 			children = (
-				A885642D29E2E6C9001C1F39 /* KeyChain */,
 				A8C9880729D9CB7B000D1249 /* Core */,
 				CC9E158129CF8CDF00237F71 /* Common */,
 				CC9E158029CF8CD400237F71 /* Features */,
@@ -590,6 +645,7 @@
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CCCE95A929E3700A007B4D0D /* Balance */,
 				CCCD15CF29D9DD0D00739C44 /* Auth */,
 				CC0608D529D89439005A815C /* CountryList */,
 				CC9E158D29CF8E1F00237F71 /* ServiceList */,
@@ -705,6 +761,7 @@
 		CCCD15CF29D9DD0D00739C44 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				CCCE95A429E3616D007B4D0D /* Data */,
 				CCCE959029E2FDB9007B4D0D /* Domain */,
 				CCCE958029E2E0E3007B4D0D /* DI */,
 				CCCE957C29E2CADB007B4D0D /* Web */,
@@ -720,7 +777,6 @@
 				CCCE958A29E2FD01007B4D0D /* States */,
 				CCCD15DA29D9DE0400739C44 /* Views */,
 				CCCD15D429D9DD6E00739C44 /* ViewModels */,
-				CCCE959D29E300BE007B4D0D /* AuthVO.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -848,7 +904,7 @@
 		CCCE959029E2FDB9007B4D0D /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				CCCE959529E2FE1A007B4D0D /* Models */,
+				CCCE95A129E360A0007B4D0D /* Interactors */,
 				CCCE959229E2FDC8007B4D0D /* Intents */,
 				CCCE959129E2FDBF007B4D0D /* Processors */,
 			);
@@ -871,20 +927,222 @@
 			path = Intents;
 			sourceTree = "<group>";
 		};
-		CCCE959529E2FE1A007B4D0D /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CCCE959629E2FE25007B4D0D /* AuthModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		CCCE959A29E2FF7E007B4D0D /* Reducers */ = {
 			isa = PBXGroup;
 			children = (
 				CCCE959B29E2FF8B007B4D0D /* AuthReducer.swift */,
 			);
 			path = Reducers;
+			sourceTree = "<group>";
+		};
+		CCCE95A129E360A0007B4D0D /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95A229E360D6007B4D0D /* AuthInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CCCE95A429E3616D007B4D0D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95A529E3618B007B4D0D /* Workers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CCCE95A529E3618B007B4D0D /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95A629E36199007B4D0D /* Cache */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		CCCE95A629E36199007B4D0D /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95A729E361CA007B4D0D /* AuthCacheWorker.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CCCE95A929E3700A007B4D0D /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95AD29E3703D007B4D0D /* Presentation */,
+				CCCE95AC29E37036007B4D0D /* DI */,
+				CCCE95AB29E37031007B4D0D /* Domain */,
+				CCCE95AA29E37014007B4D0D /* Data */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		CCCE95AA29E37014007B4D0D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95CC29E376F0007B4D0D /* Workers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CCCE95AB29E37031007B4D0D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95C329E37139007B4D0D /* Models */,
+				CCCE95C229E370EC007B4D0D /* Intents */,
+				CCCE95C129E370E6007B4D0D /* Processors */,
+				CCCE95BF29E370D0007B4D0D /* Interactors */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CCCE95AC29E37036007B4D0D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95BD29E370C7007B4D0D /* BalanceAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CCCE95AD29E3703D007B4D0D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95D929E4861F007B4D0D /* Reducer */,
+				CCCE95B229E37071007B4D0D /* Formatters */,
+				CCCE95B129E3706B007B4D0D /* VO */,
+				CCCE95B029E37057007B4D0D /* ViewModels */,
+				CCCE95AF29E37051007B4D0D /* States */,
+				CCCE95AE29E3704C007B4D0D /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CCCE95AE29E3704C007B4D0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95B529E370A8007B4D0D /* BalanceView.swift */,
+				CCCE95DC29E493B5007B4D0D /* BalanceImage.swift */,
+				CCCE95DE29E49F87007B4D0D /* BalanceLoadedView.swift */,
+				CCCE95E029E4A2A0007B4D0D /* BalanceLoadingView.swift */,
+				CCCE95E229E4A879007B4D0D /* BalanceErrorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCCE95AF29E37051007B4D0D /* States */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95B329E3707A007B4D0D /* BalanceState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		CCCE95B029E37057007B4D0D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95B729E370B2007B4D0D /* BalanceViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CCCE95B129E3706B007B4D0D /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95B929E370B8007B4D0D /* BalanceVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		CCCE95B229E37071007B4D0D /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95BB29E370BE007B4D0D /* BalanceFormatter.swift */,
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
+		CCCE95BF29E370D0007B4D0D /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95CA29E37261007B4D0D /* BalanceInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CCCE95C129E370E6007B4D0D /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95C829E37228007B4D0D /* BalanceProcessor.swift */,
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
+		CCCE95C229E370EC007B4D0D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95C629E37204007B4D0D /* BalanceIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		CCCE95C329E37139007B4D0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95C429E37151007B4D0D /* Balance.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCCE95CC29E376F0007B4D0D /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95CE29E37702007B4D0D /* Cache */,
+				CCCE95CD29E376FE007B4D0D /* Network */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		CCCE95CD29E376FE007B4D0D /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95D029E37759007B4D0D /* DTO */,
+				CCCE95CF29E37746007B4D0D /* Mappers */,
+				CCCE95D129E37789007B4D0D /* BalanceNetworkWorker.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CCCE95CE29E37702007B4D0D /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95D729E391DC007B4D0D /* BalanceCacheWorker.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CCCE95CF29E37746007B4D0D /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95D529E38C7A007B4D0D /* BalanceNetworkMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		CCCE95D029E37759007B4D0D /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95D329E38012007B4D0D /* BalanceNetworkDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CCCE95D929E4861F007B4D0D /* Reducer */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95DA29E486AE007B4D0D /* BalanceReducer.swift */,
+			);
+			path = Reducer;
 			sourceTree = "<group>";
 		};
 		CCFE4BC929D3B972006BB842 /* JSON */ = {
@@ -899,6 +1157,7 @@
 		CCFE4BCC29D74769006BB842 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A885642D29E2E6C9001C1F39 /* KeyChain */,
 				CC9E158329CF8D2D00237F71 /* Workers */,
 			);
 			path = Data;
@@ -985,34 +1244,47 @@
 				CCCE957B29E221AB007B4D0D /* WebView.swift in Sources */,
 				CC0608FD29D89891005A815C /* CountryList.swift in Sources */,
 				CC1EBC7529CFC7C400C43EF0 /* ServiceNetworkDTO.swift in Sources */,
+				CCCE95D429E38012007B4D0D /* BalanceNetworkDTO.swift in Sources */,
 				CC0608F129D89704005A815C /* CountryListFormatter.swift in Sources */,
 				CC1EBC8429CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift in Sources */,
+				CCCE95BA29E370B8007B4D0D /* BalanceVO.swift in Sources */,
+				CCCE95B429E3707A007B4D0D /* BalanceState.swift in Sources */,
 				CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */,
 				CC0608EB29D896E6005A815C /* CountryListViewModel.swift in Sources */,
 				CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */,
 				CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */,
 				CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */,
+				CCCE95B829E370B2007B4D0D /* BalanceViewModel.swift in Sources */,
 				CCCE958F29E2FD66007B4D0D /* AuthState.swift in Sources */,
 				CC9E158C29CF8DEF00237F71 /* Processor.swift in Sources */,
+				CCCE95C929E37228007B4D0D /* BalanceProcessor.swift in Sources */,
+				CCCE95B629E370A8007B4D0D /* BalanceView.swift in Sources */,
 				CC1EBC8E29D07E0000C43EF0 /* ServiceView.swift in Sources */,
+				CCCE95C729E37204007B4D0D /* BalanceIntent.swift in Sources */,
+				CCCE95E529E4A906007B4D0D /* CountryListLoadedView.swift in Sources */,
 				CC0608E229D89668005A815C /* CountryListNetworkMapper.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
 				CCCE956C29E1F7BC007B4D0D /* WebViewModel.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
 				CC0608FB29D89833005A815C /* Country.swift in Sources */,
+				CCCE95DB29E486AE007B4D0D /* BalanceReducer.swift in Sources */,
 				CCCE958429E2E935007B4D0D /* ContentView.swift in Sources */,
+				CCCE95A329E360D6007B4D0D /* AuthInteractor.swift in Sources */,
 				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
 				CCCE956A29E1F6C7007B4D0D /* WebAssembly.swift in Sources */,
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
+				CCCE95EB29E4AA7A007B4D0D /* ServiceListLoadingView.swift in Sources */,
 				CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */,
 				CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */,
 				CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */,
 				CC0608ED29D896ED005A815C /* CountryListState.swift in Sources */,
+				CCCE95E929E4AA37007B4D0D /* CountryListLoadingView.swift in Sources */,
 				CCCD15DF29D9E32000739C44 /* WebContentView.swift in Sources */,
 				CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
+				CCCE95EF29E4ABD3007B4D0D /* ServiceListErrorView.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
-				CCCE959E29E300BE007B4D0D /* AuthVO.swift in Sources */,
+				CCCE95D829E391DC007B4D0D /* BalanceCacheWorker.swift in Sources */,
 				CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */,
 				CC06090529D8A1C3005A815C /* CountryListNetworkDTO.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
@@ -1020,8 +1292,14 @@
 				CC9E15A129CF93D900237F71 /* Service.swift in Sources */,
 				CCCE95A029E327E9007B4D0D /* AuthBlockingLoadingView.swift in Sources */,
 				CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */,
+				CCCE95C529E37151007B4D0D /* Balance.swift in Sources */,
+				CCCE95CB29E37261007B4D0D /* BalanceInteractor.swift in Sources */,
 				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
+				CCCE95E129E4A2A0007B4D0D /* BalanceLoadingView.swift in Sources */,
+				CCCE95DD29E493B5007B4D0D /* BalanceImage.swift in Sources */,
+				CCCE95DF29E49F87007B4D0D /* BalanceLoadedView.swift in Sources */,
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
+				CCCE95D629E38C7A007B4D0D /* BalanceNetworkMapper.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
 				CCCD15E229D9E80400739C44 /* WebIntent.swift in Sources */,
@@ -1029,12 +1307,15 @@
 				A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
+				CCCE95A829E361CA007B4D0D /* AuthCacheWorker.swift in Sources */,
 				CC06090D29D8C256005A815C /* CountryVO.swift in Sources */,
+				CCCE95E329E4A879007B4D0D /* BalanceErrorView.swift in Sources */,
 				CC06090B29D8BAE3005A815C /* CountryListErrorFormatter.swift in Sources */,
 				CC06090129D89D28005A815C /* CountryListProcessor.swift in Sources */,
 				CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */,
 				CC06090929D8B0E9005A815C /* CountryListErrorVO.swift in Sources */,
 				CCCE957E29E2CAF3007B4D0D /* AuthWebScripts.swift in Sources */,
+				CCCE95D229E37789007B4D0D /* BalanceNetworkWorker.swift in Sources */,
 				CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */,
 				CC06090729D8A1CF005A815C /* CountryNetworkDTO.swift in Sources */,
 				CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */,
@@ -1042,10 +1323,12 @@
 				CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */,
 				CC9E15AC29CF94BE00237F71 /* ServiceListIntent.swift in Sources */,
 				CC0608FF29D89D1D005A815C /* CountryListInteractor.swift in Sources */,
+				CCCE95ED29E4AABD007B4D0D /* ServiceListLoadedView.swift in Sources */,
 				CCCD15E629DA1CAE00739C44 /* WebNavigationView.swift in Sources */,
 				CCCE957729E20381007B4D0D /* WebProcessor.swift in Sources */,
 				CCCD15E429DA0D8400739C44 /* URLType.swift in Sources */,
 				CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */,
+				CCCE95BC29E370BE007B4D0D /* BalanceFormatter.swift in Sources */,
 				CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */,
 				A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
@@ -1056,9 +1339,10 @@
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */,
+				CCCE95E729E4A9EE007B4D0D /* CountryListErrorView.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
-				CCCE959729E2FE25007B4D0D /* AuthModel.swift in Sources */,
 				A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */,
+				CCCE95BE29E370C7007B4D0D /* BalanceAssembly.swift in Sources */,
 				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

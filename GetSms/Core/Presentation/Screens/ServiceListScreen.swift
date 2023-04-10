@@ -9,11 +9,15 @@ import SwiftUI
  
 struct ServiceListScreen: View {
  
+    @ObservedObject var balanceViewModel = BalanceAssembly.assemble()
     @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
     @ObservedObject var serviceListViewModel = ServiceListAssembly.assemble()
  
     var body: some View {
         VStack {
+            
+            BalanceView()
+                .environmentObject(balanceViewModel)
 
             CountryListView()
                 .environmentObject(countryListViewModel)

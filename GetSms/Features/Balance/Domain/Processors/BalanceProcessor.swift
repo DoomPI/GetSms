@@ -1,33 +1,29 @@
 //
-//  AuthProcessor.swift
+//  BalanceProcessor.swift
 //  GetSms
 //
-//  Created by Роман Ломтев on 09.04.2023.
+//  Created by Роман Ломтев on 10.04.2023.
 //
 
-import RxSwift
 import RxRelay
+import RxSwift
 
-protocol AuthProcessorProtocol: Processor where Intent == AuthIntent {
+protocol BalanceProcessorProtocol: Processor where Intent == BalanceIntent {
 }
 
-class AuthProcessor {
+class BalanceProcessor {
     
-    typealias Intent = AuthIntent
+    typealias Intent = BalanceIntent
     
     // MARK: - External vars
-    weak var handler: (any AuthHandlerProtocol)?
+    weak var handler: (any BalanceHandlerProtocol)?
     
     // MARK: - Internal vars
+    private let intentRelay = BehaviorRelay<Intent>(value: .Load)
     private let disposeBag = DisposeBag()
-    private var intentRelay = BehaviorRelay<Intent>(value: .Nothing)
 }
 
-extension AuthProcessor: AuthProcessorProtocol {
-    
-    func fireIntent(intent: Intent) {
-        self.intentRelay.accept(intent)
-    }
+extension BalanceProcessor: BalanceProcessorProtocol {
     
     func subscribeToIntents() {
         intentRelay
@@ -44,9 +40,11 @@ extension AuthProcessor: AuthProcessorProtocol {
             }.disposed(by: disposeBag)
     }
     
+    func fireIntent(intent: Intent) {
+        intentRelay.accept(intent)
+    }
+    
     private func handleIntent(intent: Intent) {
         handler?.handle(intent: intent)
     }
 }
-
-
