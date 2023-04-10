@@ -111,6 +111,14 @@
 		CCCE95EB29E4AA7A007B4D0D /* ServiceListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95EA29E4AA7A007B4D0D /* ServiceListLoadingView.swift */; };
 		CCCE95ED29E4AABD007B4D0D /* ServiceListLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95EC29E4AABD007B4D0D /* ServiceListLoadedView.swift */; };
 		CCCE95EF29E4ABD3007B4D0D /* ServiceListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95EE29E4ABD3007B4D0D /* ServiceListErrorView.swift */; };
+		CCCE95FA29E4C314007B4D0D /* PaymentReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95F929E4C314007B4D0D /* PaymentReducer.swift */; };
+		CCCE95FC29E4C368007B4D0D /* PaymentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95FB29E4C368007B4D0D /* PaymentState.swift */; };
+		CCCE95FE29E4C36F007B4D0D /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95FD29E4C36F007B4D0D /* PaymentViewModel.swift */; };
+		CCCE960029E4C376007B4D0D /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE95FF29E4C376007B4D0D /* PaymentView.swift */; };
+		CCCE960229E4C381007B4D0D /* PaymentAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960129E4C381007B4D0D /* PaymentAssembly.swift */; };
+		CCCE960629E4C3BA007B4D0D /* PaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960529E4C3BA007B4D0D /* PaymentProcessor.swift */; };
+		CCCE960829E4C3E1007B4D0D /* PaymentIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960729E4C3E1007B4D0D /* PaymentIntent.swift */; };
+		CCCE960A29E4CA2A007B4D0D /* PaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960929E4CA2A007B4D0D /* PaymentScreen.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -235,6 +243,14 @@
 		CCCE95EA29E4AA7A007B4D0D /* ServiceListLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListLoadingView.swift; sourceTree = "<group>"; };
 		CCCE95EC29E4AABD007B4D0D /* ServiceListLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListLoadedView.swift; sourceTree = "<group>"; };
 		CCCE95EE29E4ABD3007B4D0D /* ServiceListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListErrorView.swift; sourceTree = "<group>"; };
+		CCCE95F929E4C314007B4D0D /* PaymentReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReducer.swift; sourceTree = "<group>"; };
+		CCCE95FB29E4C368007B4D0D /* PaymentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentState.swift; sourceTree = "<group>"; };
+		CCCE95FD29E4C36F007B4D0D /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
+		CCCE95FF29E4C376007B4D0D /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		CCCE960129E4C381007B4D0D /* PaymentAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAssembly.swift; sourceTree = "<group>"; };
+		CCCE960529E4C3BA007B4D0D /* PaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProcessor.swift; sourceTree = "<group>"; };
+		CCCE960729E4C3E1007B4D0D /* PaymentIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentIntent.swift; sourceTree = "<group>"; };
+		CCCE960929E4CA2A007B4D0D /* PaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScreen.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,6 +298,7 @@
 			children = (
 				A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */,
 				CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */,
+				CCCE960929E4CA2A007B4D0D /* PaymentScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -645,6 +662,7 @@
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CCCE95F029E4B638007B4D0D /* Payment */,
 				CCCE95A929E3700A007B4D0D /* Balance */,
 				CCCD15CF29D9DD0D00739C44 /* Auth */,
 				CC0608D529D89439005A815C /* CountryList */,
@@ -1145,6 +1163,92 @@
 			path = Reducer;
 			sourceTree = "<group>";
 		};
+		CCCE95F029E4B638007B4D0D /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95F429E4B6AD007B4D0D /* Presentation */,
+				CCCE95F329E4B6A7007B4D0D /* DI */,
+				CCCE95F229E4B6A0007B4D0D /* Domain */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		CCCE95F229E4B6A0007B4D0D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE960429E4C399007B4D0D /* Processors */,
+				CCCE960329E4C394007B4D0D /* Intents */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CCCE95F329E4B6A7007B4D0D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE960129E4C381007B4D0D /* PaymentAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CCCE95F429E4B6AD007B4D0D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95F829E4C305007B4D0D /* Reducers */,
+				CCCE95F729E4C2FF007B4D0D /* States */,
+				CCCE95F629E4C2F9007B4D0D /* ViewModels */,
+				CCCE95F529E4C2F4007B4D0D /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CCCE95F529E4C2F4007B4D0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95FF29E4C376007B4D0D /* PaymentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CCCE95F629E4C2F9007B4D0D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95FD29E4C36F007B4D0D /* PaymentViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CCCE95F729E4C2FF007B4D0D /* States */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95FB29E4C368007B4D0D /* PaymentState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		CCCE95F829E4C305007B4D0D /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE95F929E4C314007B4D0D /* PaymentReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
+		CCCE960329E4C394007B4D0D /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE960729E4C3E1007B4D0D /* PaymentIntent.swift */,
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		CCCE960429E4C399007B4D0D /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+				CCCE960529E4C3BA007B4D0D /* PaymentProcessor.swift */,
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
 		CCFE4BC929D3B972006BB842 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -1263,6 +1367,7 @@
 				CCCE95C729E37204007B4D0D /* BalanceIntent.swift in Sources */,
 				CCCE95E529E4A906007B4D0D /* CountryListLoadedView.swift in Sources */,
 				CC0608E229D89668005A815C /* CountryListNetworkMapper.swift in Sources */,
+				CCCE960229E4C381007B4D0D /* PaymentAssembly.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
 				CCCE956C29E1F7BC007B4D0D /* WebViewModel.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
@@ -1301,12 +1406,16 @@
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CCCE95D629E38C7A007B4D0D /* BalanceNetworkMapper.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
+				CCCE960629E4C3BA007B4D0D /* PaymentProcessor.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
+				CCCE960029E4C376007B4D0D /* PaymentView.swift in Sources */,
 				CCCD15E229D9E80400739C44 /* WebIntent.swift in Sources */,
 				CCCE958229E2E11E007B4D0D /* AuthAssembly.swift in Sources */,
+				CCCE95FA29E4C314007B4D0D /* PaymentReducer.swift in Sources */,
 				A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
+				CCCE960829E4C3E1007B4D0D /* PaymentIntent.swift in Sources */,
 				CCCE95A829E361CA007B4D0D /* AuthCacheWorker.swift in Sources */,
 				CC06090D29D8C256005A815C /* CountryVO.swift in Sources */,
 				CCCE95E329E4A879007B4D0D /* BalanceErrorView.swift in Sources */,
@@ -1317,6 +1426,7 @@
 				CCCE957E29E2CAF3007B4D0D /* AuthWebScripts.swift in Sources */,
 				CCCE95D229E37789007B4D0D /* BalanceNetworkWorker.swift in Sources */,
 				CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */,
+				CCCE95FE29E4C36F007B4D0D /* PaymentViewModel.swift in Sources */,
 				CC06090729D8A1CF005A815C /* CountryNetworkDTO.swift in Sources */,
 				CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */,
 				CC1EBC7929CFD8F500C43EF0 /* ServiceListErrorVO.swift in Sources */,
@@ -1330,6 +1440,7 @@
 				CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */,
 				CCCE95BC29E370BE007B4D0D /* BalanceFormatter.swift in Sources */,
 				CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */,
+				CCCE95FC29E4C368007B4D0D /* PaymentState.swift in Sources */,
 				A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
@@ -1337,6 +1448,7 @@
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
+				CCCE960A29E4CA2A007B4D0D /* PaymentScreen.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */,
 				CCCE95E729E4A9EE007B4D0D /* CountryListErrorView.swift in Sources */,
@@ -1486,7 +1598,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSmsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1516,7 +1628,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSms;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pyroman.GetSmsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

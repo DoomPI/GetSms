@@ -12,6 +12,8 @@ struct ServiceListScreen: View {
     @ObservedObject var balanceViewModel = BalanceAssembly.assemble()
     @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
     @ObservedObject var serviceListViewModel = ServiceListAssembly.assemble()
+    
+    @Binding var navigationState: NavigationState
  
     var body: some View {
         VStack {
@@ -27,8 +29,13 @@ struct ServiceListScreen: View {
         }
         .padding(8)
         .background(Color("DarkBlueColor"))
+        .onReceive(balanceViewModel.$state) { newState in
+            if case .ProceededToPayment = newState {
+                navigationState = .Payment
+            }
+        }
         .onReceive(countryListViewModel.$state) { newState in
-            if case .Loaded(let vo) = newState{
+            if case .Loaded(let vo) = newState {
                 serviceListViewModel.loadServiceList(countryCode: vo.countries[vo.selectedCountryIndex].code)
             }
         }

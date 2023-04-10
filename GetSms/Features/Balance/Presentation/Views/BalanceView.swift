@@ -19,17 +19,22 @@ struct BalanceView: View {
                 
             case .Loading:
                 BalanceLoadingView(
-                    pressAction: {}
+                    pressAction: viewModel.proceedToPayment
                 )
                 
             case .Loaded(let vo):
                 BalanceLoadedView(
                     vo: vo,
-                    pressAction: {}
+                    pressAction: viewModel.proceedToPayment
                 )
                 
             case .Error:
                 BalanceErrorView()
+                
+            case .ProceededToPayment:
+                BalanceLoadingView(
+                    pressAction: {}
+                )
                 
             }
         }

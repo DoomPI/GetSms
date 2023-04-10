@@ -12,4 +12,6 @@ enum BalanceIntent {
     case PresentBalance(model: Balance)
     
     case PresentError
+    
+    case ProceedToPayment
 }

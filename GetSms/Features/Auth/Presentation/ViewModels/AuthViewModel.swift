@@ -82,7 +82,10 @@ class AuthViewModel: ObservableObject {
 extension AuthViewModel: AuthHandlerProtocol {
     
     func handle(intent: Intent) {
-        let newState = self.reducer.reduce(currentState: state, intent: intent)
+        let newState = self.reducer.reduce(
+            currentState: state,
+            intent: intent
+        )
         self.state = newState
     }
 }

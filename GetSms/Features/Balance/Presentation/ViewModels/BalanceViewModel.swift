@@ -38,6 +38,10 @@ class BalanceViewModel: ObservableObject {
     func onViewAppear() {
         processor.subscribeToIntents()
     }
+    
+    func proceedToPayment() {
+        processor.fireIntent(intent: .ProceedToPayment)
+    }
 }
 
 extension BalanceViewModel: BalanceHandlerProtocol {
@@ -67,6 +71,9 @@ extension BalanceViewModel: BalanceHandlerProtocol {
             break
             
         case .PresentError:
+            break
+            
+        case .ProceedToPayment:
             break
             
         }

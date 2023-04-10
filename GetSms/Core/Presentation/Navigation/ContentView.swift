@@ -21,7 +21,10 @@ struct ContentView: View {
                 AuthScreen(navigationState: $navigationState)
                 
             case .ServiceList:
-                ServiceListScreen()
+                ServiceListScreen(navigationState: $navigationState)
+                
+            case .Payment:
+                PaymentScreen()
             }
         }
     }
@@ -32,4 +35,6 @@ enum NavigationState: Hashable {
     case Auth
     
     case ServiceList
+    
+    case Payment
 }
