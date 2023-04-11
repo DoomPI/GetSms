@@ -19,8 +19,16 @@ class ServiceListProcessor {
     weak var handler: (any ServiceListHandlerProtocol)?
     
     // MARK: - Internal vars
+    private let interactor: ServiceListBusinessLogic
     private let disposeBag = DisposeBag()
     private var intentRelay = BehaviorRelay<Intent>(value: .Nothing)
+    
+    // MARK: - Init
+    init(
+        interactor: ServiceListBusinessLogic
+    ) {
+        self.interactor = interactor
+    }
     
 }
 
@@ -41,6 +49,44 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                 else { return }
                 
                 self.handleIntent(intent: intent)
+                
+                
+                switch intent {
+                    
+                case .LoadList(let countryCode):
+                    self.interactor
+                        .getServiceList(countryCode: countryCode)
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onSuccess: { [weak self] serviceList in
+                                self?.fireIntent(intent: .PresentList(model: serviceList))
+                            },
+                            onFailure: { [weak self] error in
+                                self?.fireIntent(intent: .PresentError(error: error))
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                case .SearchService(let searchText):
+                    self.interactor
+                        .searchService(searchText: searchText)
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onSuccess: { [weak self] serviceList in
+                                self?.fireIntent(intent: .PresentList(model: serviceList))
+                            },
+                            onFailure: { [weak self] error in
+                                self?.fireIntent(intent: .PresentError(error: error))
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                    
+                case .Nothing, .PresentList, .PresentError:
+                    break
+                }
                 
             }.disposed(by: disposeBag)
     }

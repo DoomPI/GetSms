@@ -14,4 +14,6 @@ enum AuthIntent {
     case Success
     
     case Failure
+    
+    case SaveApiKey(apiKey: ApiKey)
 }

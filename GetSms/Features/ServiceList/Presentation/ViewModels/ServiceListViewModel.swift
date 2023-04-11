@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import RxSwift
 
 protocol ServiceListHandlerProtocol: Handler where Intent == ServiceListIntent {
 }
@@ -21,17 +20,13 @@ class ServiceListViewModel: ObservableObject {
     // MARK: - Internal vars
     private let processor: any ServiceListProcessorProtocol
     private let reducer: any ServiceListReducerProtocol
-    private let interactor: ServiceListBusinessLogic
-    private let disposeBag = DisposeBag()
     
     init(
         processor: any ServiceListProcessorProtocol,
-        reducer: any ServiceListReducerProtocol,
-        interactor: ServiceListBusinessLogic
+        reducer: any ServiceListReducerProtocol
     ) {
         self.processor = processor
         self.reducer = reducer
-        self.interactor = interactor
     }
     
     func onViewAppear() {
@@ -56,44 +51,6 @@ extension ServiceListViewModel: ServiceListHandlerProtocol {
             intent: intent
         )
         self.state = newState
-        
-        switch intent {
-            
-        case .LoadList(let countryCode):
-            interactor
-                .getServiceList(countryCode: countryCode)
-                .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-                .observe(on: MainScheduler.instance)
-                .subscribe(
-                    onSuccess: { [weak self] serviceList in
-                        self?.processor.fireIntent(intent: .PresentList(model: serviceList))
-                    },
-                    onFailure: { [weak self] error in
-                        self?.processor.fireIntent(intent: .PresentError(error: error))
-                    }
-                )
-                .disposed(by: disposeBag)
-            
-        case .SearchService(let searchText):
-            interactor
-                .searchService(searchText: searchText)
-                .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-                .observe(on: MainScheduler.instance)
-                .subscribe(
-                    onSuccess: { [weak self] serviceList in
-                        self?.processor.fireIntent(intent: .PresentList(model: serviceList))
-                    },
-                    onFailure: { [weak self] error in
-                        self?.processor.fireIntent(intent: .PresentError(error: error))
-                    }
-                )
-                .disposed(by: disposeBag)
-            
-            
-        case .Nothing, .PresentList, .PresentError:
-            break
-            
-        }
     }
 }
 

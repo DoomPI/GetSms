@@ -8,24 +8,24 @@
 enum BalanceAssembly {
     
     static func assemble() -> BalanceViewModel {
-        let processor = BalanceProcessor()
-        
-        let formatter = BalanceFormatter()
-        let reducer = BalanceReducer(formatter: formatter)
-        
         let networkWorker = BalanceNetworkWorker()
         let networkMapper = BalanceNetworkMapper()
         let cacheWorker = BalanceCacheWorker()
-        let interacor = BalanceInteractor(
+        let interactor = BalanceInteractor(
             networkWorker: networkWorker,
             networkMapper: networkMapper,
             cacheWorker: cacheWorker
         )
         
+        let processor = BalanceProcessor(
+            interactor: interactor
+        )
+        
+        let formatter = BalanceFormatter()
+        let reducer = BalanceReducer(formatter: formatter)
         let viewModel = BalanceViewModel(
             processor: processor,
-            reducer: reducer,
-            interactor: interacor
+            reducer: reducer
         )
         processor.handler = viewModel
         

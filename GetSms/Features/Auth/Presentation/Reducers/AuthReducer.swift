@@ -27,7 +27,9 @@ extension AuthReducer: AuthReducerProtocol {
             
         case .Failure:
             return .FailedAuth
-
+            
+        case .SaveApiKey:
+            return currentState
         }
     }
 }

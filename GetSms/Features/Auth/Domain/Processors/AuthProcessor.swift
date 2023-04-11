@@ -19,8 +19,16 @@ class AuthProcessor {
     weak var handler: (any AuthHandlerProtocol)?
     
     // MARK: - Internal vars
+    private let interactor: AuthBusinessLogic
     private let disposeBag = DisposeBag()
     private var intentRelay = BehaviorRelay<Intent>(value: .Nothing)
+    
+    // MARK: - Init
+    init(
+        interactor: AuthBusinessLogic
+    ) {
+        self.interactor = interactor
+    }
 }
 
 extension AuthProcessor: AuthProcessorProtocol {
@@ -40,6 +48,27 @@ extension AuthProcessor: AuthProcessorProtocol {
                 else { return }
                 
                 self.handleIntent(intent: intent)
+                
+                switch intent {
+                    
+                case .SaveApiKey(let apiKey):
+                    self.interactor
+                        .saveToKeyChain(apiKey: apiKey)
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onCompleted: {
+                                self.fireIntent(intent: .Success)
+                            },
+                            onError: { error in
+                                print(error)
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                case .Nothing, .Success, .Failure, .BlockingLoad:
+                    break
+                }
                 
             }.disposed(by: disposeBag)
     }
