@@ -17,7 +17,13 @@ extension PaymentReducer: PaymentReducerProtocol {
         switch intent {
             
         case .Nothing:
-            return .Idle
+            return currentState
+            
+        case .Open:
+            return .Opened
+            
+        case .Close:
+            return .Closed
             
         }
     }

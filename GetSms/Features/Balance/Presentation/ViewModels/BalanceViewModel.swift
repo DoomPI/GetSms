@@ -37,6 +37,10 @@ class BalanceViewModel: ObservableObject {
     func proceedToPayment() {
         processor.fireIntent(intent: .ProceedToPayment)
     }
+    
+    func reloadBalance() {
+        processor.fireIntent(intent: .Load)
+    }
 }
 
 extension BalanceViewModel: BalanceHandlerProtocol {

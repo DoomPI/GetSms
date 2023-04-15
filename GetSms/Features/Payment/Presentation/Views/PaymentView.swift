@@ -18,11 +18,18 @@ struct PaymentView: View {
             switch state {
                 
             case .Idle:
+                Spacer()
+                
+            case .Opened:
                 WebView(url: "https://vak-sms.com/pay/", urlType: .Public)
                     .environmentObject(WebAssembly.assemble(
                         didFinish: viewModel.webViewDidFinish,
                         decidePolicyFor: viewModel.webViewDecidePolicyFor
                     ))
+                
+            case .Closed:
+                Spacer()
+    
             }
         }
         .background(Color("DarkerBlueColor"))
@@ -31,9 +38,6 @@ struct PaymentView: View {
             withAnimation {
                 self.state = newState
             }
-        }
-        .onAppear {
-            viewModel.onViewAppear()
         }
     }
 }

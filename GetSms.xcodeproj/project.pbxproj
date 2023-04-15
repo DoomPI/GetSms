@@ -118,7 +118,6 @@
 		CCCE960229E4C381007B4D0D /* PaymentAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960129E4C381007B4D0D /* PaymentAssembly.swift */; };
 		CCCE960629E4C3BA007B4D0D /* PaymentProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960529E4C3BA007B4D0D /* PaymentProcessor.swift */; };
 		CCCE960829E4C3E1007B4D0D /* PaymentIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960729E4C3E1007B4D0D /* PaymentIntent.swift */; };
-		CCCE960A29E4CA2A007B4D0D /* PaymentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCE960929E4CA2A007B4D0D /* PaymentScreen.swift */; };
 		CCFE4BC329D366CA006BB842 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC229D366CA006BB842 /* RxRelay */; };
 		CCFE4BC529D366CA006BB842 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CCFE4BC429D366CA006BB842 /* RxSwift */; };
 		CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFE4BCA29D3B9E5006BB842 /* JSON.swift */; };
@@ -250,7 +249,6 @@
 		CCCE960129E4C381007B4D0D /* PaymentAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAssembly.swift; sourceTree = "<group>"; };
 		CCCE960529E4C3BA007B4D0D /* PaymentProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentProcessor.swift; sourceTree = "<group>"; };
 		CCCE960729E4C3E1007B4D0D /* PaymentIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentIntent.swift; sourceTree = "<group>"; };
-		CCCE960929E4CA2A007B4D0D /* PaymentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScreen.swift; sourceTree = "<group>"; };
 		CCFE4BCA29D3B9E5006BB842 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -298,7 +296,6 @@
 			children = (
 				A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */,
 				CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */,
-				CCCE960929E4CA2A007B4D0D /* PaymentScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1448,7 +1445,6 @@
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
-				CCCE960A29E4CA2A007B4D0D /* PaymentScreen.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */,
 				CCCE95E729E4A9EE007B4D0D /* CountryListErrorView.swift in Sources */,

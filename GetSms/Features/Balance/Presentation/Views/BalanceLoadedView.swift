@@ -9,8 +9,9 @@ import SwiftUI
 
 struct BalanceLoadedView: View {
     
+    @EnvironmentObject var viewModel: BalanceViewModel
+    
     let vo: BalanceVO
-    let pressAction: () -> Void
     
     var body: some View {
         VStack {
@@ -22,23 +23,31 @@ struct BalanceLoadedView: View {
             
             HStack(alignment: .center) {
                 
-                BalanceImage()
-                
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Баланс:")
-                        .font(.system(size: 15))
-                        .foregroundColor(Color("LilacColor"))
-                    
-                    Text(vo.balance)
-                        .font(.system(size: 16))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.white)
+                Button(action: {
+                    viewModel.reloadBalance()
+                }) {
+                    HStack {
+                        BalanceImage()
+                        
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Баланс:")
+                                .font(.system(size: 15))
+                                .foregroundColor(Color("LilacColor"))
+                            
+                            Text(vo.balance)
+                                .font(.system(size: 16))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color.white)
+                        }
+                        .padding(4)
+                    }
                 }
-                .padding(4)
                 
                 Spacer()
                 
-                Button(action: pressAction) {
+                Button(action: {
+                    viewModel.proceedToPayment()
+                }) {
                     Text("ПОПОЛНИТЬ")
                         .font(.system(size: 12))
                         .foregroundColor(
@@ -54,6 +63,7 @@ struct BalanceLoadedView: View {
                     )
                 )
             }
+            .frame(height: 60)
         }
     }
 }
@@ -62,8 +72,7 @@ struct BalanceLoadedView: View {
 struct BalanceLoadedView_Previews: PreviewProvider {
     static var previews: some View {
         BalanceLoadedView(
-            vo: BalanceVO(balance: "0.00 р."),
-            pressAction: {}
+            vo: BalanceVO(balance: "0.00 р.")
         )
         .background(Color("DarkBlueColor"))
     }

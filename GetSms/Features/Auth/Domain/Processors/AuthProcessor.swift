@@ -21,7 +21,7 @@ class AuthProcessor {
     // MARK: - Internal vars
     private let interactor: AuthBusinessLogic
     private let disposeBag = DisposeBag()
-    private var intentRelay = BehaviorRelay<Intent>(value: .Nothing)
+    private var intentRelay = BehaviorRelay<Intent>(value: .CheckApiKey)
     
     // MARK: - Init
     init(
@@ -66,7 +66,22 @@ extension AuthProcessor: AuthProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
-                case .Nothing, .Success, .Failure, .BlockingLoad:
+                case .CheckApiKey:
+                    self.interactor
+                        .getApiKey()
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onSuccess: { _ in
+                                self.fireIntent(intent: .Success)
+                            },
+                            onFailure: { error in
+                                self.fireIntent(intent: .ShowAuth)
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                case .ShowAuth, .Success, .Failure, .BlockingLoad:
                     break
                 }
                 

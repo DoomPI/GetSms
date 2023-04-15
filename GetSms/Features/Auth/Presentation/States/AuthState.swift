@@ -11,6 +11,8 @@ enum AuthState {
     
     case BlockingLoading
     
+    case Loaded
+    
     case SuccessfulAuth
     
     case FailedAuth

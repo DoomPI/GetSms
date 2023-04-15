@@ -16,6 +16,9 @@ struct AuthScreen: View {
     var body: some View {
         AuthView()
             .environmentObject(viewModel)
+            .onAppear {
+                viewModel.onViewAppear()
+            }
             .onReceive(viewModel.$state) { newState in
                 if case .SuccessfulAuth = newState {
                     withAnimation {

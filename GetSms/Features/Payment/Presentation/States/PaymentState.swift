@@ -9,4 +9,7 @@ enum PaymentState {
     
     case Idle
     
+    case Opened
+    
+    case Closed
 }

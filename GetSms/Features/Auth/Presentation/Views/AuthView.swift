@@ -18,6 +18,9 @@ struct AuthView: View {
             switch state {
                 
             case .Idle:
+                Spacer()
+                
+            case .Loaded:
                 WebView(url: "https://vak-sms.com/accounts/logout/?next=/accounts/login/", urlType: .Public)
                     .environmentObject(WebAssembly.assemble(
                         didFinish: viewModel.webViewDidFinish,
@@ -40,9 +43,6 @@ struct AuthView: View {
             withAnimation {
                 self.state = newState
             }
-        }
-        .onAppear {
-            viewModel.onViewAppear()
         }
     }
 }

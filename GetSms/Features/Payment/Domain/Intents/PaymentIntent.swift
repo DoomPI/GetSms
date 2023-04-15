@@ -8,4 +8,8 @@
 enum PaymentIntent {
     
     case Nothing
+    
+    case Open
+    
+    case Close
 }

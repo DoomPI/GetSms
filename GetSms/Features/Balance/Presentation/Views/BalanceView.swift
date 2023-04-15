@@ -18,32 +18,25 @@ struct BalanceView: View {
             switch state {
                 
             case .Loading:
-                BalanceLoadingView(
-                    pressAction: viewModel.proceedToPayment
-                )
+                BalanceLoadingView()
+                    .environmentObject(viewModel)
                 
             case .Loaded(let vo):
-                BalanceLoadedView(
-                    vo: vo,
-                    pressAction: viewModel.proceedToPayment
-                )
+                BalanceLoadedView(vo: vo)
+                    .environmentObject(viewModel)
                 
             case .Error:
                 BalanceErrorView()
                 
             case .ProceededToPayment:
-                BalanceLoadingView(
-                    pressAction: {}
-                )
+                BalanceLoadingView()
+                    .environmentObject(viewModel)
                 
             }
         }
         .background(Color("DarkBlueColor"))
         .onReceive(viewModel.$state) { newState in
             self.state = newState
-        }
-        .onAppear {
-            viewModel.onViewAppear()
         }
     }
 }
