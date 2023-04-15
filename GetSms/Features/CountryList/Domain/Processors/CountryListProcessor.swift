@@ -19,8 +19,16 @@ class CountryListProcessor {
     weak var handler: (any CountryListHandlerProtocol)?
     
     // MARK: - Internal vars
+    private let interactor: CountryListBusinessLogic
     private let disposeBag = DisposeBag()
     private var intentRelay = BehaviorRelay<Intent>(value: .LoadList)
+    
+    // MARK: - Init
+    init(
+        interactor: CountryListBusinessLogic
+    ) {
+        self.interactor = interactor
+    }
 }
 
 extension CountryListProcessor: CountryListProcessorProtocol {
@@ -40,6 +48,33 @@ extension CountryListProcessor: CountryListProcessorProtocol {
                 else { return }
                 
                 self.handleIntent(intent: intent)
+                
+                switch intent {
+                    
+                case .LoadList:
+                    self.interactor
+                        .getCountryList()
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onSuccess: { [weak self] countryList in
+                                self?.fireIntent(intent: .PresentList(model: countryList))
+                            },
+                            onFailure: { [weak self] error in
+                                self?.fireIntent(intent: .PresentError(error: error))
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                case .PresentList:
+                    break
+                    
+                case .SelectCountry:
+                    break
+                    
+                case .PresentError:
+                    break
+                }
                 
             }.disposed(by: disposeBag)
     }

@@ -16,18 +16,24 @@ extension AuthReducer: AuthReducerProtocol {
     func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
-        case .Nothing:
-            return currentState
-            
         case .BlockingLoad:
             return .BlockingLoading
+            
+        case .ShowAuth:
+            return .Loaded
             
         case .Success:
             return .SuccessfulAuth
             
         case .Failure:
             return .FailedAuth
-
+            
+        case .SaveApiKey:
+            return currentState
+            
+        case .CheckApiKey:
+            return currentState
+            
         }
     }
 }

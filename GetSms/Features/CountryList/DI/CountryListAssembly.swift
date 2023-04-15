@@ -8,7 +8,16 @@
 enum CountryListAssembly {
     
     static func assemble() -> CountryListViewModel {
-        let processor = CountryListProcessor()
+        let networkWorker = CountryListNetworkWorker()
+        let networkMapper = CountryListNetworkMapper()
+        let interactor = CountryListInteractor(
+            networkWorker: networkWorker,
+            networkMapper: networkMapper
+        )
+        
+        let processor = CountryListProcessor(
+            interactor: interactor
+        )
         
         let formatter = CountryListFormatter()
         let errorFormatter = CountryListErrorFormatter()
@@ -17,17 +26,9 @@ enum CountryListAssembly {
             errorFormatter: errorFormatter
         )
         
-        let networkWorker = CountryListNetworkWorker()
-        let networkMapper = CountryListNetworkMapper()
-        let interactor = CountryListInteractor(
-            networkWorker: networkWorker,
-            networkMapper: networkMapper
-        )
-        
         let viewModel = CountryListViewModel(
             processor: processor,
-            reducer: reducer,
-            interactor: interactor
+            reducer: reducer
         )
         processor.handler = viewModel
         

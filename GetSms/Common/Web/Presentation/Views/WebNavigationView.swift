@@ -35,8 +35,8 @@ struct WebNavigationView: View {
                     .imageScale(.medium)
             }
         }
-        .padding(8)
         .frame(height: 40)
+        .padding(8)
     }
 }
 

@@ -34,8 +34,5 @@ struct ServiceListView: View {
                 state = newState
             }
         }
-        .onAppear {
-            viewModel.onViewAppear()
-        }
     }
 }

@@ -39,8 +39,5 @@ struct CountryListView: View {
                 state = newState
             }
         }
-        .onAppear {
-            viewModel.onViewAppear()
-        }
     }
 }

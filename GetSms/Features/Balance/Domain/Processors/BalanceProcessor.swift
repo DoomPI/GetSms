@@ -19,8 +19,16 @@ class BalanceProcessor {
     weak var handler: (any BalanceHandlerProtocol)?
     
     // MARK: - Internal vars
+    private let interactor: BalanceBusinessLogic
     private let intentRelay = BehaviorRelay<Intent>(value: .Load)
     private let disposeBag = DisposeBag()
+    
+    // MARK: - Init
+    init(
+        interactor: BalanceBusinessLogic
+    ) {
+        self.interactor = interactor
+    }
 }
 
 extension BalanceProcessor: BalanceProcessorProtocol {
@@ -36,6 +44,34 @@ extension BalanceProcessor: BalanceProcessorProtocol {
                 else { return }
                 
                 self.handleIntent(intent: intent)
+                
+                switch intent {
+                    
+                case .Load:
+                    self.interactor
+                        .getBalance()
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onSuccess: { [weak self] balance in
+                                self?.fireIntent(intent: .PresentBalance(model: balance))
+                            },
+                            onFailure: { [weak self] _ in
+                                self?.fireIntent(intent: .PresentError)
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                case .PresentBalance:
+                    break
+                    
+                case .PresentError:
+                    break
+                    
+                case .ProceedToPayment:
+                    break
+                    
+                }
                 
             }.disposed(by: disposeBag)
     }

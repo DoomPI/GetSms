@@ -10,6 +10,8 @@ import RxSwift
 protocol AuthBusinessLogic {
     
     func saveToKeyChain(apiKey: ApiKey) -> Completable
+    
+    func getApiKey() -> Single<ApiKey>
 }
 
 class AuthInteractor {
@@ -27,5 +29,9 @@ extension AuthInteractor: AuthBusinessLogic {
     
     func saveToKeyChain(apiKey: ApiKey) -> Completable {
         return cacheWorker.saveToKeyChain(apiKey: apiKey)
+    }
+    
+    func getApiKey() -> Single<ApiKey> {
+        return cacheWorker.getApiKey()
     }
 }

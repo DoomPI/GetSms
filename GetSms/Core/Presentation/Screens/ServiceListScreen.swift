@@ -12,6 +12,11 @@ struct ServiceListScreen: View {
     @ObservedObject var balanceViewModel = BalanceAssembly.assemble()
     @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
     @ObservedObject var serviceListViewModel = ServiceListAssembly.assemble()
+    @ObservedObject var paymentViewModel = PaymentAssembly.assemble()
+    
+    @State private var isPaymentBottomsheetPresented = false
+    
+    @Binding var navigationState: NavigationState
  
     var body: some View {
         VStack {
@@ -27,9 +32,41 @@ struct ServiceListScreen: View {
         }
         .padding(8)
         .background(Color("DarkBlueColor"))
+        .sheet(isPresented: $isPaymentBottomsheetPresented){
+            PaymentView()
+                .environmentObject(paymentViewModel)
+        }
+        .onAppear {
+            balanceViewModel.onViewAppear()
+            countryListViewModel.onViewAppear()
+            serviceListViewModel.onViewAppear()
+            paymentViewModel.onViewAppear()
+        }
+        .onReceive(balanceViewModel.$state) { newState in
+            if case .ProceededToPayment = newState {
+                paymentViewModel.openPayment()
+            }
+        }
         .onReceive(countryListViewModel.$state) { newState in
-            if case .Loaded(let vo) = newState{
+            if case .Loaded(let vo) = newState {
                 serviceListViewModel.loadServiceList(countryCode: vo.countries[vo.selectedCountryIndex].code)
+            }
+        }
+        .onReceive(paymentViewModel.$state) { newState in
+            if case .Opened = newState {
+                if !isPaymentBottomsheetPresented {
+                    isPaymentBottomsheetPresented = true
+                }
+            } else if case .Closed = newState {
+                if isPaymentBottomsheetPresented {
+                    isPaymentBottomsheetPresented = false
+                }
+                balanceViewModel.reloadBalance()
+            }
+        }
+        .onChange(of: isPaymentBottomsheetPresented) { isPresented in
+            if !isPresented {
+                paymentViewModel.closePayment()
             }
         }
     }

@@ -1,17 +1,17 @@
 //
-//  AuthView.swift
+//  PaymentView.swift
 //  GetSms
 //
-//  Created by Роман Ломтев on 02.04.2023.
+//  Created by Роман Ломтев on 11.04.2023.
 //
 
 import SwiftUI
 
-struct AuthView: View {
+struct PaymentView: View {
     
-    @EnvironmentObject var viewModel: AuthViewModel
+    @EnvironmentObject var viewModel: PaymentViewModel
     
-    @State private var state: AuthState = .Idle
+    @State private var state: PaymentState = .Idle
     
     var body: some View {
         ZStack {
@@ -20,21 +20,16 @@ struct AuthView: View {
             case .Idle:
                 Spacer()
                 
-            case .Loaded:
-                WebView(url: "https://vak-sms.com/accounts/logout/?next=/accounts/login/", urlType: .Public)
+            case .Opened:
+                WebView(url: "https://vak-sms.com/pay/", urlType: .Public)
                     .environmentObject(WebAssembly.assemble(
                         didFinish: viewModel.webViewDidFinish,
                         decidePolicyFor: viewModel.webViewDecidePolicyFor
                     ))
                 
-            case .BlockingLoading:
-                AuthBlockingLoadingView()
-                
-            case .SuccessfulAuth:
+            case .Closed:
                 Spacer()
-                
-            case .FailedAuth:
-                Spacer()
+    
             }
         }
         .background(Color("DarkerBlueColor"))
@@ -46,3 +41,4 @@ struct AuthView: View {
         }
     }
 }
+

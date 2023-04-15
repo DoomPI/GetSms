@@ -7,7 +7,6 @@
 
 import WebKit
 import SwiftUI
-import RxSwift
 
 protocol AuthHandlerProtocol: Handler where Intent == AuthIntent {
 }
@@ -21,18 +20,14 @@ class AuthViewModel: ObservableObject {
     private let urlLk = "https://vak-sms.com/lk/"
     private let processor: any AuthProcessorProtocol
     private let reducer: any AuthReducerProtocol
-    private let interacor: AuthBusinessLogic
-    private let disposeBag = DisposeBag()
     
     // MARK: - Init
     init(
         processor: any AuthProcessorProtocol,
-        reducer: any AuthReducerProtocol,
-        interactor: AuthBusinessLogic
+        reducer: any AuthReducerProtocol
     ) {
         self.processor = processor
         self.reducer = reducer
-        self.interacor = interactor
     }
     
     func onViewAppear() {
@@ -46,18 +41,7 @@ class AuthViewModel: ObservableObject {
                 switch result {
                     case .success(let value):
                         if let apiKeyString = value as? String {
-                            let apiKey = ApiKey(apiKey: apiKeyString)
-                            self.interacor
-                                .saveToKeyChain(apiKey: apiKey)
-                                .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
-                                .observe(on: MainScheduler.instance)
-                                .subscribe(
-                                    onCompleted: self.success,
-                                    onError: { error in
-                                        print(error)
-                                    }
-                                )
-                                .disposed(by: self.disposeBag)
+                            self.processor.fireIntent(intent: .SaveApiKey(apiKey: ApiKey(apiKey: apiKeyString)))
                         }
                                 
                     case .failure(let error):
@@ -73,16 +57,15 @@ class AuthViewModel: ObservableObject {
             processor.fireIntent(intent: .BlockingLoad)
         }
     }
-    
-    private func success() {
-        processor.fireIntent(intent: .Success)
-    }
 }
 
 extension AuthViewModel: AuthHandlerProtocol {
     
     func handle(intent: Intent) {
-        let newState = self.reducer.reduce(currentState: state, intent: intent)
+        let newState = self.reducer.reduce(
+            currentState: state,
+            intent: intent
+        )
         self.state = newState
     }
 }

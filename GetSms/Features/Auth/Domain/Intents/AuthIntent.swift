@@ -7,11 +7,15 @@
 
 enum AuthIntent {
     
-    case Nothing
+    case ShowAuth
     
     case BlockingLoad
     
     case Success
     
     case Failure
+    
+    case SaveApiKey(apiKey: ApiKey)
+    
+    case CheckApiKey
 }

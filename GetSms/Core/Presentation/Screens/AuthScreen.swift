@@ -10,28 +10,20 @@ import SwiftUI
 struct AuthScreen: View {
     
     @ObservedObject var viewModel = AuthAssembly.assemble()
+    
     @Binding var navigationState: NavigationState
     
     var body: some View {
         AuthView()
             .environmentObject(viewModel)
+            .onAppear {
+                viewModel.onViewAppear()
+            }
             .onReceive(viewModel.$state) { newState in
-                switch newState {
-                    
-                case .Idle:
-                    break
-                    
-                case .BlockingLoading:
-                    break
-                    
-                case .SuccessfulAuth:
+                if case .SuccessfulAuth = newState {
                     withAnimation {
                         navigationState = .ServiceList
                     }
-                    
-                case .FailedAuth:
-                    break
-
                 }
             }
     }

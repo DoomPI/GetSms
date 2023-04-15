@@ -21,7 +21,8 @@ struct ContentView: View {
                 AuthScreen(navigationState: $navigationState)
                 
             case .ServiceList:
-                ServiceListScreen()
+                ServiceListScreen(navigationState: $navigationState)
+
             }
         }
     }

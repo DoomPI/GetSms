@@ -12,4 +12,6 @@ enum BalanceState {
     case Loaded(vo: BalanceVO)
     
     case Error
+    
+    case ProceededToPayment
 }

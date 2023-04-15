@@ -19,8 +19,16 @@ class AuthProcessor {
     weak var handler: (any AuthHandlerProtocol)?
     
     // MARK: - Internal vars
+    private let interactor: AuthBusinessLogic
     private let disposeBag = DisposeBag()
-    private var intentRelay = BehaviorRelay<Intent>(value: .Nothing)
+    private var intentRelay = BehaviorRelay<Intent>(value: .CheckApiKey)
+    
+    // MARK: - Init
+    init(
+        interactor: AuthBusinessLogic
+    ) {
+        self.interactor = interactor
+    }
 }
 
 extension AuthProcessor: AuthProcessorProtocol {
@@ -40,6 +48,42 @@ extension AuthProcessor: AuthProcessorProtocol {
                 else { return }
                 
                 self.handleIntent(intent: intent)
+                
+                switch intent {
+                    
+                case .SaveApiKey(let apiKey):
+                    self.interactor
+                        .saveToKeyChain(apiKey: apiKey)
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onCompleted: {
+                                self.fireIntent(intent: .Success)
+                            },
+                            onError: { error in
+                                print(error)
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                case .CheckApiKey:
+                    self.interactor
+                        .getApiKey()
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onSuccess: { _ in
+                                self.fireIntent(intent: .Success)
+                            },
+                            onFailure: { error in
+                                self.fireIntent(intent: .ShowAuth)
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
+                case .ShowAuth, .Success, .Failure, .BlockingLoad:
+                    break
+                }
                 
             }.disposed(by: disposeBag)
     }

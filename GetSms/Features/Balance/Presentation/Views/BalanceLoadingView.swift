@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BalanceLoadingView: View {
     
-    let pressAction: () -> Void
+    @EnvironmentObject var viewModel: BalanceViewModel
     
     var body: some View {
         VStack {
@@ -28,13 +28,15 @@ struct BalanceLoadingView: View {
                         .font(.system(size: 15))
                     
                     RoundedRectangle(cornerRadius: 8)
-                        .frame(width: 50, height: 16)
+                        .frame(width: 50, height: 14)
                 }
                 .padding(4)
                 
                 Spacer()
                 
-                Button(action: pressAction) {
+                Button(action: {
+                    viewModel.proceedToPayment()
+                }) {
                     Text("ПОПОЛНИТЬ")
                         .font(.system(size: 12))
                         .fontWeight(.bold)
@@ -46,6 +48,7 @@ struct BalanceLoadingView: View {
                     )
                 )
             }
+            .frame(height: 60)
         }
         .shimmer(
             tint: .gray.opacity(0.3),
@@ -57,9 +60,7 @@ struct BalanceLoadingView: View {
 
 struct BalanceLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        BalanceLoadingView(
-            pressAction: {}
-        )
+        BalanceLoadingView()
         .background(Color("DarkBlueColor"))
     }
 }

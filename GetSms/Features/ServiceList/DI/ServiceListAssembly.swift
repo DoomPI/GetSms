@@ -28,11 +28,12 @@ enum ServiceListAssembly {
             formatter: formatter,
             errorFormatter: errorFormatter
         )
-        let processor = ServiceListProcessor()
+        let processor = ServiceListProcessor(
+            interactor: interactor
+        )
         let viewModel = ServiceListViewModel(
             processor: processor,
-            reducer: reducer,
-            interactor: interactor
+            reducer: reducer
         )
         processor.handler = viewModel
         
