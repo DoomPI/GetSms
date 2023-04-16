@@ -16,25 +16,13 @@ protocol BalanceCacheWorkingLogic {
 class BalanceCacheWorker {
     
     // MARK: - Internal vars
-    private static let keychainHelper = KeychainHelper.shared
+    private static let keychainWorker = KeychainWorker.shared
 }
 
 extension BalanceCacheWorker: BalanceCacheWorkingLogic {
     
     func getApiKey() -> Single<ApiKey> {
-        Single<ApiKey>.create { subscriber in
-            if let data = Self.keychainHelper.read(
-                service: apiKeyService,
-                account: account,
-                type: ApiKey.self
-            ) {
-                subscriber(SingleEvent.success(data))
-            } else {
-                subscriber(SingleEvent.failure(ApiKeyError.NoApiKeyStoredError))
-            }
-            
-            return Disposables.create()
-        }
+        return Self.keychainWorker.getApiKey()
     }
 }
 

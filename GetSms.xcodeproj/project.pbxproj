@@ -10,7 +10,6 @@
 		A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */; };
 		A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885643029E2E7D3001C1F39 /* ApiKey.swift */; };
 		A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */; };
-		CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608B629D758D4005A815C /* ServiceSearchView.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
 		CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D129D887AC005A815C /* JSONExtractor.swift */; };
 		CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */; };
@@ -49,6 +48,24 @@
 		CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9529D0CC3700C43EF0 /* ServiceListProcessor.swift */; };
 		CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9729D0CC5000C43EF0 /* ServiceListReducer.swift */; };
 		CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9929D0DAB000C43EF0 /* Handler.swift */; };
+		CC3C133429EB1A1400397F0F /* NumberNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133329EB1A1400397F0F /* NumberNetworkWorker.swift */; };
+		CC3C133929EB1AC000397F0F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133829EB1AC000397F0F /* SearchView.swift */; };
+		CC3C133B29EB1AF800397F0F /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133A29EB1AF800397F0F /* SearchPlaceholderView.swift */; };
+		CC3C134529EB2E9800397F0F /* NumberNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C134429EB2E9800397F0F /* NumberNetworkDTO.swift */; };
+		CC3C134929EB304A00397F0F /* Number.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C134829EB304A00397F0F /* Number.swift */; };
+		CC3C134B29EB312600397F0F /* NumberDataList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C134A29EB312600397F0F /* NumberDataList.swift */; };
+		CC3C134D29EB31B300397F0F /* NumberNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C134C29EB31B300397F0F /* NumberNetworkMapper.swift */; };
+		CC3C134F29EB367900397F0F /* SmsListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C134E29EB367900397F0F /* SmsListNetworkDTO.swift */; };
+		CC3C135129EB398400397F0F /* SmsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C135029EB398400397F0F /* SmsList.swift */; };
+		CC3C135329EB39A400397F0F /* SmsListNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C135229EB39A400397F0F /* SmsListNetworkMapper.swift */; };
+		CC3C135729EB3A9300397F0F /* NumberCacheDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C135629EB3A9300397F0F /* NumberCacheDTO.swift */; };
+		CC3C135929EB3B2C00397F0F /* NumberCacheMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C135829EB3B2C00397F0F /* NumberCacheMapper.swift */; };
+		CC3C135B29EB3C7B00397F0F /* NumberCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C135A29EB3C7B00397F0F /* NumberCacheWorker.swift */; };
+		CC3C135E29EB3E2700397F0F /* CacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C135D29EB3E2700397F0F /* CacheWorker.swift */; };
+		CC3C136029EB43D800397F0F /* NumberListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C135F29EB43D800397F0F /* NumberListInteractor.swift */; };
+		CC3C136229EB45A700397F0F /* SmsListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136129EB45A700397F0F /* SmsListNetworkWorker.swift */; };
+		CC3C136429EB47C200397F0F /* KeychainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136329EB47C200397F0F /* KeychainWorker.swift */; };
+		CC3C136629EB4EE800397F0F /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136529EB4EE800397F0F /* NumberData.swift */; };
 		CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123329C78D930085324A /* GetSmsApp.swift */; };
 		CC5E123629C78D930085324A /* ServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ServiceListView.swift */; };
 		CC5E123829C78D940085324A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123729C78D940085324A /* Assets.xcassets */; };
@@ -64,7 +81,6 @@
 		CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C229D8D5AA00739C44 /* CountryView.swift */; };
 		CCCD15C729D8FBA800739C44 /* CountryPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */; };
 		CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */; };
-		CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */; };
 		CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */; };
 		CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */; };
 		CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCD15DB29D9E27E00739C44 /* AuthView.swift */; };
@@ -140,7 +156,6 @@
 		A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		A885643029E2E7D3001C1F39 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListScreen.swift; sourceTree = "<group>"; };
-		CC0608B629D758D4005A815C /* ServiceSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchView.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
 		CC0608D129D887AC005A815C /* JSONExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtractor.swift; sourceTree = "<group>"; };
 		CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
@@ -179,6 +194,24 @@
 		CC1EBC9529D0CC3700C43EF0 /* ServiceListProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListProcessor.swift; sourceTree = "<group>"; };
 		CC1EBC9729D0CC5000C43EF0 /* ServiceListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListReducer.swift; sourceTree = "<group>"; };
 		CC1EBC9929D0DAB000C43EF0 /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
+		CC3C133329EB1A1400397F0F /* NumberNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberNetworkWorker.swift; sourceTree = "<group>"; };
+		CC3C133829EB1AC000397F0F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		CC3C133A29EB1AF800397F0F /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
+		CC3C134429EB2E9800397F0F /* NumberNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberNetworkDTO.swift; sourceTree = "<group>"; };
+		CC3C134829EB304A00397F0F /* Number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Number.swift; sourceTree = "<group>"; };
+		CC3C134A29EB312600397F0F /* NumberDataList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDataList.swift; sourceTree = "<group>"; };
+		CC3C134C29EB31B300397F0F /* NumberNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberNetworkMapper.swift; sourceTree = "<group>"; };
+		CC3C134E29EB367900397F0F /* SmsListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsListNetworkDTO.swift; sourceTree = "<group>"; };
+		CC3C135029EB398400397F0F /* SmsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsList.swift; sourceTree = "<group>"; };
+		CC3C135229EB39A400397F0F /* SmsListNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsListNetworkMapper.swift; sourceTree = "<group>"; };
+		CC3C135629EB3A9300397F0F /* NumberCacheDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCacheDTO.swift; sourceTree = "<group>"; };
+		CC3C135829EB3B2C00397F0F /* NumberCacheMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCacheMapper.swift; sourceTree = "<group>"; };
+		CC3C135A29EB3C7B00397F0F /* NumberCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberCacheWorker.swift; sourceTree = "<group>"; };
+		CC3C135D29EB3E2700397F0F /* CacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheWorker.swift; sourceTree = "<group>"; };
+		CC3C135F29EB43D800397F0F /* NumberListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListInteractor.swift; sourceTree = "<group>"; };
+		CC3C136129EB45A700397F0F /* SmsListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsListNetworkWorker.swift; sourceTree = "<group>"; };
+		CC3C136329EB47C200397F0F /* KeychainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWorker.swift; sourceTree = "<group>"; };
+		CC3C136529EB4EE800397F0F /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
 		CC5E123029C78D930085324A /* GetSms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E123329C78D930085324A /* GetSmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSmsApp.swift; sourceTree = "<group>"; };
 		CC5E123529C78D930085324A /* ServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListView.swift; sourceTree = "<group>"; };
@@ -195,7 +228,6 @@
 		CCCD15C229D8D5AA00739C44 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		CCCD15C629D8FBA800739C44 /* CountryPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPlaceholderView.swift; sourceTree = "<group>"; };
 		CCCD15C829D9054E00739C44 /* CountryListDropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListDropdownView.swift; sourceTree = "<group>"; };
-		CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSearchPlaceholderView.swift; sourceTree = "<group>"; };
 		CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
 		CCCD15D829D9DDFA00739C44 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		CCCD15DB29D9E27E00739C44 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -265,13 +297,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A885642D29E2E6C9001C1F39 /* KeyChain */ = {
+		A885642D29E2E6C9001C1F39 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
 				A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */,
 				A885643029E2E7D3001C1F39 /* ApiKey.swift */,
 			);
-			path = KeyChain;
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		A8C9880729D9CB7B000D1249 /* Core */ = {
@@ -523,6 +555,7 @@
 			children = (
 				CC1EBC6B29CFBA5A00C43EF0 /* DTO */,
 				CC1EBC6A29CFBA5500C43EF0 /* Mappers */,
+				CC3C133329EB1A1400397F0F /* NumberNetworkWorker.swift */,
 				CC1EBC6E29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift */,
 			);
 			path = Network;
@@ -531,6 +564,7 @@
 		CC1EBC6A29CFBA5500C43EF0 /* Mappers */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C134C29EB31B300397F0F /* NumberNetworkMapper.swift */,
 				CC1EBC7629CFC95400C43EF0 /* ServiceListNetworkMapper.swift */,
 			);
 			path = Mappers;
@@ -539,6 +573,7 @@
 		CC1EBC6B29CFBA5A00C43EF0 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C134429EB2E9800397F0F /* NumberNetworkDTO.swift */,
 				CC1EBC7429CFC7C400C43EF0 /* ServiceNetworkDTO.swift */,
 				CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */,
 			);
@@ -568,8 +603,6 @@
 				CC5E123529C78D930085324A /* ServiceListView.swift */,
 				CC1EBC8D29D07E0000C43EF0 /* ServiceView.swift */,
 				CC1EBC8F29D0B60E00C43EF0 /* ServicePlaceholderView.swift */,
-				CC0608B629D758D4005A815C /* ServiceSearchView.swift */,
-				CCCD15CB29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift */,
 				CCCE95EA29E4AA7A007B4D0D /* ServiceListLoadingView.swift */,
 				CCCE95EC29E4AABD007B4D0D /* ServiceListLoadedView.swift */,
 				CCCE95EE29E4ABD3007B4D0D /* ServiceListErrorView.swift */,
@@ -618,6 +651,210 @@
 			path = Processors;
 			sourceTree = "<group>";
 		};
+		CC3C132A29EB180100397F0F /* NumberList */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C132E29EB18E300397F0F /* Presentation */,
+				CC3C132D29EB18DD00397F0F /* Data */,
+				CC3C132C29EB18D800397F0F /* Domain */,
+				CC3C132B29EB180900397F0F /* DI */,
+			);
+			path = NumberList;
+			sourceTree = "<group>";
+		};
+		CC3C132B29EB180900397F0F /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		CC3C132C29EB18D800397F0F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C136829EB706F00397F0F /* Processors */,
+				CC3C136729EB705B00397F0F /* Intents */,
+				CC3C134729EB2FA300397F0F /* Interactors */,
+				CC3C134629EB2F9E00397F0F /* Models */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CC3C132D29EB18DD00397F0F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C132F29EB18EE00397F0F /* Workers */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CC3C132E29EB18E300397F0F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C136C29EB717E00397F0F /* Formatters */,
+				CC3C136B29EB709D00397F0F /* ViewModels */,
+				CC3C136A29EB708700397F0F /* Views */,
+				CC3C136929EB708000397F0F /* States */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CC3C132F29EB18EE00397F0F /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C134129EB2E0400397F0F /* Cache */,
+				CC3C133029EB18FF00397F0F /* Network */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		CC3C133029EB18FF00397F0F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C133229EB194C00397F0F /* Mappers */,
+				CC3C133129EB194800397F0F /* DTO */,
+				CC3C136129EB45A700397F0F /* SmsListNetworkWorker.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CC3C133129EB194800397F0F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C134E29EB367900397F0F /* SmsListNetworkDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC3C133229EB194C00397F0F /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C135229EB39A400397F0F /* SmsListNetworkMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		CC3C133529EB1A8B00397F0F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C133629EB1A9100397F0F /* Presentation */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CC3C133629EB1A9100397F0F /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C133729EB1A9700397F0F /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		CC3C133729EB1A9700397F0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C133829EB1AC000397F0F /* SearchView.swift */,
+				CC3C133A29EB1AF800397F0F /* SearchPlaceholderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC3C134129EB2E0400397F0F /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C134329EB2E1300397F0F /* DTO */,
+				CC3C134229EB2E0C00397F0F /* Mappers */,
+				CC3C135A29EB3C7B00397F0F /* NumberCacheWorker.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CC3C134229EB2E0C00397F0F /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C135829EB3B2C00397F0F /* NumberCacheMapper.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		CC3C134329EB2E1300397F0F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C135629EB3A9300397F0F /* NumberCacheDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		CC3C134629EB2F9E00397F0F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C134829EB304A00397F0F /* Number.swift */,
+				CC3C134A29EB312600397F0F /* NumberDataList.swift */,
+				CC3C135029EB398400397F0F /* SmsList.swift */,
+				CC3C136529EB4EE800397F0F /* NumberData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CC3C134729EB2FA300397F0F /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C135F29EB43D800397F0F /* NumberListInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		CC3C135C29EB3E1200397F0F /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C135D29EB3E2700397F0F /* CacheWorker.swift */,
+				CC3C136329EB47C200397F0F /* KeychainWorker.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		CC3C136729EB705B00397F0F /* Intents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Intents;
+			sourceTree = "<group>";
+		};
+		CC3C136829EB706F00397F0F /* Processors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Processors;
+			sourceTree = "<group>";
+		};
+		CC3C136929EB708000397F0F /* States */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		CC3C136A29EB708700397F0F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC3C136B29EB709D00397F0F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		CC3C136C29EB717E00397F0F /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Formatters;
+			sourceTree = "<group>";
+		};
 		CC5E122729C78D930085324A = {
 			isa = PBXGroup;
 			children = (
@@ -659,6 +896,8 @@
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C133529EB1A8B00397F0F /* Search */,
+				CC3C132A29EB180100397F0F /* NumberList */,
 				CCCE95F029E4B638007B4D0D /* Payment */,
 				CCCE95A929E3700A007B4D0D /* Balance */,
 				CCCD15CF29D9DD0D00739C44 /* Auth */,
@@ -692,6 +931,7 @@
 		CC9E158329CF8D2D00237F71 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C135C29EB3E1200397F0F /* Cache */,
 				CC9E158429CF8D3400237F71 /* Network */,
 			);
 			path = Workers;
@@ -1258,7 +1498,7 @@
 		CCFE4BCC29D74769006BB842 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A885642D29E2E6C9001C1F39 /* KeyChain */,
+				A885642D29E2E6C9001C1F39 /* Keychain */,
 				CC9E158329CF8D2D00237F71 /* Workers */,
 			);
 			path = Data;
@@ -1350,11 +1590,15 @@
 				CC1EBC8429CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift in Sources */,
 				CCCE95BA29E370B8007B4D0D /* BalanceVO.swift in Sources */,
 				CCCE95B429E3707A007B4D0D /* BalanceState.swift in Sources */,
+				CC3C136229EB45A700397F0F /* SmsListNetworkWorker.swift in Sources */,
 				CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */,
 				CC0608EB29D896E6005A815C /* CountryListViewModel.swift in Sources */,
+				CC3C136629EB4EE800397F0F /* NumberData.swift in Sources */,
 				CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */,
 				CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */,
+				CC3C133429EB1A1400397F0F /* NumberNetworkWorker.swift in Sources */,
 				CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */,
+				CC3C135129EB398400397F0F /* SmsList.swift in Sources */,
 				CCCE95B829E370B2007B4D0D /* BalanceViewModel.swift in Sources */,
 				CCCE958F29E2FD66007B4D0D /* AuthState.swift in Sources */,
 				CC9E158C29CF8DEF00237F71 /* Processor.swift in Sources */,
@@ -1371,22 +1615,29 @@
 				CC0608FB29D89833005A815C /* Country.swift in Sources */,
 				CCCE95DB29E486AE007B4D0D /* BalanceReducer.swift in Sources */,
 				CCCE958429E2E935007B4D0D /* ContentView.swift in Sources */,
+				CC3C134B29EB312600397F0F /* NumberDataList.swift in Sources */,
 				CCCE95A329E360D6007B4D0D /* AuthInteractor.swift in Sources */,
 				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
 				CCCE956A29E1F6C7007B4D0D /* WebAssembly.swift in Sources */,
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
 				CCCE95EB29E4AA7A007B4D0D /* ServiceListLoadingView.swift in Sources */,
+				CC3C136029EB43D800397F0F /* NumberListInteractor.swift in Sources */,
 				CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */,
+				CC3C135E29EB3E2700397F0F /* CacheWorker.swift in Sources */,
 				CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */,
+				CC3C133B29EB1AF800397F0F /* SearchPlaceholderView.swift in Sources */,
 				CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */,
+				CC3C134929EB304A00397F0F /* Number.swift in Sources */,
 				CC0608ED29D896ED005A815C /* CountryListState.swift in Sources */,
 				CCCE95E929E4AA37007B4D0D /* CountryListLoadingView.swift in Sources */,
 				CCCD15DF29D9E32000739C44 /* WebContentView.swift in Sources */,
 				CCCD15CE29D9DC9F00739C44 /* AuthScreen.swift in Sources */,
 				CC9E15A829CF944C00237F71 /* ServiceListViewModel.swift in Sources */,
 				CCCE95EF29E4ABD3007B4D0D /* ServiceListErrorView.swift in Sources */,
+				CC3C135B29EB3C7B00397F0F /* NumberCacheWorker.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
 				CCCE95D829E391DC007B4D0D /* BalanceCacheWorker.swift in Sources */,
+				CC3C136429EB47C200397F0F /* KeychainWorker.swift in Sources */,
 				CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */,
 				CC06090529D8A1C3005A815C /* CountryListNetworkDTO.swift in Sources */,
 				CC9E15A329CF93F400237F71 /* ServiceList.swift in Sources */,
@@ -1403,6 +1654,7 @@
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CCCE95D629E38C7A007B4D0D /* BalanceNetworkMapper.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
+				CC3C135729EB3A9300397F0F /* NumberCacheDTO.swift in Sources */,
 				CCCE960629E4C3BA007B4D0D /* PaymentProcessor.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
 				CCCE960029E4C376007B4D0D /* PaymentView.swift in Sources */,
@@ -1418,9 +1670,9 @@
 				CCCE95E329E4A879007B4D0D /* BalanceErrorView.swift in Sources */,
 				CC06090B29D8BAE3005A815C /* CountryListErrorFormatter.swift in Sources */,
 				CC06090129D89D28005A815C /* CountryListProcessor.swift in Sources */,
-				CC0608B729D758D4005A815C /* ServiceSearchView.swift in Sources */,
 				CC06090929D8B0E9005A815C /* CountryListErrorVO.swift in Sources */,
 				CCCE957E29E2CAF3007B4D0D /* AuthWebScripts.swift in Sources */,
+				CC3C135329EB39A400397F0F /* SmsListNetworkMapper.swift in Sources */,
 				CCCE95D229E37789007B4D0D /* BalanceNetworkWorker.swift in Sources */,
 				CC1EBC6F29CFBAAD00C43EF0 /* ServiceListNetworkWorker.swift in Sources */,
 				CCCE95FE29E4C36F007B4D0D /* PaymentViewModel.swift in Sources */,
@@ -1432,9 +1684,9 @@
 				CC0608FF29D89D1D005A815C /* CountryListInteractor.swift in Sources */,
 				CCCE95ED29E4AABD007B4D0D /* ServiceListLoadedView.swift in Sources */,
 				CCCD15E629DA1CAE00739C44 /* WebNavigationView.swift in Sources */,
+				CC3C134D29EB31B300397F0F /* NumberNetworkMapper.swift in Sources */,
 				CCCE957729E20381007B4D0D /* WebProcessor.swift in Sources */,
 				CCCD15E429DA0D8400739C44 /* URLType.swift in Sources */,
-				CCCD15CC29D9C3FC00739C44 /* ServiceSearchPlaceholderView.swift in Sources */,
 				CCCE95BC29E370BE007B4D0D /* BalanceFormatter.swift in Sources */,
 				CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */,
 				CCCE95FC29E4C368007B4D0D /* PaymentState.swift in Sources */,
@@ -1445,10 +1697,14 @@
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
+				CC3C135929EB3B2C00397F0F /* NumberCacheMapper.swift in Sources */,
+				CC3C134F29EB367900397F0F /* SmsListNetworkDTO.swift in Sources */,
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */,
 				CCCE95E729E4A9EE007B4D0D /* CountryListErrorView.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
+				CC3C134529EB2E9800397F0F /* NumberNetworkDTO.swift in Sources */,
+				CC3C133929EB1AC000397F0F /* SearchView.swift in Sources */,
 				A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */,
 				CCCE95BE29E370C7007B4D0D /* BalanceAssembly.swift in Sources */,
 				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,

@@ -41,6 +41,10 @@ class ServiceListViewModel: ObservableObject {
         let searchText = inputText.trimmingCharacters(in: .whitespaces).lowercased()
         processor.fireIntent(intent: .SearchService(searchText: searchText))
     }
+    
+    func purchaseNumber(serviceCode: String) {
+        processor.fireIntent(intent: .PurchaseNumber(serviceCode: serviceCode))
+    }
 }
 
 extension ServiceListViewModel: ServiceListHandlerProtocol {

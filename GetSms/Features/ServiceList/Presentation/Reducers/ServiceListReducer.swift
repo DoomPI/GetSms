@@ -43,6 +43,10 @@ extension ServiceListReducer: ServiceListReducerProtocol {
             
         case .PresentError(let error):
             return .Error(vo: errorFormatter.format(error: error))
+            
+        case .PurchaseNumber:
+            return currentState
+    
         }
     }
 }

@@ -1,13 +1,15 @@
 //
-//  ServiceSearchPlaceholderView.swift
+//  SearchPlaceholderView.swift
 //  GetSms
 //
-//  Created by Роман Ломтев on 02.04.2023.
+//  Created by Роман Ломтев on 15.04.2023.
 //
 
 import SwiftUI
 
-struct ServiceSearchPlaceholderView: View {
+struct SearchPlaceholderView: View {
+    
+    let hint: String
     
     var body: some View {
         HStack(alignment: .center, spacing: 12) {
@@ -15,7 +17,7 @@ struct ServiceSearchPlaceholderView: View {
                 .font(.system(size: 24))
                 .foregroundColor(Color("PinkColor"))
             
-            Text("Поиск сервиса")
+            Text(hint)
                 .font(.system(size: 20))
                 .fontWeight(.bold)
                 .foregroundColor(Color("GrayColor"))
@@ -37,6 +39,9 @@ struct ServiceSearchPlaceholderView: View {
 
 struct ServiceSearchPlaceholderView_Previews: PreviewProvider {
     static var previews: some View {
-        ServiceSearchPlaceholderView()
+        SearchPlaceholderView(
+            hint: "Поиск сервиса"
+        )
     }
 }
+

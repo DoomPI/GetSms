@@ -16,4 +16,6 @@ enum ServiceListIntent {
     case PresentList(model: ServiceList)
     
     case PresentError(error: Error)
+    
+    case PurchaseNumber(serviceCode: String)
 }

@@ -16,7 +16,7 @@ class ServiceListNetworkMapper {
         countryCode: String
     ) -> ServiceList {
         let services = dto.keys.indices.map { index in
-            let serviceCode = dto.keys[index]
+            let serviceCode = dto.keys[index].lowercased()
             let serviceDto = dto.values[index][0]
             return fromDto(
                 code: serviceCode,

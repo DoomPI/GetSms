@@ -111,6 +111,7 @@ struct ServiceView_Previews: PreviewProvider {
         VStack {
             ServiceView(
                 vo: ServiceVO(
+                    code: "vk",
                     name: "VK - MailRu",
                     imageURL: URL(
                         string: "https://vak-sms.com/static/service/mr.png"

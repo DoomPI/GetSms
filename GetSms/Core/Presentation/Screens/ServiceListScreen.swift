@@ -15,6 +15,7 @@ struct ServiceListScreen: View {
     @ObservedObject var paymentViewModel = PaymentAssembly.assemble()
     
     @State private var isPaymentBottomsheetPresented = false
+    @State private var isSearchViewLoading = false
     
     @Binding var navigationState: NavigationState
  
@@ -26,6 +27,13 @@ struct ServiceListScreen: View {
 
             CountryListView()
                 .environmentObject(countryListViewModel)
+            
+            SearchView(
+                isLoading: $isSearchViewLoading,
+                hint: "Поиск Сервиса"
+            ) { searchText in
+                serviceListViewModel.searchService(inputText: searchText)
+            }
 
             ServiceListView()
                 .environmentObject(serviceListViewModel)
@@ -50,6 +58,13 @@ struct ServiceListScreen: View {
         .onReceive(countryListViewModel.$state) { newState in
             if case .Loaded(let vo) = newState {
                 serviceListViewModel.loadServiceList(countryCode: vo.countries[vo.selectedCountryIndex].code)
+            }
+        }
+        .onReceive(serviceListViewModel.$state) { newState in
+            if case .Loading = newState {
+                isSearchViewLoading = true
+            } else if case .Loaded = newState {
+                isSearchViewLoading = false
             }
         }
         .onReceive(paymentViewModel.$state) { newState in

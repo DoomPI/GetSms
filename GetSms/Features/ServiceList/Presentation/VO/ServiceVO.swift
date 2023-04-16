@@ -8,6 +8,7 @@
 import Foundation
 
 struct ServiceVO {
+    let code: String
     let name: String
     let imageURL: URL?
     let quantity: String
@@ -15,24 +16,18 @@ struct ServiceVO {
     let isLowQuantity: Bool
     
     init(
+        code: String,
         name: String,
         imageURL: URL?,
         quantity: String,
         cost: String,
         isLowQuantity: Bool
     ) {
+        self.code = code
         self.name = name
         self.imageURL = imageURL
         self.quantity = quantity
         self.cost = cost
         self.isLowQuantity = isLowQuantity
     }
-    
-    static let empty = ServiceVO(
-        name: "Название сервиса",
-        imageURL: nil,
-        quantity: "0 шт.",
-        cost: "0.00₽",
-        isLowQuantity: false
-    )
 }

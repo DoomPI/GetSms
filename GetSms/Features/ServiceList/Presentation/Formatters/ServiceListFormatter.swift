@@ -16,6 +16,7 @@ class ServiceListFormatter {
     }
     
     private func format(model: Service) -> ServiceVO {
+        let code = model.code
         let name = model.name
         let imageURL = model.imageURL
         let quantity = String(format: "%d шт.", model.quantity)
@@ -23,6 +24,7 @@ class ServiceListFormatter {
         let isLowQuantity = model.isLowQuantity
         
         return ServiceVO(
+            code: code,
             name: name,
             imageURL: imageURL,
             quantity: quantity,

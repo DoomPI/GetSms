@@ -10,15 +10,24 @@ import Foundation
 enum ServiceListAssembly {
     
     static func assemble() -> ServiceListViewModel {
-        let cacheWorker = ServiceListCacheWorker()
+        let numberNetworkWorker = NumberNetworkWorker()
+        let numberNetworkMapper = NumberNetworkMapper()
         
-        let networkWorker = ServiceListNetworkWorker()
-        let networkMapper = ServiceListNetworkMapper()
+        let serviceListNetworkWorker = ServiceListNetworkWorker()
+        let serviceListNetworkMapper = ServiceListNetworkMapper()
+        
+        let serviceListCacheWorker = ServiceListCacheWorker()
+        let numberCacheWorker = NumberCacheWorker()
+        let numberCacheMapper = NumberCacheMapper()
         
         let interactor = ServiceListInteractor(
-            cacheWorker: cacheWorker,
-            networkWorker: networkWorker,
-            networkMapper: networkMapper
+            numberNetworkWorker: numberNetworkWorker,
+            numberNetworkMapper: numberNetworkMapper,
+            serivceListNetworkWorker: serviceListNetworkWorker,
+            serviceListNetworkMapper: serviceListNetworkMapper,
+            serviceListCacheWorker: serviceListCacheWorker,
+            numberCacheWorker: numberCacheWorker,
+            numberCacheMapper: numberCacheMapper
         )
         
         let formatter = ServiceListFormatter()

@@ -29,7 +29,6 @@ class ServiceListProcessor {
     ) {
         self.interactor = interactor
     }
-    
 }
 
 extension ServiceListProcessor: ServiceListProcessorProtocol {
@@ -83,6 +82,13 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
+                case .PurchaseNumber(let serviceCode):
+                    self.interactor
+                        .purchaseNumber(serviceCode: serviceCode)
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe()
+                        .disposed(by: self.disposeBag)
                     
                 case .Nothing, .PresentList, .PresentError:
                     break
