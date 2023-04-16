@@ -1,13 +1,13 @@
 //
-//  ServiceListScreen.swift
+//  MainScreen.swift
 //  GetSms
 //
-//  Created by Роман Ломтев on 01.04.2023.
+//  Created by Роман Ломтев on 16.04.2023.
 //
- 
+
 import SwiftUI
- 
-struct ServiceListScreen: View {
+
+struct MainScreen: View {
  
     @ObservedObject var balanceViewModel = BalanceAssembly.assemble()
     @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
@@ -24,19 +24,15 @@ struct ServiceListScreen: View {
             
             BalanceView()
                 .environmentObject(balanceViewModel)
-
-            CountryListView()
-                .environmentObject(countryListViewModel)
             
-            SearchView(
-                isLoading: $isSearchViewLoading,
-                hint: "Поиск Сервиса"
-            ) { searchText in
-                serviceListViewModel.searchService(inputText: searchText)
+            TabView {
+                ServiceListTab()
+                    .environmentObject(countryListViewModel)
+                    .environmentObject(serviceListViewModel)
+                
+                NumberListTab()
             }
-
-            ServiceListView()
-                .environmentObject(serviceListViewModel)
+            .tabViewStyle(.page)
         }
         .padding(8)
         .background(Color("DarkBlueColor"))
@@ -46,25 +42,11 @@ struct ServiceListScreen: View {
         }
         .onAppear {
             balanceViewModel.onViewAppear()
-            countryListViewModel.onViewAppear()
-            serviceListViewModel.onViewAppear()
             paymentViewModel.onViewAppear()
         }
         .onReceive(balanceViewModel.$state) { newState in
             if case .ProceededToPayment = newState {
                 paymentViewModel.openPayment()
-            }
-        }
-        .onReceive(countryListViewModel.$state) { newState in
-            if case .Loaded(let vo) = newState {
-                serviceListViewModel.loadServiceList(countryCode: vo.countries[vo.selectedCountryIndex].code)
-            }
-        }
-        .onReceive(serviceListViewModel.$state) { newState in
-            if case .Loading = newState {
-                isSearchViewLoading = true
-            } else if case .Loaded = newState {
-                isSearchViewLoading = false
             }
         }
         .onReceive(paymentViewModel.$state) { newState in
@@ -86,3 +68,4 @@ struct ServiceListScreen: View {
         }
     }
 }
+

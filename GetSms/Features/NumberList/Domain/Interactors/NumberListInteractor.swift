@@ -9,14 +9,14 @@ import RxSwift
 
 protocol NumberListBusinessLogic {
     
-    func getNumberDataSingles() -> Single<NumberDataList>
+    func getNumberList() -> Single<NumberDataList>
 }
 
 class NumberListInteractor {
     
     // MARK: - Internal vars
     
-    private let smsListNetworkWorker: SmsListNetworkWorker
+    private let smsListNetworkWorker: SmsListNetworkWorkingLogic
     private let smsListNetworkMapper: SmsListNetworkMapper
     
     private let numberCacheWorker: NumberCacheWorkingLogic
@@ -24,7 +24,7 @@ class NumberListInteractor {
     
     // MARK: - Init
     init(
-        smsListNetworkWorker: SmsListNetworkWorker,
+        smsListNetworkWorker: SmsListNetworkWorkingLogic,
         smsListNetworkMapper: SmsListNetworkMapper,
         numberCacheWorker: NumberCacheWorkingLogic,
         numberCacheMapper: NumberCacheMapper
@@ -38,7 +38,7 @@ class NumberListInteractor {
 
 extension NumberListInteractor: NumberListBusinessLogic {
     
-    func getNumberDataSingles() -> Single<NumberDataList> {
+    func getNumberList() -> Single<NumberDataList> {
         return getNumbersFromCache().flatMap { numbers in
             Observable.from(
                 numbers.map { number in
@@ -65,16 +65,14 @@ extension NumberListInteractor: NumberListBusinessLogic {
     }
     
     private func getSmsListFromNetwork(numberId: String) -> Single<SmsList> {
-        return smsListNetworkWorker.getApiKey().flatMap { apiKey in
-            self.smsListNetworkWorker.getSmsList(apiKey: apiKey.apiKey, numberId: numberId).map { dto in
-                self.smsListNetworkMapper.fromDto(dto: dto)
-            }
+        return self.smsListNetworkWorker.getSmsList(numberId: numberId).map { dto in
+            return try self.smsListNetworkMapper.fromDto(dto: dto)
         }
     }
     
     private func getNumbersFromCache() -> Single<[Number]> {
         return numberCacheWorker.getNumbers().map { dto in
-            self.numberCacheMapper.fromDto(dto: dto)
+            try self.numberCacheMapper.fromDto(dto: dto)
         }
     }
     

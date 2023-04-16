@@ -21,14 +21,24 @@ class JSONExtractor {
     func extractMap<T: Decodable>(from data: Data) throws -> KeysValues<T>  {
         let jsonString = String(decoding: data, as: UTF8.self)
         let jsonMap = try JSON.parse(string: jsonString)
-        let keys = jsonMap.keys!
-        let values = try jsonMap.values!.map { value in
-            try self.decoder.decode(T.self, from: value.toJSONString().data(using: .utf8)!)
+        guard
+            let keys = jsonMap.keys,
+            let values = jsonMap.values
+        else {
+            throw NSError(domain: "JSONExtractor", code: 1)
+        }
+        let decodedValues = try values.map { value in
+            guard
+                let data = value.toJSONString().data(using: .utf8)
+            else {
+                throw NSError(domain: "JSONExtractor", code: 1)
+            }
+            return try self.decoder.decode(T.self, from: data)
         }
         
         return KeysValues(
             keys: keys,
-            values: values
+            values: decodedValues
         )
     }
 }

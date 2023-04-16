@@ -14,11 +14,11 @@ class ServiceListNetworkMapper {
     func fromDto(
         dto: ServiceListNetworkDTO,
         countryCode: String
-    ) -> ServiceList {
-        let services = dto.keys.indices.map { index in
+    ) throws -> ServiceList {
+        let services = try dto.keys.indices.map { index in
             let serviceCode = dto.keys[index].lowercased()
             let serviceDto = dto.values[index][0]
-            return fromDto(
+            return try fromDto(
                 code: serviceCode,
                 dto: serviceDto
             )
@@ -30,13 +30,17 @@ class ServiceListNetworkMapper {
         )
     }
     
-    private func fromDto(code: String, dto: ServiceNetworkDTO) -> Service {
-        let name = dto.name!
-        let imageURL = dto.imageURL != nil ? URL(string: Self.url + dto.imageURL!) : nil
-        let quantity = dto.quantity!
-        let isLowQuantity = quantity < 10
+    private func fromDto(code: String, dto: ServiceNetworkDTO) throws -> Service {
+        guard
+            let name = dto.name,
+            let quantity = dto.quantity,
+            let cost = dto.cost
+        else {
+            throw NSError(domain: "ServiceListNetworkMapper", code: 1)
+        }
+        let imageURL = getImageURL(dtoImageURL: dto.imageURL)
         let info = dto.info
-        let cost = dto.cost!
+        let isLowQuantity = quantity < 10
         
         return Service(
             code: code,
@@ -47,5 +51,16 @@ class ServiceListNetworkMapper {
             info: info,
             cost: cost
         )
+    }
+    
+    private func getImageURL(dtoImageURL: String?) -> URL? {
+        guard
+            let dtoImageURL,
+            let url = URL(string: Self.url + dtoImageURL)
+        else {
+            return nil
+        }
+        
+        return url
     }
 }

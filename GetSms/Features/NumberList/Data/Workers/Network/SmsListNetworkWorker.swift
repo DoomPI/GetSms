@@ -10,7 +10,7 @@ import RxSwift
 
 protocol SmsListNetworkWorkingLogic {
     
-    func getSmsList(apiKey: String, numberId: String) -> Single<SmsListNetworkDTO>
+    func getSmsList(numberId: String) -> Single<SmsListNetworkDTO>
 }
 
 class SmsListNetworkWorker {
@@ -29,34 +29,39 @@ class SmsListNetworkWorker {
 
 extension SmsListNetworkWorker: SmsListNetworkWorkingLogic {
     
-    func getSmsList(apiKey: String, numberId: String) -> Single<SmsListNetworkDTO> {
-        Single.deferred {
-            let queryItems = [
-                URLQueryItem(
-                    name: Self.apiKeyQueryItemName,
-                    value: apiKey
-                ),
-                URLQueryItem(
-                    name: Self.idNumQueryName,
-                    value: numberId
-                ),
-                URLQueryItem(
-                    name: Self.allQueryName,
-                    value: nil
-                )
-            ]
-            var urlComps = URLComponents(string: Self.smsListUrl)!
-            urlComps.queryItems = queryItems
-            
-            return Self.worker.sendRequest(
-                url: urlComps.url!
-            ).map { data in
-                try Self.decoder.decode(SmsListNetworkDTO.self, from: data)
+    func getSmsList(numberId: String) -> Single<SmsListNetworkDTO> {
+        getApiKey().flatMap { apiKey in
+            Single.deferred {
+                let queryItems = [
+                    URLQueryItem(
+                        name: Self.apiKeyQueryItemName,
+                        value: apiKey.apiKey
+                    ),
+                    URLQueryItem(
+                        name: Self.idNumQueryName,
+                        value: numberId
+                    ),
+                    URLQueryItem(
+                        name: Self.allQueryName,
+                        value: nil
+                    )
+                ]
+                var urlComps = URLComponents(string: Self.smsListUrl)
+                urlComps?.queryItems = queryItems
+                guard let url = urlComps?.url else {
+                    throw NSError(domain: "SmsListNetworkWorker", code: 1)
+                }
+                
+                return Self.worker.sendRequest(
+                    url: url
+                ).map { data in
+                    try Self.decoder.decode(SmsListNetworkDTO.self, from: data)
+                }
             }
         }
     }
     
-    func getApiKey() -> Single<ApiKey> {
+    private func getApiKey() -> Single<ApiKey> {
         return Self.keychainWorker.getApiKey()
     }
 }

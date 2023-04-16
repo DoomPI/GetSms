@@ -43,11 +43,14 @@ extension NumberNetworkWorker: NumberNetworkWorkingLogic {
                     value: countryCode
                 )
             ]
-            var urlComps = URLComponents(string: Self.numberListUrl)!
-            urlComps.queryItems = queryItems
+            var urlComps = URLComponents(string: Self.numberListUrl)
+            urlComps?.queryItems = queryItems
+            guard let url = urlComps?.url else {
+                throw NSError(domain: "NumberNetworkWorker", code: 1)
+            }
             
             return Self.worker.sendRequest(
-                url: urlComps.url!
+                url: url
             ).map { data in
                 try Self.decoder.decode(NumberNetworkDTO.self, from: data)
             }

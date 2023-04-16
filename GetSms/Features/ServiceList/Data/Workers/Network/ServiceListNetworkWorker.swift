@@ -33,11 +33,14 @@ extension ServiceListNetworkWorker: ServiceListNetworkWorkingLogic {
                     value: countryCode
                 )
             ]
-            var urlComps = URLComponents(string: Self.serviceListUrl)!
-            urlComps.queryItems = queryItems
+            var urlComps = URLComponents(string: Self.serviceListUrl)
+            urlComps?.queryItems = queryItems
+            guard let url = urlComps?.url else {
+                throw NSError(domain: "ServiceListNetworkWorker", code: 1)
+            }
             
             return Self.worker.sendRequest(
-                url: urlComps.url!
+                url: url
             ).map { data in
                 try Self.extractor.extractMap(from: data)
             }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */; };
 		A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885643029E2E7D3001C1F39 /* ApiKey.swift */; };
-		A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */; };
+		A8C9880B29D9CBB3000D1249 /* ServiceListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListTab.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
 		CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D129D887AC005A815C /* JSONExtractor.swift */; };
 		CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */; };
@@ -66,6 +66,24 @@
 		CC3C136229EB45A700397F0F /* SmsListNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136129EB45A700397F0F /* SmsListNetworkWorker.swift */; };
 		CC3C136429EB47C200397F0F /* KeychainWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136329EB47C200397F0F /* KeychainWorker.swift */; };
 		CC3C136629EB4EE800397F0F /* NumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136529EB4EE800397F0F /* NumberData.swift */; };
+		CC3C136E29EB957C00397F0F /* NumberListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136D29EB957C00397F0F /* NumberListState.swift */; };
+		CC3C137029EB95C100397F0F /* NumberListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C136F29EB95C100397F0F /* NumberListView.swift */; };
+		CC3C137229EB95CB00397F0F /* NumberListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C137129EB95CB00397F0F /* NumberListViewModel.swift */; };
+		CC3C137429EB95D300397F0F /* NumberDataListFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C137329EB95D300397F0F /* NumberDataListFormatter.swift */; };
+		CC3C137929EB969E00397F0F /* NumberListLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C137829EB969E00397F0F /* NumberListLoadingView.swift */; };
+		CC3C137B29EB96A700397F0F /* NumberListLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C137A29EB96A700397F0F /* NumberListLoadedView.swift */; };
+		CC3C137D29EB96B100397F0F /* NumberListErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C137C29EB96B100397F0F /* NumberListErrorView.swift */; };
+		CC3C137F29EB973800397F0F /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C137E29EB973800397F0F /* NumberView.swift */; };
+		CC3C138129EB975700397F0F /* NumberPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C138029EB975700397F0F /* NumberPlaceholderView.swift */; };
+		CC3C138329EC09B700397F0F /* NumberDataVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C138229EC09B700397F0F /* NumberDataVO.swift */; };
+		CC3C138629EC0AE700397F0F /* NumberListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C138529EC0AE700397F0F /* NumberListReducer.swift */; };
+		CC3C138829EC143400397F0F /* NumberDataListVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C138729EC143400397F0F /* NumberDataListVO.swift */; };
+		CC3C138B29EC197000397F0F /* NumberVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C138A29EC197000397F0F /* NumberVO.swift */; };
+		CC3C138D29EC347B00397F0F /* NumberListIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C138C29EC347B00397F0F /* NumberListIntent.swift */; };
+		CC3C138F29EC34D300397F0F /* NumberListProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C138E29EC34D300397F0F /* NumberListProcessor.swift */; };
+		CC3C139129EC377100397F0F /* NumberListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139029EC377100397F0F /* NumberListAssembly.swift */; };
+		CC3C139329EC392F00397F0F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139229EC392F00397F0F /* MainScreen.swift */; };
+		CC3C139529EC393800397F0F /* NumberListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139429EC393800397F0F /* NumberListTab.swift */; };
 		CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123329C78D930085324A /* GetSmsApp.swift */; };
 		CC5E123629C78D930085324A /* ServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ServiceListView.swift */; };
 		CC5E123829C78D940085324A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123729C78D940085324A /* Assets.xcassets */; };
@@ -155,7 +173,7 @@
 /* Begin PBXFileReference section */
 		A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		A885643029E2E7D3001C1F39 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
-		A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListScreen.swift; sourceTree = "<group>"; };
+		A8C9880A29D9CBB3000D1249 /* ServiceListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListTab.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
 		CC0608D129D887AC005A815C /* JSONExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONExtractor.swift; sourceTree = "<group>"; };
 		CC0608D329D88CF1005A815C /* ServiceListNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListNetworkDTO.swift; sourceTree = "<group>"; };
@@ -212,6 +230,24 @@
 		CC3C136129EB45A700397F0F /* SmsListNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsListNetworkWorker.swift; sourceTree = "<group>"; };
 		CC3C136329EB47C200397F0F /* KeychainWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWorker.swift; sourceTree = "<group>"; };
 		CC3C136529EB4EE800397F0F /* NumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberData.swift; sourceTree = "<group>"; };
+		CC3C136D29EB957C00397F0F /* NumberListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListState.swift; sourceTree = "<group>"; };
+		CC3C136F29EB95C100397F0F /* NumberListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListView.swift; sourceTree = "<group>"; };
+		CC3C137129EB95CB00397F0F /* NumberListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListViewModel.swift; sourceTree = "<group>"; };
+		CC3C137329EB95D300397F0F /* NumberDataListFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDataListFormatter.swift; sourceTree = "<group>"; };
+		CC3C137829EB969E00397F0F /* NumberListLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListLoadingView.swift; sourceTree = "<group>"; };
+		CC3C137A29EB96A700397F0F /* NumberListLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListLoadedView.swift; sourceTree = "<group>"; };
+		CC3C137C29EB96B100397F0F /* NumberListErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListErrorView.swift; sourceTree = "<group>"; };
+		CC3C137E29EB973800397F0F /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		CC3C138029EB975700397F0F /* NumberPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPlaceholderView.swift; sourceTree = "<group>"; };
+		CC3C138229EC09B700397F0F /* NumberDataVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDataVO.swift; sourceTree = "<group>"; };
+		CC3C138529EC0AE700397F0F /* NumberListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListReducer.swift; sourceTree = "<group>"; };
+		CC3C138729EC143400397F0F /* NumberDataListVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDataListVO.swift; sourceTree = "<group>"; };
+		CC3C138A29EC197000397F0F /* NumberVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberVO.swift; sourceTree = "<group>"; };
+		CC3C138C29EC347B00397F0F /* NumberListIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListIntent.swift; sourceTree = "<group>"; };
+		CC3C138E29EC34D300397F0F /* NumberListProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListProcessor.swift; sourceTree = "<group>"; };
+		CC3C139029EC377100397F0F /* NumberListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListAssembly.swift; sourceTree = "<group>"; };
+		CC3C139229EC392F00397F0F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		CC3C139429EC393800397F0F /* NumberListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListTab.swift; sourceTree = "<group>"; };
 		CC5E123029C78D930085324A /* GetSms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E123329C78D930085324A /* GetSmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSmsApp.swift; sourceTree = "<group>"; };
 		CC5E123529C78D930085324A /* ServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListView.swift; sourceTree = "<group>"; };
@@ -326,8 +362,10 @@
 		A8C9880929D9CB9D000D1249 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A8C9880A29D9CBB3000D1249 /* ServiceListScreen.swift */,
+				A8C9880A29D9CBB3000D1249 /* ServiceListTab.swift */,
 				CCCD15CD29D9DC9F00739C44 /* AuthScreen.swift */,
+				CC3C139229EC392F00397F0F /* MainScreen.swift */,
+				CC3C139429EC393800397F0F /* NumberListTab.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -665,6 +703,7 @@
 		CC3C132B29EB180900397F0F /* DI */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C139029EC377100397F0F /* NumberListAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -691,6 +730,8 @@
 		CC3C132E29EB18E300397F0F /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C138429EC0ACD00397F0F /* Reducers */,
+				CC3C137529EB95D800397F0F /* VO */,
 				CC3C136C29EB717E00397F0F /* Formatters */,
 				CC3C136B29EB709D00397F0F /* ViewModels */,
 				CC3C136A29EB708700397F0F /* Views */,
@@ -816,6 +857,7 @@
 		CC3C136729EB705B00397F0F /* Intents */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C138C29EC347B00397F0F /* NumberListIntent.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -823,6 +865,7 @@
 		CC3C136829EB706F00397F0F /* Processors */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C138E29EC34D300397F0F /* NumberListProcessor.swift */,
 			);
 			path = Processors;
 			sourceTree = "<group>";
@@ -830,6 +873,7 @@
 		CC3C136929EB708000397F0F /* States */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C136D29EB957C00397F0F /* NumberListState.swift */,
 			);
 			path = States;
 			sourceTree = "<group>";
@@ -837,6 +881,12 @@
 		CC3C136A29EB708700397F0F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C136F29EB95C100397F0F /* NumberListView.swift */,
+				CC3C137829EB969E00397F0F /* NumberListLoadingView.swift */,
+				CC3C137A29EB96A700397F0F /* NumberListLoadedView.swift */,
+				CC3C137C29EB96B100397F0F /* NumberListErrorView.swift */,
+				CC3C137E29EB973800397F0F /* NumberView.swift */,
+				CC3C138029EB975700397F0F /* NumberPlaceholderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -844,6 +894,7 @@
 		CC3C136B29EB709D00397F0F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C137129EB95CB00397F0F /* NumberListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -851,8 +902,27 @@
 		CC3C136C29EB717E00397F0F /* Formatters */ = {
 			isa = PBXGroup;
 			children = (
+				CC3C137329EB95D300397F0F /* NumberDataListFormatter.swift */,
 			);
 			path = Formatters;
+			sourceTree = "<group>";
+		};
+		CC3C137529EB95D800397F0F /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C138229EC09B700397F0F /* NumberDataVO.swift */,
+				CC3C138729EC143400397F0F /* NumberDataListVO.swift */,
+				CC3C138A29EC197000397F0F /* NumberVO.swift */,
+			);
+			path = VO;
+			sourceTree = "<group>";
+		};
+		CC3C138429EC0ACD00397F0F /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				CC3C138529EC0AE700397F0F /* NumberListReducer.swift */,
+			);
+			path = Reducers;
 			sourceTree = "<group>";
 		};
 		CC5E122729C78D930085324A = {
@@ -1582,6 +1652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC3C138B29EC197000397F0F /* NumberVO.swift in Sources */,
 				CCCE957B29E221AB007B4D0D /* WebView.swift in Sources */,
 				CC0608FD29D89891005A815C /* CountryList.swift in Sources */,
 				CC1EBC7529CFC7C400C43EF0 /* ServiceNetworkDTO.swift in Sources */,
@@ -1591,15 +1662,19 @@
 				CCCE95BA29E370B8007B4D0D /* BalanceVO.swift in Sources */,
 				CCCE95B429E3707A007B4D0D /* BalanceState.swift in Sources */,
 				CC3C136229EB45A700397F0F /* SmsListNetworkWorker.swift in Sources */,
+				CC3C137429EB95D300397F0F /* NumberDataListFormatter.swift in Sources */,
 				CCFE4BCB29D3B9E5006BB842 /* JSON.swift in Sources */,
+				CC3C137D29EB96B100397F0F /* NumberListErrorView.swift in Sources */,
 				CC0608EB29D896E6005A815C /* CountryListViewModel.swift in Sources */,
 				CC3C136629EB4EE800397F0F /* NumberData.swift in Sources */,
 				CC1EBC7F29CFDB4B00C43EF0 /* ServiceListInteractor.swift in Sources */,
 				CC0608D229D887AC005A815C /* JSONExtractor.swift in Sources */,
 				CC3C133429EB1A1400397F0F /* NumberNetworkWorker.swift in Sources */,
+				CC3C137029EB95C100397F0F /* NumberListView.swift in Sources */,
 				CC1EBC6529CFB89F00C43EF0 /* ServiceVO.swift in Sources */,
 				CC3C135129EB398400397F0F /* SmsList.swift in Sources */,
 				CCCE95B829E370B2007B4D0D /* BalanceViewModel.swift in Sources */,
+				CC3C139529EC393800397F0F /* NumberListTab.swift in Sources */,
 				CCCE958F29E2FD66007B4D0D /* AuthState.swift in Sources */,
 				CC9E158C29CF8DEF00237F71 /* Processor.swift in Sources */,
 				CCCE95C929E37228007B4D0D /* BalanceProcessor.swift in Sources */,
@@ -1608,15 +1683,21 @@
 				CCCE95C729E37204007B4D0D /* BalanceIntent.swift in Sources */,
 				CCCE95E529E4A906007B4D0D /* CountryListLoadedView.swift in Sources */,
 				CC0608E229D89668005A815C /* CountryListNetworkMapper.swift in Sources */,
+				CC3C139129EC377100397F0F /* NumberListAssembly.swift in Sources */,
+				CC3C137929EB969E00397F0F /* NumberListLoadingView.swift in Sources */,
 				CCCE960229E4C381007B4D0D /* PaymentAssembly.swift in Sources */,
+				CC3C138829EC143400397F0F /* NumberDataListVO.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
 				CCCE956C29E1F7BC007B4D0D /* WebViewModel.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
 				CC0608FB29D89833005A815C /* Country.swift in Sources */,
 				CCCE95DB29E486AE007B4D0D /* BalanceReducer.swift in Sources */,
+				CC3C138329EC09B700397F0F /* NumberDataVO.swift in Sources */,
 				CCCE958429E2E935007B4D0D /* ContentView.swift in Sources */,
+				CC3C138D29EC347B00397F0F /* NumberListIntent.swift in Sources */,
 				CC3C134B29EB312600397F0F /* NumberDataList.swift in Sources */,
 				CCCE95A329E360D6007B4D0D /* AuthInteractor.swift in Sources */,
+				CC3C137B29EB96A700397F0F /* NumberListLoadedView.swift in Sources */,
 				CC1EBC9629D0CC3700C43EF0 /* ServiceListProcessor.swift in Sources */,
 				CCCE956A29E1F6C7007B4D0D /* WebAssembly.swift in Sources */,
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
@@ -1624,6 +1705,7 @@
 				CC3C136029EB43D800397F0F /* NumberListInteractor.swift in Sources */,
 				CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */,
 				CC3C135E29EB3E2700397F0F /* CacheWorker.swift in Sources */,
+				CC3C138F29EC34D300397F0F /* NumberListProcessor.swift in Sources */,
 				CCCD15C929D9054E00739C44 /* CountryListDropdownView.swift in Sources */,
 				CC3C133B29EB1AF800397F0F /* SearchPlaceholderView.swift in Sources */,
 				CC0608D429D88CF1005A815C /* ServiceListNetworkDTO.swift in Sources */,
@@ -1636,6 +1718,7 @@
 				CCCE95EF29E4ABD3007B4D0D /* ServiceListErrorView.swift in Sources */,
 				CC3C135B29EB3C7B00397F0F /* NumberCacheWorker.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
+				CC3C137F29EB973800397F0F /* NumberView.swift in Sources */,
 				CCCE95D829E391DC007B4D0D /* BalanceCacheWorker.swift in Sources */,
 				CC3C136429EB47C200397F0F /* KeychainWorker.swift in Sources */,
 				CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */,
@@ -1646,6 +1729,7 @@
 				CCCE95A029E327E9007B4D0D /* AuthBlockingLoadingView.swift in Sources */,
 				CCCD15DC29D9E27E00739C44 /* AuthView.swift in Sources */,
 				CCCE95C529E37151007B4D0D /* Balance.swift in Sources */,
+				CC3C138129EB975700397F0F /* NumberPlaceholderView.swift in Sources */,
 				CCCE95CB29E37261007B4D0D /* BalanceInteractor.swift in Sources */,
 				CC5E123629C78D930085324A /* ServiceListView.swift in Sources */,
 				CCCE95E129E4A2A0007B4D0D /* BalanceLoadingView.swift in Sources */,
@@ -1655,13 +1739,15 @@
 				CCCE95D629E38C7A007B4D0D /* BalanceNetworkMapper.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC3C135729EB3A9300397F0F /* NumberCacheDTO.swift in Sources */,
+				CC3C137229EB95CB00397F0F /* NumberListViewModel.swift in Sources */,
 				CCCE960629E4C3BA007B4D0D /* PaymentProcessor.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
 				CCCE960029E4C376007B4D0D /* PaymentView.swift in Sources */,
 				CCCD15E229D9E80400739C44 /* WebIntent.swift in Sources */,
+				CC3C138629EC0AE700397F0F /* NumberListReducer.swift in Sources */,
 				CCCE958229E2E11E007B4D0D /* AuthAssembly.swift in Sources */,
 				CCCE95FA29E4C314007B4D0D /* PaymentReducer.swift in Sources */,
-				A8C9880B29D9CBB3000D1249 /* ServiceListScreen.swift in Sources */,
+				A8C9880B29D9CBB3000D1249 /* ServiceListTab.swift in Sources */,
 				CC1EBC8C29D0705000C43EF0 /* ShimmerEffect.swift in Sources */,
 				CC9E158A29CF8DDE00237F71 /* Reducer.swift in Sources */,
 				CCCE960829E4C3E1007B4D0D /* PaymentIntent.swift in Sources */,
@@ -1702,11 +1788,13 @@
 				CC1EBC6329CFADDF00C43EF0 /* ServiceListVO.swift in Sources */,
 				CCCE959929E2FE75007B4D0D /* AuthProcessor.swift in Sources */,
 				CCCE95E729E4A9EE007B4D0D /* CountryListErrorView.swift in Sources */,
+				CC3C139329EC392F00397F0F /* MainScreen.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
 				CC3C134529EB2E9800397F0F /* NumberNetworkDTO.swift in Sources */,
 				CC3C133929EB1AC000397F0F /* SearchView.swift in Sources */,
 				A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */,
 				CCCE95BE29E370C7007B4D0D /* BalanceAssembly.swift in Sources */,
+				CC3C136E29EB957C00397F0F /* NumberListState.swift in Sources */,
 				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

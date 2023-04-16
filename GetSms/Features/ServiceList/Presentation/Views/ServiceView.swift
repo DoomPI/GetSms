@@ -23,9 +23,7 @@ struct ServiceView: View {
     ) {
         self.vo = vo
         self.pressAction = pressAction
-        self.backgroundColor = vo.isLowQuantity
-        ? Color("RedColor")
-        : Color("GreenColor")
+        self.backgroundColor = Color(vo.backgroundColorRes)
     }
     
     var body: some View {
@@ -118,7 +116,7 @@ struct ServiceView_Previews: PreviewProvider {
                     ),
                     quantity: "1 шт.",
                     cost: "17.00₽",
-                    isLowQuantity: false
+                    backgroundColorRes: "GreenColor"
                 ),
                 pressAction: {}
             )

@@ -21,7 +21,9 @@ class ServiceListFormatter {
         let imageURL = model.imageURL
         let quantity = String(format: "%d шт.", model.quantity)
         let cost = String(format: "%.2f₽", model.cost)
-        let isLowQuantity = model.isLowQuantity
+        let backgroundColorRes = model.isLowQuantity
+        ? "RedColor"
+        : "GreenColor"
         
         return ServiceVO(
             code: code,
@@ -29,7 +31,7 @@ class ServiceListFormatter {
             imageURL: imageURL,
             quantity: quantity,
             cost: cost,
-            isLowQuantity: isLowQuantity
+            backgroundColorRes: backgroundColorRes
         )
     }
 }

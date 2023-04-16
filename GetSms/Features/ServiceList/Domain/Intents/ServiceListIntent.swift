@@ -17,5 +17,5 @@ enum ServiceListIntent {
     
     case PresentError(error: Error)
     
-    case PurchaseNumber(serviceCode: String)
+    case PurchaseNumber(serviceCode: String, serviceName: String)
 }

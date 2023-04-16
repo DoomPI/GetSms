@@ -42,8 +42,11 @@ class ServiceListViewModel: ObservableObject {
         processor.fireIntent(intent: .SearchService(searchText: searchText))
     }
     
-    func purchaseNumber(serviceCode: String) {
-        processor.fireIntent(intent: .PurchaseNumber(serviceCode: serviceCode))
+    func purchaseNumber(serviceCode: String, serviceName: String) {
+        processor.fireIntent(intent: .PurchaseNumber(
+            serviceCode: serviceCode,
+            serviceName: serviceName
+        ))
     }
 }
 

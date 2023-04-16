@@ -33,7 +33,7 @@ extension CountryListInteractor: CountryListBusinessLogic {
     
     func getCountryList() -> Single<CountryList> {
         return networkWorker.getCountryList().map { dto in
-            self.networkMapper.fromDto(dto: dto)
+            try self.networkMapper.fromDto(dto: dto)
         }
     }
 }

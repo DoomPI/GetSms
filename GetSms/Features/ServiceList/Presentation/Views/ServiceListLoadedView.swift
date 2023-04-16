@@ -21,7 +21,8 @@ struct ServiceListLoadedView: View {
                         vo: vo.services[index],
                         pressAction: {
                             viewModel.purchaseNumber(
-                                serviceCode: vo.services[index].code
+                                serviceCode: vo.services[index].code,
+                                serviceName: vo.services[index].name
                             )
                         }
                     )
@@ -47,7 +48,7 @@ struct ServiceListLoadedView_Previews: PreviewProvider {
                         ),
                         quantity: "10 шт.",
                         cost: "17.00 ₽",
-                        isLowQuantity: false
+                        backgroundColorRes: "GreenColor"
                     ),
                     ServiceVO(
                         code: "vk",
@@ -57,7 +58,7 @@ struct ServiceListLoadedView_Previews: PreviewProvider {
                         ),
                         quantity: "10 шт.",
                         cost: "17.00 ₽",
-                        isLowQuantity: false
+                        backgroundColorRes: "GreenColor"
                     ),
                     ServiceVO(
                         code: "vk",
@@ -67,7 +68,7 @@ struct ServiceListLoadedView_Previews: PreviewProvider {
                         ),
                         quantity: "10 шт.",
                         cost: "17.00 ₽",
-                        isLowQuantity: false
+                        backgroundColorRes: "GreenColor"
                     ),
                     ServiceVO(
                         code: "vk",
@@ -77,7 +78,7 @@ struct ServiceListLoadedView_Previews: PreviewProvider {
                         ),
                         quantity: "10 шт.",
                         cost: "17.00 ₽",
-                        isLowQuantity: false
+                        backgroundColorRes: "GreenColor"
                     ),
                     ServiceVO(
                         code: "vk",
@@ -87,7 +88,7 @@ struct ServiceListLoadedView_Previews: PreviewProvider {
                         ),
                         quantity: "10 шт.",
                         cost: "17.00 ₽",
-                        isLowQuantity: false
+                        backgroundColorRes: "GreenColor"
                     )
                 ]
             )

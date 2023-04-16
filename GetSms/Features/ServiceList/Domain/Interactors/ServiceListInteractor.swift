@@ -13,7 +13,7 @@ protocol ServiceListBusinessLogic {
     
     func searchService(searchText: String) -> Single<ServiceList>
     
-    func purchaseNumber(serviceCode: String) -> Completable
+    func purchaseNumber(serviceCode: String, serviceName: String) -> Completable
 }
 
 class ServiceListInteractor {
@@ -76,7 +76,7 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
         return serviceListCacheWorker.searchService(searchText: searchText)
     }
     
-    func purchaseNumber(serviceCode: String) -> Completable {
+    func purchaseNumber(serviceCode: String, serviceName: String) -> Completable {
         return Single.zip(
             getApiKey(),
             getCountryCodeFromCache()
@@ -87,6 +87,7 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
             return self.getNumberFromNetwork(
                 apiKey: apiKey,
                 serviceCode: serviceCode,
+                serviceName: serviceName,
                 countryCode: countryCode
             )
             .flatMapCompletable { number in
@@ -97,7 +98,7 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
     
     private func getServiceListFromNetwork(countryCode: String) -> Single<ServiceList> {
         return serviceListNetworkWorker.getServiceList(countryCode: countryCode).map { dto in
-            self.serviceListNetworkMapper.fromDto(
+            try self.serviceListNetworkMapper.fromDto(
                 dto: dto,
                 countryCode: countryCode
             )
@@ -119,6 +120,7 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
     private func getNumberFromNetwork(
         apiKey: ApiKey,
         serviceCode: String,
+        serviceName: String,
         countryCode: String
     ) -> Single<Number> {
         return numberNetworkWorker.getNumber(
@@ -126,19 +128,19 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
             serviceCode: serviceCode,
             countryCode: countryCode
         ).map { dto in
-            self.numberNetworkMapper.fromDto(dto: dto)
+            try self.numberNetworkMapper.fromDto(serviceName: serviceName, dto: dto)
         }
     }
     
     private func getNumbersFromCache() -> Single<[Number]> {
         return numberCacheWorker.getNumbers().map { dto in
-            self.numberCacheMapper.fromDto(dto: dto)
+            try self.numberCacheMapper.fromDto(dto: dto)
         }
     }
     
     private func setNumbersInCache(numbers: [Number]) -> Completable {
         Completable.deferred {
-            let dto = self.numberCacheMapper.toDto(model: numbers)
+            let dto = try self.numberCacheMapper.toDto(model: numbers)
             return self.numberCacheWorker.setNumbers(numbers: dto)
         }
     }

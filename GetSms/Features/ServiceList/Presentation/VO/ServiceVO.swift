@@ -13,7 +13,7 @@ struct ServiceVO {
     let imageURL: URL?
     let quantity: String
     let cost: String
-    let isLowQuantity: Bool
+    let backgroundColorRes: String
     
     init(
         code: String,
@@ -21,13 +21,13 @@ struct ServiceVO {
         imageURL: URL?,
         quantity: String,
         cost: String,
-        isLowQuantity: Bool
+        backgroundColorRes: String
     ) {
         self.code = code
         self.name = name
         self.imageURL = imageURL
         self.quantity = quantity
         self.cost = cost
-        self.isLowQuantity = isLowQuantity
+        self.backgroundColorRes = backgroundColorRes
     }
 }

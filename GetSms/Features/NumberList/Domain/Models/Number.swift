@@ -6,6 +6,7 @@
 //
 
 struct Number {
+    let serviceName: String
     let id: String
     let phoneNumber: Int
 }
