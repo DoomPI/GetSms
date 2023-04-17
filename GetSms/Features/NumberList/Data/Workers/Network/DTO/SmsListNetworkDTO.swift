@@ -7,8 +7,10 @@
 
 struct SmsListNetworkDTO: Decodable {
     let data: [String]?
+    let error: String?
     
     enum CodingKeys: String, CodingKey {
         case data = "smsCode"
+        case error = "error"
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NumberListTab: View {
     
-    @ObservedObject var viewModel = NumberListAssembly.assemble()
+    @EnvironmentObject var viewModel: NumberListViewModel
     
     var body: some View {
         NumberListView()

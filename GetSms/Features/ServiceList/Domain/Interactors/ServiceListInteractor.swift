@@ -140,7 +140,7 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
     
     private func setNumbersInCache(numbers: [Number]) -> Completable {
         Completable.deferred {
-            let dto = try self.numberCacheMapper.toDto(model: numbers)
+            let dto = self.numberCacheMapper.toDto(model: numbers)
             return self.numberCacheWorker.setNumbers(numbers: dto)
         }
     }

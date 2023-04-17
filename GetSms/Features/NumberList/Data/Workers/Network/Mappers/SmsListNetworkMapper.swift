@@ -10,11 +10,11 @@ import Foundation
 class SmsListNetworkMapper {
     
     func fromDto(dto: SmsListNetworkDTO) throws -> SmsList {
-        guard
-            let data = dto.data
-        else {
+        if dto.error != nil {
             throw NSError(domain: "SmsListNetworkMapper", code: 1)
         }
+        
+        let data = dto.data ?? []
         
         return SmsList(
             data: data

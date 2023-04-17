@@ -13,6 +13,7 @@ struct MainScreen: View {
     @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
     @ObservedObject var serviceListViewModel = ServiceListAssembly.assemble()
     @ObservedObject var paymentViewModel = PaymentAssembly.assemble()
+    @ObservedObject var numberListViewModel = NumberListAssembly.assemble()
     
     @State private var isPaymentBottomsheetPresented = false
     @State private var isSearchViewLoading = false
@@ -31,6 +32,8 @@ struct MainScreen: View {
                     .environmentObject(serviceListViewModel)
                 
                 NumberListTab()
+                    .environmentObject(numberListViewModel)
+
             }
             .tabViewStyle(.page)
         }

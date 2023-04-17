@@ -31,7 +31,6 @@ struct ServiceListTab: View {
                 .environmentObject(serviceListViewModel)
         }
         .padding(8)
-        .background(Color("DarkBlueColor"))
         .onAppear {
             serviceListViewModel.onViewAppear()
             countryListViewModel.onViewAppear()

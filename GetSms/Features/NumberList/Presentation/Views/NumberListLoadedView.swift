@@ -16,12 +16,22 @@ struct NumberListLoadedView: View {
     var body: some View {
         VStack {
             ScrollView {
-                ForEach(vo.numbers.indices, id: \.self) { index in
-                    NumberView(
-                        vo: vo.numbers[index],
-                        bannedPressAction: {},
-                        cancelPressAction: {}
-                    )
+                if vo.numbers.isEmpty {
+                    
+                    Text("Нет арендованных номеров")
+                        .font(.system(size: 20))
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                    
+                } else {
+                    
+                    ForEach(vo.numbers.indices, id: \.self) { index in
+                        NumberView(
+                            vo: vo.numbers[index],
+                            bannedPressAction: {},
+                            cancelPressAction: {}
+                        )
+                    }
                 }
             }
             .refreshable {

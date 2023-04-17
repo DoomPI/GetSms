@@ -6,6 +6,7 @@
 //
 
 import RxSwift
+import Foundation
 
 protocol NumberListBusinessLogic {
     
@@ -43,30 +44,27 @@ extension NumberListInteractor: NumberListBusinessLogic {
             Observable.from(
                 numbers.map { number in
                     self.getNumberData(number: number)
-                        .asObservable()
+                        .asMaybe()
                 }
             )
             .merge()
             .toArray()
         }
         .flatMap { numberData in
-            self.setNumbersInCache(numbers: numberData.map { $0.number})
+            return self.setNumbersInCache(numbers: numberData.map { $0.number})
                 .andThen(Single.just(NumberDataList(data: numberData)))
         }
     }
     
-    private func getNumberData(number: Number) -> Maybe<NumberData> {
-        return getSmsListFromNetwork(numberId: number.id)
-            .catchAndReturn(SmsList.empty)
-            .filter { $0 != SmsList.empty }
-            .map { smsList in
-                NumberData(number: number, smsList: smsList)
-            }
+    private func getNumberData(number: Number) -> Single<NumberData> {
+        return getSmsListFromNetwork(numberId: number.id).map { smsList in
+            NumberData(number: number, smsList: smsList)
+        }
     }
     
     private func getSmsListFromNetwork(numberId: String) -> Single<SmsList> {
         return self.smsListNetworkWorker.getSmsList(numberId: numberId).map { dto in
-            return try self.smsListNetworkMapper.fromDto(dto: dto)
+            try self.smsListNetworkMapper.fromDto(dto: dto)
         }
     }
     

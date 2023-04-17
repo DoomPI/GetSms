@@ -7,6 +7,4 @@
 
 struct SmsList: Equatable {
     let data: [String]
-    
-    static let empty = SmsList(data: [])
 }
