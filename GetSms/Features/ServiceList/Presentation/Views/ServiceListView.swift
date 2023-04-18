@@ -27,6 +27,13 @@ struct ServiceListView: View {
                 
             case .Error(let vo):
                 ServiceListErrorView(vo: vo)
+                
+            case .ProceededToNumbersList:
+                Spacer()
+                
+            case .BlockingLoading:
+                ServiceListBlockingLoadingView()
+                
             }
         }
         .onReceive(viewModel.$state) { newState in

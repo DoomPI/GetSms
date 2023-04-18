@@ -40,6 +40,9 @@ extension CountryListReducer: CountryListReducerProtocol {
             
         case .PresentError(let error):
             return .Error(vo: errorFormatter.format(error: error))
+            
+        case .PresentBlockingLoading:
+            return .BlockingLoading
         }
     }
     

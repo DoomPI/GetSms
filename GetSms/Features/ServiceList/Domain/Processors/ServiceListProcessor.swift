@@ -82,16 +82,19 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                         .disposed(by: self.disposeBag)
                     
                 case .PurchaseNumber(let serviceCode, let serviceName):
+                    self.fireIntent(intent: .PresentBlockingLoading)
                     self.interactor
                         .purchaseNumber(serviceCode: serviceCode, serviceName: serviceName)
                         .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
                         .observe(on: MainScheduler.instance)
                         .subscribe(
-                            onCompleted: {}
+                            onCompleted: {
+                                self.fireIntent(intent: .ProceedToNumbersList)
+                            }
                         )
                         .disposed(by: self.disposeBag)
                     
-                case .Nothing, .PresentList, .PresentError:
+                default:
                     break
                 }
                 

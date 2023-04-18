@@ -12,4 +12,8 @@ enum ServiceListState {
     case Loaded(vo: ServiceListVO)
     
     case Error(vo: ServiceListErrorVO)
+    
+    case ProceededToNumbersList
+    
+    case BlockingLoading
 }

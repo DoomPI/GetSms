@@ -17,6 +17,7 @@ struct MainScreen: View {
     
     @State private var isPaymentBottomsheetPresented = false
     @State private var isSearchViewLoading = false
+    @State private var selectedTab: TabNavigationState = .ServiceList
     
     @Binding var navigationState: NavigationState
  
@@ -26,12 +27,14 @@ struct MainScreen: View {
             BalanceView()
                 .environmentObject(balanceViewModel)
             
-            TabView {
+            TabView(selection: $selectedTab) {
                 ServiceListTab()
+                    .tag(TabNavigationState.ServiceList)
                     .environmentObject(countryListViewModel)
                     .environmentObject(serviceListViewModel)
                 
                 NumberListTab()
+                    .tag(TabNavigationState.NumberList)
                     .environmentObject(numberListViewModel)
 
             }
@@ -55,6 +58,24 @@ struct MainScreen: View {
                 paymentViewModel.openPayment()
             }
         }
+        .onReceive(serviceListViewModel.$state) { newState in
+            switch newState {
+                
+            case .ProceededToNumbersList:
+                withAnimation {
+                    selectedTab = .NumberList
+                }
+                numberListViewModel.loadNumberList()
+                balanceViewModel.reloadBalance()
+                countryListViewModel.loadCountryList()
+                
+            case .BlockingLoading:
+                countryListViewModel.blockingLoad()
+                
+            default:
+                break
+            }
+        }
         .onReceive(paymentViewModel.$state) { newState in
             if case .Opened = newState {
                 if !isPaymentBottomsheetPresented {
@@ -73,5 +94,12 @@ struct MainScreen: View {
             }
         }
     }
+}
+
+private enum TabNavigationState {
+    
+    case ServiceList
+    
+    case NumberList
 }
 

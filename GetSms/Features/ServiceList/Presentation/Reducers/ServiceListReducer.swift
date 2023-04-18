@@ -46,6 +46,12 @@ extension ServiceListReducer: ServiceListReducerProtocol {
             
         case .PurchaseNumber:
             return currentState
+            
+        case .ProceedToNumbersList:
+            return .ProceededToNumbersList
+            
+        case .PresentBlockingLoading:
+            return .BlockingLoading
     
         }
     }

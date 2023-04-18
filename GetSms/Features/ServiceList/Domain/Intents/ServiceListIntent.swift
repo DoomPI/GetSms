@@ -9,7 +9,7 @@ enum ServiceListIntent {
     
     case Nothing
     
-    case LoadList(countryCode: String?)
+    case LoadList(countryCode: String? = nil)
     
     case SearchService(searchText: String)
     
@@ -18,4 +18,8 @@ enum ServiceListIntent {
     case PresentError(error: Error)
     
     case PurchaseNumber(serviceCode: String, serviceName: String)
+    
+    case ProceedToNumbersList
+    
+    case PresentBlockingLoading
 }

@@ -62,13 +62,7 @@ extension BalanceProcessor: BalanceProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
-                case .PresentBalance:
-                    break
-                    
-                case .PresentError:
-                    break
-                    
-                case .ProceedToPayment:
+                default:
                     break
                     
                 }

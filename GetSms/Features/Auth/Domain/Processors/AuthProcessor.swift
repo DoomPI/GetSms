@@ -81,7 +81,7 @@ extension AuthProcessor: AuthProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
-                case .ShowAuth, .Success, .Failure, .BlockingLoad:
+                default:
                     break
                 }
                 

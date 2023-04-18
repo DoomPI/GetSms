@@ -37,10 +37,16 @@ struct ServiceListTab: View {
             }
         }
         .onReceive(serviceListViewModel.$state) { newState in
-            if case .Loading = newState {
+            switch newState {
+                
+            case .Loading, .BlockingLoading:
                 isSearchViewLoading = true
-            } else if case .Loaded = newState {
+                
+            case .Loaded:
                 isSearchViewLoading = false
+                
+            default:
+                break
             }
         }
     }

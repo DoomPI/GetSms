@@ -67,7 +67,7 @@ extension NumberListProcessor: NumberListProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
-                case .PresentList, .PresentError:
+                default:
                     break
                 }
                 

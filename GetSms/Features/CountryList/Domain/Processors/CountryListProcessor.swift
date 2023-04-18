@@ -66,13 +66,7 @@ extension CountryListProcessor: CountryListProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
-                case .PresentList:
-                    break
-                    
-                case .SelectCountry:
-                    break
-                    
-                case .PresentError:
+                default:
                     break
                 }
                 
