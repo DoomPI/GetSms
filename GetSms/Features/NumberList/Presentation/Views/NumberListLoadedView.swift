@@ -28,14 +28,15 @@ struct NumberListLoadedView: View {
                     ForEach(vo.numbers.indices, id: \.self) { index in
                         NumberView(
                             vo: vo.numbers[index],
-                            bannedPressAction: {},
                             cancelPressAction: {}
                         )
                     }
                 }
             }
             .refreshable {
-                viewModel.loadNumberList()
+                viewModel.loadNumberList(
+                    numbersDisplayedCount: vo.numbers.count
+                )
             }
             
             Spacer()

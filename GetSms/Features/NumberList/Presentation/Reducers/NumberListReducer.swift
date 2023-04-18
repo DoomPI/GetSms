@@ -29,8 +29,8 @@ extension NumberListReducer: NumberListReducerProtocol {
     func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
-        case .LoadList:
-            return .Loading
+        case .LoadList(let numbersDisplayedCount):
+            return .Loading(numbersDisplayedCount: numbersDisplayedCount)
             
         case .PresentList(let model):
             return .Loaded(vo: formatter.format(model: model))

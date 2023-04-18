@@ -21,7 +21,7 @@ class NumberListProcessor {
     // MARK: - Internal vars
     private let interactor: NumberListBusinessLogic
     private let disposeBag = DisposeBag()
-    private var intentRelay = BehaviorRelay<Intent>(value: .LoadList)
+    private var intentRelay = BehaviorRelay<Intent>(value: .LoadList())
     
     // MARK: - Init
     init(

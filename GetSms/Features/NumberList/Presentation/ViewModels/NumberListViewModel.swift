@@ -15,7 +15,7 @@ class NumberListViewModel: ObservableObject {
     typealias State = NumberListState
     
     // MARK: - External vars
-    @Published private(set) var state: State = .Loading
+    @Published private(set) var state: State = .Loading()
     
     // MARK: - Internal vars
     private let processor: any NumberListProcessorProtocol
@@ -34,8 +34,10 @@ class NumberListViewModel: ObservableObject {
         processor.subscribeToIntents()
     }
     
-    func loadNumberList() {
-        processor.fireIntent(intent: .LoadList)
+    func loadNumberList(
+        numbersDisplayedCount: Int? = nil
+    ) {
+        processor.fireIntent(intent: .LoadList(numbersDisplayedCount: numbersDisplayedCount))
     }
 }
 

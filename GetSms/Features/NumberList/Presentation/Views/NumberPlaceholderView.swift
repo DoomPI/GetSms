@@ -11,7 +11,7 @@ struct NumberPlaceholderView: View {
     
     // MARK: - External vars
 
-    let backgroundColor: Color = Color("GreenColor")
+    let backgroundColor: Color = Color("YellowColor")
     
     var body: some View {
         HStack(alignment: .center) {
@@ -31,40 +31,20 @@ struct NumberPlaceholderView: View {
             
             Spacer()
             
-            VStack {
-                Button(action: {}) {
-                    Text("ОТМЕНА")
-                        .font(.system(size: 12))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                }
-                .disabled(true)
-                .padding(4)
-                .frame(maxWidth: .infinity)
-                .overlay(RoundedRectangle(cornerRadius: 5)
-                    .stroke(
-                        Color("GreenColor"),
-                        lineWidth: 1
-                    )
-                )
-                
-                Button(action: {}) {
-                    Text("ЗАБАНЕН")
-                        .font(.system(size: 12))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                }
-                .disabled(true)
-                .padding(4)
-                .frame(maxWidth: .infinity)
-                .overlay(RoundedRectangle(cornerRadius: 5)
-                    .stroke(
-                        Color("RedColor"),
-                        lineWidth: 1
-                    )
-                )
+            Button(action: {}) {
+                Text("ОТМЕНА")
+                    .font(.system(size: 12))
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
             }
-            .fixedSize(horizontal: true, vertical: false)
+            .disabled(true)
+            .padding(4)
+            .overlay(RoundedRectangle(cornerRadius: 5)
+                .stroke(
+                    Color("GreenColor"),
+                    lineWidth: 1
+                )
+            )
         }
         .frame(height: 40)
         .padding(16)

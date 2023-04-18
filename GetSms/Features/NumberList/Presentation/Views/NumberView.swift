@@ -11,7 +11,6 @@ struct NumberView: View {
     
     // MARK: - External vars
     let vo: NumberDataVO
-    let bannedPressAction: () -> Void
     let cancelPressAction: () -> Void
     
     // MARK: - Internval vars
@@ -20,11 +19,9 @@ struct NumberView: View {
     // MARK: - Init
     init(
         vo: NumberDataVO,
-        bannedPressAction: @escaping () -> Void,
         cancelPressAction: @escaping () -> Void
     ) {
         self.vo = vo
-        self.bannedPressAction = bannedPressAction
         self.cancelPressAction = cancelPressAction
         self.backgroundColor = Color(vo.backgroundColorRes)
     }
@@ -52,38 +49,19 @@ struct NumberView: View {
             
             Spacer()
             
-            VStack {
-                Button(action: cancelPressAction) {
-                    Text("ОТМЕНА")
-                        .font(.system(size: 12))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                }
-                .padding(4)
-                .frame(maxWidth: .infinity)
-                .overlay(RoundedRectangle(cornerRadius: 5)
-                    .stroke(
-                        Color("GreenColor"),
-                        lineWidth: 1
-                    )
-                )
-                
-                Button(action: bannedPressAction) {
-                    Text("ЗАБАНЕН")
-                        .font(.system(size: 12))
-                        .foregroundColor(.white)
-                        .fontWeight(.bold)
-                }
-                .padding(4)
-                .frame(maxWidth: .infinity)
-                .overlay(RoundedRectangle(cornerRadius: 5)
-                    .stroke(
-                        Color("RedColor"),
-                        lineWidth: 1
-                    )
-                )
+            Button(action: cancelPressAction) {
+                Text("ОТМЕНА")
+                    .font(.system(size: 12))
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
             }
-            .fixedSize(horizontal: true, vertical: false)
+            .padding(4)
+            .overlay(RoundedRectangle(cornerRadius: 5)
+                .stroke(
+                    Color("GreenColor"),
+                    lineWidth: 1
+                )
+            )
         }
         .frame(height: 40)
         .padding(16)
@@ -134,7 +112,6 @@ struct NumberView_Previews: PreviewProvider {
                     smsList: SmsList(data: []),
                     backgroundColorRes: "YellowColor"
                 ),
-                bannedPressAction: {},
                 cancelPressAction: {}
             )
             

@@ -11,14 +11,14 @@ struct NumberListView: View {
     
     @EnvironmentObject var viewModel: NumberListViewModel
     
-    @State private var state: NumberListState = .Loading
+    @State private var state: NumberListState = .Loading()
     
     var body: some View {
         VStack {
             switch state {
                 
-            case .Loading:
-                NumberListLoadingView()
+            case .Loading(let numbersDisplayedCount):
+                NumberListLoadingView(numbersDisplayedCount: numbersDisplayedCount)
                     .environmentObject(viewModel)
                 
             case .Loaded(let vo):

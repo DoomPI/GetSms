@@ -7,7 +7,7 @@
 
 enum NumberListIntent {
     
-    case LoadList
+    case LoadList(numbersDisplayedCount: Int? = nil)
     
     case PresentList(model: NumberDataList)
     

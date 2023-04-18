@@ -7,7 +7,7 @@
 
 enum NumberListState {
     
-    case Loading
+    case Loading(numbersDisplayedCount: Int? = nil)
     
     case Loaded(vo: NumberDataListVO)
     

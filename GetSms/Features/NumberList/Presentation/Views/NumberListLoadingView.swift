@@ -9,12 +9,19 @@ import SwiftUI
 
 struct NumberListLoadingView: View {
     
+    private let numbersCount: Int
+    
+    init(numbersDisplayedCount: Int?) {
+        self.numbersCount = numbersDisplayedCount ?? 10
+    }
+    
     @EnvironmentObject var viewModel: NumberListViewModel
     
     var body: some View {
         VStack {
+            
             ScrollView {
-                ForEach((1...10), id: \.self) { _ in
+                ForEach((1...numbersCount), id: \.self) { _ in
                     NumberPlaceholderView()
                 }
             }
@@ -27,7 +34,7 @@ struct NumberListLoadingView: View {
 
 struct NumberListLoadingView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberListLoadingView()
+        NumberListLoadingView(numbersDisplayedCount: nil)
             .background(Color("DarkBlueColor"))
     }
 }
