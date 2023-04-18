@@ -25,8 +25,8 @@ struct NumberListView: View {
                 NumberListLoadedView(vo: vo)
                     .environmentObject(viewModel)
                 
-            case .Error:
-                NumberListErrorView()
+            case .Error(let vo):
+                NumberListErrorView(errorVo: vo)
             }
         }
         .onReceive(viewModel.$state) { newState in

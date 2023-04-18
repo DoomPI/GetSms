@@ -80,19 +80,17 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
         return Single.zip(
             getApiKey(),
             getCountryCodeFromCache()
-        ) { (apiKey: ApiKey, countryCode: String) in
-            return (apiKey, countryCode)
-        }
-        .flatMapCompletable { (apiKey, countryCode) in
-            return self.getNumberFromNetwork(
+        )
+        .flatMap { (apiKey, countryCode) in
+            self.getNumberFromNetwork(
                 apiKey: apiKey,
                 serviceCode: serviceCode,
                 serviceName: serviceName,
                 countryCode: countryCode
             )
-            .flatMapCompletable { number in
-                self.appendNumbers(newNumber: number)
-            }
+        }
+        .flatMapCompletable { number in
+            self.appendNumbers(newNumber: number)
         }
     }
     

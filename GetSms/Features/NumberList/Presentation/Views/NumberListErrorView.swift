@@ -9,6 +9,8 @@ import SwiftUI
 
 struct NumberListErrorView: View {
     
+    let errorVo: NumberDataListErrorVO
+    
     var body: some View {
         VStack {
             Spacer()
@@ -16,7 +18,7 @@ struct NumberListErrorView: View {
             HStack {
                 Spacer()
                 
-                Text("Error!")
+                Text(errorVo.description)
                 
                 Spacer()
             }
@@ -29,7 +31,7 @@ struct NumberListErrorView: View {
 
 struct NumberListErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberListErrorView()
+        NumberListErrorView(errorVo: NumberDataListErrorVO(description: "Error!"))
             .background(Color("DarkBlueColor"))
     }
 }

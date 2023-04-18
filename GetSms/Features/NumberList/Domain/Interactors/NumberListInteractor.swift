@@ -44,7 +44,6 @@ extension NumberListInteractor: NumberListBusinessLogic {
             Observable.from(
                 numbers.map { number in
                     self.getNumberData(number: number)
-                        .asMaybe()
                 }
             )
             .merge()
@@ -56,15 +55,20 @@ extension NumberListInteractor: NumberListBusinessLogic {
         }
     }
     
-    private func getNumberData(number: Number) -> Single<NumberData> {
+    private func getNumberData(number: Number) -> Maybe<NumberData> {
         return getSmsListFromNetwork(numberId: number.id).map { smsList in
             NumberData(number: number, smsList: smsList)
         }
     }
     
-    private func getSmsListFromNetwork(numberId: String) -> Single<SmsList> {
-        return self.smsListNetworkWorker.getSmsList(numberId: numberId).map { dto in
-            try self.smsListNetworkMapper.fromDto(dto: dto)
+    private func getSmsListFromNetwork(numberId: String) -> Maybe<SmsList> {
+        self.smsListNetworkWorker.getSmsList(numberId: numberId).flatMapMaybe { dto in
+            do {
+                let smsList = try self.smsListNetworkMapper.fromDto(dto: dto)
+                return Maybe.just(smsList)
+            } catch {
+                return Maybe.empty()
+            }
         }
     }
     

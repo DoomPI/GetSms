@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */; };
 		A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885643029E2E7D3001C1F39 /* ApiKey.swift */; };
 		A8C9880B29D9CBB3000D1249 /* ServiceListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListTab.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
@@ -84,6 +83,9 @@
 		CC3C139129EC377100397F0F /* NumberListAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139029EC377100397F0F /* NumberListAssembly.swift */; };
 		CC3C139329EC392F00397F0F /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139229EC392F00397F0F /* MainScreen.swift */; };
 		CC3C139529EC393800397F0F /* NumberListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139429EC393800397F0F /* NumberListTab.swift */; };
+		CC3C139729ECD29B00397F0F /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139629ECD29B00397F0F /* KeychainHelper.swift */; };
+		CC3C139929EDE7A000397F0F /* NumberDataListErrorVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139829EDE7A000397F0F /* NumberDataListErrorVO.swift */; };
+		CC3C139B29EDE7C000397F0F /* NumberDataListErrorFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C139A29EDE7C000397F0F /* NumberDataListErrorFormatter.swift */; };
 		CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123329C78D930085324A /* GetSmsApp.swift */; };
 		CC5E123629C78D930085324A /* ServiceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5E123529C78D930085324A /* ServiceListView.swift */; };
 		CC5E123829C78D940085324A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC5E123729C78D940085324A /* Assets.xcassets */; };
@@ -171,7 +173,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		A885643029E2E7D3001C1F39 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		A8C9880A29D9CBB3000D1249 /* ServiceListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListTab.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
@@ -248,6 +249,9 @@
 		CC3C139029EC377100397F0F /* NumberListAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListAssembly.swift; sourceTree = "<group>"; };
 		CC3C139229EC392F00397F0F /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		CC3C139429EC393800397F0F /* NumberListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberListTab.swift; sourceTree = "<group>"; };
+		CC3C139629ECD29B00397F0F /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		CC3C139829EDE7A000397F0F /* NumberDataListErrorVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDataListErrorVO.swift; sourceTree = "<group>"; };
+		CC3C139A29EDE7C000397F0F /* NumberDataListErrorFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberDataListErrorFormatter.swift; sourceTree = "<group>"; };
 		CC5E123029C78D930085324A /* GetSms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSms.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5E123329C78D930085324A /* GetSmsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSmsApp.swift; sourceTree = "<group>"; };
 		CC5E123529C78D930085324A /* ServiceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListView.swift; sourceTree = "<group>"; };
@@ -336,8 +340,8 @@
 		A885642D29E2E6C9001C1F39 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				A885642E29E2E6FA001C1F39 /* KeychainHelper.swift */,
 				A885643029E2E7D3001C1F39 /* ApiKey.swift */,
+				CC3C139629ECD29B00397F0F /* KeychainHelper.swift */,
 			);
 			path = Keychain;
 			sourceTree = "<group>";
@@ -903,6 +907,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3C137329EB95D300397F0F /* NumberDataListFormatter.swift */,
+				CC3C139A29EDE7C000397F0F /* NumberDataListErrorFormatter.swift */,
 			);
 			path = Formatters;
 			sourceTree = "<group>";
@@ -913,6 +918,7 @@
 				CC3C138229EC09B700397F0F /* NumberDataVO.swift */,
 				CC3C138729EC143400397F0F /* NumberDataListVO.swift */,
 				CC3C138A29EC197000397F0F /* NumberVO.swift */,
+				CC3C139829EDE7A000397F0F /* NumberDataListErrorVO.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -1687,6 +1693,7 @@
 				CC3C137929EB969E00397F0F /* NumberListLoadingView.swift in Sources */,
 				CCCE960229E4C381007B4D0D /* PaymentAssembly.swift in Sources */,
 				CC3C138829EC143400397F0F /* NumberDataListVO.swift in Sources */,
+				CC3C139929EDE7A000397F0F /* NumberDataListErrorVO.swift in Sources */,
 				CC9E15AA29CF949500237F71 /* ServiceListState.swift in Sources */,
 				CCCE956C29E1F7BC007B4D0D /* WebViewModel.swift in Sources */,
 				CC1EBC7729CFC95400C43EF0 /* ServiceListNetworkMapper.swift in Sources */,
@@ -1775,6 +1782,7 @@
 				CCCD15E429DA0D8400739C44 /* URLType.swift in Sources */,
 				CCCE95BC29E370BE007B4D0D /* BalanceFormatter.swift in Sources */,
 				CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */,
+				CC3C139B29EDE7C000397F0F /* NumberDataListErrorFormatter.swift in Sources */,
 				CCCE95FC29E4C368007B4D0D /* PaymentState.swift in Sources */,
 				A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
@@ -1791,8 +1799,8 @@
 				CC3C139329EC392F00397F0F /* MainScreen.swift in Sources */,
 				CC5E123429C78D930085324A /* GetSmsApp.swift in Sources */,
 				CC3C134529EB2E9800397F0F /* NumberNetworkDTO.swift in Sources */,
+				CC3C139729ECD29B00397F0F /* KeychainHelper.swift in Sources */,
 				CC3C133929EB1AC000397F0F /* SearchView.swift in Sources */,
-				A885642F29E2E6FA001C1F39 /* KeychainHelper.swift in Sources */,
 				CCCE95BE29E370C7007B4D0D /* BalanceAssembly.swift in Sources */,
 				CC3C136E29EB957C00397F0F /* NumberListState.swift in Sources */,
 				CCCD15C329D8D5AA00739C44 /* CountryView.swift in Sources */,

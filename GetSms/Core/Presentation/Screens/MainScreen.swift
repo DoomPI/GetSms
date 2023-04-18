@@ -45,7 +45,10 @@ struct MainScreen: View {
         }
         .onAppear {
             balanceViewModel.onViewAppear()
+            countryListViewModel.onViewAppear()
+            serviceListViewModel.onViewAppear()
             paymentViewModel.onViewAppear()
+            numberListViewModel.onViewAppear()
         }
         .onReceive(balanceViewModel.$state) { newState in
             if case .ProceededToPayment = newState {

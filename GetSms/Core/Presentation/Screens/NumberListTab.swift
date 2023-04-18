@@ -14,8 +14,5 @@ struct NumberListTab: View {
     var body: some View {
         NumberListView()
             .environmentObject(viewModel)
-            .onAppear {
-                viewModel.onViewAppear()
-            }
     }
 }

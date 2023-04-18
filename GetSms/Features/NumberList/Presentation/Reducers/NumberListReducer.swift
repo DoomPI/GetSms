@@ -12,12 +12,15 @@ class NumberListReducer {
     
     // MARK: - Internal vars
     private let formatter: NumberDataListFormatter
+    private let errorFormatter: NumberDataListErrorFormatter
     
     // MARK: - Init
     init(
-        formatter: NumberDataListFormatter
+        formatter: NumberDataListFormatter,
+        errorFormatter: NumberDataListErrorFormatter
     ) {
         self.formatter = formatter
+        self.errorFormatter = errorFormatter
     }
 }
 
@@ -32,8 +35,8 @@ extension NumberListReducer: NumberListReducerProtocol {
         case .PresentList(let model):
             return .Loaded(vo: formatter.format(model: model))
             
-        case .PresentError:
-            return .Error
+        case .PresentError(let error):
+            return .Error(vo: errorFormatter.format(error: error))
     
         }
     }

@@ -31,10 +31,6 @@ struct ServiceListTab: View {
                 .environmentObject(serviceListViewModel)
         }
         .padding(8)
-        .onAppear {
-            serviceListViewModel.onViewAppear()
-            countryListViewModel.onViewAppear()
-        }
         .onReceive(countryListViewModel.$state) { newState in
             if case .Loaded(let vo) = newState {
                 serviceListViewModel.loadServiceList(countryCode: vo.countries[vo.selectedCountryIndex].code)

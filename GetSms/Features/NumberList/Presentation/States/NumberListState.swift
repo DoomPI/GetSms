@@ -11,5 +11,5 @@ enum NumberListState {
     
     case Loaded(vo: NumberDataListVO)
     
-    case Error
+    case Error(vo: NumberDataListErrorVO)
 }

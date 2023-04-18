@@ -49,7 +49,6 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                 
                 self.handleIntent(intent: intent)
                 
-                
                 switch intent {
                     
                 case .LoadList(let countryCode):
@@ -87,7 +86,9 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                         .purchaseNumber(serviceCode: serviceCode, serviceName: serviceName)
                         .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
                         .observe(on: MainScheduler.instance)
-                        .subscribe()
+                        .subscribe(
+                            onCompleted: {}
+                        )
                         .disposed(by: self.disposeBag)
                     
                 case .Nothing, .PresentList, .PresentError:

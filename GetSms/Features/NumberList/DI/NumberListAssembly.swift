@@ -25,9 +25,11 @@ enum NumberListAssembly {
         )
         
         let formatter = NumberDataListFormatter()
+        let errorFormatter = NumberDataListErrorFormatter()
         
         let reducer = NumberListReducer(
-            formatter: formatter
+            formatter: formatter,
+            errorFormatter: errorFormatter
         )
         
         let viewModel = NumberListViewModel(

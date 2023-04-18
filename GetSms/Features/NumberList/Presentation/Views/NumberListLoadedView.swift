@@ -37,6 +37,8 @@ struct NumberListLoadedView: View {
             .refreshable {
                 viewModel.loadNumberList()
             }
+            
+            Spacer()
         }
     }
 }
