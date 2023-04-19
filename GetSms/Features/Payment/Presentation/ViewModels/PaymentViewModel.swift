@@ -48,10 +48,6 @@ class PaymentViewModel: ObservableObject {
     }
     
     func webViewDecidePolicyFor(webView: WKWebView) {
-        if webView.url?.absoluteString != urlPayment {
-            webView.isHidden = true
-            processor.fireIntent(intent: .Close)
-        }
     }
 }
 
