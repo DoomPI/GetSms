@@ -58,19 +58,18 @@ struct MainScreen: View {
                 paymentViewModel.openPayment()
             }
         }
-        .onReceive(serviceListViewModel.$state) { newState in
+        .onReceive(serviceListViewModel.$routeState) { newState in
             switch newState {
                 
-            case .ProceededToNumbersList:
+            case .NumberListInitRouting:
+                withAnimation {
+                    selectedTab = .NumberList
+                }                
+                numberListViewModel.setLoading()
                 
-                selectedTab = .NumberList
-                
+            case .NumberListFinishRouting:
                 numberListViewModel.loadNumberList()
                 balanceViewModel.reloadBalance()
-                countryListViewModel.loadCountryList()
-                
-            case .BlockingLoading:
-                countryListViewModel.blockingLoad()
                 
             default:
                 break

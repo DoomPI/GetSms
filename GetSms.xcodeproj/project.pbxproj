@@ -55,6 +55,7 @@
 		CC30F76629EF5C96009EE081 /* NumberGetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F76529EF5C96009EE081 /* NumberGetStatus.swift */; };
 		CC30F76A29EF6126009EE081 /* SetStatusNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F76929EF6126009EE081 /* SetStatusNetworkDTO.swift */; };
 		CC30F76E29EF61ED009EE081 /* StatusNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F76D29EF61ED009EE081 /* StatusNetworkMapper.swift */; };
+		CC30F77129EF7E7E009EE081 /* ServiceListRouteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F77029EF7E7E009EE081 /* ServiceListRouteState.swift */; };
 		CC3C133429EB1A1400397F0F /* NumberNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133329EB1A1400397F0F /* NumberNetworkWorker.swift */; };
 		CC3C133929EB1AC000397F0F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133829EB1AC000397F0F /* SearchView.swift */; };
 		CC3C133B29EB1AF800397F0F /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133A29EB1AF800397F0F /* SearchPlaceholderView.swift */; };
@@ -229,6 +230,7 @@
 		CC30F76529EF5C96009EE081 /* NumberGetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGetStatus.swift; sourceTree = "<group>"; };
 		CC30F76929EF6126009EE081 /* SetStatusNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStatusNetworkDTO.swift; sourceTree = "<group>"; };
 		CC30F76D29EF61ED009EE081 /* StatusNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNetworkMapper.swift; sourceTree = "<group>"; };
+		CC30F77029EF7E7E009EE081 /* ServiceListRouteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListRouteState.swift; sourceTree = "<group>"; };
 		CC3C133329EB1A1400397F0F /* NumberNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberNetworkWorker.swift; sourceTree = "<group>"; };
 		CC3C133829EB1AC000397F0F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CC3C133A29EB1AF800397F0F /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
@@ -711,6 +713,14 @@
 			path = Processors;
 			sourceTree = "<group>";
 		};
+		CC30F76F29EF7E60009EE081 /* RouteStates */ = {
+			isa = PBXGroup;
+			children = (
+				CC30F77029EF7E7E009EE081 /* ServiceListRouteState.swift */,
+			);
+			path = RouteStates;
+			sourceTree = "<group>";
+		};
 		CC3C132A29EB180100397F0F /* NumberList */ = {
 			isa = PBXGroup;
 			children = (
@@ -1059,6 +1069,7 @@
 		CC9E158E29CF8E2700237F71 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				CC30F76F29EF7E60009EE081 /* RouteStates */,
 				CC1EBC9329D0CC0000C43EF0 /* Reducers */,
 				CC1EBC8529CFE4F400C43EF0 /* Views */,
 				CC1EBC8029CFDEB800C43EF0 /* Formatters */,
@@ -1792,6 +1803,7 @@
 				CCCE95E329E4A879007B4D0D /* BalanceErrorView.swift in Sources */,
 				CC06090B29D8BAE3005A815C /* CountryListErrorFormatter.swift in Sources */,
 				CC30F75C29EE2E06009EE081 /* CountryListBlockingLoadingView.swift in Sources */,
+				CC30F77129EF7E7E009EE081 /* ServiceListRouteState.swift in Sources */,
 				CC06090129D89D28005A815C /* CountryListProcessor.swift in Sources */,
 				CC06090929D8B0E9005A815C /* CountryListErrorVO.swift in Sources */,
 				CCCE957E29E2CAF3007B4D0D /* AuthWebScripts.swift in Sources */,

@@ -29,9 +29,6 @@ extension ServiceListReducer: ServiceListReducerProtocol {
     func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
-        case .Nothing:
-            return currentState
-            
         case .LoadList:
             return .Loading
             
@@ -44,14 +41,8 @@ extension ServiceListReducer: ServiceListReducerProtocol {
         case .PresentError(let error):
             return .Error(vo: errorFormatter.format(error: error))
             
-        case .PurchaseNumber:
+        default:
             return currentState
-            
-        case .ProceedToNumbersList:
-            return .ProceededToNumbersList
-            
-        case .PresentBlockingLoading:
-            return .BlockingLoading
     
         }
     }

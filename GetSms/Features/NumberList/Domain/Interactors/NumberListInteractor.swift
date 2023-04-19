@@ -68,9 +68,16 @@ extension NumberListInteractor: NumberListBusinessLogic {
         setStatusInNetwork(numberSetStatus: numberSetStatus).map { dto in
             try self.statusNetworkMapper.fromDto(dto: dto)
         }.flatMap { getStatus in
-            self.getNumbersFromCache().flatMap { numbers in
-                let newNumbers = numbers.filter { $0.id != numberSetStatus.numberId }
-                return self.setNumbersInCache(numbers: newNumbers)
+            switch getStatus {
+                
+            case .Ready:
+                return Single.just(NumberGetStatus(
+                    numberId: numberSetStatus.numberId,
+                    status: getStatus
+                ))
+                
+            default:
+                return self.deleteNumberFromCache(numberId: numberSetStatus.numberId)
                     .andThen(Single.just(NumberGetStatus(
                         numberId: numberSetStatus.numberId,
                         status: getStatus
@@ -78,7 +85,7 @@ extension NumberListInteractor: NumberListBusinessLogic {
             }
         }
     }
-    
+        
     private func getNumberData(number: Number) -> Maybe<NumberData> {
         return getSmsListFromNetwork(numberId: number.id).map { smsList in
             NumberData(number: number, smsList: smsList)
@@ -93,6 +100,13 @@ extension NumberListInteractor: NumberListBusinessLogic {
             } catch {
                 return Maybe.empty()
             }
+        }
+    }
+    
+    private func deleteNumberFromCache(numberId: String) -> Completable {
+        self.getNumbersFromCache().flatMapCompletable { numbers in
+            let newNumbers = numbers.filter { $0.id != numberId }
+            return self.setNumbersInCache(numbers: newNumbers)
         }
     }
     

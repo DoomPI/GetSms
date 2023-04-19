@@ -29,17 +29,18 @@ extension NumberListReducer: NumberListReducerProtocol {
     func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
-        case .LoadList(let numbersDisplayedCount):
-            return .Loading(numbersDisplayedCount: numbersDisplayedCount)
-            
         case .PresentList(let model):
             return .Loaded(vo: formatter.format(model: model))
+            
+        case .PresentLoading(let numbersDisplayedCount):
+            return .Loading(numbersDisplayedCount: numbersDisplayedCount)
             
         case .PresentError(let error):
             return .Error(vo: errorFormatter.format(error: error))
             
-        case .CancelNumber:
+        default:
             return currentState
+            
         }
     }
 }

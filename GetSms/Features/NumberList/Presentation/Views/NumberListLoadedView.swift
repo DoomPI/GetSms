@@ -32,6 +32,11 @@ struct NumberListLoadedView: View {
                                 viewModel.cancelNumber(
                                     numberId: vo.numbers[index].number.id
                                 )
+                            },
+                            continuePressAction: {
+                                viewModel.continueNumber(
+                                    numbedId: vo.numbers[index].number.id
+                                )
                             }
                         )
                     }

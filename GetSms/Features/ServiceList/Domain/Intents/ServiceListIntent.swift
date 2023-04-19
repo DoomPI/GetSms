@@ -19,7 +19,7 @@ enum ServiceListIntent {
     
     case PurchaseNumber(serviceCode: String, serviceName: String)
     
-    case ProceedToNumbersList
+    case NumberListInitRoute
     
-    case PresentBlockingLoading
+    case NumberListFinishRoute
 }

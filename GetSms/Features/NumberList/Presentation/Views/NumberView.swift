@@ -12,6 +12,7 @@ struct NumberView: View {
     // MARK: - External vars
     let vo: NumberDataVO
     let cancelPressAction: () -> Void
+    let continuePressAction: () -> Void
     
     // MARK: - Internval vars
     private let backgroundColor: Color
@@ -19,10 +20,12 @@ struct NumberView: View {
     // MARK: - Init
     init(
         vo: NumberDataVO,
-        cancelPressAction: @escaping () -> Void
+        cancelPressAction: @escaping () -> Void,
+        continuePressAction: @escaping () -> Void
     ) {
         self.vo = vo
         self.cancelPressAction = cancelPressAction
+        self.continuePressAction = continuePressAction
         self.backgroundColor = Color(vo.backgroundColorRes)
     }
     
@@ -49,22 +52,12 @@ struct NumberView: View {
             
             Spacer()
             
-            Button(action: cancelPressAction) {
-                Text("ОТМЕНА")
-                    .font(.system(size: 12))
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-            }
-            .padding(4)
-            .overlay(RoundedRectangle(cornerRadius: 5)
-                .stroke(
-                    Color("GreenColor"),
-                    lineWidth: 1
-                )
+            ButtonsSection(
+                cancelPressAction: cancelPressAction,
+                vo: vo
             )
         }
-        .frame(height: 40)
-        .padding(16)
+        .padding(8)
         .background(Rectangle()
             .fill(.linearGradient(
                 colors: [
@@ -100,6 +93,64 @@ struct SmsInfoView: View {
     }
 }
 
+struct ButtonsSection: View {
+    
+    let cancelPressAction: () -> Void
+    let vo: NumberDataVO
+    
+    var body: some View {
+        
+        if vo.smsList.data.isEmpty {
+            Button(action: cancelPressAction) {
+                Text("ОТМЕНА")
+                    .font(.system(size: 12))
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+            }
+            .padding(4)
+            .overlay(RoundedRectangle(cornerRadius: 5)
+                .stroke(
+                    Color("RedColor"),
+                    lineWidth: 1
+                )
+            )
+        } else {
+            VStack {
+                Button(action: {}) {
+                    Text("ПОЛУЧИТЬ ЕЩЁ")
+                        .font(.system(size: 12))
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                }
+                .padding(4)
+                .frame(maxWidth: .infinity)
+                .overlay(RoundedRectangle(cornerRadius: 5)
+                    .stroke(
+                        Color("GreenColor"),
+                        lineWidth: 1
+                    )
+                )
+                
+                Button(action: cancelPressAction) {
+                    Text("ОТМЕНА")
+                        .font(.system(size: 12))
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                }
+                .padding(4)
+                .frame(maxWidth: .infinity)
+                .overlay(RoundedRectangle(cornerRadius: 5)
+                    .stroke(
+                        Color("RedColor"),
+                        lineWidth: 1
+                    )
+                )
+            }
+            .fixedSize(horizontal: true, vertical: false)
+        }
+    }
+}
+
 struct NumberView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
@@ -113,7 +164,8 @@ struct NumberView_Previews: PreviewProvider {
                     smsList: SmsList(data: []),
                     backgroundColorRes: "YellowColor"
                 ),
-                cancelPressAction: {}
+                cancelPressAction: {},
+                continuePressAction: {}
             )
             
             Spacer()

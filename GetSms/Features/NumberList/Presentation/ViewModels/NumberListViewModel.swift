@@ -40,8 +40,16 @@ class NumberListViewModel: ObservableObject {
         processor.fireIntent(intent: .LoadList(numbersDisplayedCount: numbersDisplayedCount))
     }
     
+    func setLoading() {
+        processor.fireIntent(intent: .PresentLoading())
+    }
+    
     func cancelNumber(numberId: String) {
         processor.fireIntent(intent: .CancelNumber(numberId: numberId))
+    }
+    
+    func continueNumber(numbedId: String) {
+        processor.fireIntent(intent: .ContinueNumber(numberId: numbedId))
     }
 }
 

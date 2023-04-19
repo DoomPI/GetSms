@@ -39,7 +39,7 @@ struct ServiceListTab: View {
         .onReceive(serviceListViewModel.$state) { newState in
             switch newState {
                 
-            case .Loading, .BlockingLoading:
+            case .Loading:
                 isSearchViewLoading = true
                 
             case .Loaded:

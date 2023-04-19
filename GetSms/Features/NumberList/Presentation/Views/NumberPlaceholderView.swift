@@ -46,8 +46,7 @@ struct NumberPlaceholderView: View {
                 )
             )
         }
-        .frame(height: 40)
-        .padding(16)
+        .padding(8)
         .shimmer(
             tint: .gray.opacity(0.3),
             highlight: .white,

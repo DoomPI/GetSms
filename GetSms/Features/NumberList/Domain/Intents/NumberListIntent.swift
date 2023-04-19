@@ -9,9 +9,13 @@ enum NumberListIntent {
     
     case LoadList(numbersDisplayedCount: Int? = nil)
     
+    case PresentLoading(numbersDisplayedCount: Int? = nil)
+    
     case PresentList(model: NumberDataList)
     
     case PresentError(error: Error)
     
     case CancelNumber(numberId: String)
+    
+    case ContinueNumber(numberId: String)
 }
