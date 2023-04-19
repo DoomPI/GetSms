@@ -16,14 +16,14 @@ extension PaymentReducer: PaymentReducerProtocol {
     func reduce(currentState: State, intent: Intent) -> State {
         switch intent {
             
-        case .Nothing:
-            return currentState
-            
         case .Open:
             return .Opened
             
         case .Close:
             return .Closed
+            
+        default:
+            return currentState
             
         }
     }

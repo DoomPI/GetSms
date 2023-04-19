@@ -8,31 +8,26 @@
 import Foundation
 
 struct ServiceVO {
+    let code: String
     let name: String
     let imageURL: URL?
     let quantity: String
     let cost: String
-    let isLowQuantity: Bool
+    let backgroundColorRes: String
     
     init(
+        code: String,
         name: String,
         imageURL: URL?,
         quantity: String,
         cost: String,
-        isLowQuantity: Bool
+        backgroundColorRes: String
     ) {
+        self.code = code
         self.name = name
         self.imageURL = imageURL
         self.quantity = quantity
         self.cost = cost
-        self.isLowQuantity = isLowQuantity
+        self.backgroundColorRes = backgroundColorRes
     }
-    
-    static let empty = ServiceVO(
-        name: "Название сервиса",
-        imageURL: nil,
-        quantity: "0 шт.",
-        cost: "0.00₽",
-        isLowQuantity: false
-    )
 }

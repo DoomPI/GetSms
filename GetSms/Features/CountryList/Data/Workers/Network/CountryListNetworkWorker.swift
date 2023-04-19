@@ -27,11 +27,14 @@ extension CountryListNetworkWorker: CountryListNetworkWorkingLogic {
     func getCountryList() -> Single<CountryListNetworkDTO>{
         Single.deferred {
             let queryItems: [URLQueryItem] = []
-            var urlComps = URLComponents(string: Self.countryListUrl)!
-            urlComps.queryItems = queryItems
+            var urlComps = URLComponents(string: Self.countryListUrl)
+            urlComps?.queryItems = queryItems
+            guard let url = urlComps?.url else {
+                throw NSError(domain: "CountryListNetworkWorker", code: 1)
+            }
             
             return Self.worker.sendRequest(
-                url: urlComps.url!
+                url: url
             ).map { data in
                 try Self.extractor.extractMap(from: data)
             }

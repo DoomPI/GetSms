@@ -33,11 +33,14 @@ extension BalanceNetworkWorker: BalanceNetworkWorkingLogic {
                     value: apiKey
                 )
             ]
-            var urlComps = URLComponents(string: Self.balanceUrl)!
-            urlComps.queryItems = queryItems
+            var urlComps = URLComponents(string: Self.balanceUrl)
+            urlComps?.queryItems = queryItems
+            guard let url = urlComps?.url else {
+                throw NSError(domain: "BalanceNetworkWorker", code: 1)
+            }
             
             return Self.worker.sendRequest(
-                url: urlComps.url!
+                url: url
             ).map { data in
                 try self.decoder.decode(BalanceNetworkDTO.self, from: data)
             }

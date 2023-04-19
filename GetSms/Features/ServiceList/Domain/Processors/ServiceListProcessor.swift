@@ -29,7 +29,6 @@ class ServiceListProcessor {
     ) {
         self.interactor = interactor
     }
-    
 }
 
 extension ServiceListProcessor: ServiceListProcessorProtocol {
@@ -49,7 +48,6 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                 else { return }
                 
                 self.handleIntent(intent: intent)
-                
                 
                 switch intent {
                     
@@ -83,8 +81,20 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
+                case .PurchaseNumber(let serviceCode, let serviceName):
+                    self.fireIntent(intent: .NumberListInitRoute)
+                    self.interactor
+                        .purchaseNumber(serviceCode: serviceCode, serviceName: serviceName)
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onCompleted: {
+                                self.fireIntent(intent: .NumberListFinishRoute)
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
                     
-                case .Nothing, .PresentList, .PresentError:
+                default:
                     break
                 }
                 

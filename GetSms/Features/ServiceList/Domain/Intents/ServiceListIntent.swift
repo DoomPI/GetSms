@@ -9,11 +9,17 @@ enum ServiceListIntent {
     
     case Nothing
     
-    case LoadList(countryCode: String?)
+    case LoadList(countryCode: String? = nil)
     
     case SearchService(searchText: String)
     
     case PresentList(model: ServiceList)
     
     case PresentError(error: Error)
+    
+    case PurchaseNumber(serviceCode: String, serviceName: String)
+    
+    case NumberListInitRoute
+    
+    case NumberListFinishRoute
 }

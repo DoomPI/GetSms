@@ -27,6 +27,7 @@ struct ServiceListView: View {
                 
             case .Error(let vo):
                 ServiceListErrorView(vo: vo)
+                
             }
         }
         .onReceive(viewModel.$state) { newState in

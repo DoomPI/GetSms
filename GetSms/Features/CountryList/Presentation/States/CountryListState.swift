@@ -12,4 +12,6 @@ enum CountryListState {
     case Loaded(vo: CountryListVO)
     
     case Error(vo: CountryListErrorVO)
+    
+    case BlockingLoading
 }

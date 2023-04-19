@@ -40,22 +40,25 @@ extension CountryListReducer: CountryListReducerProtocol {
             
         case .PresentError(let error):
             return .Error(vo: errorFormatter.format(error: error))
+            
+        case .PresentBlockingLoading:
+            return .BlockingLoading
         }
     }
     
     private func reduceSelectCountry(currentState: State, countryCode: String) -> State {
         if case .Loaded(let vo) = currentState {
-            let selectedCountryIndex = vo.countries.firstIndex(where: { country in
-                country.code == countryCode
-            })
-            if selectedCountryIndex != nil {
-                return .Loaded(vo: CountryListVO(
-                    countries: vo.countries,
-                    selectedCountryIndex: selectedCountryIndex!
-                ))
-            } else {
+            guard
+                let selectedCountryIndex = vo.countries.firstIndex(where: { country in
+                    country.code == countryCode
+                })
+            else {
                 return .Error(vo: CountryListErrorVO(description: "Country code not found"))
             }
+            return .Loaded(vo: CountryListVO(
+                countries: vo.countries,
+                selectedCountryIndex: selectedCountryIndex
+            ))
         } else {
             return currentState
         }

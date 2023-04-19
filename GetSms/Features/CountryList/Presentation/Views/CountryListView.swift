@@ -32,6 +32,9 @@ struct CountryListView: View {
             case .Error(let vo):
                 CountryListErrorView(vo: vo)
                 
+            case .BlockingLoading:
+                CountryListBlockingLoadingView()
+                
             }
         }
         .onReceive(viewModel.$state) { newState in

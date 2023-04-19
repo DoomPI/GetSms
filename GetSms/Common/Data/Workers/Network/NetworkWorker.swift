@@ -22,8 +22,10 @@ class NetworkWorker {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data {
                     subscriber(SingleEvent.success(data))
+                } else if let error {
+                    subscriber(SingleEvent.failure(error))
                 } else {
-                    subscriber(SingleEvent.failure(error!))
+                    subscriber(SingleEvent.failure(NSError(domain: "NetworkWorker", code: 1)))
                 }
             }.resume()
             return Disposables.create()

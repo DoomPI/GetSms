@@ -1,20 +1,23 @@
 //
-//  ServiceListScreen.swift
+//  MainScreen.swift
 //  GetSms
 //
-//  Created by Роман Ломтев on 01.04.2023.
+//  Created by Роман Ломтев on 16.04.2023.
 //
- 
+
 import SwiftUI
- 
-struct ServiceListScreen: View {
+
+struct MainScreen: View {
  
     @ObservedObject var balanceViewModel = BalanceAssembly.assemble()
     @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
     @ObservedObject var serviceListViewModel = ServiceListAssembly.assemble()
     @ObservedObject var paymentViewModel = PaymentAssembly.assemble()
+    @ObservedObject var numberListViewModel = NumberListAssembly.assemble()
     
     @State private var isPaymentBottomsheetPresented = false
+    @State private var isSearchViewLoading = false
+    @State private var selectedTab: TabNavigationState = .ServiceList
     
     @Binding var navigationState: NavigationState
  
@@ -23,12 +26,19 @@ struct ServiceListScreen: View {
             
             BalanceView()
                 .environmentObject(balanceViewModel)
+            
+            TabView(selection: $selectedTab) {
+                ServiceListTab()
+                    .tag(TabNavigationState.ServiceList)
+                    .environmentObject(countryListViewModel)
+                    .environmentObject(serviceListViewModel)
+                
+                NumberListTab()
+                    .tag(TabNavigationState.NumberList)
+                    .environmentObject(numberListViewModel)
 
-            CountryListView()
-                .environmentObject(countryListViewModel)
-
-            ServiceListView()
-                .environmentObject(serviceListViewModel)
+            }
+            .tabViewStyle(.page)
         }
         .padding(8)
         .background(Color("DarkBlueColor"))
@@ -41,15 +51,28 @@ struct ServiceListScreen: View {
             countryListViewModel.onViewAppear()
             serviceListViewModel.onViewAppear()
             paymentViewModel.onViewAppear()
+            numberListViewModel.onViewAppear()
         }
         .onReceive(balanceViewModel.$state) { newState in
             if case .ProceededToPayment = newState {
                 paymentViewModel.openPayment()
             }
         }
-        .onReceive(countryListViewModel.$state) { newState in
-            if case .Loaded(let vo) = newState {
-                serviceListViewModel.loadServiceList(countryCode: vo.countries[vo.selectedCountryIndex].code)
+        .onReceive(serviceListViewModel.$routeState) { newState in
+            switch newState {
+                
+            case .NumberListInitRouting:
+                withAnimation {
+                    selectedTab = .NumberList
+                }                
+                numberListViewModel.setLoading()
+                
+            case .NumberListFinishRouting:
+                numberListViewModel.loadNumberList()
+                balanceViewModel.reloadBalance()
+                
+            default:
+                break
             }
         }
         .onReceive(paymentViewModel.$state) { newState in
@@ -71,3 +94,11 @@ struct ServiceListScreen: View {
         }
     }
 }
+
+private enum TabNavigationState {
+    
+    case ServiceList
+    
+    case NumberList
+}
+

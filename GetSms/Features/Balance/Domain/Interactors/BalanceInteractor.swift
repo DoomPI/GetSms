@@ -38,7 +38,7 @@ extension BalanceInteractor: BalanceBusinessLogic {
     func getBalance() -> Single<Balance> {
         return getApiKey().flatMap { apiKey in
             self.networkWorker.getBalance(apiKey: apiKey.apiKey).map { dto in
-                self.networkMapper.fromDto(dto: dto)
+                try self.networkMapper.fromDto(dto: dto)
             }
         }
     }

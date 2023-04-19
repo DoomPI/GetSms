@@ -49,12 +49,12 @@ struct ServicePlaceholderView: View {
             )
         }
         .frame(height: 40)
+        .padding(16)
         .shimmer(
             tint: .gray.opacity(0.3),
             highlight: .white,
             blur: 5
         )
-        .padding(16)
         .background(Rectangle()
             .fill(.linearGradient(
                 colors: [

@@ -14,4 +14,6 @@ enum CountryListIntent {
     case SelectCountry(countryCode: String)
     
     case PresentError(error: Error)
+    
+    case PresentBlockingLoading
 }

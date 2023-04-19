@@ -13,8 +13,6 @@ struct ServiceListLoadingView: View {
     
     var body: some View {
         VStack {
-            ServiceSearchPlaceholderView()
-            
             ScrollView {
                 ForEach((1...10), id: \.self) { _ in
                     ServicePlaceholderView()

@@ -12,7 +12,20 @@ struct ServiceListErrorView: View {
     let vo: ServiceListErrorVO
     
     var body: some View {
-        Text(vo.description)
+        VStack {
+            Spacer()
+            
+            HStack {
+                Spacer()
+                
+                Text(vo.description)
+                
+                Spacer()
+            }
+            
+            Spacer()
+        }
+        
     }
 }
 

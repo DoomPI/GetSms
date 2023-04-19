@@ -23,9 +23,7 @@ struct ServiceView: View {
     ) {
         self.vo = vo
         self.pressAction = pressAction
-        self.backgroundColor = vo.isLowQuantity
-        ? Color("RedColor")
-        : Color("GreenColor")
+        self.backgroundColor = Color(vo.backgroundColorRes)
     }
     
     var body: some View {
@@ -111,13 +109,14 @@ struct ServiceView_Previews: PreviewProvider {
         VStack {
             ServiceView(
                 vo: ServiceVO(
+                    code: "vk",
                     name: "VK - MailRu",
                     imageURL: URL(
                         string: "https://vak-sms.com/static/service/mr.png"
                     ),
                     quantity: "1 шт.",
                     cost: "17.00₽",
-                    isLowQuantity: false
+                    backgroundColorRes: "GreenColor"
                 ),
                 pressAction: {}
             )

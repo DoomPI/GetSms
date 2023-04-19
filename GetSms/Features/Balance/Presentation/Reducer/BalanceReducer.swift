@@ -37,6 +37,7 @@ extension BalanceReducer: BalanceReducerProtocol {
             
         case .ProceedToPayment:
             return .ProceededToPayment
+
         }
     }
 }

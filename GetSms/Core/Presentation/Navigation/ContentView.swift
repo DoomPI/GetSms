@@ -20,8 +20,8 @@ struct ContentView: View {
             case .Auth:
                 AuthScreen(navigationState: $navigationState)
                 
-            case .ServiceList:
-                ServiceListScreen(navigationState: $navigationState)
+            case .Main:
+                MainScreen(navigationState: $navigationState)
 
             }
         }
@@ -32,5 +32,5 @@ enum NavigationState: Hashable {
     
     case Auth
     
-    case ServiceList
+    case Main
 }

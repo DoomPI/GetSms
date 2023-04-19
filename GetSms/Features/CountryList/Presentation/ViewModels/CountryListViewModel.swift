@@ -41,6 +41,10 @@ class CountryListViewModel: ObservableObject {
     func loadCountryList() {
         processor.fireIntent(intent: .LoadList)
     }
+    
+    func blockingLoad() {
+        processor.fireIntent(intent: .PresentBlockingLoading)
+    }
 }
 
 extension CountryListViewModel: CountryListHandlerProtocol {

@@ -22,7 +22,7 @@ struct AuthScreen: View {
             .onReceive(viewModel.$state) { newState in
                 if case .SuccessfulAuth = newState {
                     withAnimation {
-                        navigationState = .ServiceList
+                        navigationState = .Main
                     }
                 }
             }
