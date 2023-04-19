@@ -62,6 +62,18 @@ extension BalanceProcessor: BalanceProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
+                case .Logout:
+                    self.interactor
+                        .logout()
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onCompleted: { [weak self] in
+                                self?.fireIntent(intent: .ProceedToAuth)
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
                 default:
                     break
                     

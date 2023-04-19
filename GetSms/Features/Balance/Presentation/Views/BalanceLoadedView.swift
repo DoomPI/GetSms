@@ -18,7 +18,9 @@ struct BalanceLoadedView: View {
             HStack {
                 Spacer()
                 
-                Image("SignoutImage")
+                Button(action: viewModel.logout) {
+                    Image("SignoutImage")
+                }
             }
             
             HStack(alignment: .center) {

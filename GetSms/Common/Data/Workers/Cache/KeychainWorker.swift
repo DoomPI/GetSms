@@ -47,4 +47,13 @@ class KeychainWorker {
             return Disposables.create()
         }
     }
+    
+    func deleteApiKey() -> Completable {
+        Completable.create { subscriber in
+            Self.keychainHelper.delete(service: apiKeyService, account: account)
+            subscriber(CompletableEvent.completed)
+            
+            return Disposables.create()
+        }
+    }
 }

@@ -53,9 +53,17 @@ struct MainScreen: View {
             paymentViewModel.onViewAppear()
             numberListViewModel.onViewAppear()
         }
-        .onReceive(balanceViewModel.$state) { newState in
-            if case .ProceededToPayment = newState {
+        .onReceive(balanceViewModel.$routeState) { newState in
+            switch newState {
+                
+            case .PaymentRouting:
                 paymentViewModel.openPayment()
+                
+            case .AuthRouting:
+                navigationState = .Auth
+                
+            default:
+                break
             }
         }
         .onReceive(serviceListViewModel.$routeState) { newState in

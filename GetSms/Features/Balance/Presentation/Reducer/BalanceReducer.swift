@@ -35,8 +35,8 @@ extension BalanceReducer: BalanceReducerProtocol {
         case .PresentError:
             return .Error
             
-        case .ProceedToPayment:
-            return .ProceededToPayment
+        default:
+            return currentState
 
         }
     }
