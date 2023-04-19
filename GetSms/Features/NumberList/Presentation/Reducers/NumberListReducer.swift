@@ -37,7 +37,9 @@ extension NumberListReducer: NumberListReducerProtocol {
             
         case .PresentError(let error):
             return .Error(vo: errorFormatter.format(error: error))
-    
+            
+        case .CancelNumber:
+            return currentState
         }
     }
 }

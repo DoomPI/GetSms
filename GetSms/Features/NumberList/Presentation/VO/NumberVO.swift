@@ -7,5 +7,6 @@
 
 struct NumberVO {
     let serviceName: String
+    let id: String
     let number: String
 }

@@ -28,14 +28,20 @@ struct NumberListLoadedView: View {
                     ForEach(vo.numbers.indices, id: \.self) { index in
                         NumberView(
                             vo: vo.numbers[index],
-                            cancelPressAction: {}
+                            cancelPressAction: {
+                                viewModel.cancelNumber(
+                                    numberId: vo.numbers[index].number.id
+                                )
+                            }
                         )
                     }
                 }
             }
             .refreshable {
                 viewModel.loadNumberList(
-                    numbersDisplayedCount: vo.numbers.count
+                    numbersDisplayedCount: vo.numbers.count > 0
+                    ? vo.numbers.count
+                    : nil
                 )
             }
             
@@ -51,6 +57,7 @@ struct NumberListLoadedView_Previews: PreviewProvider {
                 NumberDataVO(
                     number: NumberVO(
                         serviceName: "VK - MailRu",
+                        id: "",
                         number: "+70001234567"
                     ),
                     smsList: SmsList(data: []),
@@ -59,6 +66,7 @@ struct NumberListLoadedView_Previews: PreviewProvider {
                 NumberDataVO(
                     number: NumberVO(
                         serviceName: "VK - MailRu",
+                        id: "",
                         number: "+70001234567"
                     ),
                     smsList: SmsList(data: []),
@@ -67,6 +75,7 @@ struct NumberListLoadedView_Previews: PreviewProvider {
                 NumberDataVO(
                     number: NumberVO(
                         serviceName: "VK - MailRu",
+                        id: "",
                         number: "+70001234567"
                     ),
                     smsList: SmsList(data: []),
@@ -75,6 +84,7 @@ struct NumberListLoadedView_Previews: PreviewProvider {
                 NumberDataVO(
                     number: NumberVO(
                         serviceName: "VK - MailRu",
+                        id: "",
                         number: "+70001234567"
                     ),
                     smsList: SmsList(data: []),
@@ -83,6 +93,7 @@ struct NumberListLoadedView_Previews: PreviewProvider {
                 NumberDataVO(
                     number: NumberVO(
                         serviceName: "VK - MailRu",
+                        id: "",
                         number: "+70001234567"
                     ),
                     smsList: SmsList(data: []),

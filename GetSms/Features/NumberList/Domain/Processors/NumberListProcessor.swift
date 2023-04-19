@@ -67,6 +67,24 @@ extension NumberListProcessor: NumberListProcessorProtocol {
                         )
                         .disposed(by: self.disposeBag)
                     
+                case .CancelNumber(let numberId):
+                    self.interactor
+                        .setStatus(numberSetStatus: NumberSetStatus(
+                            numberId: numberId,
+                            status: .End
+                        ))
+                        .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))
+                        .observe(on: MainScheduler.instance)
+                        .subscribe(
+                            onSuccess: { [weak self] numberGetStatus in
+                                self?.fireIntent(intent: .LoadList())
+                            },
+                            onFailure: { [weak self] error in
+                                self?.fireIntent(intent: .PresentError(error: error))
+                            }
+                        )
+                        .disposed(by: self.disposeBag)
+                    
                 default:
                     break
                 }

@@ -33,10 +33,12 @@ class NumberDataListFormatter {
     
     private func format(model: Number) -> NumberVO {
         let serviceName = model.serviceName
+        let id = model.id
         let number = "+\(model.phoneNumber)"
         
         return NumberVO(
             serviceName: serviceName,
+            id: id,
             number: number
         )
     }

@@ -14,11 +14,16 @@ enum NumberListAssembly {
         let numberCacheWorker = NumberCacheWorker()
         let numberCacheMapper = NumberCacheMapper()
         
+        let statusNetworkWorker = StatusNetworkWorker()
+        let statusNetworkMapper = StatusNetworkMapper()
+        
         let interactor = NumberListInteractor(
             smsListNetworkWorker: smsListNetworkWorker,
             smsListNetworkMapper: smsListNetworkMapper,
             numberCacheWorker: numberCacheWorker,
-            numberCacheMapper: numberCacheMapper
+            numberCacheMapper: numberCacheMapper,
+            statusNetworkWorker: statusNetworkWorker,
+            statusNetworkMapper: statusNetworkMapper
         )
         let processor = NumberListProcessor(
             interactor: interactor

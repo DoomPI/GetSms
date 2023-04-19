@@ -39,6 +39,10 @@ class NumberListViewModel: ObservableObject {
     ) {
         processor.fireIntent(intent: .LoadList(numbersDisplayedCount: numbersDisplayedCount))
     }
+    
+    func cancelNumber(numberId: String) {
+        processor.fireIntent(intent: .CancelNumber(numberId: numberId))
+    }
 }
 
 extension NumberListViewModel: NumberListHandlerProtocol {

@@ -49,6 +49,12 @@
 		CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1EBC9929D0DAB000C43EF0 /* Handler.swift */; };
 		CC30F75A29EE29F6009EE081 /* ServiceListBlockingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F75929EE29F6009EE081 /* ServiceListBlockingLoadingView.swift */; };
 		CC30F75C29EE2E06009EE081 /* CountryListBlockingLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F75B29EE2E06009EE081 /* CountryListBlockingLoadingView.swift */; };
+		CC30F75E29EF4ECD009EE081 /* StatusNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F75D29EF4ECD009EE081 /* StatusNetworkWorker.swift */; };
+		CC30F76029EF4F05009EE081 /* GetStatusNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F75F29EF4F05009EE081 /* GetStatusNetworkDTO.swift */; };
+		CC30F76429EF4F56009EE081 /* NumberSetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F76329EF4F56009EE081 /* NumberSetStatus.swift */; };
+		CC30F76629EF5C96009EE081 /* NumberGetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F76529EF5C96009EE081 /* NumberGetStatus.swift */; };
+		CC30F76A29EF6126009EE081 /* SetStatusNetworkDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F76929EF6126009EE081 /* SetStatusNetworkDTO.swift */; };
+		CC30F76E29EF61ED009EE081 /* StatusNetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC30F76D29EF61ED009EE081 /* StatusNetworkMapper.swift */; };
 		CC3C133429EB1A1400397F0F /* NumberNetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133329EB1A1400397F0F /* NumberNetworkWorker.swift */; };
 		CC3C133929EB1AC000397F0F /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133829EB1AC000397F0F /* SearchView.swift */; };
 		CC3C133B29EB1AF800397F0F /* SearchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3C133A29EB1AF800397F0F /* SearchPlaceholderView.swift */; };
@@ -217,6 +223,12 @@
 		CC1EBC9929D0DAB000C43EF0 /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		CC30F75929EE29F6009EE081 /* ServiceListBlockingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListBlockingLoadingView.swift; sourceTree = "<group>"; };
 		CC30F75B29EE2E06009EE081 /* CountryListBlockingLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListBlockingLoadingView.swift; sourceTree = "<group>"; };
+		CC30F75D29EF4ECD009EE081 /* StatusNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNetworkWorker.swift; sourceTree = "<group>"; };
+		CC30F75F29EF4F05009EE081 /* GetStatusNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStatusNetworkDTO.swift; sourceTree = "<group>"; };
+		CC30F76329EF4F56009EE081 /* NumberSetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberSetStatus.swift; sourceTree = "<group>"; };
+		CC30F76529EF5C96009EE081 /* NumberGetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberGetStatus.swift; sourceTree = "<group>"; };
+		CC30F76929EF6126009EE081 /* SetStatusNetworkDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStatusNetworkDTO.swift; sourceTree = "<group>"; };
+		CC30F76D29EF61ED009EE081 /* StatusNetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNetworkMapper.swift; sourceTree = "<group>"; };
 		CC3C133329EB1A1400397F0F /* NumberNetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberNetworkWorker.swift; sourceTree = "<group>"; };
 		CC3C133829EB1AC000397F0F /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		CC3C133A29EB1AF800397F0F /* SearchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPlaceholderView.swift; sourceTree = "<group>"; };
@@ -765,6 +777,7 @@
 				CC3C133229EB194C00397F0F /* Mappers */,
 				CC3C133129EB194800397F0F /* DTO */,
 				CC3C136129EB45A700397F0F /* SmsListNetworkWorker.swift */,
+				CC30F75D29EF4ECD009EE081 /* StatusNetworkWorker.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -773,6 +786,8 @@
 			isa = PBXGroup;
 			children = (
 				CC3C134E29EB367900397F0F /* SmsListNetworkDTO.swift */,
+				CC30F75F29EF4F05009EE081 /* GetStatusNetworkDTO.swift */,
+				CC30F76929EF6126009EE081 /* SetStatusNetworkDTO.swift */,
 			);
 			path = DTO;
 			sourceTree = "<group>";
@@ -781,6 +796,7 @@
 			isa = PBXGroup;
 			children = (
 				CC3C135229EB39A400397F0F /* SmsListNetworkMapper.swift */,
+				CC30F76D29EF61ED009EE081 /* StatusNetworkMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -843,6 +859,8 @@
 				CC3C134A29EB312600397F0F /* NumberDataList.swift */,
 				CC3C135029EB398400397F0F /* SmsList.swift */,
 				CC3C136529EB4EE800397F0F /* NumberData.swift */,
+				CC30F76329EF4F56009EE081 /* NumberSetStatus.swift */,
+				CC30F76529EF5C96009EE081 /* NumberGetStatus.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1671,6 +1689,7 @@
 				CCCE95D429E38012007B4D0D /* BalanceNetworkDTO.swift in Sources */,
 				CC0608F129D89704005A815C /* CountryListFormatter.swift in Sources */,
 				CC1EBC8429CFDFCF00C43EF0 /* ServiceListErrorFormatter.swift in Sources */,
+				CC30F76E29EF61ED009EE081 /* StatusNetworkMapper.swift in Sources */,
 				CCCE95BA29E370B8007B4D0D /* BalanceVO.swift in Sources */,
 				CCCE95B429E3707A007B4D0D /* BalanceState.swift in Sources */,
 				CC3C136229EB45A700397F0F /* SmsListNetworkWorker.swift in Sources */,
@@ -1732,6 +1751,7 @@
 				CC3C135B29EB3C7B00397F0F /* NumberCacheWorker.swift in Sources */,
 				CC1EBC8829CFE79400C43EF0 /* ServiceListAssembly.swift in Sources */,
 				CC3C137F29EB973800397F0F /* NumberView.swift in Sources */,
+				CC30F76A29EF6126009EE081 /* SetStatusNetworkDTO.swift in Sources */,
 				CCCE95D829E391DC007B4D0D /* BalanceCacheWorker.swift in Sources */,
 				CC3C136429EB47C200397F0F /* KeychainWorker.swift in Sources */,
 				CCCD15D929D9DDFA00739C44 /* AuthViewModel.swift in Sources */,
@@ -1751,10 +1771,12 @@
 				CCCE95DF29E49F87007B4D0D /* BalanceLoadedView.swift in Sources */,
 				CC1EBC9029D0B60E00C43EF0 /* ServicePlaceholderView.swift in Sources */,
 				CCCE95D629E38C7A007B4D0D /* BalanceNetworkMapper.swift in Sources */,
+				CC30F75E29EF4ECD009EE081 /* StatusNetworkWorker.swift in Sources */,
 				CC9E158829CF8DA800237F71 /* NetworkWorker.swift in Sources */,
 				CC3C135729EB3A9300397F0F /* NumberCacheDTO.swift in Sources */,
 				CC3C137229EB95CB00397F0F /* NumberListViewModel.swift in Sources */,
 				CCCE960629E4C3BA007B4D0D /* PaymentProcessor.swift in Sources */,
+				CC30F76029EF4F05009EE081 /* GetStatusNetworkDTO.swift in Sources */,
 				CC0608F329D89718005A815C /* CountryListView.swift in Sources */,
 				CCCE960029E4C376007B4D0D /* PaymentView.swift in Sources */,
 				CCCD15E229D9E80400739C44 /* WebIntent.swift in Sources */,
@@ -1792,12 +1814,14 @@
 				CCCE959429E2FDD1007B4D0D /* AuthIntent.swift in Sources */,
 				CC3C139B29EDE7C000397F0F /* NumberDataListErrorFormatter.swift in Sources */,
 				CCCE95FC29E4C368007B4D0D /* PaymentState.swift in Sources */,
+				CC30F76429EF4F56009EE081 /* NumberSetStatus.swift in Sources */,
 				A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */,
 				CC1EBC8229CFDF3100C43EF0 /* ServiceListFormatter.swift in Sources */,
 				CC1EBC9A29D0DAB000C43EF0 /* Handler.swift in Sources */,
 				CCCE959C29E2FF8B007B4D0D /* AuthReducer.swift in Sources */,
 				CC06090329D89D35005A815C /* CountryListIntent.swift in Sources */,
 				CC0608F529D89722005A815C /* CountryListReducer.swift in Sources */,
+				CC30F76629EF5C96009EE081 /* NumberGetStatus.swift in Sources */,
 				CC0608E429D8967D005A815C /* CountryListNetworkWorker.swift in Sources */,
 				CC3C135929EB3B2C00397F0F /* NumberCacheMapper.swift in Sources */,
 				CC3C134F29EB367900397F0F /* SmsListNetworkDTO.swift in Sources */,

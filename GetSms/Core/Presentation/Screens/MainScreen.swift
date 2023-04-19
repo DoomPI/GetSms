@@ -62,9 +62,9 @@ struct MainScreen: View {
             switch newState {
                 
             case .ProceededToNumbersList:
-                withAnimation {
-                    selectedTab = .NumberList
-                }
+                
+                selectedTab = .NumberList
+                
                 numberListViewModel.loadNumberList()
                 balanceViewModel.reloadBalance()
                 countryListViewModel.loadCountryList()

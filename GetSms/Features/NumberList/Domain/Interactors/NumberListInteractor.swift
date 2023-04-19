@@ -11,6 +11,8 @@ import Foundation
 protocol NumberListBusinessLogic {
     
     func getNumberList() -> Single<NumberDataList>
+    
+    func setStatus(numberSetStatus: NumberSetStatus) -> Single<NumberGetStatus>
 }
 
 class NumberListInteractor {
@@ -23,17 +25,24 @@ class NumberListInteractor {
     private let numberCacheWorker: NumberCacheWorkingLogic
     private let numberCacheMapper: NumberCacheMapper
     
+    private let statusNetworkWorker: StatusNetworkWorkingLogic
+    private let statusNetworkMapper: StatusNetworkMapper
+    
     // MARK: - Init
     init(
         smsListNetworkWorker: SmsListNetworkWorkingLogic,
         smsListNetworkMapper: SmsListNetworkMapper,
         numberCacheWorker: NumberCacheWorkingLogic,
-        numberCacheMapper: NumberCacheMapper
+        numberCacheMapper: NumberCacheMapper,
+        statusNetworkWorker: StatusNetworkWorkingLogic,
+        statusNetworkMapper: StatusNetworkMapper
     ) {
         self.smsListNetworkWorker = smsListNetworkWorker
         self.smsListNetworkMapper = smsListNetworkMapper
         self.numberCacheWorker = numberCacheWorker
         self.numberCacheMapper = numberCacheMapper
+        self.statusNetworkWorker = statusNetworkWorker
+        self.statusNetworkMapper = statusNetworkMapper
     }
 }
 
@@ -52,6 +61,21 @@ extension NumberListInteractor: NumberListBusinessLogic {
         .flatMap { numberData in
             return self.setNumbersInCache(numbers: numberData.map { $0.number})
                 .andThen(Single.just(NumberDataList(data: numberData)))
+        }
+    }
+    
+    func setStatus(numberSetStatus: NumberSetStatus) -> Single<NumberGetStatus> {
+        setStatusInNetwork(numberSetStatus: numberSetStatus).map { dto in
+            try self.statusNetworkMapper.fromDto(dto: dto)
+        }.flatMap { getStatus in
+            self.getNumbersFromCache().flatMap { numbers in
+                let newNumbers = numbers.filter { $0.id != numberSetStatus.numberId }
+                return self.setNumbersInCache(numbers: newNumbers)
+                    .andThen(Single.just(NumberGetStatus(
+                        numberId: numberSetStatus.numberId,
+                        status: getStatus
+                    )))
+            }
         }
     }
     
@@ -82,6 +106,17 @@ extension NumberListInteractor: NumberListBusinessLogic {
         Completable.deferred {
             let dto = self.numberCacheMapper.toDto(model: numbers)
             return self.numberCacheWorker.setNumbers(numbers: dto)
+        }
+    }
+    
+    private func setStatusInNetwork(numberSetStatus: NumberSetStatus) -> Single<GetStatusNetworkDTO> {
+        Single.deferred {
+            let setStatusNetworkDto = self.statusNetworkMapper.toDto(model: numberSetStatus.status)
+            
+            return self.statusNetworkWorker.setStatus(
+                numberId: numberSetStatus.numberId,
+                setStatusNetworkDto: setStatusNetworkDto
+            )
         }
     }
 }

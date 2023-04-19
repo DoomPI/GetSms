@@ -12,4 +12,6 @@ enum NumberListIntent {
     case PresentList(model: NumberDataList)
     
     case PresentError(error: Error)
+    
+    case CancelNumber(numberId: String)
 }

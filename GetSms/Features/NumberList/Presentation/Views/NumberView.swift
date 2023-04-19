@@ -107,6 +107,7 @@ struct NumberView_Previews: PreviewProvider {
                 vo: NumberDataVO(
                     number: NumberVO(
                         serviceName: "VK - MailRu",
+                        id: "",
                         number: "+70001234567"
                     ),
                     smsList: SmsList(data: []),
