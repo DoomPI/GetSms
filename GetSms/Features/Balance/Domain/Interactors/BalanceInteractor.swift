@@ -10,6 +10,8 @@ import RxSwift
 protocol BalanceBusinessLogic {
     
     func getBalance() -> Single<Balance>
+    
+    func logout() -> Completable
 }
 
 class BalanceInteractor {
@@ -43,7 +45,15 @@ extension BalanceInteractor: BalanceBusinessLogic {
         }
     }
     
+    func logout() -> Completable {
+        return deleteApiKey()
+    }
+    
     private func getApiKey() -> Single<ApiKey> {
         return cacheWorker.getApiKey()
+    }
+    
+    private func deleteApiKey() -> Completable {
+        return cacheWorker.deleteApiKey()
     }
 }

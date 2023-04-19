@@ -14,4 +14,8 @@ enum BalanceIntent {
     case PresentError
     
     case ProceedToPayment
+    
+    case ProceedToAuth
+    
+    case Logout
 }

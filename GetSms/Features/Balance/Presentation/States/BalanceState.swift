@@ -13,5 +13,4 @@ enum BalanceState {
     
     case Error
     
-    case ProceededToPayment
 }

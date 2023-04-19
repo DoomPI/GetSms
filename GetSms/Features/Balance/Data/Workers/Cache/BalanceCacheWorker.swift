@@ -11,6 +11,8 @@ import RxRelay
 protocol BalanceCacheWorkingLogic {
     
     func getApiKey() -> Single<ApiKey>
+    
+    func deleteApiKey() -> Completable
 }
 
 class BalanceCacheWorker {
@@ -23,6 +25,10 @@ extension BalanceCacheWorker: BalanceCacheWorkingLogic {
     
     func getApiKey() -> Single<ApiKey> {
         return Self.keychainWorker.getApiKey()
+    }
+    
+    func deleteApiKey() -> Completable {
+        return Self.keychainWorker.deleteApiKey()
     }
 }
 

@@ -28,10 +28,6 @@ struct BalanceView: View {
             case .Error:
                 BalanceErrorView()
                 
-            case .ProceededToPayment:
-                BalanceLoadingView()
-                    .environmentObject(viewModel)
-                
             }
         }
         .background(Color("DarkBlueColor"))
