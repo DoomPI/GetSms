@@ -17,6 +17,10 @@ struct ServiceListView: View {
         VStack {
             switch state {
                 
+            case .Idle:
+                ServiceListLoadingView()
+                    .environmentObject(viewModel)
+                
             case .Loading:
                 ServiceListLoadingView()
                     .environmentObject(viewModel)

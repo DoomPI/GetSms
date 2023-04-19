@@ -7,6 +7,8 @@
 
 enum ServiceListState {
     
+    case Idle
+    
     case Loading
     
     case Loaded(vo: ServiceListVO)

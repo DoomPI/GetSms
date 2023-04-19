@@ -16,7 +16,7 @@ class ServiceListViewModel: ObservableObject {
     typealias RouteState = ServiceListRouteState
     
     // MARK: - External vars
-    @Published private(set) var state: State = .Loading
+    @Published private(set) var state: State = .Idle
     
     @Published private(set) var routeState: RouteState = .Idle
     
