@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UniformTypeIdentifiers
 
 struct NumberView: View {
     
@@ -38,10 +39,17 @@ struct NumberView: View {
                     .foregroundColor(.white)
                     .fontWeight(.bold)
                 
-                Text(vo.number.number)
-                    .font(.system(size: 12))
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
+                Button(action: {
+                    UIPasteboard.general.setValue(
+                        vo.number.number,
+                        forPasteboardType: UTType.plainText.identifier
+                    )
+                }) {
+                    Text(vo.number.number)
+                        .font(.system(size: 12))
+                        .foregroundColor(.white)
+                        .fontWeight(.bold)
+                }
             }
             
             Spacer()
@@ -82,14 +90,23 @@ struct SmsInfoView: View {
     
     var body: some View {
         
-        Text(
-            smsList.data.isEmpty
-            ? "Ожидает SMS"
-            : smsList.data[0]
-        )
-        .font(.system(size: 15))
-        .foregroundColor(.white)
-        .fontWeight(.bold)
+        Button(action: {
+            if !smsList.data.isEmpty {
+                UIPasteboard.general.setValue(
+                    smsList.data[0],
+                    forPasteboardType: UTType.plainText.identifier
+                )
+            }
+        }) {
+            Text(
+                smsList.data.isEmpty
+                ? "Ожидает SMS"
+                : smsList.data[0]
+            )
+            .font(.system(size: 15))
+            .foregroundColor(.white)
+            .fontWeight(.bold)
+        }
     }
 }
 
