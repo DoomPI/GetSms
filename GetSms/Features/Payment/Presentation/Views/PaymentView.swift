@@ -23,6 +23,7 @@ struct PaymentView: View {
             case .Opened:
                 WebView(url: "https://vak-sms.com/pay/", urlType: .Public)
                     .environmentObject(WebAssembly.assemble(
+                        didCommit: viewModel.webViewDidCommit,
                         didFinish: viewModel.webViewDidFinish,
                         decidePolicyFor: viewModel.webViewDecidePolicyFor
                     ))

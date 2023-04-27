@@ -18,16 +18,19 @@ class WebViewModel: NSObject, ObservableObject {
     private let processor: any WebProcessorProtocol
     private var webView: WKWebView? = nil
     
+    private let didCommit: (WKWebView) -> Void
     private let didFinish: (WKWebView) -> Void
-    private let decidePolicyFor: (WKWebView) -> Void
+    private let decidePolicyFor: (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void
     
     // MARK: - Init
     init(
         processor: any WebProcessorProtocol,
+        didCommit: @escaping (WKWebView) -> Void,
         didFinish: @escaping (WKWebView) -> Void,
-        decidePolicyFor: @escaping (WKWebView) -> Void
+        decidePolicyFor: @escaping (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void
     ) {
         self.processor = processor
+        self.didCommit = didCommit
         self.didFinish = didFinish
         self.decidePolicyFor = decidePolicyFor
     }
@@ -87,12 +90,20 @@ extension WebViewModel: WKNavigationDelegate {
         didFinish(webView)
     }
     
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!){
+        didCommit(webView)
+    }
+
+    
     func webView(
         _ webView: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
         decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
     ) {
-        decidePolicyFor(webView)
-        return decisionHandler(WKNavigationActionPolicy.allow)
+        return decidePolicyFor(webView, navigationAction, decisionHandler)
+    }
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        print(error)
     }
 }

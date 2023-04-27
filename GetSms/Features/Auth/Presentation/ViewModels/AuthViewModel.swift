@@ -17,6 +17,7 @@ class AuthViewModel: ObservableObject {
     @Published private(set) var state: AuthState = .Idle
     
     // MARK: - Internal vars
+    private let urlMain = "https://vak-sms.com/"
     private let urlLk = "https://vak-sms.com/lk/"
     private let processor: any AuthProcessorProtocol
     private let reducer: any AuthReducerProtocol
@@ -32,6 +33,10 @@ class AuthViewModel: ObservableObject {
     
     func onViewAppear() {
         processor.subscribeToIntents()
+    }
+    
+    func didCommit(webView : WKWebView) {
+        webView.evaluateJavaScript(hideAuthComponets)
     }
     
     func webViewDidFinish(webView : WKWebView) {
@@ -51,13 +56,21 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func webViewDecidePolicyFor(webView: WKWebView) {
-        if webView.url?.absoluteString == urlLk {
-            webView.isHidden = true
-            processor.fireIntent(intent: .BlockingLoad)
-        }
-    }
-}
+    func webViewDecidePolicyFor ( _ webView: WKWebView,
+     decidePolicyFor navigationAction: WKNavigationAction,
+     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+ ) {
+         let str = navigationAction.request.url?.absoluteString
+         if (str == urlMain){
+             return decisionHandler(.cancel)
+         }
+         if webView.url?.absoluteString == urlLk {
+             webView.isHidden = true
+             processor.fireIntent(intent: .BlockingLoad)
+         }
+         return decisionHandler(.allow)
+     }
+ }
 
 extension AuthViewModel: AuthHandlerProtocol {
     

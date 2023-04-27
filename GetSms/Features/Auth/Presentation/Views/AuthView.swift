@@ -23,6 +23,7 @@ struct AuthView: View {
             case .Loaded:
                 WebView(url: "https://vak-sms.com/accounts/logout/?next=/accounts/login/", urlType: .Public)
                     .environmentObject(WebAssembly.assemble(
+                        didCommit: viewModel.didCommit,
                         didFinish: viewModel.webViewDidFinish,
                         decidePolicyFor: viewModel.webViewDecidePolicyFor
                     ))
