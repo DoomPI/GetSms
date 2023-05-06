@@ -10,14 +10,16 @@ import WebKit
 enum WebAssembly {
     
     static func assemble(
+        didCommit: @escaping (WKWebView)->Void,
         didFinish: @escaping (WKWebView) -> Void,
-        decidePolicyFor: @escaping (WKWebView) -> Void
+        decidePolicyFor: @escaping (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void
     ) -> WebViewModel {
         
         let processor = WebProcessor()
         
         let viewModel = WebViewModel(
             processor: processor,
+            didCommit: didCommit,
             didFinish: didFinish,
             decidePolicyFor: decidePolicyFor
         )

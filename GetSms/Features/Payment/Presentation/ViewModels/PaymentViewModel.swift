@@ -19,6 +19,7 @@ class PaymentViewModel: ObservableObject {
     @Published private(set) var state: State = .Idle
     
     // MARK: - Internal vars
+    private let urlMain = "https://vak-sms.com/"
     private let urlPayment = "https://vak-sms.com/pay/"
     private let processor: any PaymentProcessorProtocol
     private let reducer: any PaymentReducerProtocol
@@ -44,10 +45,22 @@ class PaymentViewModel: ObservableObject {
         processor.fireIntent(intent: .Close)
     }
     
+    func webViewDidCommit(webView: WKWebView) {
+        webView.evaluateJavaScript(hideComponets)
+    }
+    
     func webViewDidFinish(webView: WKWebView) {
     }
     
-    func webViewDecidePolicyFor(webView: WKWebView) {
+    func webViewDecidePolicyFor ( _ webView: WKWebView,
+     decidePolicyFor navigationAction: WKNavigationAction,
+     decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+ ) {
+        let str = navigationAction.request.url?.absoluteString
+        if (str == urlMain){
+            return decisionHandler(.cancel)
+        }
+        return decisionHandler(.allow)
     }
 }
 
