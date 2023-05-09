@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A880993C29FB03220084233D /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880993B29FB03220084233D /* ErrorView.swift */; };
+		A880993F29FB04030084233D /* ErrorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A880993E29FB04030084233D /* ErrorState.swift */; };
 		A885643129E2E7D3001C1F39 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A885643029E2E7D3001C1F39 /* ApiKey.swift */; };
 		A8C9880B29D9CBB3000D1249 /* ServiceListTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C9880A29D9CBB3000D1249 /* ServiceListTab.swift */; };
 		CC0608BB29D78842005A815C /* ServiceListCacheWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */; };
@@ -183,6 +185,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A880993B29FB03220084233D /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		A880993E29FB04030084233D /* ErrorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorState.swift; sourceTree = "<group>"; };
 		A885643029E2E7D3001C1F39 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
 		A8C9880A29D9CBB3000D1249 /* ServiceListTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListTab.swift; sourceTree = "<group>"; };
 		CC0608BA29D78842005A815C /* ServiceListCacheWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceListCacheWorker.swift; sourceTree = "<group>"; };
@@ -357,6 +361,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A880993529FB02070084233D /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				A880993929FB02AA0084233D /* Data */,
+				A880993829FB029E0084233D /* Domain */,
+				A880993729FB028E0084233D /* DI */,
+				A880993629FB027B0084233D /* Presentation */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		A880993629FB027B0084233D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				A880993D29FB03F10084233D /* States */,
+				A880993A29FB02F50084233D /* Views */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		A880993729FB028E0084233D /* DI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		A880993829FB029E0084233D /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		A880993929FB02AA0084233D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A880993A29FB02F50084233D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A880993B29FB03220084233D /* ErrorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A880993D29FB03F10084233D /* States */ = {
+			isa = PBXGroup;
+			children = (
+				A880993E29FB04030084233D /* ErrorState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
 		A885642D29E2E6C9001C1F39 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
@@ -1016,6 +1077,7 @@
 		CC9E158029CF8CD400237F71 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				A880993529FB02070084233D /* Error */,
 				CC3C133529EB1A8B00397F0F /* Search */,
 				CC3C132A29EB180100397F0F /* NumberList */,
 				CCCE95F029E4B638007B4D0D /* Payment */,
@@ -1707,6 +1769,7 @@
 				CC3C138B29EC197000397F0F /* NumberVO.swift in Sources */,
 				CCCE957B29E221AB007B4D0D /* WebView.swift in Sources */,
 				CC0608FD29D89891005A815C /* CountryList.swift in Sources */,
+				A880993C29FB03220084233D /* ErrorView.swift in Sources */,
 				CC1EBC7529CFC7C400C43EF0 /* ServiceNetworkDTO.swift in Sources */,
 				CCCE95D429E38012007B4D0D /* BalanceNetworkDTO.swift in Sources */,
 				CC0608F129D89704005A815C /* CountryListFormatter.swift in Sources */,
@@ -1757,6 +1820,7 @@
 				CC1EBC9829D0CC5000C43EF0 /* ServiceListReducer.swift in Sources */,
 				CCCE95EB29E4AA7A007B4D0D /* ServiceListLoadingView.swift in Sources */,
 				CC3C136029EB43D800397F0F /* NumberListInteractor.swift in Sources */,
+				A880993F29FB04030084233D /* ErrorState.swift in Sources */,
 				CC0608DB29D895D1005A815C /* CountryListAssembly.swift in Sources */,
 				CC3C135E29EB3E2700397F0F /* CacheWorker.swift in Sources */,
 				CC3C138F29EC34D300397F0F /* NumberListProcessor.swift in Sources */,
