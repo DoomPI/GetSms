@@ -12,4 +12,8 @@ enum PaymentIntent {
     case Open
     
     case Close
+    
+    case Error(message: String)
+    
+    case Active
 }

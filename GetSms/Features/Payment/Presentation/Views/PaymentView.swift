@@ -12,6 +12,9 @@ struct PaymentView: View {
     @EnvironmentObject var viewModel: PaymentViewModel
     
     @State private var state: PaymentState = .Idle
+    @State private var errorState: ErrorState = .None
+
+    private static let payUrl: String = "https://vak-sms.com/pay/"
     
     var body: some View {
         ZStack {
@@ -21,16 +24,16 @@ struct PaymentView: View {
                 Spacer()
                 
             case .Opened:
-                WebView(url: "https://vak-sms.com/pay/", urlType: .Public)
+                WebView(errorState: $errorState, url: Self.payUrl, urlType: .Public)
                     .environmentObject(WebAssembly.assemble(
                         didCommit: viewModel.webViewDidCommit,
                         didFinish: viewModel.webViewDidFinish,
-                        decidePolicyFor: viewModel.webViewDecidePolicyFor
+                        decidePolicyFor: viewModel.webViewDecidePolicyFor,
+                        didFail: viewModel.webViewDidFail
+                        
                     ))
-                
             case .Closed:
                 Spacer()
-    
             }
         }
         .background(Color("DarkerBlueColor"))
@@ -39,7 +42,10 @@ struct PaymentView: View {
             withAnimation {
                 self.state = newState
             }
+        }.onReceive(viewModel.$errorState) { newState in
+                withAnimation {
+                    self.errorState = newState
+            }
         }
     }
 }
-

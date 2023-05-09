@@ -12,7 +12,8 @@ enum WebAssembly {
     static func assemble(
         didCommit: @escaping (WKWebView)->Void,
         didFinish: @escaping (WKWebView) -> Void,
-        decidePolicyFor: @escaping (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void
+        decidePolicyFor: @escaping (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void,
+        didFail: @escaping (String) -> Void
     ) -> WebViewModel {
         
         let processor = WebProcessor()
@@ -21,7 +22,8 @@ enum WebAssembly {
             processor: processor,
             didCommit: didCommit,
             didFinish: didFinish,
-            decidePolicyFor: decidePolicyFor
+            decidePolicyFor: decidePolicyFor,
+            didFail: didFail
         )
         processor.handler = viewModel
         

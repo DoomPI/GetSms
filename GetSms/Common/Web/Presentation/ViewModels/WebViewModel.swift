@@ -21,18 +21,21 @@ class WebViewModel: NSObject, ObservableObject {
     private let didCommit: (WKWebView) -> Void
     private let didFinish: (WKWebView) -> Void
     private let decidePolicyFor: (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void
+    private let didFail: (String) -> Void
     
     // MARK: - Init
     init(
         processor: any WebProcessorProtocol,
         didCommit: @escaping (WKWebView) -> Void,
         didFinish: @escaping (WKWebView) -> Void,
-        decidePolicyFor: @escaping (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void
+        decidePolicyFor: @escaping (WKWebView, WKNavigationAction, @escaping (WKNavigationActionPolicy) -> Void) -> Void,
+        didFail: @escaping (String) -> Void
     ) {
         self.processor = processor
         self.didCommit = didCommit
         self.didFinish = didFinish
         self.decidePolicyFor = decidePolicyFor
+        self.didFail = didFail
     }
     
     func onViewAppear() {
@@ -104,6 +107,11 @@ extension WebViewModel: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        print(error)
+        didFail(error.localizedDescription)
+        
+    }
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation: WKNavigation!, withError error: Error){
+        didFail(error.localizedDescription)
     }
 }

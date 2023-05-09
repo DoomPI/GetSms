@@ -18,4 +18,6 @@ enum AuthIntent {
     case SaveApiKey(apiKey: ApiKey)
     
     case CheckApiKey
+    
+    case Error(message: String)
 }

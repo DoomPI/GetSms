@@ -17,6 +17,7 @@ class PaymentViewModel: ObservableObject {
     
     // MARK: - External vars
     @Published private(set) var state: State = .Idle
+    @Published private(set) var errorState: ErrorState = .None
     
     // MARK: - Internal vars
     private let urlMain = "https://vak-sms.com/"
@@ -52,6 +53,10 @@ class PaymentViewModel: ObservableObject {
     func webViewDidFinish(webView: WKWebView) {
     }
     
+    func webViewDidFail(message: String){
+        processor.fireIntent(intent: .Error(message: message))
+    }
+    
     func webViewDecidePolicyFor ( _ webView: WKWebView,
      decidePolicyFor navigationAction: WKNavigationAction,
      decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
@@ -67,10 +72,18 @@ class PaymentViewModel: ObservableObject {
 extension PaymentViewModel: PaymentHandlerProtocol {
     
     func handle(intent: Intent) {
+        print(intent)
+        switch intent {
+            case .Error(let message):
+                self.errorState = .Error(message: message)
+            default:
+                self.errorState = .None
+        }
         let newState = self.reducer.reduce(
             currentState: state,
             intent: intent
         )
+        print("state = \(newState)")
         self.state = newState
     }
 }

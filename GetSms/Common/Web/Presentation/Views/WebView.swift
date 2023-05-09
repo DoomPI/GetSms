@@ -10,13 +10,13 @@ import SwiftUI
 struct WebView: View {
     
     @EnvironmentObject var viewModel: WebViewModel
+    @Binding var errorState: ErrorState
     
     var url: String
     var urlType: URLType
     
     var body: some View {
         VStack {
-            
             WebNavigationView(
                 goForwardAction: viewModel.forward,
                 goBackwardAction: viewModel.backward,
@@ -25,6 +25,9 @@ struct WebView: View {
             
             WebContentView(url: url, urlType: urlType)
                 .environmentObject(viewModel)
+                    .overlay (
+                        ErrorView(errorState: $errorState)
+                    )
         }
         .background(Color("DarkerBlueColor"))
         .onAppear {
