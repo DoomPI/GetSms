@@ -29,8 +29,8 @@ struct ServiceListView: View {
                 ServiceListLoadedView(vo: vo)
                     .environmentObject(viewModel)
                 
-            case .Error(let vo):
-                ServiceListErrorView(vo: vo)
+            case .Error(_):
+                EmptyView()
                 
             }
         }

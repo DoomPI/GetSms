@@ -10,9 +10,17 @@ import SwiftUI
 struct NumberListTab: View {
     
     @EnvironmentObject var viewModel: NumberListViewModel
+    @Binding var errorState: ErrorState
     
     var body: some View {
-        NumberListView()
-            .environmentObject(viewModel)
+        switch errorState {
+        case .Error(let message):
+            Text("Refresh!").onTapGesture {
+                viewModel.loadNumberList()
+            }
+        case .None:
+            NumberListView()
+                .environmentObject(viewModel)
+        }
     }
 }
