@@ -14,17 +14,15 @@ struct ServiceListTab: View {
     
     @State private var isSearchViewLoading = false
     @Binding var errorState: ErrorState
+    var updateFunc: () -> Void
  
     var body: some View {
         VStack {
             switch errorState {
             case .Error(_):
-                Spacer()
-                Text("Refresh!").onTapGesture {
-                    serviceListViewModel.loadServiceList()
-                    countryListViewModel.loadCountryList()
+                Text("Tap to refresh").onTapGesture {
+                   updateFunc()
                 }
-                Spacer()
             case .None:
                 CountryListView()
                     .environmentObject(countryListViewModel)

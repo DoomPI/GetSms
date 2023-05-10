@@ -11,12 +11,13 @@ struct NumberListTab: View {
     
     @EnvironmentObject var viewModel: NumberListViewModel
     @Binding var errorState: ErrorState
+    var updateFunc: () -> Void
     
     var body: some View {
         switch errorState {
-        case .Error(let message):
-            Text("Refresh!").onTapGesture {
-                viewModel.loadNumberList()
+        case .Error(_):
+            Text("Tap to refresh").onTapGesture {
+                updateFunc()
             }
         case .None:
             NumberListView()
