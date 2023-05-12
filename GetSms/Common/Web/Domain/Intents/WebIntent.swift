@@ -14,4 +14,6 @@ enum WebIntent {
     case Backward
     
     case Reload
+    
+    case Error(message: String)
 }

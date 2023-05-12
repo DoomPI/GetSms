@@ -364,9 +364,6 @@
 		A880993529FB02070084233D /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				A880993929FB02AA0084233D /* Data */,
-				A880993829FB029E0084233D /* Domain */,
-				A880993729FB028E0084233D /* DI */,
 				A880993629FB027B0084233D /* Presentation */,
 			);
 			path = Error;
@@ -379,27 +376,6 @@
 				A880993A29FB02F50084233D /* Views */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		A880993729FB028E0084233D /* DI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DI;
-			sourceTree = "<group>";
-		};
-		A880993829FB029E0084233D /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		A880993929FB02AA0084233D /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		A880993A29FB02F50084233D /* Views */ = {

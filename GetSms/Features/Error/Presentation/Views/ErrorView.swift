@@ -28,6 +28,7 @@ struct ErrorView: View {
             }
             Spacer()
         } .padding(.vertical, 15)
+            .padding(.horizontal, 5)
     }
 }
 

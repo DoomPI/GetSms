@@ -14,6 +14,8 @@ protocol WebHandlerProtocol: Handler where Intent == WebIntent {
 
 class WebViewModel: NSObject, ObservableObject {
     
+    @Published private(set) var errorState: ErrorState = .None
+    
     // MARK: - Internal vars
     private let processor: any WebProcessorProtocol
     private var webView: WKWebView? = nil
@@ -67,19 +69,27 @@ extension WebViewModel: WebHandlerProtocol {
         case .Forward:
             guard let webView else { return }
             if webView.canGoForward {
+                errorState = .None
                 webView.goForward()
             }
             
         case .Backward:
             guard let webView else { return }
             if webView.canGoBack {
+                errorState = .None
                 webView.goBack()
             }
             
         case .Reload:
             guard let webView else { return }
+            errorState = .None
             webView.reload()
+            
+        case .Error(message: let message):
+            guard let webView else { return }
+            errorState = .Error(message: message)
         }
+        
     }
 }
 
@@ -107,11 +117,18 @@ extension WebViewModel: WKNavigationDelegate {
     }
     
     func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        let nsError = error as NSError
+        if nsError.code != -999 {
+            processor.fireIntent(intent: .Error(message: error.localizedDescription))
+        }
         didFail(error.localizedDescription)
-        
     }
     
     func webView(_ webView: WKWebView, didFailProvisionalNavigation: WKNavigation!, withError error: Error){
+        let nsError = error as NSError
+        if nsError.code != -999 {
+            processor.fireIntent(intent: .Error(message: error.localizedDescription))
+        }
         didFail(error.localizedDescription)
     }
 }

@@ -54,7 +54,7 @@ class PaymentViewModel: ObservableObject {
     }
     
     func webViewDidFail(message: String){
-        processor.fireIntent(intent: .Error(message: message))
+        print("Top up balance error - \(message)")
     }
     
     func webViewDecidePolicyFor ( _ webView: WKWebView,

@@ -41,7 +41,7 @@ class AuthViewModel: ObservableObject {
     }
     
     func webViewDidFail(message: String){
-        processor.fireIntent(intent: .Error(message: message))
+        print("Auth error - \(message)")
     }
     
     func webViewDidFinish(webView : WKWebView) {
@@ -55,7 +55,7 @@ class AuthViewModel: ObservableObject {
                         }
                                 
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        processor.fireIntent(intent: .Error(message: error.localizedDescription))
                 }
             }
         }

@@ -32,6 +32,10 @@ struct WebView: View {
         .background(Color("DarkerBlueColor"))
         .onAppear {
             viewModel.onViewAppear()
+        }.onReceive(viewModel.$errorState){ newState in
+            withAnimation{
+                self.errorState = newState
+            }
         }
     }
 }
