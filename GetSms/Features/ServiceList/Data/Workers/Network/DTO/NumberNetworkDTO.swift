@@ -6,8 +6,8 @@
 //
 
 struct NumberNetworkDTO: Decodable {
-    let id: String?
-    let phoneNumber: Int?
+    let id: String
+    let phoneNumber: Int
     
     enum CodingKeys: String, CodingKey {
         case id = "idNum"

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ErrorView: View {
     
+    private let errorNotificationShowTime: UInt64 = 2_800_000_000
+    
     @Binding var errorState: ErrorState
     
     var body: some View {

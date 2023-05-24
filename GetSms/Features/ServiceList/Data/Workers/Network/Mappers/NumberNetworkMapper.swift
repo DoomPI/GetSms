@@ -13,17 +13,11 @@ class NumberNetworkMapper {
         serviceName: String,
         dto: NumberNetworkDTO
     ) throws -> Number {
-        guard
-            let id = dto.id,
-            let phoneNumber = dto.phoneNumber
-        else {
-            throw NSError(domain: "NumberNetworkMapper", code: 1)
-        }
-        
+
         return Number(
             serviceName: serviceName,
-            id: id,
-            phoneNumber: phoneNumber
+            id: dto.id,
+            phoneNumber: dto.phoneNumber
         )
     }
 }

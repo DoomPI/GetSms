@@ -8,6 +8,10 @@
 class ServiceListErrorFormatter {
     
     func format(error: Error) -> ServiceListErrorVO {
-        return ServiceListErrorVO(description: error.localizedDescription)
+        var description = error.localizedDescription
+        if (error is PurchaseNumberError) {
+            description = (error as! PurchaseNumberError).localizedDescription
+        }
+        return ServiceListErrorVO(description: description)
     }
 }

@@ -10,7 +10,7 @@ import RxSwift
 
 protocol NumberNetworkWorkingLogic {
     
-    func getNumber(apiKey: String, serviceCode: String, countryCode: String) -> Single<NumberNetworkDTO>
+    func getNumber(apiKey: String, serviceCode: String, countryCode: String) -> Single<Result<NumberNetworkDTO, PurchaseNumberError>>
 }
 
 class NumberNetworkWorker {
@@ -27,7 +27,7 @@ class NumberNetworkWorker {
 
 extension NumberNetworkWorker: NumberNetworkWorkingLogic {
     
-    func getNumber(apiKey: String, serviceCode: String, countryCode: String) -> Single<NumberNetworkDTO> {
+    func getNumber(apiKey: String, serviceCode: String, countryCode: String) -> Single<Result<NumberNetworkDTO, PurchaseNumberError>> {
         Single.deferred {
             let queryItems = [
                 URLQueryItem(
@@ -52,7 +52,12 @@ extension NumberNetworkWorker: NumberNetworkWorkingLogic {
             return Self.worker.sendRequest(
                 url: url
             ).map { data in
-                try Self.decoder.decode(NumberNetworkDTO.self, from: data)
+                
+                if let result = try? Self.decoder.decode(NumberNetworkDTO.self, from: data) {
+                    return .success(result)
+                }
+                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                return .failure(getPurchaseNumberError(from: json))
             }
         }
     }
