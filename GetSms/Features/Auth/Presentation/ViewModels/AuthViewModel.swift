@@ -15,6 +15,7 @@ class AuthViewModel: ObservableObject {
     
     // MARK: - External state
     @Published private(set) var state: AuthState = .Idle
+    @Published private(set) var errorState: ErrorState = .None
     
     // MARK: - Internal vars
     private let urlMain = "https://vak-sms.com/"
@@ -39,6 +40,10 @@ class AuthViewModel: ObservableObject {
         webView.evaluateJavaScript(hideAuthComponets)
     }
     
+    func webViewDidFail(message: String){
+        print("Auth error - \(message)")
+    }
+    
     func webViewDidFinish(webView : WKWebView) {
         if webView.url?.absoluteString == urlLk {
             webView.evaluateJavaScript(authScript, in: nil, in: .defaultClient) { [weak self] result in
@@ -50,7 +55,7 @@ class AuthViewModel: ObservableObject {
                         }
                                 
                     case .failure(let error):
-                        print(error.localizedDescription)
+                        processor.fireIntent(intent: .Error(message: error.localizedDescription))
                 }
             }
         }
@@ -75,6 +80,12 @@ class AuthViewModel: ObservableObject {
 extension AuthViewModel: AuthHandlerProtocol {
     
     func handle(intent: Intent) {
+        switch intent {
+            case .Error(let message):
+                self.errorState = .TempError(message: message)
+            default:
+                self.errorState = .None
+        }
         let newState = self.reducer.reduce(
             currentState: state,
             intent: intent

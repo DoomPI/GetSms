@@ -12,6 +12,7 @@ struct AuthView: View {
     @EnvironmentObject var viewModel: AuthViewModel
     
     @State private var state: AuthState = .Idle
+    @State private var errorState: ErrorState = .None
     
     var body: some View {
         ZStack {
@@ -21,11 +22,12 @@ struct AuthView: View {
                 Spacer()
                 
             case .Loaded:
-                WebView(url: "https://vak-sms.com/accounts/logout/?next=/accounts/login/", urlType: .Public)
+                WebView(errorState: $errorState, url: "https://vak-sms.com/accounts/logout/?next=/accounts/login/", urlType: .Public)
                     .environmentObject(WebAssembly.assemble(
                         didCommit: viewModel.didCommit,
                         didFinish: viewModel.webViewDidFinish,
-                        decidePolicyFor: viewModel.webViewDecidePolicyFor
+                        decidePolicyFor: viewModel.webViewDecidePolicyFor,
+                        didFail: viewModel.webViewDidFail
                     ))
                 
             case .BlockingLoading:
@@ -44,6 +46,10 @@ struct AuthView: View {
             withAnimation {
                 self.state = newState
             }
+        }.onReceive(viewModel.$errorState) { newState in
+            withAnimation {
+                self.errorState = newState
         }
+    }
     }
 }

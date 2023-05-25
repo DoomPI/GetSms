@@ -39,7 +39,8 @@ struct BalanceLoadedView: View {
                             Text(vo.balance)
                                 .font(.system(size: 16))
                                 .fontWeight(.bold)
-                                .foregroundColor(Color.white)
+                                .lineLimit(2)
+                                .foregroundColor(Color.white).multilineTextAlignment(.leading)
                         }
                         .padding(4)
                     }
@@ -65,7 +66,7 @@ struct BalanceLoadedView: View {
                     )
                 )
             }
-            .frame(height: 60)
+            .frame(height: 70)
         }
     }
 }

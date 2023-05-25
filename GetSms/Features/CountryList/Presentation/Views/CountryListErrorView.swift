@@ -21,7 +21,7 @@ struct CountryListErrorView_Previews: PreviewProvider {
     static var previews: some View {
         CountryListErrorView(
             vo: CountryListErrorVO(
-                description: "Error!"
+                description: "Error!", isTemp: false
             )
         )
         .background(Color("DarkBlueColor"))

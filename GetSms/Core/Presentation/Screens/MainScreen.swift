@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MainScreen: View {
- 
     @ObservedObject var balanceViewModel = BalanceAssembly.assemble()
     @ObservedObject var countryListViewModel = CountryListAssembly.assemble()
     @ObservedObject var serviceListViewModel = ServiceListAssembly.assemble()
@@ -18,28 +17,32 @@ struct MainScreen: View {
     @State private var isPaymentBottomsheetPresented = false
     @State private var isSearchViewLoading = false
     @State private var selectedTab: TabNavigationState = .ServiceList
+    @State private var errorState: ErrorState = .None
+    @State private var errorActiveNumbersState: ErrorState = .None
+    @State private var errorStateArr: [ErrorState] = [.None, .None]
     
     @Binding var navigationState: NavigationState
  
     var body: some View {
         VStack {
-            
             BalanceView()
                 .environmentObject(balanceViewModel)
-            
-            TabView(selection: $selectedTab) {
-                ServiceListTab()
-                    .tag(TabNavigationState.ServiceList)
-                    .environmentObject(countryListViewModel)
-                    .environmentObject(serviceListViewModel)
-                
-                NumberListTab()
-                    .tag(TabNavigationState.NumberList)
-                    .environmentObject(numberListViewModel)
 
-            }
-            .tabViewStyle(.page)
-        }
+                TabView(selection: $selectedTab) {
+                    ServiceListTab(errorState: $errorState, updateFunc: updateAll)
+                        .tag(TabNavigationState.ServiceList)
+                        .environmentObject(countryListViewModel)
+                        .environmentObject(serviceListViewModel)
+                    NumberListTab(errorState: $errorActiveNumbersState, updateFunc: updateAll)
+                        .tag(TabNavigationState.NumberList)
+                        .environmentObject(numberListViewModel)
+                }
+                .tabViewStyle(.page)
+        }.overlay(content: {
+            ErrorView(errorState: $errorState)
+        }).overlay(content: {
+            ErrorView(errorState: $errorActiveNumbersState)
+        })
         .padding(8)
         .background(Color("DarkBlueColor"))
         .sheet(isPresented: $isPaymentBottomsheetPresented){
@@ -80,7 +83,56 @@ struct MainScreen: View {
                 balanceViewModel.reloadBalance()
                 
             default:
+                withAnimation {
+                    selectedTab = .ServiceList
+                }
                 break
+            }
+        }
+        .onReceive(serviceListViewModel.$state) { newState in
+            switch newState {
+            case .Error(vo: let error):
+                if (error.isTemp){
+                    errorStateArr[0] = .TempError(message: error.description)
+                } else {
+                    errorStateArr[0] = .InfError(message: error.description)
+                }
+            default:
+                errorStateArr[0] = .None
+            }
+            if let dataEr = errorStateArr.first(where: {if case .None = $0 {return false} else {return true}}){
+                errorState = dataEr
+            } else {
+                errorState = .None
+            }
+        }
+        .onReceive(numberListViewModel.$state) { newState in
+            switch newState {
+            case .Error(vo: let error):
+                if (error.isTemp){
+                    errorActiveNumbersState = .TempError(message: error.description)
+                } else {
+                    errorActiveNumbersState = .InfError(message: error.description)
+                }
+            default:
+                errorActiveNumbersState = .None
+            }
+        }
+        .onReceive(countryListViewModel.$state) { newState in
+            switch newState {
+            case .Error(vo: let error):
+                if (error.isTemp){
+                    errorStateArr[1] = .TempError(message: error.description)
+                } else {
+                    errorStateArr[1] = .InfError(message: error.description)
+                }
+            default:
+                errorStateArr[1] = .None
+            }
+            if let dataEr = errorStateArr.first(where: {if case .None = $0 {return false} else {return true}}){
+                errorState = dataEr
+            } else {
+                errorState = .None
             }
         }
         .onReceive(paymentViewModel.$state) { newState in
@@ -100,6 +152,17 @@ struct MainScreen: View {
                 paymentViewModel.closePayment()
             }
         }
+    }
+    
+    private func updateAll(){
+        if case .InfError(_) = errorState {
+            serviceListViewModel.loadServiceList()
+            countryListViewModel.loadCountryList()
+        }
+        if case .InfError(_) = errorActiveNumbersState {
+            numberListViewModel.loadNumberList()
+        }
+        balanceViewModel.reloadBalance()
     }
 }
 

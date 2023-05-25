@@ -89,8 +89,13 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
                 countryCode: countryCode
             )
         }
-        .flatMapCompletable { number in
-            self.appendNumbers(newNumber: number)
+        .flatMapCompletable { result in
+            switch result {
+            case .success(let number):
+                return self.appendNumbers(newNumber: number)
+            case .failure(let error):
+                return Completable.error(error)
+            }
         }
     }
     
@@ -120,13 +125,20 @@ extension ServiceListInteractor: ServiceListBusinessLogic {
         serviceCode: String,
         serviceName: String,
         countryCode: String
-    ) -> Single<Number> {
+    ) -> Single<Result<Number, PurchaseNumberError>> {
         return numberNetworkWorker.getNumber(
             apiKey: apiKey.apiKey,
             serviceCode: serviceCode,
             countryCode: countryCode
-        ).map { dto in
-            try self.numberNetworkMapper.fromDto(serviceName: serviceName, dto: dto)
+        ).map { result in
+            switch result {
+            case .success(let dto):
+                print(dto)
+                return .success( try self.numberNetworkMapper.fromDto(serviceName: serviceName, dto: dto))
+            case .failure(let error):
+                return .failure(error)
+            }
+            
         }
     }
     

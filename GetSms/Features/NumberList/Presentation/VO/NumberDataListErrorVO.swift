@@ -7,4 +7,5 @@
 
 struct NumberDataListErrorVO {
     let description: String
+    let isTemp: Bool
 }

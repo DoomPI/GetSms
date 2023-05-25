@@ -90,9 +90,15 @@ extension ServiceListProcessor: ServiceListProcessorProtocol {
                         .subscribe(
                             onCompleted: {
                                 self.fireIntent(intent: .NumberListFinishRoute)
+                            },
+                            onError: { error in
+                                // Handle the error here
+                                self.fireIntent(intent: .NumberListFinishRoute)
+                                self.fireIntent(intent: .PresentError(error: error))
                             }
                         )
                         .disposed(by: self.disposeBag)
+
                     
                 default:
                     break

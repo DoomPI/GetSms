@@ -11,7 +11,8 @@ class NumberDataListErrorFormatter {
         let description = error.localizedDescription
         
         return NumberDataListErrorVO(
-            description: description
+            description: description,
+            isTemp: false
         )
     }
 }

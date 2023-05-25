@@ -31,7 +31,7 @@ struct NumberListErrorView: View {
 
 struct NumberListErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberListErrorView(errorVo: NumberDataListErrorVO(description: "Error!"))
+        NumberListErrorView(errorVo: NumberDataListErrorVO(description: "Error!", isTemp: false))
             .background(Color("DarkBlueColor"))
     }
 }

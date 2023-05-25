@@ -26,7 +26,8 @@ struct BalanceView: View {
                     .environmentObject(viewModel)
                 
             case .Error:
-                BalanceErrorView()
+                BalanceLoadedView(vo: BalanceVO(balance: "Не удалось получить баланс\nНажмите чтоб обновить"))
+                    .environmentObject(viewModel)
                 
             }
         }

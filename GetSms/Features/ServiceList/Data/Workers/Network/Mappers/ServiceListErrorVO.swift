@@ -7,4 +7,5 @@
 
 struct ServiceListErrorVO {
     let description: String
+    let isTemp: Bool
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ServiceListErrorView: View {
     
+    @EnvironmentObject var viewModel: ServiceListViewModel
     let vo: ServiceListErrorVO
     
     var body: some View {
@@ -18,7 +19,9 @@ struct ServiceListErrorView: View {
             HStack {
                 Spacer()
                 
-                Text(vo.description)
+                Text("Refresh").onTapGesture {
+                    viewModel.loadServiceList()
+                }
                 
                 Spacer()
             }
@@ -33,7 +36,8 @@ struct ServiceListErrorView_Previews: PreviewProvider {
     static var previews: some View {
         ServiceListErrorView(
             vo: ServiceListErrorVO(
-                description: "Error!"
+                description: "Error!",
+                isTemp: true
             )
         )
         .background(Color("DarkBlueColor"))

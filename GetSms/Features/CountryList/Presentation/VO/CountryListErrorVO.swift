@@ -7,4 +7,5 @@
 
 struct CountryListErrorVO {
     let description: String
+    let isTemp: Bool
 }
