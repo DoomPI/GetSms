@@ -32,7 +32,8 @@ struct ServiceListTab: View {
                     hint: "Поиск Сервиса"
                 ) { searchText in
                     serviceListViewModel.searchService(inputText: searchText)
-                }.onAppear{
+                }.task {
+                    try? await Task.sleep(nanoseconds: 1_500_000_000)
                     serviceListViewModel.searchService(inputText: "")
                 }
 

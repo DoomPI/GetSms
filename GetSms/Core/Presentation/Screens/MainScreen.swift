@@ -83,6 +83,9 @@ struct MainScreen: View {
                 balanceViewModel.reloadBalance()
                 
             default:
+                withAnimation {
+                    selectedTab = .ServiceList
+                }
                 break
             }
         }
