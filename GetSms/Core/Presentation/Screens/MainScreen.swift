@@ -89,7 +89,11 @@ struct MainScreen: View {
         .onReceive(serviceListViewModel.$state) { newState in
             switch newState {
             case .Error(vo: let error):
-                errorStateArr[0] = .Error(message: error.description)
+                if (error.isTemp){
+                    errorStateArr[0] = .TempError(message: error.description)
+                } else {
+                    errorStateArr[0] = .InfError(message: error.description)
+                }
             default:
                 errorStateArr[0] = .None
             }
@@ -102,7 +106,11 @@ struct MainScreen: View {
         .onReceive(numberListViewModel.$state) { newState in
             switch newState {
             case .Error(vo: let error):
-                errorActiveNumbersState = .Error(message: error.description)
+                if (error.isTemp){
+                    errorActiveNumbersState = .TempError(message: error.description)
+                } else {
+                    errorActiveNumbersState = .InfError(message: error.description)
+                }
             default:
                 errorActiveNumbersState = .None
             }
@@ -110,7 +118,11 @@ struct MainScreen: View {
         .onReceive(countryListViewModel.$state) { newState in
             switch newState {
             case .Error(vo: let error):
-                errorStateArr[1] = .Error(message: error.description)
+                if (error.isTemp){
+                    errorStateArr[1] = .TempError(message: error.description)
+                } else {
+                    errorStateArr[1] = .InfError(message: error.description)
+                }
             default:
                 errorStateArr[1] = .None
             }
@@ -140,11 +152,11 @@ struct MainScreen: View {
     }
     
     private func updateAll(){
-        if case .Error(_) = errorState {
+        if case .InfError(_) = errorState {
             serviceListViewModel.loadServiceList()
             countryListViewModel.loadCountryList()
         }
-        if case .Error(_) = errorActiveNumbersState {
+        if case .InfError(_) = errorActiveNumbersState {
             numberListViewModel.loadNumberList()
         }
         balanceViewModel.reloadBalance()

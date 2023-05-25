@@ -53,7 +53,7 @@ extension CountryListReducer: CountryListReducerProtocol {
                     country.code == countryCode
                 })
             else {
-                return .Error(vo: CountryListErrorVO(description: "Country code not found"))
+                return .Error(vo: CountryListErrorVO(description: "Country code not found", isTemp: true))
             }
             return .Loaded(vo: CountryListVO(
                 countries: vo.countries,

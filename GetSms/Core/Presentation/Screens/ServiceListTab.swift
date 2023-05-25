@@ -19,10 +19,25 @@ struct ServiceListTab: View {
     var body: some View {
         VStack {
             switch errorState {
-            case .Error(_):
+            case .InfError(_):
                 Text("Tap to refresh").onTapGesture {
                    updateFunc()
                 }
+            case .TempError(_):
+                CountryListView()
+                    .environmentObject(countryListViewModel)
+
+                SearchView(
+                    isLoading: $isSearchViewLoading,
+                    hint: "Поиск Сервиса"
+                ) { searchText in
+                    serviceListViewModel.searchService(inputText: searchText)
+                }.onAppear{
+                    serviceListViewModel.searchService(inputText: "")
+                }
+
+                ServiceListView()
+                    .environmentObject(serviceListViewModel)
             case .None:
                 CountryListView()
                     .environmentObject(countryListViewModel)

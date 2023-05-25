@@ -9,7 +9,8 @@ class CountryListErrorFormatter {
     
     func format(error: Error) -> CountryListErrorVO {
         return CountryListErrorVO(
-            description: error.localizedDescription
+            description: error.localizedDescription,
+            isTemp: true
         )
     }
 }

@@ -82,7 +82,7 @@ extension AuthViewModel: AuthHandlerProtocol {
     func handle(intent: Intent) {
         switch intent {
             case .Error(let message):
-                self.errorState = .Error(message: message)
+                self.errorState = .TempError(message: message)
             default:
                 self.errorState = .None
         }

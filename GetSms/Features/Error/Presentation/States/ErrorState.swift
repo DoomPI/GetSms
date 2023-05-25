@@ -7,7 +7,9 @@
 
 enum ErrorState {
     
-    case Error(message: String)
+    case InfError(message: String)
+    
+    case TempError(message: String)
     
     case None
 }

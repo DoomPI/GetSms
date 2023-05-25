@@ -11,7 +11,8 @@ class ServiceListErrorFormatter {
         var description = error.localizedDescription
         if (error is PurchaseNumberError) {
             description = (error as! PurchaseNumberError).localizedDescription
+            return ServiceListErrorVO(description: description, isTemp: true)
         }
-        return ServiceListErrorVO(description: description)
+        return ServiceListErrorVO(description: description, isTemp: false)
     }
 }

@@ -15,7 +15,11 @@ struct NumberListTab: View {
     
     var body: some View {
         switch errorState {
-        case .Error(_):
+        case .InfError(_):
+            Text("Tap to refresh").onTapGesture {
+                updateFunc()
+            }
+        case .TempError(_):
             Text("Tap to refresh").onTapGesture {
                 updateFunc()
             }

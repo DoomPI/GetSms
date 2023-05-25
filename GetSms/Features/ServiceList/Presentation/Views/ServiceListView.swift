@@ -30,7 +30,7 @@ struct ServiceListView: View {
                     .environmentObject(viewModel)
                 
             case .Error(_):
-                EmptyView()
+                Spacer()
                 
             }
         }

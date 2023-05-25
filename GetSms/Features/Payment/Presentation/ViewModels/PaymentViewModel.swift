@@ -75,7 +75,7 @@ extension PaymentViewModel: PaymentHandlerProtocol {
         print(intent)
         switch intent {
             case .Error(let message):
-                self.errorState = .Error(message: message)
+                self.errorState = .InfError(message: message)
             default:
                 self.errorState = .None
         }

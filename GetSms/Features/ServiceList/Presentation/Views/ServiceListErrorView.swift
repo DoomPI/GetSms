@@ -36,7 +36,8 @@ struct ServiceListErrorView_Previews: PreviewProvider {
     static var previews: some View {
         ServiceListErrorView(
             vo: ServiceListErrorVO(
-                description: "Error!"
+                description: "Error!",
+                isTemp: true
             )
         )
         .background(Color("DarkBlueColor"))

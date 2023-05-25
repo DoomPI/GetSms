@@ -87,7 +87,7 @@ extension WebViewModel: WebHandlerProtocol {
             
         case .Error(message: let message):
             guard let webView else { return }
-            errorState = .Error(message: message)
+            errorState = .InfError(message: message)
         }
         
     }
